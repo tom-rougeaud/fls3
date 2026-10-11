@@ -1,0 +1,254 @@
+{
+ "id": "python",
+ "annee": "2de",
+ "titre": "Algorithmique et programmation en Python",
+ "icone": "🐍",
+ "cat": "algo",
+ "domaine": "Algorithmique et programmation",
+ "intro": "Lire et écrire de petits programmes en Python : variables, tests, boucles et fonctions.",
+ "objectifs": [
+  "Je sais **lire** un programme et **trouver** ce qu’il affiche.",
+  "Je sais **utiliser** une variable, une affectation, input et print.",
+  "Je sais **utiliser** un test if / else.",
+  "Je sais **utiliser** une boucle for ou while, et **écrire** une fonction simple."
+ ],
+ "situation": {
+  "metier": "🛒 Commerce en ligne",
+  "txt": [
+   "Un site internet vend des articles de sport.",
+   "La livraison est gratuite si le montant de la commande est de 50 € ou plus. Sinon, elle coûte 4,90 €.",
+   "Le site doit calculer tout seul le prix à payer."
+  ],
+  "question": "Comment écrire un programme qui calcule le prix à payer ?"
+ },
+ "cours": [
+  {
+   "titre": "Variables et affectation",
+   "txt": [
+    "Une [[variable]] est une boîte avec un nom. Elle contient une valeur.",
+    "Le signe = sert à [[affecter|affectation]] : prix = 12 met 12 dans la boîte prix.",
+    "x = x + 1 veut dire : je prends x, j’ajoute 1, et je remets le résultat dans x."
+   ],
+   "man": [
+    "L’affectation variable = expression calcule l’expression, puis stocke le résultat dans la variable.",
+    "Types courants : int (entier), float (décimal, avec un point), str (texte, entre guillemets)."
+   ],
+   "ex": [
+    "a = 5, puis a = a * 2 : a contient 10."
+   ],
+   "ill": "l3:variable|prix|12.5"
+  },
+  {
+   "titre": "Afficher et demander",
+   "txt": [
+    "print( ) [[affiche|afficher]] un résultat à l’écran.",
+    "input( ) [[demande une valeur|saisir]] à l’utilisateur. Elle donne du texte.",
+    "Pour un nombre, j’écris float(input(\"…\")) ou int(input(\"…\"))."
+   ],
+   "man": [
+    "input() renvoie toujours une chaîne de caractères ; on la convertit avec int() ou float() pour calculer."
+   ],
+   "ex": [
+    "montant = float(input(\"Montant : \")) demande un nombre décimal."
+   ],
+   "ill": "l3:py|montant = float(input(\"Montant : \"))|print(montant * 2)"
+  },
+  {
+   "titre": "Le test if / else",
+   "txt": [
+    "if veut dire « si ». else veut dire « sinon ».",
+    "Après if, j’écris une condition, puis deux-points « : ».",
+    "Les lignes dans le if sont décalées vers la droite : c’est l’[[indentation]]."
+   ],
+   "man": [
+    "Instruction conditionnelle : if condition : bloc 1, else : bloc 2. Opérateurs de comparaison : ==, !=, <, <=, >, >=.",
+    "Attention : == compare deux valeurs, = affecte une valeur."
+   ],
+   "ex": [
+    "if montant >= 50: frais = 0, else: frais = 4.90."
+   ],
+   "ill": "l3:py|if montant >= 50:|··frais = 0|else:|··frais = 4.90"
+  },
+  {
+   "titre": "La boucle for",
+   "txt": [
+    "Une [[boucle for|boucle-for]] répète des instructions un nombre de fois connu.",
+    "for i in range(5): répète 5 fois. i vaut 0, puis 1, 2, 3, 4.",
+    "range(1, 6) donne 1, 2, 3, 4, 5 : le dernier nombre n’est pas compris."
+   ],
+   "man": [
+    "range(n) parcourt les entiers de 0 à n − 1 ; range(a, b) parcourt les entiers de a à b − 1."
+   ],
+   "ex": [
+    "s = 0, puis for i in range(1, 4): s = s + i. À la fin, s = 1 + 2 + 3 = 6."
+   ],
+   "ill": "l3:boucle|3|for i in range(3):"
+  },
+  {
+   "titre": "La boucle while",
+   "txt": [
+    "Une [[boucle while|boucle-while]] répète tant qu’une condition est vraie.",
+    "Je ne sais pas à l’avance combien de fois elle va tourner.",
+    "Attention : la condition doit devenir fausse un jour, sinon la boucle ne s’arrête jamais."
+   ],
+   "man": [
+    "while condition : bloc. Le bloc est répété tant que la condition est vraie ; on l’utilise souvent pour chercher un seuil."
+   ],
+   "ex": [
+    "Tant que le capital est inférieur à 1 200 €, je le multiplie par 1,05 et je compte les années."
+   ],
+   "ill": "l3:py|while capital < 1200:|··capital = capital * 1.05|··annee = annee + 1"
+  },
+  {
+   "titre": "Les fonctions",
+   "txt": [
+    "Une [[fonction Python|fonction-python]] est un petit programme avec un nom.",
+    "Je l’écris avec def. Elle reçoit une valeur et [[renvoie|renvoyer]] un résultat avec return.",
+    "Je peux l’utiliser plusieurs fois : prix_total(3), prix_total(10)…"
+   ],
+   "man": [
+    "def nom(paramètre): … return valeur. L’appel nom(argument) renvoie la valeur calculée."
+   ],
+   "ex": [
+    "def prix_total(q): return 15 * q + 8. prix_total(4) renvoie 68."
+   ],
+   "ill": "l3:py|def prix_total(q):|··return 15 * q + 8|print(prix_total(4))"
+  },
+  {
+   "titre": "Les erreurs",
+   "txt": [
+    "Un [[bug]] est une erreur dans un programme.",
+    "Erreurs fréquentes : oublier les deux-points, oublier l’indentation, écrire une virgule au lieu d’un point (4,90 au lieu de 4.90).",
+    "Je lis le message d’erreur : il donne le numéro de la ligne."
+   ],
+   "man": [
+    "SyntaxError : erreur d’écriture. IndentationError : mauvais décalage. NameError : variable inconnue. En Python, le séparateur décimal est le point."
+   ],
+   "ex": [
+    "if montant >= 50 (sans « : ») → SyntaxError."
+   ],
+   "ill": "l3:console|>>> print(4,90)|4 90|>>> print(4.90)|4.9"
+  }
+ ],
+ "methodes": [
+  {
+   "titre": "Trouver ce qu’affiche un programme",
+   "etapes": [
+    "Je fais un tableau avec une colonne par variable.",
+    "Je lis le programme ligne par ligne, de haut en bas.",
+    "À chaque affectation, j’écris la nouvelle valeur dans le tableau.",
+    "Quand je lis print, j’écris ce qui est affiché."
+   ],
+   "code": "a = 3\nb = a * 4\na = b - 5\nprint(a, b)",
+   "exemple": {
+    "enonce": "**Détermine** ce qu’affiche ce programme.",
+    "etapes": [
+     { "t": "Ligne 1.", "c": "a = 3" },
+     { "t": "Ligne 2.", "c": "b = 3 × 4 = 12" },
+     { "t": "Ligne 3.", "c": "a = 12 − 5 = 7" }
+    ],
+    "reponse": "Le programme affiche 7 12."
+   }
+  },
+  {
+   "titre": "Écrire un test pour la livraison",
+   "outil": "Python",
+   "etapes": [
+    "Je demande le montant avec float(input( )).",
+    "J’écris le test : if montant >= 50:",
+    "J’écris ce qui se passe dans chaque cas, avec l’indentation.",
+    "J’affiche le prix total."
+   ],
+   "code": "montant = float(input(\"Montant : \"))\nif montant >= 50:\n    frais = 0\nelse:\n    frais = 4.90\nprint(montant + frais)",
+   "exemple": {
+    "enonce": "Le client saisit 35. **Détermine** ce qu’affiche le programme.",
+    "etapes": [
+     { "t": "35 >= 50 ?", "c": "faux → else" },
+     { "t": "frais = 4.90", "c": "" },
+     { "t": "35 + 4.90", "c": "39.9" }
+    ],
+    "reponse": "Le programme affiche 39.9 : le client paie 39,90 €."
+   }
+  },
+  {
+   "titre": "Chercher un seuil avec while",
+   "outil": "Python",
+   "etapes": [
+    "Je donne les valeurs de départ (capital, compteur).",
+    "J’écris while avec la condition « tant que l’objectif n’est pas atteint ».",
+    "Dans la boucle, je calcule la nouvelle valeur et j’ajoute 1 au compteur.",
+    "Après la boucle, j’affiche le compteur."
+   ],
+   "code": "capital = 1000\nannee = 0\nwhile capital < 1200:\n    capital = capital * 1.05\n    annee = annee + 1\nprint(annee)",
+   "exemple": {
+    "enonce": "**Détermine** ce qu’affiche ce programme.",
+    "etapes": [
+     { "t": "Tour 1 : 1 050 ; tour 2 : 1 102,50.", "c": "annee = 2" },
+     { "t": "Tour 3 : 1 157,63 ; tour 4 : 1 215,51.", "c": "annee = 4" },
+     { "t": "1 215,51 ≥ 1 200 : la boucle s’arrête.", "c": "print(4)" }
+    ],
+    "reponse": "Le programme affiche 4 : le capital dépasse 1 200 € au bout de 4 ans."
+   }
+  }
+ ],
+ "comprendre": [
+  { "t": "qcm", "txt": "x = 7, puis x = x + 3.", "q": "Que contient x ?", "o": ["10", "7", "3"], "a": 0, "exp": "x = x + 3 : je prends 7, j’ajoute 3, je remets dans x. x = 10." },
+  { "t": "qcm", "txt": "for i in range(4):", "q": "Combien de fois la boucle tourne-t-elle ?", "o": ["4 fois", "3 fois", "5 fois"], "a": 0, "exp": "range(4) donne 0, 1, 2, 3 : 4 valeurs, donc 4 tours." },
+  { "t": "vf", "txt": "En Python, j’écris prix = 4,90.", "q": "La variable prix contient le nombre 4,9.", "a": false, "exp": "En Python, le séparateur décimal est le point : prix = 4.90." },
+  { "t": "qcm", "txt": "if note >= 10: print(\"Admis\") else: print(\"Refusé\"). La note est 10.", "q": "Qu’affiche le programme ?", "o": ["Admis", "Refusé", "rien"], "a": 0, "exp": "10 >= 10 est vrai : le programme affiche « Admis »." },
+  { "t": "qcm", "txt": "def double(x): return 2 * x", "q": "Que renvoie double(6) ?", "o": ["12", "8", "6"], "a": 0, "exp": "double(6) renvoie 2 × 6 = 12." },
+  { "t": "question", "txt": ["Le site vend des ballons à 15 €.", "La livraison coûte 8 €.", "Quel prix paie un client pour 4 ballons ?"], "q": "Touche la phrase qui est la question.", "a": 2, "exp": "La question finit par « ? »." },
+  { "t": "donnees", "txt": "Un programme ajoute 3 à une variable n qui vaut 5 au départ. La boucle tourne 4 fois. Le programme a été écrit en 2024. Quelle est la valeur finale de n ?", "q": "Touche les trois données utiles.", "a": ["3", "5", "4"], "exp": "n = 5 + 4 × 3 = 17. L’année 2024 ne sert pas." },
+  { "t": "ordre", "q": "Remets la phrase dans l’ordre.", "phrase": "La boucle répète les instructions quatre fois." }
+ ],
+ "brevet": [
+  {
+   "id": "py-b1",
+   "titre": "Les frais de livraison",
+   "fig": "l3:py|montant = float(input(\"Montant : \"))|if montant >= 50:|··frais = 0|else:|··frais = 4.90|print(montant + frais)",
+   "ctx": ["Le site de vente utilise ce programme pour calculer le prix à payer."],
+   "qs": [
+    { "q": "Un client commande pour 35 €. **Détermine** le nombre affiché.", "type": "num", "a": 39.9, "aide": ["35 >= 50 est faux : je vais dans else.", "frais = 4.90"], "corr": ["35 < 50 : frais = 4,90", "35 + 4,90 = 39,90"], "rep": "Le programme affiche 39,9 : le client paie 39,90 €." },
+    { "q": "Un client commande pour 50 €. **Détermine** le nombre affiché.", "type": "num", "a": 50, "aide": ["50 >= 50 est vrai."], "corr": ["50 >= 50 : frais = 0", "50 + 0 = 50"], "rep": "Le programme affiche 50 : la livraison est gratuite." },
+    { "q": "Le site veut la livraison gratuite à partir de 60 €. Quelle ligne faut-il modifier ?", "type": "qcm", "o": ["La ligne 2 : if montant >= 60:", "La ligne 3 : frais = 60", "La ligne 6 : print(montant + 60)"], "a": 0, "aide": ["Le seuil de 50 € est dans le test."], "corr": ["Le test de la ligne 2 compare le montant au seuil : il faut écrire 60."], "rep": "Il faut modifier la ligne 2 : if montant >= 60:" }
+   ]
+  },
+  {
+   "id": "py-b2",
+   "titre": "Le livret d’épargne",
+   "fig": "l3:py|capital = 1000|annee = 0|while capital < 1200:|··capital = capital * 1.05|··annee = annee + 1|print(annee)",
+   "ctx": ["Sami place 1 000 € sur un livret. Chaque année, le capital augmente de 5 %.", "Il écrit ce programme."],
+   "qs": [
+    { "q": "**Calcule** la valeur de capital après le premier tour de boucle.", "type": "num", "a": 1050, "unit": "€", "aide": ["capital = 1000 × 1,05."], "corr": ["1 000 × 1,05 = 1 050"], "rep": "Après le premier tour, capital vaut 1 050 €." },
+    { "q": "**Détermine** le nombre affiché par le programme.", "type": "num", "a": 4, "aide": ["Je fais un tableau : capital et annee à chaque tour.", "Je m’arrête quand capital ≥ 1 200."], "corr": ["1 050 (1) ; 1 102,50 (2) ; 1 157,63 (3) ; 1 215,51 (4)", "1 215,51 ≥ 1 200 : la boucle s’arrête, annee = 4."], "rep": "Le programme affiche 4." },
+    { "q": "**Interprète** ce résultat.", "type": "qcm", "o": ["Le capital dépasse 1 200 € au bout de 4 ans", "Le capital est de 4 € au bout d’un an", "Le capital augmente de 4 % par an"], "a": 0, "aide": ["La variable annee compte les années."], "corr": ["La boucle s’arrête quand le capital atteint 1 200 € : il faut 4 années."], "rep": "Le capital de Sami dépasse 1 200 € au bout de 4 ans." }
+   ]
+  },
+  {
+   "id": "py-b3",
+   "titre": "La fonction prix total",
+   "fig": "l3:py|def prix_total(q):|··return 15 * q + 8|for q in range(1, 4):|··print(prix_total(q))",
+   "ctx": ["Un ballon coûte 15 €. La livraison coûte 8 €.", "La fonction prix_total donne le prix pour q ballons."],
+   "qs": [
+    { "q": "**Calcule** prix_total(4).", "type": "num", "a": 68, "unit": "€", "aide": ["Je remplace q par 4 : 15 × 4 + 8."], "corr": ["15 × 4 + 8 = 68"], "rep": "prix_total(4) renvoie 68." },
+    { "q": "Combien de nombres la boucle for affiche-t-elle ?", "type": "num", "a": 3, "aide": ["range(1, 4) donne 1, 2, 3."], "corr": ["q prend les valeurs 1, 2 et 3 : 3 affichages."], "rep": "La boucle affiche 3 nombres." },
+    { "q": "Quel est le dernier nombre affiché ?", "type": "num", "a": 53, "aide": ["Le dernier q est 3 (4 n’est pas compris)."], "corr": ["prix_total(3) = 15 × 3 + 8 = 53"], "rep": "Le dernier nombre affiché est 53." }
+   ]
+  }
+ ],
+ "calc": ["py-trace", "py-for", "py-if", "py-fct", "py-while"],
+ "mots": [
+  { "id": "langage-python", "mot": "Python", "art": "", "g": "m", "cat": "algo", "ill": "l3:py|print(\"Bonjour\")", "def": "Un langage pour écrire des programmes. On écrit des lignes de texte.", "man": "Langage de programmation textuel, utilisé au lycée pour l’algorithmique.", "vie": "un python : un grand serpent.", "ph": ["J’écris mon programme en [[Python|langage-python]].", "En [[Python|langage-python]], les lignes d’un bloc sont décalées."] },
+  { "id": "affectation", "mot": "affectation", "art": "l’", "g": "f", "cat": "algo", "ill": "l3:variable|x|7", "def": "Mettre une valeur dans une variable, avec le signe =.", "man": "Instruction variable = expression : l’expression est évaluée puis stockée dans la variable.", "vie": "une affectation : le poste où l’on envoie quelqu’un travailler.", "ph": ["L’[[affectation]] x = 7 met 7 dans x.", "Après l’[[affectation]] a = a + 1, a augmente de 1."] },
+  { "id": "afficher", "mot": "afficher", "cat": "algo", "ill": "l3:console|>>> print(15 * 4 + 8)|68", "f": { "c": "Affiche · Affichez", "je": "j’affiche" }, "def": "Montrer un résultat à l’écran. En Python : print( ).", "man": "print(valeur) affiche la valeur dans la console.", "vie": "afficher une affiche : la mettre au mur.", "ph": ["print( ) [[affiche|afficher]] le prix à l’écran.", "Le programme [[affiche|afficher]] 39.9."] },
+  { "id": "saisir", "mot": "saisir", "cat": "algo", "ill": "l3:console|>>> n = int(input(\"n ? \"))|n ? 12", "f": { "c": "Saisis · Saisissez", "je": "je saisis" }, "def": "Taper une valeur au clavier quand le programme la demande. En Python : input( ).", "man": "input() lit une chaîne au clavier ; int() ou float() la convertit en nombre.", "vie": "saisir un objet : le prendre vite avec la main.", "ph": ["L’utilisateur [[saisit|saisir]] le montant de la commande.", "Je [[saisis|saisir]] 35 puis j’appuie sur Entrée."] },
+  { "id": "indentation", "mot": "indentation", "art": "l’", "g": "f", "cat": "algo", "ill": "l3:py|if x > 10:|··print(\"grand\")|print(\"fin\")", "def": "Le décalage vers la droite des lignes dans un bloc (if, for, while, def).", "man": "En Python, l’indentation (4 espaces) délimite les blocs d’instructions.", "ph": ["Sans [[indentation]], Python affiche une erreur.", "L’[[indentation]] montre les lignes qui sont dans la boucle."] },
+  { "id": "boucle-for", "mot": "boucle for", "art": "la", "g": "f", "cat": "algo", "ill": "l3:boucle|3|for i in range(3):", "def": "Une boucle qui répète un nombre de fois connu.", "man": "for variable in range(…) : le bloc est exécuté pour chaque valeur parcourue.", "ph": ["La [[boucle for|boucle-for]] tourne 5 fois avec range(5).", "J’utilise une [[boucle for|boucle-for]] pour additionner les nombres de 1 à 10."] },
+  { "id": "boucle-while", "mot": "boucle while", "art": "la", "g": "f", "cat": "algo", "ill": "l3:py|while capital < 1200:|··capital = capital * 1.05", "def": "Une boucle qui répète tant qu’une condition est vraie.", "man": "while condition : le bloc est répété tant que la condition est vraie ; utile pour un algorithme de seuil.", "ph": ["La [[boucle while|boucle-while]] s’arrête quand le capital dépasse 1 200 €.", "Avec une [[boucle while|boucle-while]], je ne sais pas à l’avance le nombre de tours."] },
+  { "id": "test-if", "mot": "instruction conditionnelle", "art": "l’", "g": "f", "cat": "algo", "ill": "l3:test|montant >= 50 ?", "def": "Un test : si la condition est vraie, je fais une chose ; sinon, une autre. En Python : if … else.", "man": "if condition : bloc ; else : bloc. Comparaisons : ==, !=, <, <=, >, >=.", "ph": ["L’[[instruction conditionnelle|test-if]] teste si le montant est supérieur ou égal à 50.", "Avec une [[instruction conditionnelle|test-if]], le programme choisit les frais."] },
+  { "id": "fonction-python", "mot": "fonction (en Python)", "art": "la", "g": "f", "cat": "algo", "ill": "l3:py|def double(x):|··return 2 * x", "def": "Un petit programme avec un nom. On lui donne une valeur, il renvoie un résultat.", "man": "Définie avec def nom(paramètres) : … return résultat ; on l’appelle avec nom(arguments).", "ph": ["La [[fonction|fonction-python]] prix_total calcule le prix de q ballons.", "J’écris une [[fonction Python|fonction-python]] avec def."] },
+  { "id": "renvoyer", "mot": "renvoyer", "cat": "algo", "ill": "l3:console|>>> double(6)|12", "f": { "c": "Renvoie · Renvoyez", "je": "je renvoie" }, "def": "Donner le résultat d’une fonction. En Python : return.", "man": "return valeur termine la fonction et transmet la valeur au programme qui l’a appelée.", "vie": "renvoyer un employé : le faire partir de l’entreprise.", "ph": ["La fonction [[renvoie|renvoyer]] 68 pour 4 ballons.", "return [[renvoie|renvoyer]] le résultat de la fonction."] },
+  { "id": "bug", "mot": "bug", "art": "le", "g": "m", "cat": "algo", "ill": "l3:console|>>> if x > 3|SyntaxError", "def": "Une erreur dans un programme.", "man": "Erreur de programmation (syntaxe, indentation, logique) qui empêche le programme de fonctionner correctement.", "ph": ["Il y a un [[bug]] : j’ai oublié les deux-points.", "Je lis le message d’erreur pour trouver le [[bug]]."] },
+  { "id": "liste", "mot": "liste", "art": "la", "g": "f", "cat": "algo", "ill": "l3:liste|12,15,9,14", "def": "Plusieurs valeurs rangées dans une seule variable, entre crochets.", "man": "Liste Python : [v0, v1, …] ; L[0] est le premier élément ; len(L) donne le nombre d’éléments.", "vie": "une liste de courses.", "ph": ["La [[liste]] notes contient 4 nombres.", "notes[0] est le premier élément de la [[liste]]."] }
+ ]
+}

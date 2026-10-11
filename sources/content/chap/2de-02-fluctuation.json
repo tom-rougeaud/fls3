@@ -1,0 +1,286 @@
+{
+ "id": "fluctuation",
+ "annee": "2de",
+ "titre": "Fluctuation et probabilités",
+ "icone": "🎲",
+ "cat": "donnees",
+ "domaine": "Statistique et probabilités",
+ "intro": "Observer qu’une fréquence change d’un échantillon à l’autre, simuler une expérience et calculer une probabilité.",
+ "objectifs": [
+  "Je sais **calculer** la fréquence observée sur un échantillon.",
+  "Je sais **expliquer** la fluctuation d’échantillonnage.",
+  "Je sais **simuler** une expérience aléatoire avec le tableur ou Python.",
+  "Je sais **calculer** une probabilité et **estimer** une probabilité avec une fréquence."
+ ],
+ "situation": {
+  "metier": "🏭 Contrôle qualité",
+  "txt": [
+   "Une machine fabrique des bouchons. Le fabricant dit : « 4 % des bouchons ont un défaut. »",
+   "Inès travaille au contrôle qualité. Chaque heure, elle prend 50 bouchons au hasard et compte les bouchons avec un défaut.",
+   "Elle ne trouve pas toujours le même nombre de défauts."
+  ],
+  "question": "Les résultats d’Inès sont-ils en accord avec ce que dit le fabricant ?"
+ },
+ "cours": [
+  {
+   "titre": "Expérience aléatoire et échantillon",
+   "txt": [
+    "Une [[expérience aléatoire|experience-aleatoire]] : je connais les résultats possibles, mais je ne sais pas lequel va arriver.",
+    "Un [[échantillon|echantillon]] : je prends quelques individus au hasard dans une grande population.",
+    "La [[taille de l’échantillon|taille-echantillon]] est le nombre d’individus pris : n."
+   ],
+   "man": [
+    "Un échantillon de taille n est constitué des résultats de n répétitions indépendantes d’une même expérience aléatoire.",
+    "On note n la taille de l’échantillon."
+   ],
+   "ex": [
+    "Inès prend 50 bouchons au hasard : c’est un échantillon de taille n = 50."
+   ],
+   "ill": "l3:echantillon"
+  },
+  {
+   "titre": "Fréquence observée",
+   "txt": [
+    "Dans un échantillon, je compte les individus qui ont le caractère.",
+    "[[Fréquence observée|frequence-observee]] = nombre trouvé ÷ taille de l’échantillon.",
+    "La fréquence est entre 0 et 1. Je peux l’écrire en pourcentage."
+   ],
+   "man": [
+    "La fréquence observée d’un caractère dans un échantillon de taille n est f = k ÷ n, où k est l’effectif du caractère.",
+    "0 ≤ f ≤ 1."
+   ],
+   "ex": [
+    "3 bouchons avec défaut sur 50 : f = 3 ÷ 50 = 0,06 = 6 %."
+   ],
+   "ill": "l3:frequence|3 sur 50|3 ÷ 50 = 0,06|= 6 %"
+  },
+  {
+   "titre": "La fluctuation d’échantillonnage",
+   "txt": [
+    "Je prends un autre échantillon : je ne trouve pas la même fréquence.",
+    "Les fréquences changent d’un échantillon à l’autre : c’est la [[fluctuation d’échantillonnage|fluctuation]].",
+    "Les fréquences restent souvent proches de la proportion p de la population."
+   ],
+   "man": [
+    "Pour des échantillons de même taille n, la fréquence observée varie d’un échantillon à l’autre : c’est la fluctuation d’échantillonnage.",
+    "Plus n est grand, moins les fréquences fluctuent autour de la proportion p."
+   ],
+   "ex": [
+    "Heure 1 : 2 défauts (4 %). Heure 2 : 3 défauts (6 %). Heure 3 : 1 défaut (2 %)."
+   ],
+   "ill": "l3:fluct|0.5|bande"
+  },
+  {
+   "titre": "Simuler une expérience",
+   "txt": [
+    "[[Simuler|simulation]], c’est faire l’expérience avec un ordinateur, beaucoup de fois, très vite.",
+    "Dans le tableur : =ALEA.ENTRE.BORNES(1;6) donne un [[nombre au hasard|nombre-aleatoire]] entre 1 et 6, comme un dé.",
+    "En Python : randint(1, 6) fait la même chose."
+   ],
+   "man": [
+    "Une simulation reproduit une expérience aléatoire à l’aide de nombres pseudo-aléatoires (tableur, calculatrice, Python).",
+    "ALEA() renvoie un nombre décimal aléatoire de [0 ; 1[ ; ALEA.ENTRE.BORNES(a;b) renvoie un entier aléatoire entre a et b."
+   ],
+   "ex": [
+    "=ALEA.ENTRE.BORNES(0;1) simule un lancer de pièce : 0 pour pile, 1 pour face."
+   ],
+   "ill": "l3:simul"
+  },
+  {
+   "titre": "Quand n devient grand",
+   "txt": [
+    "Je lance un dé 10 fois, puis 100 fois, puis 1 000 fois.",
+    "Plus je lance, plus la fréquence du 6 se rapproche de {{1/6}} ≈ 0,17.",
+    "C’est la [[loi des grands nombres|loi-des-grands-nombres]]."
+   ],
+   "man": [
+    "Loi des grands nombres : quand la taille n de l’échantillon augmente, la fréquence observée d’un événement se stabilise autour de sa probabilité p."
+   ],
+   "ex": [
+    "1 000 lancers : 171 fois le 6. f = 0,171, proche de {{1/6}} ≈ 0,167."
+   ],
+   "ill": "l3:convergence|0.5"
+  },
+  {
+   "titre": "Calculer une probabilité",
+   "txt": [
+    "Si toutes les issues ont la même chance ([[équiprobables|equiprobable]]) :",
+    "[[probabilité|probabilite]] = nombre d’[[issues favorables|issue-favorable]] ÷ nombre d’issues possibles.",
+    "Une probabilité est entre 0 et 1."
+   ],
+   "man": [
+    "En situation d’équiprobabilité, P(A) = nombre d’issues favorables à A ÷ nombre d’issues possibles.",
+    "Pour tout événement A : 0 ≤ P(A) ≤ 1, et P(Ā) = 1 − P(A)."
+   ],
+   "ex": [
+    "Un dé : P(« obtenir 5 ou 6 ») = {{2/6}} = {{1/3}}."
+   ],
+   "ill": "proba:evenement"
+  },
+  {
+   "titre": "Événement contraire",
+   "txt": [
+    "L’[[événement contraire|evenement-contraire]] de A se note Ā (on dit « A barre »).",
+    "Ā arrive quand A n’arrive pas.",
+    "P(Ā) = 1 − P(A)."
+   ],
+   "man": [
+    "L’événement contraire de A, noté Ā, est réalisé lorsque A ne l’est pas : P(Ā) = 1 − P(A)."
+   ],
+   "ex": [
+    "P(« bouchon avec défaut ») = 0,04. P(« bouchon sans défaut ») = 1 − 0,04 = 0,96."
+   ],
+   "ill": "proba:contraire"
+  },
+  {
+   "titre": "Estimer une probabilité",
+   "txt": [
+    "Parfois, je ne peux pas calculer la probabilité.",
+    "Je fais l’expérience un grand nombre de fois.",
+    "La fréquence observée donne une [[estimation|estimer]] de la probabilité."
+   ],
+   "man": [
+    "Lorsque la probabilité n’est pas calculable, on l’estime par la fréquence observée sur un échantillon de grande taille."
+   ],
+   "ex": [
+    "Une punaise tombe 620 fois sur 1 000 « pointe en haut ». J’estime P(« pointe en haut ») ≈ 0,62."
+   ],
+   "ill": "l3:frequence|620 sur 1 000|620 ÷ 1 000 = 0,62|P ≈ 0,62"
+  }
+ ],
+ "methodes": [
+  {
+   "titre": "Calculer une fréquence observée",
+   "etapes": [
+    "Je repère la taille de l’échantillon n.",
+    "Je repère le nombre k d’individus qui ont le caractère.",
+    "Je calcule f = k ÷ n.",
+    "Si on le demande, je multiplie par 100 pour avoir un pourcentage."
+   ],
+   "exemple": {
+    "enonce": "Sur 80 pièces contrôlées, 6 ont un défaut. **Calcule** la fréquence des pièces avec défaut, en %.",
+    "etapes": [
+     { "t": "n = 80 ; k = 6.", "c": "" },
+     { "t": "Je divise.", "c": "6 ÷ 80 = 0,075" },
+     { "t": "En pourcentage.", "c": "0,075 × 100 = 7,5 %" }
+    ],
+    "reponse": "La fréquence des pièces avec défaut est 7,5 %."
+   }
+  },
+  {
+   "titre": "Simuler 100 lancers de dé avec le tableur",
+   "outil": "Tableur",
+   "etapes": [
+    "En A1, je tape =ALEA.ENTRE.BORNES(1;6).",
+    "Je recopie la formule jusqu’à A100 : j’ai 100 lancers.",
+    "En B1, je compte les 6 : =NB.SI(A1:A100;6).",
+    "En C1, je calcule la fréquence : =B1/100. J’appuie sur F9 pour une nouvelle simulation."
+   ],
+   "exemple": {
+    "enonce": "Une simulation donne 19 fois le 6 sur 100 lancers. **Calcule** la fréquence du 6 et **compare** avec la probabilité {{1/6}}.",
+    "ill": "l3:simul",
+    "etapes": [
+     { "t": "Je calcule la fréquence.", "c": "19 ÷ 100 = 0,19" },
+     { "t": "Je calcule la probabilité.", "c": "1 ÷ 6 ≈ 0,17" },
+     { "t": "Je compare.", "c": "0,19 est proche de 0,17" }
+    ],
+    "reponse": "La fréquence du 6 est 0,19, proche de la probabilité 0,17."
+   }
+  },
+  {
+   "titre": "Simuler avec Python",
+   "outil": "Python",
+   "etapes": [
+    "J’importe la fonction randint : from random import randint.",
+    "Je répète n fois avec une boucle for.",
+    "Je compte les succès dans une variable.",
+    "J’affiche la fréquence : succès ÷ n."
+   ],
+   "code": "from random import randint\nn = 1000\nsucces = 0\nfor i in range(n):\n    if randint(1, 6) == 6:\n        succes = succes + 1\nprint(succes / n)",
+   "exemple": {
+    "enonce": "Le programme affiche 0.163. **Interprète** ce résultat.",
+    "etapes": [
+     { "t": "Le programme simule 1 000 lancers de dé.", "c": "" },
+     { "t": "0.163 est la fréquence des 6.", "c": "16,3 %" },
+     { "t": "Je compare avec {{1/6}}.", "c": "1 ÷ 6 ≈ 0,167" }
+    ],
+    "reponse": "Sur 1 000 lancers simulés, le 6 sort avec une fréquence de 0,163, proche de {{1/6}}."
+   }
+  },
+  {
+   "titre": "Utiliser une fréquence pour estimer",
+   "etapes": [
+    "Je calcule la fréquence observée sur un grand échantillon.",
+    "J’utilise cette fréquence comme valeur approchée de la probabilité.",
+    "Pour estimer un nombre : fréquence × effectif total."
+   ],
+   "exemple": {
+    "enonce": "Sur 200 clients interrogés, 130 sont satisfaits. Le magasin a 1 500 clients. **Estime** le nombre de clients satisfaits.",
+    "etapes": [
+     { "t": "Fréquence observée.", "c": "130 ÷ 200 = 0,65" },
+     { "t": "J’estime.", "c": "0,65 × 1 500 = 975" }
+    ],
+    "reponse": "On peut estimer qu’environ 975 clients sont satisfaits."
+   }
+  }
+ ],
+ "comprendre": [
+  { "t": "qcm", "txt": "Inès prend 50 bouchons au hasard dans la production du jour.", "q": "Quelle est la taille de l’échantillon ?", "o": ["50", "4 %", "la production du jour"], "a": 0, "exp": "La taille de l’échantillon est le nombre d’individus pris : n = 50." },
+  { "t": "vf", "txt": "Dans deux échantillons de 50 bouchons, Inès trouve 2 défauts, puis 4 défauts.", "q": "La machine fonctionne forcément mal.", "a": false, "exp": "Les fréquences changent d’un échantillon à l’autre : c’est normal. C’est la fluctuation d’échantillonnage." },
+  { "t": "qcm", "txt": "On lance une pièce de monnaie.", "q": "Avec quelle taille d’échantillon la fréquence de « pile » sera-t-elle sans doute la plus proche de 0,5 ?", "o": ["1 000 lancers", "100 lancers", "10 lancers"], "a": 0, "exp": "Plus l’échantillon est grand, plus la fréquence est proche de la probabilité : c’est la loi des grands nombres." },
+  { "t": "qcm", "txt": "Dans le tableur, j’écris =ALEA.ENTRE.BORNES(1;6).", "q": "Que simule cette formule ?", "o": ["Le lancer d’un dé", "Le lancer d’une pièce", "Le tirage d’une carte"], "a": 0, "exp": "La formule donne un entier au hasard entre 1 et 6, comme un dé." },
+  { "t": "vf", "txt": "La probabilité de tirer une boule rouge est 0,3.", "q": "La probabilité de ne pas tirer une boule rouge est 0,7.", "a": true, "exp": "P(Ā) = 1 − P(A) = 1 − 0,3 = 0,7." },
+  { "t": "question", "txt": ["Un jeu a 52 cartes.", "Il y a 4 as dans le jeu.", "Quelle est la probabilité de tirer un as ?"], "q": "Touche la phrase qui est la question.", "a": 2, "exp": "La question finit par « ? »." },
+  { "t": "donnees", "txt": "Une usine fabrique 3 000 pièces par jour. Sur un échantillon de 120 pièces, 9 ont un défaut. Calcule la fréquence des pièces avec défaut dans l’échantillon.", "q": "Touche les deux données utiles.", "a": ["120", "9"], "exp": "f = 9 ÷ 120 = 0,075. Les 3 000 pièces ne servent pas pour ce calcul." },
+  { "t": "ordre", "q": "Remets la phrase dans l’ordre.", "phrase": "La fréquence observée change d’un échantillon à l’autre." }
+ ],
+ "brevet": [
+  {
+   "id": "fl-b1",
+   "titre": "Le contrôle des bouchons",
+   "tab": [["Heure", "8 h", "9 h", "10 h", "11 h", "12 h"], ["Bouchons avec défaut", "2", "3", "1", "4", "2"]],
+   "ctx": ["Le fabricant dit : « 4 % des bouchons ont un défaut. »", "Chaque heure, Inès prélève un échantillon de 50 bouchons. Elle note le nombre de bouchons avec un défaut."],
+   "qs": [
+    { "q": "**Calcule** la fréquence des bouchons avec défaut dans l’échantillon de 11 h, en %.", "type": "num", "a": 8, "unit": "%", "aide": ["Fréquence = nombre de défauts ÷ taille de l’échantillon.", "4 ÷ 50, puis × 100."], "corr": ["4 ÷ 50 = 0,08", "0,08 = 8 %"], "rep": "À 11 h, la fréquence des bouchons avec défaut est 8 %." },
+    { "q": "Les fréquences ne sont pas les mêmes chaque heure. Comment s’appelle ce phénomène ?", "type": "qcm", "o": ["la fluctuation d’échantillonnage", "la loi des grands nombres", "l’équiprobabilité"], "a": 0, "aide": ["Les fréquences changent d’un échantillon à l’autre."], "corr": ["Des échantillons de même taille donnent des fréquences différentes : c’est la fluctuation d’échantillonnage."], "rep": "C’est la fluctuation d’échantillonnage." },
+    { "q": "Inès regroupe les 5 échantillons. **Calcule** la fréquence des bouchons avec défaut sur les 250 bouchons, en %.", "type": "num", "a": 4.8, "unit": "%", "aide": ["J’additionne les défauts des 5 échantillons.", "Je divise par 250."], "corr": ["2 + 3 + 1 + 4 + 2 = 12", "12 ÷ 250 = 0,048 = 4,8 %"], "rep": "Sur 250 bouchons, la fréquence des défauts est 4,8 %." },
+    { "q": "**Valide** ou non l’affirmation du fabricant.", "type": "qcm", "o": ["Elle est plausible : 4,8 % est proche de 4 %", "Elle est fausse : 4,8 % n’est pas égal à 4 %", "On ne peut rien dire"], "a": 0, "aide": ["Les fréquences fluctuent : elles sont proches de p, pas forcément égales."], "corr": ["4,8 % est proche de 4 %. Avec la fluctuation, ce résultat est normal."], "rep": "L’affirmation du fabricant est plausible." }
+   ]
+  },
+  {
+   "id": "fl-b2",
+   "titre": "Le dé est-il équilibré ?",
+   "ctx": ["Un club de jeux reçoit un nouveau dé. On le lance 600 fois.", "Le 6 sort 102 fois.", "Si le dé est équilibré, chaque face a la même probabilité."],
+   "qs": [
+    { "q": "**Calcule** la probabilité d’obtenir 6 avec un dé équilibré. **Arrondis** au centième.", "type": "num", "a": 0.16666667, "arr": 2, "aide": ["Il y a 6 faces, une seule est favorable."], "corr": ["P = 1 ÷ 6 ≈ 0,17"], "rep": "La probabilité d’obtenir 6 est environ 0,17." },
+    { "q": "**Calcule** la fréquence observée du 6.", "type": "num", "a": 0.17, "aide": ["Fréquence = nombre de 6 ÷ nombre de lancers."], "corr": ["102 ÷ 600 = 0,17"], "rep": "La fréquence observée du 6 est 0,17." },
+    { "q": "**Conclus** : le dé semble-t-il équilibré pour le 6 ?", "type": "qcm", "o": ["Oui, la fréquence est très proche de la probabilité", "Non, le 6 sort trop souvent", "Non, il faudrait 0 fois le 6"], "a": 0, "aide": ["Je compare 0,17 (fréquence) et 0,17 (probabilité)."], "corr": ["Fréquence ≈ probabilité : avec 600 lancers, c’est en accord avec un dé équilibré."], "rep": "Le dé semble équilibré pour le 6." }
+   ]
+  },
+  {
+   "id": "fl-b3",
+   "titre": "L’enquête de satisfaction",
+   "ctx": ["Une enseigne a 1 500 clients fidèles.", "Elle interroge un échantillon de 200 clients choisis au hasard : 130 sont satisfaits.", "L’enseigne veut offrir un cadeau à chaque client satisfait."],
+   "qs": [
+    { "q": "**Calcule** la fréquence des clients satisfaits dans l’échantillon.", "type": "num", "a": 0.65, "aide": ["130 clients satisfaits sur 200."], "corr": ["130 ÷ 200 = 0,65"], "rep": "La fréquence des clients satisfaits est 0,65." },
+    { "q": "**Estime** le nombre de clients satisfaits parmi les 1 500 clients fidèles.", "type": "num", "a": 975, "unit": "clients", "aide": ["J’utilise la fréquence comme une probabilité.", "0,65 × 1 500."], "corr": ["0,65 × 1 500 = 975"], "rep": "On peut estimer qu’environ 975 clients sont satisfaits." },
+    { "q": "Un cadeau coûte 4 €. **Calcule** le budget à prévoir pour 975 cadeaux.", "type": "num", "a": 3900, "unit": "€", "aide": ["975 cadeaux à 4 € chacun."], "corr": ["975 × 4 = 3 900"], "rep": "Il faut prévoir un budget d’environ 3 900 €." }
+   ]
+  }
+ ],
+ "calc": ["fl-freq", "fl-proba", "fl-contraire", "fl-estim", "fl-taille", "pb-de"],
+ "mots": [
+  { "id": "echantillon", "mot": "échantillon", "art": "l’", "g": "m", "cat": "donnees", "ill": "l3:echantillon", "def": "Quelques individus pris au hasard dans une grande population.", "man": "Ensemble de n résultats obtenus en répétant n fois, de façon indépendante, une même expérience aléatoire.", "vie": "un petit flacon gratuit de parfum ou de crème, pour essayer.", "ph": ["Inès prend un [[échantillon|echantillon]] de 50 bouchons.", "Dans cet [[échantillon|echantillon]], 3 bouchons ont un défaut."] },
+  { "id": "taille-echantillon", "mot": "taille d’un échantillon", "art": "la", "g": "f", "cat": "donnees", "ill": "txt:n = {50}|50 bouchons", "def": "Le nombre d’individus dans l’échantillon. On la note n.", "man": "Nombre n de répétitions de l’expérience aléatoire.", "vie": "la taille d’une personne : sa hauteur.", "ph": ["La [[taille de l’échantillon|taille-echantillon]] est n = 50.", "Si la [[taille de l’échantillon|taille-echantillon]] augmente, les fréquences fluctuent moins."] },
+  { "id": "frequence-observee", "mot": "fréquence observée", "art": "la", "g": "f", "cat": "donnees", "ill": "l3:frequence|3 sur 50|3 ÷ 50 = 0,06|= 6 %", "def": "Le nombre d’individus qui ont le caractère, divisé par la taille de l’échantillon.", "man": "f = k ÷ n, où k est l’effectif du caractère dans l’échantillon de taille n.", "ph": ["La [[fréquence observée|frequence-observee]] est 3 ÷ 50 = 0,06.", "Je compare la [[fréquence observée|frequence-observee]] et la probabilité."] },
+  { "id": "fluctuation", "mot": "fluctuation d’échantillonnage", "art": "la", "g": "f", "cat": "donnees", "ill": "l3:fluct|0.5", "def": "Les fréquences changent d’un échantillon à l’autre.", "man": "Variation de la fréquence observée d’un échantillon à l’autre, pour des échantillons de même taille.", "ph": ["La [[fluctuation d’échantillonnage|fluctuation]] explique les résultats différents.", "Avec de grands échantillons, la [[fluctuation|fluctuation]] est plus petite."] },
+  { "id": "proportion-p", "mot": "proportion dans la population", "art": "la", "g": "f", "cat": "donnees", "ill": "l3:fluct|0.5|bande", "def": "La part d’individus qui ont le caractère dans toute la population. On la note p.", "man": "Proportion p du caractère dans la population ; les fréquences observées fluctuent autour de p.", "ph": ["La [[proportion dans la population|proportion-p]] de bouchons avec défaut est p = 0,04.", "Les fréquences sont proches de la [[proportion|proportion-p]] p."] },
+  { "id": "simulation", "mot": "simulation", "art": "la", "g": "f", "cat": "donnees", "ill": "l3:simul", "def": "Faire une expérience aléatoire avec un ordinateur ou une calculatrice.", "man": "Reproduction d’une expérience aléatoire à l’aide de nombres pseudo-aléatoires.", "vie": "faire semblant ; un simulateur de conduite.", "ph": ["La [[simulation]] de 1 000 lancers prend une seconde.", "Je fais une [[simulation]] avec le tableur."] },
+  { "id": "nombre-aleatoire", "mot": "nombre aléatoire", "art": "le", "g": "m", "cat": "algo", "ill": "l3:calculatrice|ALEA → 4|un nombre au hasard", "def": "Un nombre choisi au hasard par la machine.", "man": "Nombre produit par une fonction pseudo-aléatoire : ALEA(), ALEA.ENTRE.BORNES(a;b), randint(a, b).", "ph": ["=ALEA.ENTRE.BORNES(1;6) donne un [[nombre aléatoire|nombre-aleatoire]] entre 1 et 6.", "En Python, randint donne un [[nombre aléatoire|nombre-aleatoire]] entier."] },
+  { "id": "loi-des-grands-nombres", "mot": "loi des grands nombres", "art": "la", "g": "f", "cat": "donnees", "ill": "l3:convergence|0.5", "def": "Quand on répète beaucoup de fois, la fréquence se rapproche de la probabilité.", "man": "Lorsque n devient grand, la fréquence observée d’un événement se stabilise autour de sa probabilité.", "vie": "une loi : une règle qu’il faut respecter dans un pays.", "ph": ["D’après la [[loi des grands nombres|loi-des-grands-nombres]], la fréquence se rapproche de 0,5.", "La [[loi des grands nombres|loi-des-grands-nombres]] marche avec beaucoup de lancers."] },
+  { "id": "estimer", "mot": "estimer", "cat": "verbe", "ill": "l3:frequence|620 sur 1 000|620 ÷ 1 000 = 0,62|P ≈ 0,62", "f": { "c": "Estime · Estimez", "je": "j’estime" }, "def": "Donner une valeur proche, pas exacte.", "man": "Estimer une probabilité : la remplacer par une fréquence observée sur un grand échantillon.", "vie": "estimer une personne : avoir du respect pour elle.", "ph": ["J’[[estime|estimer]] la probabilité avec la fréquence : environ 0,62.", "[[Estimer]] le nombre de clients satisfaits."] },
+  { "id": "issue-favorable", "mot": "issue favorable", "art": "l’", "g": "f", "cat": "donnees", "ill": "proba:evenement", "def": "Une issue qui fait arriver l’événement.", "man": "Issue qui réalise l’événement étudié.", "ph": ["Pour « obtenir un nombre pair », il y a 3 [[issues favorables|issue-favorable]] : 2, 4 et 6.", "Je compte les [[issues favorables|issue-favorable]]."] },
+  { "id": "tirage-avec-remise", "mot": "tirage avec remise", "art": "le", "g": "m", "cat": "donnees", "ill": "proba:urne|3|5", "def": "Je tire une boule, je la regarde, puis je la remets dans l’urne.", "man": "Les tirages sont alors indépendants : la composition de l’urne ne change pas.", "ph": ["C’est un [[tirage avec remise|tirage-avec-remise]] : il y a toujours 8 boules.", "Dans un [[tirage avec remise|tirage-avec-remise]], les probabilités ne changent pas."] },
+  { "id": "proba-evenement", "mot": "probabilité d’un événement", "art": "la", "g": "f", "cat": "donnees", "sym": "P(A)", "ill": "proba:echelle", "def": "Un nombre entre 0 et 1 qui dit si l’événement a beaucoup de chances d’arriver.", "man": "En équiprobabilité, P(A) = nombre d’issues favorables ÷ nombre d’issues possibles ; 0 ≤ P(A) ≤ 1.", "ph": ["La [[probabilité de l’événement|proba-evenement]] A est P(A) = 0,25.", "Je calcule la [[probabilité d’un événement|proba-evenement]] avec les issues favorables."] }
+ ]
+}

@@ -1,0 +1,210 @@
+{
+ "id": "proba2",
+ "annee": "tle",
+ "titre": "Probabilités conditionnelles",
+ "icone": "🌳",
+ "cat": "donnees",
+ "domaine": "Statistique et probabilités",
+ "intro": "Utiliser un arbre pondéré, calculer une probabilité conditionnelle, utiliser la formule des probabilités totales et reconnaître des événements indépendants.",
+ "objectifs": [
+  "Je sais **construire** et **lire** un arbre pondéré.",
+  "Je sais **calculer** P(A ∩ B) = P(A) × P_A(B).",
+  "Je sais **calculer** une probabilité avec la formule des probabilités totales.",
+  "Je sais **calculer** une probabilité conditionnelle et **reconnaître** des événements indépendants."
+ ],
+ "situation": {
+  "metier": "🏭 Qualité en production",
+  "txt": [
+   "Une usine fabrique des pièces avec deux machines. La machine M₁ fait 60 % des pièces, la machine M₂ fait 40 %.",
+   "3 % des pièces de M₁ ont un défaut. 5 % des pièces de M₂ ont un défaut.",
+   "Un client reçoit une pièce avec un défaut. Il veut savoir de quelle machine elle vient probablement."
+  ],
+  "question": "Quelle est la probabilité qu’une pièce ait un défaut ? Et qu’une pièce avec défaut vienne de M₂ ?"
+ },
+ "cours": [
+  {
+   "titre": "L’arbre pondéré",
+   "txt": [
+    "Un [[arbre pondéré|arbre-pondere]] a une probabilité écrite sur chaque branche.",
+    "Les branches qui partent d’un même point ont une somme égale à 1.",
+    "Sur les branches du deuxième niveau, ce sont des probabilités « [[sachant]] » ce qui s’est passé avant."
+   ],
+   "man": [
+    "Dans un arbre pondéré, la somme des probabilités des branches issues d’un même nœud vaut 1. Les branches du second niveau portent des probabilités conditionnelles."
+   ],
+   "ex": [
+    "Branches M₁ : 0,6 et M₂ : 0,4. Après M₁ : D (défaut) 0,03 et D̄ 0,97."
+   ],
+   "ill": "l3:arbrep|M₁,M₂|0,6;0,4|D,D̄|0,03;0,97;0,05;0,95"
+  },
+  {
+   "titre": "Probabilité conditionnelle",
+   "txt": [
+    "P_A(B) se lit « probabilité de B sachant A ».",
+    "C’est la probabilité de B quand on sait déjà que A est arrivé.",
+    "P_A(B) = P(A ∩ B) ÷ P(A)."
+   ],
+   "man": [
+    "Pour P(A) ≠ 0, la [[probabilité conditionnelle|proba-conditionnelle]] de B sachant A est P_A(B) = P(A ∩ B) ÷ P(A)."
+   ],
+   "ex": [
+    "P_M₁(D) = 0,03 : parmi les pièces de M₁, 3 % ont un défaut."
+   ],
+   "ill": "txt:B {sachant} A|= P(A ∩ B) ÷ P(A)"
+  },
+  {
+   "titre": "Probabilité d’un chemin",
+   "txt": [
+    "Pour un chemin de l’arbre, je multiplie les probabilités des branches.",
+    "P(A ∩ B) = P(A) × P_A(B).",
+    "C’est la probabilité que A et B arrivent tous les deux."
+   ],
+   "man": [
+    "P(A ∩ B) = P(A) × P_A(B) (règle du produit sur un chemin)."
+   ],
+   "ex": [
+    "P(M₁ ∩ D) = 0,6 × 0,03 = 0,018."
+   ],
+   "ill": "l3:arbrep|M₁,M₂|0,6;0,4|D,D̄|0,03;0,97;0,05;0,95|chemin"
+  },
+  {
+   "titre": "Les probabilités totales",
+   "txt": [
+    "Pour calculer P(D), j’additionne tous les chemins qui mènent à D.",
+    "C’est la formule des [[probabilités totales|probabilites-totales]].",
+    "P(D) = P(M₁ ∩ D) + P(M₂ ∩ D)."
+   ],
+   "man": [
+    "Si A et Ā partitionnent l’univers : P(B) = P(A ∩ B) + P(Ā ∩ B) = P(A) × P_A(B) + P(Ā) × P_Ā(B)."
+   ],
+   "ex": [
+    "P(D) = 0,6 × 0,03 + 0,4 × 0,05 = 0,018 + 0,02 = 0,038."
+   ],
+   "ill": "txt:P(D) = 0,018 + 0,02|= {0,038}"
+  },
+  {
+   "titre": "Événements indépendants",
+   "txt": [
+    "Deux événements sont [[indépendants|evenements-independants]] si l’un ne change pas la probabilité de l’autre.",
+    "Alors P_A(B) = P(B), et P(A ∩ B) = P(A) × P(B).",
+    "Exemple : deux machines qui tombent en panne sans lien entre elles."
+   ],
+   "man": [
+    "A et B sont indépendants si et seulement si P(A ∩ B) = P(A) × P(B)."
+   ],
+   "ex": [
+    "P(panne A) = 0,1 ; P(panne B) = 0,05. Si indépendants : P(les deux) = 0,1 × 0,05 = 0,005."
+   ],
+   "ill": "txt:P(A ∩ B) = {P(A) × P(B)}"
+  }
+ ],
+ "methodes": [
+  {
+   "titre": "Construire un arbre pondéré",
+   "etapes": [
+    "Je trouve la première étape (par exemple : quelle machine ?) et ses probabilités.",
+    "Je trouve la deuxième étape (défaut ou non) pour chaque branche.",
+    "Je complète avec « 1 − p » pour que chaque nœud ait une somme de 1.",
+    "J’écris les événements au bout des branches."
+   ],
+   "exemple": {
+    "enonce": "M₁ : 60 % des pièces, 3 % de défauts. M₂ : 40 %, 5 % de défauts. **Construis** l’arbre.",
+    "ill": "l3:arbrep|M₁,M₂|0,6;0,4|D,D̄|0,03;0,97;0,05;0,95",
+    "etapes": [
+     { "t": "Premier niveau.", "c": "M₁ : 0,6 ; M₂ : 0,4" },
+     { "t": "Après M₁.", "c": "D : 0,03 ; D̄ : 1 − 0,03 = 0,97" },
+     { "t": "Après M₂.", "c": "D : 0,05 ; D̄ : 0,95" }
+    ],
+    "reponse": "L’arbre a 4 chemins ; la somme des branches de chaque nœud vaut 1."
+   }
+  },
+  {
+   "titre": "Calculer P(B) avec les probabilités totales",
+   "etapes": [
+    "Je repère tous les chemins qui finissent par B.",
+    "Pour chaque chemin, je multiplie les probabilités.",
+    "J’additionne les résultats."
+   ],
+   "exemple": {
+    "enonce": "**Calcule** la probabilité qu’une pièce ait un défaut.",
+    "etapes": [
+     { "t": "Chemin M₁ puis D.", "c": "0,6 × 0,03 = 0,018" },
+     { "t": "Chemin M₂ puis D.", "c": "0,4 × 0,05 = 0,02" },
+     { "t": "Somme.", "c": "0,018 + 0,02 = 0,038" }
+    ],
+    "reponse": "P(D) = 0,038 : 3,8 % des pièces ont un défaut."
+   }
+  },
+  {
+   "titre": "Calculer une probabilité « à l’envers »",
+   "etapes": [
+    "J’écris la formule : P_D(M₂) = P(M₂ ∩ D) ÷ P(D).",
+    "Je calcule P(M₂ ∩ D) avec le chemin.",
+    "Je calcule P(D) avec les probabilités totales.",
+    "Je divise."
+   ],
+   "exemple": {
+    "enonce": "Une pièce a un défaut. **Calcule** la probabilité qu’elle vienne de M₂. **Arrondis** au centième.",
+    "etapes": [
+     { "t": "P(M₂ ∩ D).", "c": "0,4 × 0,05 = 0,02" },
+     { "t": "P(D).", "c": "0,038" },
+     { "t": "Division.", "c": "0,02 ÷ 0,038 ≈ 0,53" }
+    ],
+    "reponse": "Une pièce avec défaut vient de M₂ avec une probabilité d’environ 0,53."
+   }
+  }
+ ],
+ "comprendre": [
+  { "t": "qcm", "txt": "Dans un arbre, deux branches partent d’un même point. L’une porte 0,35.", "q": "Que porte l’autre ?", "o": ["0,65", "0,35", "1,35"], "a": 0, "exp": "La somme vaut 1 : 1 − 0,35 = 0,65." },
+  { "t": "qcm", "txt": "P(A) = 0,5 et P_A(B) = 0,2.", "q": "Que vaut P(A ∩ B) ?", "o": ["0,1", "0,7", "0,4"], "a": 0, "exp": "P(A ∩ B) = 0,5 × 0,2 = 0,1." },
+  { "t": "qcm", "txt": "« P_A(B) ».", "q": "Comment se lit cette écriture ?", "o": ["probabilité de B sachant A", "probabilité de A et B", "probabilité de A ou B"], "a": 0, "exp": "P_A(B) : probabilité de B sachant que A est réalisé." },
+  { "t": "vf", "txt": "P(A) = 0,4 ; P(B) = 0,5 ; P(A ∩ B) = 0,2.", "q": "A et B sont indépendants.", "a": true, "exp": "0,4 × 0,5 = 0,2 = P(A ∩ B) : ils sont indépendants." },
+  { "t": "qcm", "txt": "Deux chemins mènent à D : 0,018 et 0,02.", "q": "Que vaut P(D) ?", "o": ["0,038", "0,00036", "0,02"], "a": 0, "exp": "On additionne les chemins : 0,018 + 0,02 = 0,038." },
+  { "t": "question", "txt": ["M₁ fabrique 60 % des pièces.", "3 % des pièces de M₁ ont un défaut.", "Quelle est la probabilité qu’une pièce vienne de M₁ et ait un défaut ?"], "q": "Touche la phrase qui est la question.", "a": 2, "exp": "La question finit par « ? »." },
+  { "t": "donnees", "txt": "Dans un club de 120 membres, 70 % font du football. Parmi eux, 20 % sont gardiens. Le club a été créé en 1998. Calcule la probabilité qu’un membre soit footballeur et gardien.", "q": "Touche les deux pourcentages utiles.", "a": ["70", "20"], "exp": "0,7 × 0,2 = 0,14. L’année de création ne sert pas." },
+  { "t": "ordre", "q": "Remets la phrase dans l’ordre.", "phrase": "Sur un chemin de l’arbre, je multiplie les probabilités." }
+ ],
+ "brevet": [
+  {
+   "id": "p2-b1",
+   "titre": "D’où vient la pièce défectueuse ?",
+   "fig": "l3:arbrep|M₁,M₂|0,6;0,4|D,D̄|0,03;…;0,05;…",
+   "ctx": ["La machine M₁ fabrique 60 % des pièces, la machine M₂ en fabrique 40 %.", "3 % des pièces de M₁ et 5 % des pièces de M₂ ont un défaut. On choisit une pièce au hasard.", "D : « la pièce a un défaut »."],
+   "qs": [
+    { "q": "**Donne** P_M₁(D̄), la probabilité qu’une pièce de M₁ n’ait pas de défaut.", "type": "num", "a": 0.97, "aide": ["1 − 0,03."], "corr": ["1 − 0,03 = 0,97"], "rep": "P_M₁(D̄) = 0,97." },
+    { "q": "**Calcule** P(M₁ ∩ D).", "type": "num", "a": 0.018, "aide": ["0,6 × 0,03."], "corr": ["0,6 × 0,03 = 0,018"], "rep": "P(M₁ ∩ D) = 0,018." },
+    { "q": "**Calcule** P(D).", "type": "num", "a": 0.038, "aide": ["P(D) = P(M₁ ∩ D) + P(M₂ ∩ D).", "P(M₂ ∩ D) = 0,4 × 0,05."], "corr": ["0,4 × 0,05 = 0,02", "0,018 + 0,02 = 0,038"], "rep": "La probabilité qu’une pièce ait un défaut est 0,038." },
+    { "q": "Une pièce a un défaut. **Calcule** la probabilité qu’elle vienne de M₂. **Arrondis** au centième.", "type": "num", "a": 0.52631579, "arr": 2, "aide": ["P_D(M₂) = P(M₂ ∩ D) ÷ P(D)."], "corr": ["0,02 ÷ 0,038 ≈ 0,53"], "rep": "Une pièce avec défaut vient de M₂ avec une probabilité d’environ 0,53." }
+   ]
+  },
+  {
+   "id": "p2-b2",
+   "titre": "Les clients satisfaits",
+   "fig": "l3:arbrep|F,F̄|0,7;0,3|S,S̄|0,8;0,2;0,5;0,5",
+   "ctx": ["Dans un magasin, 70 % des clients ont une carte de fidélité (F).", "80 % des clients fidèles sont satisfaits (S). 50 % des autres clients sont satisfaits."],
+   "qs": [
+    { "q": "**Calcule** P(F ∩ S).", "type": "num", "a": 0.56, "aide": ["0,7 × 0,8."], "corr": ["0,7 × 0,8 = 0,56"], "rep": "P(F ∩ S) = 0,56." },
+    { "q": "**Calcule** P(S), la probabilité qu’un client soit satisfait.", "type": "num", "a": 0.71, "aide": ["P(F ∩ S) + P(F̄ ∩ S).", "P(F̄ ∩ S) = 0,3 × 0,5."], "corr": ["0,3 × 0,5 = 0,15", "0,56 + 0,15 = 0,71"], "rep": "71 % des clients sont satisfaits." },
+    { "q": "Un client est satisfait. **Calcule** la probabilité qu’il ait une carte de fidélité. **Arrondis** au centième.", "type": "num", "a": 0.78873239, "arr": 2, "aide": ["P_S(F) = P(F ∩ S) ÷ P(S)."], "corr": ["0,56 ÷ 0,71 ≈ 0,79"], "rep": "Un client satisfait a une carte de fidélité avec une probabilité d’environ 0,79." }
+   ]
+  },
+  {
+   "id": "p2-b3",
+   "titre": "Deux machines en panne",
+   "ctx": ["Dans un atelier, la machine A tombe en panne dans la semaine avec une probabilité de 0,1.", "La machine B tombe en panne avec une probabilité de 0,05. Les pannes sont indépendantes."],
+   "qs": [
+    { "q": "**Calcule** la probabilité que les deux machines tombent en panne.", "type": "num", "a": 0.005, "aide": ["Indépendants : P(A ∩ B) = P(A) × P(B)."], "corr": ["0,1 × 0,05 = 0,005"], "rep": "La probabilité que les deux tombent en panne est 0,005." },
+    { "q": "**Calcule** la probabilité qu’aucune machine ne tombe en panne.", "type": "num", "a": 0.855, "aide": ["P(Ā) = 0,9 et P(B̄) = 0,95.", "Indépendants : je multiplie."], "corr": ["0,9 × 0,95 = 0,855"], "rep": "La probabilité qu’aucune machine ne tombe en panne est 0,855." },
+    { "q": "**Déduis**-en la probabilité qu’au moins une machine tombe en panne.", "type": "num", "a": 0.145, "aide": ["Contraire de « aucune »."], "corr": ["1 − 0,855 = 0,145"], "rep": "La probabilité qu’au moins une machine tombe en panne est 0,145." }
+   ]
+  }
+ ],
+ "calc": ["p2-chemin", "p2-total", "p2-cond", "p2-indep"],
+ "mots": [
+  { "id": "arbre-pondere", "mot": "arbre pondéré", "art": "l’", "g": "m", "cat": "donnees", "ill": "l3:arbrep|M₁,M₂|0,6;0,4|D,D̄|0,03;0,97;0,05;0,95", "def": "Un arbre avec une probabilité sur chaque branche.", "man": "Arbre dont chaque branche porte une probabilité ; la somme des branches issues d’un nœud vaut 1.", "ph": ["Je construis un [[arbre pondéré|arbre-pondere]] avec les deux machines.", "Dans un [[arbre pondéré|arbre-pondere]], je multiplie le long d’un chemin."] },
+  { "id": "proba-conditionnelle", "mot": "probabilité conditionnelle", "art": "la", "g": "f", "cat": "donnees", "sym": "P_A(B)", "ill": "txt:B {sachant} A|= P(A ∩ B) ÷ P(A)", "def": "La probabilité d’un événement quand on sait déjà qu’un autre est arrivé.", "man": "P_A(B) = P(A ∩ B) ÷ P(A), pour P(A) ≠ 0.", "ph": ["La [[probabilité conditionnelle|proba-conditionnelle]] P_M₁(D) vaut 0,03.", "Je calcule une [[probabilité conditionnelle|proba-conditionnelle]] avec une division."] },
+  { "id": "sachant", "mot": "sachant", "cat": "donnees", "ill": "txt:probabilité de B|{sachant} A", "def": "Quand on sait déjà que… Dans P_A(B), on sait que A est arrivé.", "man": "« Probabilité de B sachant A » : probabilité conditionnelle P_A(B).", "vie": "sachant : du verbe savoir (« sachant cela, il est parti »).", "ph": ["P_A(B) se lit « probabilité de B [[sachant]] A ».", "La probabilité d’un défaut, [[sachant]] que la pièce vient de M₂, est 0,05."] },
+  { "id": "probabilites-totales", "mot": "formule des probabilités totales", "art": "la", "g": "f", "cat": "donnees", "ill": "txt:P(D) = 0,018 + 0,02|= {0,038}", "def": "Pour calculer P(B), j’additionne tous les chemins de l’arbre qui mènent à B.", "man": "P(B) = P(A) × P_A(B) + P(Ā) × P_Ā(B).", "ph": ["Avec la [[formule des probabilités totales|probabilites-totales]], P(D) = 0,038.", "J’utilise les [[probabilités totales|probabilites-totales]] pour trouver P(S)."] },
+  { "id": "evenements-independants", "mot": "événements indépendants", "art": "les", "g": "m", "cat": "donnees", "ill": "txt:P(A ∩ B) = {P(A) × P(B)}", "def": "Deux événements où l’un ne change pas la probabilité de l’autre.", "man": "A et B indépendants ⟺ P(A ∩ B) = P(A) × P(B) ⟺ P_A(B) = P(B).", "vie": "indépendant : libre, qui ne dépend de personne ; un travailleur indépendant.", "ph": ["Les pannes des deux machines sont des [[événements indépendants|evenements-independants]].", "Pour des [[événements indépendants|evenements-independants]], je multiplie les probabilités."] }
+ ]
+}

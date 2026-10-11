@@ -1,0 +1,232 @@
+{
+ "id": "fresnel",
+ "annee": "tle",
+ "grp": ["A"],
+ "titre": "Signaux sinusoïdaux et vecteurs de Fresnel",
+ "icone": "〰️",
+ "cat": "fonction",
+ "domaine": "Trigonométrie et analyse",
+ "intro": "Étudier une tension u(t) = A sin(ωt + φ) : amplitude, période, fréquence, pulsation, phase, déphasage et représentation de Fresnel.",
+ "objectifs": [
+  "Je sais **lire** l’amplitude, la période et la phase d’un signal sinusoïdal.",
+  "Je sais **utiliser** les relations T = 2π ÷ ω et f = 1 ÷ T.",
+  "Je sais **calculer** une valeur de u(t) avec la calculatrice en mode radian.",
+  "Je sais **représenter** un signal par un vecteur de Fresnel et **lire** un déphasage."
+ ],
+ "situation": {
+  "metier": "⚡ Électricité",
+  "txt": [
+   "Un électricien mesure la tension du réseau électrique avec un oscilloscope.",
+   "La tension est u(t) = 325 sin(100πt), en volts, avec t en secondes.",
+   "Sur les appareils, on lit pourtant « 230 V »."
+  ],
+  "question": "Quelle est la fréquence du réseau, et d’où vient la valeur 230 V ?"
+ },
+ "cours": [
+  {
+   "titre": "Le signal sinusoïdal",
+   "txt": [
+    "Un [[signal sinusoïdal|signal-sinusoidal]] s’écrit u(t) = A sin(ωt + φ).",
+    "A est l’[[amplitude]] : la valeur maximale. Le signal varie entre −A et A.",
+    "ω est la [[pulsation]] (en rad/s) et φ est la [[phase à l’origine|phase-origine]] (en rad)."
+   ],
+   "man": [
+    "Une fonction sinusoïdale s’écrit t ↦ A sin(ωt + φ), avec A > 0 (amplitude), ω > 0 (pulsation) et φ (phase à l’origine)."
+   ],
+   "ex": [
+    "u(t) = 325 sin(100πt) : A = 325 V ; ω = 100π rad/s ; φ = 0."
+   ],
+   "ill": "l3:sinus|sin|1|1|0|periode"
+  },
+  {
+   "titre": "Période et fréquence",
+   "txt": [
+    "La [[période|periode]] T est la durée d’un motif complet : T = 2π ÷ ω.",
+    "La [[fréquence|frequence-hz]] f est le nombre de motifs par seconde : f = 1 ÷ T. Elle se mesure en hertz (Hz).",
+    "ω = 2π × f."
+   ],
+   "man": [
+    "T = 2π/ω (en s) ; f = 1/T = ω/(2π) (en Hz)."
+   ],
+   "ex": [
+    "ω = 100π : T = 2π ÷ 100π = 0,02 s = 20 ms ; f = 1 ÷ 0,02 = 50 Hz."
+   ],
+   "ill": "txt:T = 2π ÷ ω = {0,02 s}|f = 1 ÷ T = {50 Hz}"
+  },
+  {
+   "titre": "Calculer une valeur du signal",
+   "txt": [
+    "Je remplace t par sa valeur, en secondes.",
+    "Je règle la calculatrice en mode radian.",
+    "Je calcule A × sin(ωt + φ)."
+   ],
+   "man": [
+    "Les calculs de sin(ωt + φ) se font avec ωt + φ en radians."
+   ],
+   "ex": [
+    "u(0,005) = 325 sin(100π × 0,005) = 325 sin(π/2) = 325 V."
+   ],
+   "ill": "l3:calculatrice|325sin(100π*0.005)|= 325"
+  },
+  {
+   "titre": "La valeur efficace",
+   "txt": [
+    "Pour une tension sinusoïdale, la [[valeur efficace|valeur-efficace]] est U = A ÷ √2.",
+    "C’est la valeur écrite sur les appareils.",
+    "325 ÷ √2 ≈ 230 V."
+   ],
+   "man": [
+    "Valeur efficace d’une grandeur sinusoïdale d’amplitude A : A/√2 ≈ 0,707 A."
+   ],
+   "ex": [
+    "Amplitude 325 V → valeur efficace ≈ 229,8 V, soit environ 230 V."
+   ],
+   "ill": "txt:U = A ÷ √2|325 ÷ √2 ≈ {230 V}"
+  },
+  {
+   "titre": "Le vecteur de Fresnel",
+   "txt": [
+    "Je représente u(t) = A sin(ωt + φ) par un [[vecteur de Fresnel|vecteur-fresnel]].",
+    "Sa longueur est l’amplitude A. Son angle avec l’axe horizontal est la phase φ.",
+    "Le vecteur tourne à la vitesse ω : sa projection verticale donne le signal."
+   ],
+   "man": [
+    "À u(t) = A sin(ωt + φ) on associe le vecteur de Fresnel de norme A faisant l’angle φ avec l’axe de référence. La somme de deux signaux de même pulsation correspond à la somme de leurs vecteurs de Fresnel."
+   ],
+   "ex": [
+    "u(t) = 5 sin(ωt + π/4) : vecteur de longueur 5, angle 45°."
+   ],
+   "ill": "l3:fresnel|0.7854"
+  },
+  {
+   "titre": "Le déphasage",
+   "txt": [
+    "Deux signaux de même fréquence peuvent être décalés : c’est le [[déphasage|dephasage]].",
+    "Déphasage = différence des phases : φ₂ − φ₁.",
+    "Décalage dans le temps : Δt = déphasage ÷ ω."
+   ],
+   "man": [
+    "Pour u₁ = A₁ sin(ωt + φ₁) et u₂ = A₂ sin(ωt + φ₂), le déphasage est φ₂ − φ₁ ; il correspond à un décalage temporel |φ₂ − φ₁|/ω."
+   ],
+   "ex": [
+    "Déphasage de π/2 à 50 Hz : Δt = (π/2) ÷ (100π) = 0,005 s = 5 ms (un quart de période)."
+   ],
+   "ill": "l3:dephas|1.5708"
+  }
+ ],
+ "methodes": [
+  {
+   "titre": "Trouver la période et la fréquence",
+   "etapes": [
+    "Je lis ω devant t dans sin(ωt + φ).",
+    "Je calcule T = 2π ÷ ω (en secondes).",
+    "Je calcule f = 1 ÷ T (en hertz).",
+    "Je convertis si besoin : 1 s = 1 000 ms."
+   ],
+   "exemple": {
+    "enonce": "u(t) = 12 sin(400πt). **Calcule** la période et la fréquence.",
+    "etapes": [
+     { "t": "ω = 400π.", "c": "T = 2π ÷ 400π = 0,005 s" },
+     { "t": "Fréquence.", "c": "f = 1 ÷ 0,005 = 200 Hz" }
+    ],
+    "reponse": "La période est 5 ms et la fréquence est 200 Hz."
+   }
+  },
+  {
+   "titre": "Lire un signal sur l’écran d’un oscilloscope",
+   "etapes": [
+    "Je compte le nombre de divisions verticales entre 0 et le haut de la courbe.",
+    "Amplitude = nombre de divisions × sensibilité verticale (V/div).",
+    "Je compte le nombre de divisions horizontales pour un motif.",
+    "Période = nombre de divisions × base de temps (ms/div)."
+   ],
+   "exemple": {
+    "enonce": "Hauteur : 3 divisions à 2 V/div. Motif : 4 divisions à 2 ms/div. **Détermine** l’amplitude et la fréquence.",
+    "ill": "l3:sinus|sin|1|1|0|periode",
+    "etapes": [
+     { "t": "Amplitude.", "c": "3 × 2 = 6 V" },
+     { "t": "Période.", "c": "4 × 2 = 8 ms = 0,008 s" },
+     { "t": "Fréquence.", "c": "1 ÷ 0,008 = 125 Hz" }
+    ],
+    "reponse": "L’amplitude est 6 V et la fréquence est 125 Hz."
+   }
+  },
+  {
+   "titre": "Calculer un déphasage en temps",
+   "etapes": [
+    "Je calcule la différence des phases (en radians).",
+    "Je calcule ω.",
+    "Δt = déphasage ÷ ω.",
+    "Je vérifie : le décalage est plus petit qu’une période."
+   ],
+   "exemple": {
+    "enonce": "u₁ = 5 sin(100πt) et u₂ = 5 sin(100πt − π/2). **Calcule** le décalage dans le temps.",
+    "ill": "l3:dephas|1.5708",
+    "etapes": [
+     { "t": "Déphasage.", "c": "π/2" },
+     { "t": "Décalage.", "c": "(π/2) ÷ (100π) = 0,005 s" }
+    ],
+    "reponse": "u₂ est en retard de 5 ms sur u₁."
+   }
+  }
+ ],
+ "comprendre": [
+  { "t": "qcm", "txt": "u(t) = 230 sin(100πt + π/3).", "q": "Quelle est l’amplitude ?", "o": ["230", "100π", "π/3"], "a": 0, "exp": "L’amplitude est le nombre devant sin : 230." },
+  { "t": "qcm", "txt": "La période d’un signal est T = 0,01 s.", "q": "Quelle est sa fréquence ?", "o": ["100 Hz", "0,01 Hz", "10 Hz"], "a": 0, "exp": "f = 1 ÷ 0,01 = 100 Hz." },
+  { "t": "vf", "txt": "u(t) = 5 sin(ωt).", "q": "La tension peut atteindre 6 V.", "a": false, "exp": "Le signal reste entre −5 et 5 : il ne dépasse jamais l’amplitude." },
+  { "t": "qcm", "txt": "f = 50 Hz.", "q": "Quelle est la pulsation ω ?", "o": ["100π rad/s", "50π rad/s", "25 rad/s"], "a": 0, "exp": "ω = 2π × 50 = 100π." },
+  { "t": "qcm", "txt": "Un vecteur de Fresnel a une longueur de 8 et fait un angle de π/6 avec l’axe.", "q": "Quel signal représente-t-il ?", "o": ["8 sin(ωt + π/6)", "π/6 sin(8t)", "6 sin(ωt + 8)"], "a": 0, "exp": "Longueur = amplitude ; angle = phase à l’origine." },
+  { "t": "question", "txt": ["La tension du réseau est u(t) = 325 sin(100πt).", "Les appareils indiquent 230 V.", "Quelle est la fréquence du réseau ?"], "q": "Touche la phrase qui est la question.", "a": 2, "exp": "La question finit par « ? »." },
+  { "t": "donnees", "txt": "Sur l’oscilloscope, un motif occupe 5 divisions. La base de temps est 4 ms par division. L’appareil a coûté 450 €. Calcule la période du signal.", "q": "Touche les deux données utiles.", "a": ["5", "4"], "exp": "T = 5 × 4 = 20 ms. Le prix ne sert pas." },
+  { "t": "ordre", "q": "Remets la phrase dans l’ordre.", "phrase": "La fréquence du réseau électrique est cinquante hertz." }
+ ],
+ "brevet": [
+  {
+   "id": "fr-b1",
+   "titre": "La tension du secteur",
+   "fig": "l3:sinus|sin|1|1|0|periode",
+   "ctx": ["La tension du réseau est u(t) = 325 sin(100πt), en volts, t en secondes."],
+   "qs": [
+    { "q": "**Donne** l’amplitude de la tension.", "type": "num", "a": 325, "unit": "V", "aide": ["C’est le nombre devant sin."], "corr": ["A = 325 V"], "rep": "L’amplitude est 325 V." },
+    { "q": "**Calcule** la période, en millisecondes.", "type": "num", "a": 20, "unit": "ms", "aide": ["T = 2π ÷ ω, avec ω = 100π."], "corr": ["T = 2π ÷ 100π = 0,02 s", "0,02 s = 20 ms"], "rep": "La période est 20 ms." },
+    { "q": "**Calcule** la fréquence.", "type": "num", "a": 50, "unit": "Hz", "aide": ["f = 1 ÷ T."], "corr": ["f = 1 ÷ 0,02 = 50"], "rep": "La fréquence du réseau est 50 Hz." },
+    { "q": "**Calcule** u(0,005).", "type": "num", "a": 325, "unit": "V", "aide": ["100π × 0,005 = π/2.", "Mode radian."], "corr": ["u(0,005) = 325 sin(π/2) = 325 × 1 = 325"], "rep": "u(0,005) = 325 V : la tension est maximale." },
+    { "q": "**Calcule** la valeur efficace A ÷ √2. **Arrondis** à l’unité.", "type": "num", "a": 229.809704, "arr": 0, "unit": "V", "aide": ["325 ÷ √2."], "corr": ["325 ÷ 1,414 ≈ 230"], "rep": "La valeur efficace est environ 230 V : c’est la valeur écrite sur les appareils." }
+   ]
+  },
+  {
+   "id": "fr-b2",
+   "titre": "L’écran de l’oscilloscope",
+   "fig": "l3:sinus|sin|1|1|0|periode",
+   "ctx": ["Sur l’écran d’un oscilloscope, la courbe monte de 3 divisions au-dessus de l’axe. Sensibilité verticale : 2 V par division.", "Un motif complet occupe 4 divisions horizontales. Base de temps : 2 ms par division."],
+   "qs": [
+    { "q": "**Calcule** l’amplitude du signal.", "type": "num", "a": 6, "unit": "V", "aide": ["3 divisions × 2 V."], "corr": ["3 × 2 = 6"], "rep": "L’amplitude est 6 V." },
+    { "q": "**Calcule** la période, en ms.", "type": "num", "a": 8, "unit": "ms", "aide": ["4 divisions × 2 ms."], "corr": ["4 × 2 = 8"], "rep": "La période est 8 ms." },
+    { "q": "**Calcule** la fréquence.", "type": "num", "a": 125, "unit": "Hz", "aide": ["8 ms = 0,008 s ; f = 1 ÷ T."], "corr": ["1 ÷ 0,008 = 125"], "rep": "La fréquence est 125 Hz." },
+    { "q": "**Calcule** la pulsation ω. **Arrondis** à l’unité.", "type": "num", "a": 785.398163, "arr": 0, "unit": "rad/s", "aide": ["ω = 2π × f."], "corr": ["2π × 125 = 250π ≈ 785"], "rep": "La pulsation est 250π ≈ 785 rad/s." }
+   ]
+  },
+  {
+   "id": "fr-b3",
+   "titre": "Deux tensions décalées",
+   "fig": "l3:dephas|1.5708",
+   "ctx": ["Deux tensions ont la même fréquence 50 Hz : u₁(t) = 5 sin(100πt) et u₂(t) = 5 sin(100πt − π/2)."],
+   "qs": [
+    { "q": "**Donne** le déphasage entre les deux tensions, en degrés.", "type": "num", "a": 90, "unit": "°", "aide": ["π/2 rad en degrés."], "corr": ["π/2 rad = 90°"], "rep": "Le déphasage est 90°." },
+    { "q": "**Calcule** le décalage dans le temps, en ms.", "type": "num", "a": 5, "unit": "ms", "aide": ["Δt = (π/2) ÷ (100π)."], "corr": ["(π/2) ÷ (100π) = 1 ÷ 200 = 0,005 s = 5 ms"], "rep": "u₂ est décalée de 5 ms par rapport à u₁." },
+    { "q": "Ce décalage représente quelle fraction de la période ?", "type": "qcm", "o": ["un quart", "la moitié", "un tiers"], "a": 0, "aide": ["La période est 20 ms."], "corr": ["5 ÷ 20 = 1/4"], "rep": "Le décalage représente un quart de période." }
+   ]
+  }
+ ],
+ "calc": ["fr-periode", "fr-valeur", "fr-osc", "fr-dephas"],
+ "mots": [
+  { "id": "signal-sinusoidal", "mot": "signal sinusoïdal", "art": "le", "g": "m", "cat": "fonction", "ill": "l3:sinus|sin", "def": "Un signal qui a la forme d’une vague régulière : A sin(ωt + φ).", "man": "Grandeur u(t) = A sin(ωt + φ), périodique de période 2π/ω.", "ph": ["La tension du secteur est un [[signal sinusoïdal|signal-sinusoidal]].", "J’observe le [[signal sinusoïdal|signal-sinusoidal]] sur l’oscilloscope."] },
+  { "id": "amplitude", "mot": "amplitude", "art": "l’", "g": "f", "cat": "fonction", "sym": "A", "ill": "l3:sinus|sin|1|1|0", "def": "La valeur maximale du signal.", "man": "A > 0 dans A sin(ωt + φ) ; le signal varie entre −A et A.", "vie": "l’amplitude d’un mouvement : sa taille (« de grande amplitude »).", "ph": ["L’[[amplitude]] de la tension est 325 V.", "Je lis l’[[amplitude]] sur l’écran : 3 divisions."] },
+  { "id": "pulsation", "mot": "pulsation", "art": "la", "g": "f", "cat": "fonction", "sym": "ω", "ill": "l3:fresnel|0.7854", "def": "Le nombre devant t dans sin(ωt + φ). Il dit à quelle vitesse le signal tourne.", "man": "ω = 2πf = 2π/T, en rad/s.", "vie": "les pulsations du cœur : les battements.", "ph": ["La [[pulsation]] du réseau est 100π rad/s.", "Je calcule la [[pulsation]] avec ω = 2πf."] },
+  { "id": "frequence-hz", "mot": "fréquence d’un signal", "art": "la", "g": "f", "cat": "fonction", "sym": "f", "ill": "txt:f = 1 ÷ T|{50 Hz}", "def": "Le nombre de motifs par seconde. Elle se mesure en hertz (Hz).", "man": "f = 1/T, en hertz (Hz).", "vie": "la fréquence d’une radio : le nombre à choisir pour écouter une station.", "ph": ["La [[fréquence|frequence-hz]] du réseau est 50 Hz.", "Je calcule la [[fréquence du signal|frequence-hz]] avec f = 1 ÷ T."] },
+  { "id": "phase-origine", "mot": "phase à l’origine", "art": "la", "g": "f", "cat": "fonction", "sym": "φ", "ill": "l3:fresnel|0.7854", "def": "Le nombre φ dans sin(ωt + φ) : il dit où commence le signal.", "man": "φ : angle du vecteur de Fresnel avec l’axe de référence, en radians.", "vie": "une phase : une étape (« la première phase du projet »).", "ph": ["La [[phase à l’origine|phase-origine]] de u₂ est −π/2.", "Sur le vecteur de Fresnel, je lis la [[phase|phase-origine]] φ."] },
+  { "id": "dephasage", "mot": "déphasage", "art": "le", "g": "m", "cat": "fonction", "ill": "l3:dephas|1.5708", "def": "Le décalage entre deux signaux de même fréquence.", "man": "Différence des phases φ₂ − φ₁ ; décalage temporel |φ₂ − φ₁|/ω.", "ph": ["Le [[déphasage|dephasage]] entre u₁ et u₂ est π/2.", "Un [[déphasage|dephasage]] de 90° correspond à un quart de période."] },
+  { "id": "vecteur-fresnel", "mot": "vecteur de Fresnel", "art": "le", "g": "m", "cat": "fonction", "ill": "l3:fresnel|0.7854", "def": "Une flèche qui représente un signal : sa longueur est l’amplitude, son angle est la phase.", "man": "Vecteur tournant de norme A et d’angle initial φ associé à A sin(ωt + φ).", "ph": ["Le [[vecteur de Fresnel|vecteur-fresnel]] de u a une longueur de 5.", "J’additionne deux [[vecteurs de Fresnel|vecteur-fresnel]] pour additionner deux tensions."] },
+  { "id": "valeur-efficace", "mot": "valeur efficace", "art": "la", "g": "f", "cat": "mesure", "sym": "U", "ill": "txt:U = A ÷ √2|325 ÷ √2 ≈ {230 V}", "def": "La valeur écrite sur les appareils : amplitude ÷ √2.", "man": "Pour une grandeur sinusoïdale : U = A/√2.", "ph": ["La [[valeur efficace|valeur-efficace]] du secteur est 230 V.", "Le voltmètre mesure la [[valeur efficace|valeur-efficace]]."] }
+ ]
+}

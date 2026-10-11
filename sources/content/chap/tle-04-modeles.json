@@ -1,0 +1,210 @@
+{
+ "id": "modeles",
+ "annee": "tle",
+ "titre": "Modéliser : affine ou exponentiel ?",
+ "icone": "☀️",
+ "cat": "donnees",
+ "domaine": "Statistique et analyse",
+ "intro": "Choisir un modèle adapté à une série de données (affine ou exponentiel), obtenir son équation avec la calculatrice et faire des prévisions.",
+ "objectifs": [
+  "Je sais **reconnaître** une évolution à écarts constants (affine) ou à rapports constants (exponentielle).",
+  "Je sais **obtenir** un ajustement affine ou exponentiel avec la calculatrice ou le tableur.",
+  "Je sais **utiliser** le coefficient de détermination R² pour choisir un modèle.",
+  "Je sais **faire** une prévision et **résoudre** une équation avec le modèle."
+ ],
+ "situation": {
+  "metier": "☀️ Énergie solaire",
+  "txt": [
+   "Une entreprise installe des panneaux solaires sur des maisons.",
+   "Année 0 : 40 installations. Année 1 : 52. Année 2 : 68. Année 3 : 88. Année 4 : 114. Année 5 : 148.",
+   "Le gérant veut prévoir le nombre d’installations dans deux ans pour embaucher."
+  ],
+  "question": "Quel modèle choisir, et combien d’installations prévoir pour l’année 7 ?"
+ },
+ "cours": [
+  {
+   "titre": "Écarts constants : modèle affine",
+   "txt": [
+    "Je calcule les écarts : valeur suivante − valeur.",
+    "Si les écarts sont à peu près constants, les points sont presque alignés.",
+    "Je choisis un [[modèle affine|modele-affine]] : y = ax + b."
+   ],
+   "man": [
+    "Si les différences yᵢ₊₁ − yᵢ sont à peu près constantes (pour des xᵢ régulièrement espacés), un ajustement affine y = ax + b est adapté."
+   ],
+   "ex": [
+    "Taxi : 12 € ; 20 € ; 28 € ; 36 € pour 5, 10, 15, 20 km : écarts constants de 8 €."
+   ],
+   "ill": "l3:nuage|droite"
+  },
+  {
+   "titre": "Rapports constants : modèle exponentiel",
+   "txt": [
+    "Je calcule les rapports : valeur suivante ÷ valeur.",
+    "Si les rapports sont à peu près constants, c’est une hausse (ou une baisse) en pourcentage.",
+    "Je choisis un [[modèle exponentiel|modele-exponentiel]] : y = k × qˣ."
+   ],
+   "man": [
+    "Si les quotients yᵢ₊₁ ÷ yᵢ sont à peu près constants, un ajustement exponentiel y = k × qˣ est adapté ; q est proche de ces quotients."
+   ],
+   "ex": [
+    "52 ÷ 40 = 1,3 ; 68 ÷ 52 ≈ 1,31 ; 88 ÷ 68 ≈ 1,29 : environ + 30 % par an."
+   ],
+   "ill": "l3:nuage|solaire"
+  },
+  {
+   "titre": "Obtenir l’équation du modèle",
+   "txt": [
+    "Je saisis les valeurs de x et de y dans la calculatrice (ou le tableur).",
+    "Je choisis le type d’ajustement : linéaire (y = ax + b) ou exponentiel (y = k × qˣ).",
+    "La calculatrice donne les coefficients et un nombre R²."
+   ],
+   "man": [
+    "Les calculatrices proposent une régression exponentielle (ExpReg) ; le tableur propose une courbe de tendance exponentielle. L’équation peut être donnée sous la forme y = k × qˣ ou y = k × eᵇˣ selon l’outil."
+   ],
+   "ex": [
+    "Pour les installations : y ≈ 40 × 1,3ˣ."
+   ],
+   "ill": "l3:calculatrice|y=k×q^x|k≈40 q≈1,3"
+  },
+  {
+   "titre": "Le coefficient de détermination R²",
+   "txt": [
+    "Le [[coefficient de détermination|coefficient-determination]] R² est un nombre entre 0 et 1.",
+    "Plus R² est proche de 1, plus le modèle est proche des points.",
+    "Pour choisir entre deux modèles, je prends celui qui a le R² le plus proche de 1."
+   ],
+   "man": [
+    "R² mesure la qualité d’un ajustement : 0 ≤ R² ≤ 1 ; un ajustement est d’autant meilleur que R² est proche de 1."
+   ],
+   "ex": [
+    "Affine : R² = 0,95. Exponentiel : R² = 0,999. Je choisis le modèle exponentiel."
+   ],
+   "ill": "l3:nuage|compare"
+  },
+  {
+   "titre": "Prévoir avec le modèle",
+   "txt": [
+    "Je remplace x par la valeur voulue dans l’équation du modèle.",
+    "Pour trouver x, je résous l’équation (avec le log pour un modèle exponentiel).",
+    "Une prévision loin des données est moins sûre."
+   ],
+   "man": [
+    "Pour y = k × qˣ, résoudre y = c revient à qˣ = c ÷ k, soit x = log(c/k) ÷ log q."
+   ],
+   "ex": [
+    "Année 7 : 40 × 1,3⁷ ≈ 251 installations."
+   ],
+   "ill": "l3:nuage|solaire"
+  }
+ ],
+ "methodes": [
+  {
+   "titre": "Choisir entre modèle affine et modèle exponentiel",
+   "etapes": [
+    "Je calcule les écarts entre deux valeurs qui se suivent.",
+    "Je calcule les rapports entre deux valeurs qui se suivent.",
+    "Écarts presque constants → affine. Rapports presque constants → exponentiel.",
+    "Je peux confirmer avec R² sur la calculatrice."
+   ],
+   "exemple": {
+    "enonce": "Installations : 40 ; 52 ; 68 ; 88 ; 114 ; 148. **Choisis** un modèle.",
+    "etapes": [
+     { "t": "Écarts.", "c": "12 ; 16 ; 20 ; 26 ; 34 : pas constants" },
+     { "t": "Rapports.", "c": "1,30 ; 1,31 ; 1,29 ; 1,30 ; 1,30 : presque constants" }
+    ],
+    "reponse": "Un modèle exponentiel est adapté, avec q ≈ 1,3."
+   }
+  },
+  {
+   "titre": "Utiliser un modèle exponentiel",
+   "outil": "Calculatrice",
+   "etapes": [
+    "J’écris le modèle : y = k × qˣ.",
+    "Prévision : je calcule k × qˣ pour la valeur de x.",
+    "Seuil : je résous k × qˣ = c avec x = log(c ÷ k) ÷ log q.",
+    "Je réponds en donnant l’année entière qui convient."
+   ],
+   "exemple": {
+    "enonce": "Modèle : y = 40 × 1,3ˣ. **Détermine** l’année où l’on dépasse 500 installations.",
+    "etapes": [
+     { "t": "J’isole.", "c": "1,3ˣ = 500 ÷ 40 = 12,5" },
+     { "t": "Logarithme.", "c": "x = log 12,5 ÷ log 1,3 ≈ 9,6" },
+     { "t": "Année entière.", "c": "x = 10" }
+    ],
+    "reponse": "D’après le modèle, on dépasse 500 installations l’année 10."
+   }
+  },
+  {
+   "titre": "Comparer deux modèles avec R²",
+   "etapes": [
+    "Je fais les deux ajustements à la calculatrice ou au tableur.",
+    "Je note le R² de chacun.",
+    "Je choisis le modèle dont R² est le plus proche de 1."
+   ],
+   "exemple": {
+    "enonce": "Affine : R² = 0,951. Exponentiel : R² = 0,999. **Choisis** le meilleur modèle.",
+    "ill": "l3:nuage|compare",
+    "etapes": [
+     { "t": "Je compare à 1.", "c": "0,999 > 0,951" }
+    ],
+    "reponse": "Le modèle exponentiel est le plus adapté."
+   }
+  }
+ ],
+ "comprendre": [
+  { "t": "qcm", "txt": "Valeurs : 100 ; 115 ; 130 ; 145.", "q": "Quel modèle est adapté ?", "o": ["affine", "exponentiel", "aucun"], "a": 0, "exp": "Les écarts sont constants (+ 15) : modèle affine." },
+  { "t": "qcm", "txt": "Valeurs : 200 ; 220 ; 242 ; 266,2.", "q": "Quel modèle est adapté ?", "o": ["exponentiel", "affine", "aucun"], "a": 0, "exp": "Les rapports sont constants (× 1,1) : modèle exponentiel." },
+  { "t": "vf", "txt": "Un modèle a R² = 0,65 ; un autre a R² = 0,98.", "q": "Le modèle avec R² = 0,98 est le meilleur.", "a": true, "exp": "Plus R² est proche de 1, meilleur est l’ajustement." },
+  { "t": "qcm", "txt": "Modèle : y = 50 × 1,2ˣ.", "q": "Que vaut y pour x = 2 ?", "o": ["72", "60", "120"], "a": 0, "exp": "50 × 1,2² = 50 × 1,44 = 72." },
+  { "t": "qcm", "txt": "Modèle : y = 40 × 1,3ˣ.", "q": "De combien de % y augmente-t-il quand x augmente de 1 ?", "o": ["30 %", "1,3 %", "40 %"], "a": 0, "exp": "× 1,3 = + 30 %." },
+  { "t": "question", "txt": ["L’entreprise a fait 148 installations l’année 5.", "Le modèle est y = 40 × 1,3ˣ.", "Combien d’installations prévoir l’année 7 ?"], "q": "Touche la phrase qui est la question.", "a": 2, "exp": "La question finit par « ? »." },
+  { "t": "donnees", "txt": "Un modèle de ventes est y = 120 × 1,05ˣ, où x est le nombre d’années depuis 2020. Le magasin a 8 vendeurs. Estime les ventes pour x = 10.", "q": "Touche les trois nombres utiles.", "a": ["120", "1,05", "10"], "exp": "120 × 1,05¹⁰ ≈ 195. Le nombre de vendeurs ne sert pas." },
+  { "t": "ordre", "q": "Remets la phrase dans l’ordre.", "phrase": "Les rapports sont presque constants donc le modèle est exponentiel." }
+ ],
+ "brevet": [
+  {
+   "id": "mo-b1",
+   "titre": "Les installations solaires",
+   "tab": [["Année x", "0", "1", "2", "3", "4", "5"], ["Installations y", "40", "52", "68", "88", "114", "148"]],
+   "fig": "l3:nuage|solaire",
+   "ctx": ["Le gérant étudie le nombre d’installations de panneaux solaires depuis 5 ans."],
+   "qs": [
+    { "q": "**Calcule** le rapport 68 ÷ 52. **Arrondis** au centième.", "type": "num", "a": 1.30769231, "arr": 2, "aide": ["Je divise 68 par 52."], "corr": ["68 ÷ 52 ≈ 1,31"], "rep": "Le rapport est environ 1,31." },
+    { "q": "Les rapports sont tous proches de 1,3. Quel modèle choisir ?", "type": "qcm", "o": ["Un modèle exponentiel", "Un modèle affine", "Aucun modèle"], "a": 0, "aide": ["Rapports constants → hausse en pourcentage."], "corr": ["Rapports presque constants : modèle exponentiel."], "rep": "Le gérant doit choisir un modèle exponentiel." },
+    { "q": "Le modèle est y = 40 × 1,3ˣ. **Estime** le nombre d’installations l’année 7. **Arrondis** à l’unité.", "type": "num", "a": 250.99, "arr": 0, "unit": "installations", "aide": ["Je calcule 40 × 1,3⁷."], "corr": ["1,3⁷ ≈ 6,2749", "40 × 6,2749 ≈ 251"], "rep": "On peut prévoir environ 251 installations l’année 7." },
+    { "q": "**Détermine** l’année où le modèle dépasse 500 installations.", "type": "num", "a": 10, "aide": ["40 × 1,3ˣ = 500, donc 1,3ˣ = 12,5.", "x = log 12,5 ÷ log 1,3 ≈ 9,6."], "corr": ["x = log 12,5 ÷ log 1,3 ≈ 9,63", "Première année entière : 10"], "rep": "Le modèle dépasse 500 installations l’année 10." }
+   ]
+  },
+  {
+   "id": "mo-b2",
+   "titre": "Le prix des courses en taxi",
+   "tab": [["Distance x (km)", "5", "10", "15", "20"], ["Prix y (€)", "12", "20", "28", "36"]],
+   "ctx": ["Un chauffeur de taxi relève le prix de quelques courses."],
+   "qs": [
+    { "q": "**Calcule** l’écart entre deux prix qui se suivent.", "type": "num", "a": 8, "unit": "€", "aide": ["20 − 12."], "corr": ["20 − 12 = 8 ; 28 − 20 = 8 ; 36 − 28 = 8"], "rep": "Les écarts sont tous de 8 €." },
+    { "q": "Quel modèle est adapté ?", "type": "qcm", "o": ["affine", "exponentiel", "aucun"], "a": 0, "aide": ["Écarts constants."], "corr": ["Écarts constants : modèle affine."], "rep": "Un modèle affine est adapté." },
+    { "q": "Le modèle est y = 1,6x + 4. **Estime** le prix d’une course de 32 km.", "type": "num", "a": 55.2, "unit": "€", "aide": ["1,6 × 32 + 4."], "corr": ["1,6 × 32 = 51,2", "51,2 + 4 = 55,2"], "rep": "Une course de 32 km coûte environ 55,20 €." }
+   ]
+  },
+  {
+   "id": "mo-b3",
+   "titre": "Deux modèles pour un même nuage",
+   "fig": "l3:nuage|compare",
+   "ctx": ["Pour une série de données, la calculatrice donne deux ajustements.", "Affine : y = 11,2x + 12, avec R² = 0,951.", "Exponentiel : y = 20 × 1,28ˣ, avec R² = 0,999."],
+   "qs": [
+    { "q": "Quel modèle est le plus adapté ?", "type": "qcm", "o": ["L’exponentiel, car son R² est plus proche de 1", "L’affine, car il est plus simple", "L’affine, car 11,2 > 1,28"], "a": 0, "aide": ["Je compare R² à 1."], "corr": ["0,999 > 0,951"], "rep": "Le modèle exponentiel est le plus adapté." },
+    { "q": "Avec le modèle exponentiel, **estime** y pour x = 8. **Arrondis** à l’unité.", "type": "num", "a": 144.115188, "arr": 0, "aide": ["20 × 1,28⁸."], "corr": ["1,28⁸ ≈ 7,2058", "20 × 7,2058 ≈ 144"], "rep": "Pour x = 8, le modèle exponentiel donne environ 144." },
+    { "q": "Avec le modèle affine, **estime** y pour x = 8.", "type": "num", "a": 101.6, "aide": ["11,2 × 8 + 12."], "corr": ["89,6 + 12 = 101,6"], "rep": "Pour x = 8, le modèle affine donne 101,6 : les deux prévisions sont très différentes." }
+   ]
+  }
+ ],
+ "calc": ["mo-choix", "mo-pred", "el-resol", "s2-pred"],
+ "mots": [
+  { "id": "modele", "mot": "modèle mathématique", "art": "le", "g": "m", "cat": "donnees", "ill": "l3:nuage|compare", "def": "Une fonction qui décrit une situation réelle, pour calculer et prévoir.", "man": "Fonction (affine, exponentielle, polynôme…) choisie pour représenter des données et faire des prévisions.", "vie": "un modèle : une personne qui pose pour des photos ; ou un exemple à suivre.", "ph": ["Le [[modèle|modele]] y = 40 × 1,3ˣ décrit les installations.", "Je choisis le [[modèle mathématique|modele]] le plus proche des points."] },
+  { "id": "modele-affine", "mot": "modèle affine", "art": "le", "g": "m", "cat": "donnees", "ill": "l3:nuage|droite", "def": "Un modèle y = ax + b : la grandeur augmente (ou baisse) toujours de la même quantité.", "man": "Adapté lorsque les écarts entre valeurs successives sont à peu près constants.", "ph": ["Le prix du taxi suit un [[modèle affine|modele-affine]].", "Avec un [[modèle affine|modele-affine]], les points sont alignés."] },
+  { "id": "modele-exponentiel", "mot": "modèle exponentiel", "art": "le", "g": "m", "cat": "donnees", "ill": "l3:nuage|solaire", "def": "Un modèle y = k × qˣ : la grandeur augmente (ou baisse) toujours du même pourcentage.", "man": "Adapté lorsque les rapports entre valeurs successives sont à peu près constants.", "ph": ["Les installations suivent un [[modèle exponentiel|modele-exponentiel]].", "Dans un [[modèle exponentiel|modele-exponentiel]], q = 1,3 veut dire + 30 % par an."] },
+  { "id": "coefficient-determination", "mot": "coefficient de détermination", "art": "le", "g": "m", "cat": "donnees", "sym": "R²", "ill": "l3:calculatrice|R²=0,999|proche de 1", "def": "Un nombre entre 0 et 1 donné par la calculatrice. Plus il est proche de 1, meilleur est le modèle.", "man": "R² ∈ [0 ; 1] mesure la qualité de l’ajustement aux données.", "ph": ["Le [[coefficient de détermination|coefficient-determination]] vaut 0,999.", "Je compare les [[coefficients de détermination|coefficient-determination]] des deux modèles."] },
+  { "id": "ecarts-rapports", "mot": "écarts et rapports", "art": "les", "g": "m", "cat": "donnees", "ill": "txt:écart : 52 − 40 = 12|rapport : {52 ÷ 40 = 1,3}", "def": "Écart = soustraction entre deux valeurs. Rapport = division entre deux valeurs.", "man": "Écarts constants : croissance linéaire ; rapports constants : croissance exponentielle.", "ph": ["Je calcule les [[écarts et les rapports|ecarts-rapports]] pour choisir le modèle.", "Ici, les [[rapports|ecarts-rapports]] sont presque constants."] }
+ ]
+}

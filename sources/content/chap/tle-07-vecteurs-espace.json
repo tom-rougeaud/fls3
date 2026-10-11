@@ -1,0 +1,208 @@
+{
+ "id": "vecteurs-espace",
+ "annee": "tle",
+ "grp": ["B"],
+ "titre": "Repérage et vecteurs dans l’espace",
+ "icone": "🏗️",
+ "cat": "geometrie",
+ "domaine": "Géométrie",
+ "intro": "Repérer un point dans l’espace avec trois coordonnées, calculer les coordonnées d’un vecteur, une distance et un milieu.",
+ "objectifs": [
+  "Je sais **lire** et **placer** un point de coordonnées (x ; y ; z).",
+  "Je sais **calculer** les coordonnées d’un vecteur de l’espace.",
+  "Je sais **calculer** une distance (norme) et un milieu dans l’espace.",
+  "Je sais **additionner** des vecteurs de l’espace (forces)."
+ ],
+ "situation": {
+  "metier": "🏗️ Bâtiment",
+  "txt": [
+   "Sur un chantier, on tend un câble entre le pied A d’un mât et le haut B d’une grue.",
+   "Dans un repère de l’espace (unité : le mètre), A(0 ; 0 ; 0) et B(6 ; 8 ; 24).",
+   "Le chef de chantier doit commander le câble."
+  ],
+  "question": "Quelle longueur de câble faut-il commander ?"
+ },
+ "cours": [
+  {
+   "titre": "Le repère de l’espace",
+   "txt": [
+    "Dans l’espace, il faut trois axes : x, y et z.",
+    "Un point M a trois coordonnées : M(x ; y ; z).",
+    "x est l’abscisse, y l’ordonnée et z la [[cote|cote-z]] (la hauteur)."
+   ],
+   "man": [
+    "Un [[repère de l’espace|repere-espace]] (O ; I, J, K) est formé d’une origine et de trois axes. Tout point M est repéré par ses coordonnées (x ; y ; z) : abscisse, ordonnée, cote."
+   ],
+   "ex": [
+    "M(4 ; 3 ; 5) : 4 sur l’axe x, 3 sur l’axe y, puis 5 vers le haut."
+   ],
+   "ill": "l3:esp|point"
+  },
+  {
+   "titre": "Coordonnées d’un vecteur",
+   "txt": [
+    "Comme dans le plan : arrivée moins départ, pour chaque coordonnée.",
+    "~AB~(xB − xA ; yB − yA ; zB − zA).",
+    "Deux vecteurs égaux ont les mêmes trois coordonnées."
+   ],
+   "man": [
+    "Si A(xA ; yA ; zA) et B(xB ; yB ; zB), alors ~AB~ a pour coordonnées (xB − xA ; yB − yA ; zB − zA)."
+   ],
+   "ex": [
+    "A(0 ; 0 ; 0), B(6 ; 8 ; 24) : ~AB~(6 ; 8 ; 24)."
+   ],
+   "ill": "l3:esp|vecteur"
+  },
+  {
+   "titre": "Distance et norme",
+   "txt": [
+    "La norme d’un vecteur ~u~(x ; y ; z) est √(x² + y² + z²).",
+    "La distance AB est la norme de ~AB~.",
+    "C’est le théorème de Pythagore utilisé deux fois."
+   ],
+   "man": [
+    "Dans un repère orthonormé de l’espace : ‖~u~‖ = √(x² + y² + z²) et AB = √((xB − xA)² + (yB − yA)² + (zB − zA)²)."
+   ],
+   "ex": [
+    "AB = √(36 + 64 + 576) = √676 = 26 m."
+   ],
+   "ill": "l3:esp|cable"
+  },
+  {
+   "titre": "Le milieu d’un segment",
+   "txt": [
+    "Le [[milieu]] I de [AB] a pour coordonnées les moyennes des coordonnées de A et B.",
+    "I((xA + xB) ÷ 2 ; (yA + yB) ÷ 2 ; (zA + zB) ÷ 2)."
+   ],
+   "man": [
+    "Le milieu I de [AB] a pour coordonnées ((xA + xB)/2 ; (yA + yB)/2 ; (zA + zB)/2)."
+   ],
+   "ex": [
+    "Milieu du câble : I(3 ; 4 ; 12)."
+   ],
+   "ill": "txt:I(3 ; 4 ; {12})|à 12 m de haut"
+  },
+  {
+   "titre": "Somme de vecteurs et forces",
+   "txt": [
+    "Pour additionner deux vecteurs, j’additionne les x, les y et les z.",
+    "En mécanique, la somme des forces est la [[force résultante|force-resultante]].",
+    "Son intensité est la norme du vecteur somme."
+   ],
+   "man": [
+    "Si ~u~(x ; y ; z) et ~v~(x′ ; y′ ; z′), alors ~u~ + ~v~ a pour coordonnées (x + x′ ; y + y′ ; z + z′)."
+   ],
+   "ex": [
+    "~F₁~(0 ; 0 ; −500) + ~F₂~(200 ; 0 ; 300) = (200 ; 0 ; −200)."
+   ],
+   "ill": "l3:esp|repere"
+  }
+ ],
+ "methodes": [
+  {
+   "titre": "Calculer une distance dans l’espace",
+   "etapes": [
+    "J’écris les coordonnées de A et B.",
+    "Je calcule les trois différences (arrivée − départ).",
+    "J’élève chaque différence au carré et j’additionne.",
+    "Je prends la racine carrée."
+   ],
+   "exemple": {
+    "enonce": "A(0 ; 0 ; 0) et B(6 ; 8 ; 24). **Calcule** la longueur du câble AB.",
+    "ill": "l3:esp|cable",
+    "etapes": [
+     { "t": "Différences.", "c": "6 ; 8 ; 24" },
+     { "t": "Carrés.", "c": "36 + 64 + 576 = 676" },
+     { "t": "Racine.", "c": "√676 = 26" }
+    ],
+    "reponse": "Il faut 26 m de câble."
+   }
+  },
+  {
+   "titre": "Lire les coordonnées des sommets d’un pavé",
+   "etapes": [
+    "Je place l’origine O à un coin du pavé, les axes le long des arêtes.",
+    "Un sommet sur un axe a deux coordonnées nulles.",
+    "Le sommet opposé à O a pour coordonnées (longueur ; largeur ; hauteur)."
+   ],
+   "exemple": {
+    "enonce": "Un pavé mesure 4 m × 3 m × 2 m. O est un sommet. **Donne** les coordonnées du sommet G opposé à O, puis la longueur OG.",
+    "ill": "l3:esp|pave",
+    "etapes": [
+     { "t": "Coordonnées.", "c": "G(4 ; 3 ; 2)" },
+     { "t": "Distance.", "c": "√(16 + 9 + 4) = √29 ≈ 5,39" }
+    ],
+    "reponse": "G(4 ; 3 ; 2) et OG ≈ 5,39 m."
+   }
+  },
+  {
+   "titre": "Additionner des forces",
+   "etapes": [
+    "J’écris les coordonnées de chaque force.",
+    "J’additionne coordonnée par coordonnée.",
+    "Je calcule la norme de la somme."
+   ],
+   "exemple": {
+    "enonce": "~F₁~(0 ; 0 ; −500) et ~F₂~(200 ; 0 ; 300), en newtons. **Calcule** l’intensité de la force résultante. **Arrondis** à l’unité.",
+    "etapes": [
+     { "t": "Somme.", "c": "(200 ; 0 ; −200)" },
+     { "t": "Norme.", "c": "√(40 000 + 0 + 40 000) = √80 000 ≈ 283" }
+    ],
+    "reponse": "La force résultante a une intensité d’environ 283 N."
+   }
+  }
+ ],
+ "comprendre": [
+  { "t": "qcm", "txt": "M(2 ; −1 ; 5).", "q": "Quelle est la cote de M ?", "o": ["5", "2", "−1"], "a": 0, "exp": "La cote est la troisième coordonnée, z = 5." },
+  { "t": "qcm", "txt": "A(1 ; 2 ; 3) et B(4 ; 2 ; 7).", "q": "Quelles sont les coordonnées de ~AB~ ?", "o": ["(3 ; 0 ; 4)", "(5 ; 4 ; 10)", "(−3 ; 0 ; −4)"], "a": 0, "exp": "(4 − 1 ; 2 − 2 ; 7 − 3) = (3 ; 0 ; 4)." },
+  { "t": "qcm", "txt": "~u~(3 ; 0 ; 4).", "q": "Quelle est la norme de ~u~ ?", "o": ["5", "7", "25"], "a": 0, "exp": "√(9 + 0 + 16) = √25 = 5." },
+  { "t": "vf", "txt": "A(2 ; 4 ; 6) et B(4 ; 0 ; 10).", "q": "Le milieu de [AB] est (3 ; 2 ; 8).", "a": true, "exp": "((2 + 4) ÷ 2 ; (4 + 0) ÷ 2 ; (6 + 10) ÷ 2) = (3 ; 2 ; 8)." },
+  { "t": "qcm", "txt": "Un point est sur le sol (plan horizontal passant par O).", "q": "Que vaut sa cote ?", "o": ["0", "1", "on ne peut pas savoir"], "a": 0, "exp": "Sur le sol, la hauteur z vaut 0." },
+  { "t": "question", "txt": ["Le pied du mât est en A(0 ; 0 ; 0).", "Le haut de la grue est en B(6 ; 8 ; 24).", "Quelle longueur de câble faut-il ?"], "q": "Touche la phrase qui est la question.", "a": 2, "exp": "La question finit par « ? »." },
+  { "t": "donnees", "txt": "Un drone part de O(0 ; 0 ; 0) et arrive en D(12 ; 9 ; 20). Il pèse 900 g. Calcule la distance OD.", "q": "Touche les trois coordonnées de D.", "a": ["12", "9", "20"], "exp": "OD = √(144 + 81 + 400) = 25. La masse ne sert pas." },
+  { "t": "ordre", "q": "Remets la phrase dans l’ordre.", "phrase": "Dans l’espace, un point a trois coordonnées." }
+ ],
+ "brevet": [
+  {
+   "id": "v3-b1",
+   "titre": "Le câble de la grue",
+   "fig": "l3:esp|cable",
+   "ctx": ["Dans un repère de l’espace (unité : le mètre), le pied du mât est A(0 ; 0 ; 0) et le haut de la grue est B(6 ; 8 ; 24)."],
+   "qs": [
+    { "q": "**Donne** la cote du point B.", "type": "num", "a": 24, "unit": "m", "aide": ["La cote est la troisième coordonnée."], "corr": ["B(6 ; 8 ; 24) : z = 24"], "rep": "Le haut de la grue est à 24 m." },
+    { "q": "**Calcule** la longueur du câble AB.", "type": "num", "a": 26, "unit": "m", "aide": ["AB = √(6² + 8² + 24²)."], "corr": ["36 + 64 + 576 = 676", "√676 = 26"], "rep": "Le câble mesure 26 m." },
+    { "q": "On accroche un fanion au milieu I du câble. **Calcule** la hauteur du fanion.", "type": "num", "a": 12, "unit": "m", "aide": ["La cote de I est (0 + 24) ÷ 2."], "corr": ["I(3 ; 4 ; 12)"], "rep": "Le fanion est à 12 m de haut." },
+    { "q": "Le câble est vendu par rouleaux de 10 m. Combien de rouleaux faut-il ?", "type": "num", "a": 3, "unit": "rouleaux", "aide": ["26 ÷ 10 = 2,6 : il faut un nombre entier de rouleaux."], "corr": ["2 rouleaux = 20 m < 26 m", "3 rouleaux = 30 m ≥ 26 m"], "rep": "Il faut 3 rouleaux de câble." }
+   ]
+  },
+  {
+   "id": "v3-b2",
+   "titre": "La diagonale du local",
+   "fig": "l3:esp|pave",
+   "ctx": ["Un local technique est un pavé droit de 4 m de long, 3 m de large et 2 m de haut.", "On place l’origine O au coin du sol, les axes le long des arêtes."],
+   "qs": [
+    { "q": "Le coin G est opposé à O. **Donne** sa cote.", "type": "num", "a": 2, "unit": "m", "aide": ["G(4 ; 3 ; 2)."], "corr": ["G(4 ; 3 ; 2) : la cote est 2."], "rep": "La cote de G est 2 m." },
+    { "q": "**Calcule** la longueur OG. **Arrondis** au centième.", "type": "num", "a": 5.38516481, "arr": 2, "unit": "m", "aide": ["OG = √(4² + 3² + 2²)."], "corr": ["16 + 9 + 4 = 29", "√29 ≈ 5,39"], "rep": "OG mesure environ 5,39 m." },
+    { "q": "Une gaine rigide de 5,5 m doit aller de O à G en ligne droite. Est-ce possible ?", "type": "qcm", "o": ["Non, car 5,5 m > 5,39 m", "Oui, car 5,5 m > 5,39 m", "Oui, car 5,5 m < 6 m"], "a": 0, "aide": ["La plus grande longueur dans le local est OG."], "corr": ["5,5 > 5,39 : la gaine est trop longue."], "rep": "Non, la gaine est trop longue." }
+   ]
+  },
+  {
+   "id": "v3-b3",
+   "titre": "Les forces sur la charge",
+   "ctx": ["Une charge est soumise à son poids ~F₁~(0 ; 0 ; −500) et à la traction d’un câble ~F₂~(200 ; 0 ; 300), en newtons."],
+   "qs": [
+    { "q": "**Calcule** la cote de la force résultante ~F~ = ~F₁~ + ~F₂~.", "type": "num", "a": -200, "unit": "N", "aide": ["−500 + 300."], "corr": ["~F~(200 ; 0 ; −200)"], "rep": "La cote de ~F~ est −200 N." },
+    { "q": "**Calcule** l’intensité de la force résultante. **Arrondis** à l’unité.", "type": "num", "a": 282.842712, "arr": 0, "unit": "N", "aide": ["‖~F~‖ = √(200² + 0² + (−200)²)."], "corr": ["40 000 + 40 000 = 80 000", "√80 000 ≈ 283"], "rep": "La force résultante a une intensité d’environ 283 N." },
+    { "q": "La charge va-t-elle monter ou descendre ?", "type": "qcm", "o": ["Descendre, car la cote de ~F~ est négative", "Monter, car 200 > 0", "Rester immobile"], "a": 0, "aide": ["Je regarde la troisième coordonnée (verticale)."], "corr": ["z = −200 < 0 : la force verticale est vers le bas."], "rep": "La charge va descendre." }
+   ]
+  }
+ ],
+ "calc": ["v3-coord", "v3-dist", "v3-milieu", "v3-somme"],
+ "mots": [
+  { "id": "repere-espace", "mot": "repère de l’espace", "art": "le", "g": "m", "cat": "geometrie", "ill": "l3:esp|repere", "def": "Trois axes (x, y, z) qui partent d’un point O, pour repérer les points dans l’espace.", "man": "(O ; I, J, K) : origine et trois axes deux à deux perpendiculaires (repère orthonormé).", "ph": ["Dans le [[repère de l’espace|repere-espace]], A a pour coordonnées (0 ; 0 ; 0).", "Je place le point M dans le [[repère de l’espace|repere-espace]]."] },
+  { "id": "cote-z", "mot": "cote", "art": "la", "g": "f", "cat": "geometrie", "sym": "z", "ill": "l3:esp|point", "def": "La troisième coordonnée d’un point : sa hauteur.", "man": "Troisième coordonnée z d’un point dans un repère de l’espace.", "vie": "la cote d’un objet : sa valeur ; la cote sur un plan : une mesure écrite.", "ph": ["La [[cote|cote-z]] du point B est 24.", "Un point du sol a une [[cote|cote-z]] nulle."] },
+  { "id": "coordonnees-espace", "mot": "coordonnées dans l’espace", "art": "les", "g": "f", "cat": "geometrie", "ill": "l3:esp|point", "def": "Les trois nombres (x ; y ; z) qui repèrent un point.", "man": "M(x ; y ; z) : abscisse, ordonnée, cote.", "ph": ["Les [[coordonnées|coordonnees-espace]] de G sont (4 ; 3 ; 2).", "J’écris les trois [[coordonnées dans l’espace|coordonnees-espace]] entre parenthèses."] },
+  { "id": "norme-espace", "mot": "distance dans l’espace", "art": "la", "g": "f", "cat": "geometrie", "ill": "l3:esp|cable", "def": "La longueur entre deux points : √(x² + y² + z²) avec les différences de coordonnées.", "man": "AB = √((xB − xA)² + (yB − yA)² + (zB − zA)²).", "ph": ["La [[distance|norme-espace]] AB est 26 m.", "Je calcule la [[distance dans l’espace|norme-espace]] avec trois carrés."] },
+  { "id": "force-resultante", "mot": "force résultante", "art": "la", "g": "f", "cat": "geometrie", "ill": "l3:vect|force", "def": "La somme de toutes les forces qui agissent sur un objet.", "man": "Vecteur somme des forces ; son intensité est la norme de ce vecteur.", "ph": ["La [[force résultante|force-resultante]] est ~F~(200 ; 0 ; −200).", "L’intensité de la [[force résultante|force-resultante]] est environ 283 N."] }
+ ]
+}

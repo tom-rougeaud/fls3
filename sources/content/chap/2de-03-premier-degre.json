@@ -1,0 +1,234 @@
+{
+ "id": "premier-degre",
+ "annee": "2de",
+ "titre": "Équations et inéquations du premier degré",
+ "icone": "⚖️",
+ "cat": "algebre",
+ "domaine": "Algèbre",
+ "intro": "Mettre un problème en équation, résoudre une équation ou une inéquation, et écrire les solutions avec un intervalle.",
+ "objectifs": [
+  "Je sais **résoudre** une équation du premier degré.",
+  "Je sais **mettre** un problème en équation ou en inéquation.",
+  "Je sais **écrire** et **lire** un intervalle.",
+  "Je sais **résoudre** une inéquation du premier degré."
+ ],
+ "situation": {
+  "metier": "🚚 Logistique",
+  "txt": [
+   "Une entreprise de déménagement loue une camionnette.",
+   "Tarif A : 50 € plus 0,40 € par kilomètre. Tarif B : 90 € plus 0,20 € par kilomètre.",
+   "Le responsable ne sait pas quel tarif choisir : cela dépend de la distance."
+  ],
+  "question": "À partir de combien de kilomètres le tarif B est-il le moins cher ?"
+ },
+ "cours": [
+  {
+   "titre": "Équation du premier degré",
+   "txt": [
+    "Une [[équation du premier degré|equation-premier-degre]] s’écrit par exemple 3x + 5 = 20.",
+    "x est l’[[inconnue]]. Je cherche la valeur de x qui rend l’égalité vraie.",
+    "Pour [[résoudre|resoudre]], je fais la même opération dans les deux [[membres|membre]]."
+   ],
+   "man": [
+    "Une équation du premier degré à une inconnue peut s’écrire ax + b = 0, avec a ≠ 0. Elle a une unique solution : x = −b ÷ a.",
+    "On ne change pas les solutions en ajoutant (ou soustrayant) un même nombre aux deux membres, ou en les multipliant (ou divisant) par un même nombre non nul."
+   ],
+   "ex": [
+    "3x + 5 = 20 → 3x = 15 → x = 5. Vérification : 3 × 5 + 5 = 20."
+   ],
+   "ill": "eq:bal|3x + 5|20"
+  },
+  {
+   "titre": "Mettre un problème en équation",
+   "txt": [
+    "Je choisis l’inconnue : « Soit x le nombre de… ».",
+    "J’écris l’égalité avec les informations de l’énoncé.",
+    "Je résous, puis je réponds à la question avec une phrase."
+   ],
+   "man": [
+    "Mettre en équation : choisir l’inconnue, traduire l’énoncé par une égalité, résoudre, puis vérifier que la solution convient à la situation."
+   ],
+   "ex": [
+    "Tarif A pour x km : 50 + 0,4x. Tarif B : 90 + 0,2x. Même prix : 50 + 0,4x = 90 + 0,2x."
+   ],
+   "ill": "ico2:miseeq"
+  },
+  {
+   "titre": "Les intervalles",
+   "txt": [
+    "Un [[intervalle]] est un ensemble de nombres entre deux [[bornes|borne]].",
+    "[2 ; 5] : de 2 à 5, 2 et 5 compris. ]2 ; 5[ : 2 et 5 non compris.",
+    "Le crochet est tourné vers le nombre s’il est compris, vers l’extérieur sinon.",
+    "[3 ; +∞[ : tous les nombres à partir de 3. +∞ se lit « [[plus l’infini|infini]] »."
+   ],
+   "man": [
+    "[a ; b] = ensemble des réels x tels que a ≤ x ≤ b. ]a ; b[ : a < x < b.",
+    "[a ; +∞[ : x ≥ a. ]−∞ ; b[ : x < b. Le crochet est toujours ouvert du côté de l’infini."
+   ],
+   "ex": [
+    "x ≥ 3 s’écrit x ∈ [3 ; +∞[. Le symbole ∈ se lit « [[appartient à|appartient]] »."
+   ],
+   "ill": "l3:inter|2|5|[["
+  },
+  {
+   "titre": "Inéquation",
+   "txt": [
+    "Une [[inéquation]] utilise <, >, ≤ ou ≥ à la place de =.",
+    "≤ se lit « [[inférieur ou égal|inferieur-ou-egal]] ». ≥ se lit « [[supérieur ou égal|superieur-ou-egal]] ».",
+    "Les solutions sont souvent nombreuses : je les écris avec un intervalle."
+   ],
+   "man": [
+    "Résoudre une inéquation, c’est trouver l’[[ensemble des solutions|ensemble-solutions]], noté souvent S, sous forme d’intervalle."
+   ],
+   "ex": [
+    "2x + 3 < 11 → 2x < 8 → x < 4. S = ]−∞ ; 4[."
+   ],
+   "ill": "l3:inequation"
+  },
+  {
+   "titre": "Attention au signe !",
+   "txt": [
+    "J’ajoute ou j’enlève un nombre : le signe de l’inégalité ne change pas.",
+    "Je multiplie ou je divise par un nombre positif : le signe ne change pas.",
+    "Je multiplie ou je divise par un nombre négatif : le signe [[change de sens|changer-de-sens]] !"
+   ],
+   "man": [
+    "Multiplier ou diviser les deux membres d’une inéquation par un nombre strictement négatif change le sens de l’inégalité."
+   ],
+   "ex": [
+    "−2x > 6 → x < 6 ÷ (−2) → x < −3."
+   ],
+   "note": "Je divise par −2 : > devient <.",
+   "ill": "l3:sens"
+  },
+  {
+   "titre": "Interpréter la solution",
+   "txt": [
+    "La solution doit avoir du sens dans la situation.",
+    "Un nombre d’objets est un nombre entier : j’arrondis avec bon sens.",
+    "Je vérifie avec un calcul."
+   ],
+   "man": [
+    "Dans un problème concret, les solutions mathématiques sont restreintes aux valeurs possibles (entiers, positifs…)."
+   ],
+   "ex": [
+    "18x + 45 ≤ 400 donne x ≤ 19,7… Le club peut acheter 19 maillots au maximum."
+   ],
+   "ill": "l3:verbe|valider"
+  }
+ ],
+ "methodes": [
+  {
+   "titre": "Résoudre une équation du premier degré",
+   "etapes": [
+    "Je regroupe les termes en x dans un membre, les nombres dans l’autre.",
+    "Je réduis chaque membre.",
+    "Je divise par le nombre devant x.",
+    "Je vérifie en remplaçant x par la solution."
+   ],
+   "exemple": {
+    "enonce": "**Résous** l’équation 50 + 0,4x = 90 + 0,2x.",
+    "etapes": [
+     { "t": "J’enlève 0,2x des deux côtés.", "c": "50 + 0,2x = 90" },
+     { "t": "J’enlève 50 des deux côtés.", "c": "0,2x = 40" },
+     { "t": "Je divise par 0,2.", "c": "x = 200" },
+     { "t": "Je vérifie.", "c": "50 + 80 = 130 et 90 + 40 = 130 ✓" }
+    ],
+    "reponse": "La solution est x = 200."
+   }
+  },
+  {
+   "titre": "Résoudre une inéquation",
+   "etapes": [
+    "Je fais comme pour une équation.",
+    "Si je divise ou multiplie par un nombre négatif, je change le sens du signe.",
+    "J’écris l’ensemble des solutions avec un intervalle."
+   ],
+   "exemple": {
+    "enonce": "**Résous** l’inéquation 5 − 3x ≥ −7.",
+    "ill": "l3:inter|-inf|4|]]|S = ]−∞ ; 4]",
+    "etapes": [
+     { "t": "J’enlève 5 des deux côtés.", "c": "−3x ≥ −12" },
+     { "t": "Je divise par −3 : le signe change.", "c": "x ≤ 4" },
+     { "t": "J’écris l’intervalle.", "c": "S = ]−∞ ; 4]" }
+    ],
+    "reponse": "L’ensemble des solutions est ]−∞ ; 4]."
+   }
+  },
+  {
+   "titre": "Comparer deux tarifs",
+   "etapes": [
+    "J’écris le prix de chaque tarif en fonction de x.",
+    "J’écris l’inéquation : prix B < prix A.",
+    "Je la résous.",
+    "Je réponds avec une phrase, avec l’unité."
+   ],
+   "exemple": {
+    "enonce": "Tarif A : 50 + 0,4x. Tarif B : 90 + 0,2x (x en km). **Détermine** les distances pour lesquelles B est moins cher.",
+    "etapes": [
+     { "t": "J’écris l’inéquation.", "c": "90 + 0,2x < 50 + 0,4x" },
+     { "t": "J’enlève 0,2x et 50.", "c": "40 < 0,2x" },
+     { "t": "Je divise par 0,2 (positif).", "c": "200 < x" }
+    ],
+    "reponse": "Le tarif B est moins cher pour plus de 200 km."
+   }
+  }
+ ],
+ "comprendre": [
+  { "t": "qcm", "txt": "On cherche x tel que 4x − 7 = 13.", "q": "Quelle est la solution ?", "o": ["x = 5", "x = 1,5", "x = 24"], "a": 0, "exp": "4x = 20, donc x = 5. Vérification : 4 × 5 − 7 = 13." },
+  { "t": "qcm", "txt": "On écrit : tous les nombres x tels que x ≥ 3.", "q": "Quel intervalle correspond ?", "o": ["[3 ; +∞[", "]3 ; +∞[", "]−∞ ; 3]"], "a": 0, "exp": "x ≥ 3 : 3 est compris, le crochet est tourné vers 3." },
+  { "t": "vf", "txt": "L’intervalle est ]−2 ; 5].", "q": "Le nombre −2 appartient à cet intervalle.", "a": false, "exp": "Le crochet ] devant −2 est tourné vers l’extérieur : −2 n’est pas compris." },
+  { "t": "qcm", "txt": "On résout −4x < 12.", "q": "Quelle est la bonne étape ?", "o": ["x > −3", "x < −3", "x < 3"], "a": 0, "exp": "Je divise par −4, un nombre négatif : le signe < devient >. x > −3." },
+  { "t": "question", "txt": ["Un club achète des maillots à 18 € pièce.", "La livraison coûte 45 €.", "Le club a 400 €.", "Combien de maillots peut-il acheter au maximum ?"], "q": "Touche la phrase qui est la question.", "a": 3, "exp": "La question finit par « ? »." },
+  { "t": "donnees", "txt": "Une salle de sport coûte 30 € d’inscription puis 25 € par mois. Elle ouvre 7 jours sur 7. Au bout de combien de mois le total dépasse 300 € ?", "q": "Touche les trois données utiles.", "a": ["30", "25", "300"], "exp": "30 + 25x > 300. Les 7 jours ne servent pas." },
+  { "t": "qcm", "txt": "Prix d’un abonnement : 30 + 25x, où x est le nombre de mois.", "q": "Que veut dire 30 + 25x ≤ 200 ?", "o": ["Le prix total ne dépasse pas 200 €", "Le prix total est plus grand que 200 €", "Le prix par mois est 200 €"], "a": 0, "exp": "≤ veut dire « inférieur ou égal » : le prix ne dépasse pas 200 €." },
+  { "t": "ordre", "q": "Remets la phrase dans l’ordre.", "phrase": "Le tarif B est moins cher pour plus de deux cents kilomètres." }
+ ],
+ "brevet": [
+  {
+   "id": "pd-b1",
+   "titre": "Quel tarif pour la camionnette ?",
+   "ctx": ["Tarif A : 50 € plus 0,40 € par kilomètre.", "Tarif B : 90 € plus 0,20 € par kilomètre.", "On note x le nombre de kilomètres parcourus."],
+   "qs": [
+    { "q": "**Calcule** le prix avec le tarif A pour 150 km.", "type": "num", "a": 110, "unit": "€", "aide": ["Prix = 50 + 0,40 × nombre de km."], "corr": ["0,40 × 150 = 60", "50 + 60 = 110"], "rep": "Pour 150 km, le tarif A coûte 110 €." },
+    { "q": "**Exprime** le prix avec le tarif A en fonction de x.", "type": "expr", "a": "0.4x+50", "form": "any", "aide": ["0,40 € pour chaque kilomètre : 0,4 × x.", "J’ajoute les 50 €."], "corr": ["Prix = 0,4x + 50"], "rep": "Avec le tarif A, le prix est 0,4x + 50." },
+    { "q": "**Résous** l’équation 0,4x + 50 = 0,2x + 90.", "type": "num", "a": 200, "aide": ["J’enlève 0,2x des deux côtés, puis 50.", "0,2x = 40."], "corr": ["0,4x − 0,2x = 90 − 50", "0,2x = 40", "x = 40 ÷ 0,2 = 200"], "rep": "La solution est x = 200." },
+    { "q": "**Choisis** la bonne conclusion.", "type": "qcm", "o": ["Au-delà de 200 km, le tarif B est moins cher", "Au-delà de 200 km, le tarif A est moins cher", "Le tarif B est toujours moins cher"], "a": 0, "aide": ["Pour 150 km (moins de 200 km), quel tarif était le moins cher ?"], "corr": ["À 150 km : A = 110 €, B = 120 € : A est moins cher.", "À 200 km, les prix sont égaux. Au-delà, B est moins cher."], "rep": "Au-delà de 200 km, le tarif B est le moins cher." }
+   ]
+  },
+  {
+   "id": "pd-b2",
+   "titre": "Les maillots du club",
+   "ctx": ["Un club de football achète des maillots à 18 € pièce.", "La livraison coûte 45 €, quel que soit le nombre de maillots.", "Le budget du club est 400 €. On note x le nombre de maillots."],
+   "qs": [
+    { "q": "**Choisis** l’inéquation qui traduit la situation.", "type": "qcm", "o": ["18x + 45 ≤ 400", "18x + 45 ≥ 400", "45x + 18 ≤ 400"], "a": 0, "aide": ["Le prix total ne doit pas dépasser le budget."], "corr": ["Prix total : 18x + 45. Il doit être inférieur ou égal à 400."], "rep": "L’inéquation est 18x + 45 ≤ 400." },
+    { "q": "**Résous** l’inéquation : x ≤ … ? **Arrondis** au dixième.", "type": "num", "a": 19.7222222, "arr": 1, "aide": ["J’enlève 45 des deux côtés.", "Je divise par 18."], "corr": ["18x ≤ 355", "x ≤ 355 ÷ 18 ≈ 19,7"], "rep": "Les solutions sont les nombres x ≤ 19,7." },
+    { "q": "**Détermine** le nombre maximum de maillots que le club peut acheter.", "type": "num", "a": 19, "unit": "maillots", "aide": ["Un nombre de maillots est un nombre entier."], "corr": ["x ≤ 19,7 et x entier : x = 19.", "Vérification : 18 × 19 + 45 = 387 ≤ 400."], "rep": "Le club peut acheter 19 maillots au maximum." }
+   ]
+  },
+  {
+   "id": "pd-b3",
+   "titre": "La chambre froide",
+   "ctx": ["Dans un restaurant, la température d’une chambre froide doit rester entre −25 °C et −18 °C, valeurs comprises.", "Une panne arrive. À ce moment, la température est −24 °C. Elle monte de 0,5 °C par minute."],
+   "qs": [
+    { "q": "**Choisis** l’intervalle des températures autorisées.", "type": "qcm", "o": ["[−25 ; −18]", "]−25 ; −18[", "[−18 ; −25]"], "a": 0, "aide": ["Les valeurs sont comprises : crochets tournés vers les nombres.", "On écrit le plus petit nombre en premier."], "corr": ["−25 ≤ T ≤ −18 : T ∈ [−25 ; −18]"], "rep": "Les températures autorisées forment l’intervalle [−25 ; −18]." },
+    { "q": "**Exprime** la température T après t minutes de panne.", "type": "expr", "v": "t", "a": "0.5t-24", "form": "any", "aide": ["Au départ : −24 °C.", "Chaque minute, + 0,5 °C : 0,5 × t."], "corr": ["T = −24 + 0,5t"], "rep": "Après t minutes, T = 0,5t − 24." },
+    { "q": "La température dépasse −18 °C quand −24 + 0,5t > −18. **Résous** : t > … ?", "type": "num", "a": 12, "unit": "min", "aide": ["J’ajoute 24 des deux côtés.", "Je divise par 0,5."], "corr": ["0,5t > 6", "t > 6 ÷ 0,5 = 12"], "rep": "La température dépasse −18 °C après 12 minutes." }
+   ]
+  }
+ ],
+ "calc": ["eq-1", "eq-2", "eq-mise", "pd-inter", "pd-ineq", "pd-appart"],
+ "mots": [
+  { "id": "equation-premier-degre", "mot": "équation du premier degré", "art": "l’", "g": "f", "cat": "algebre", "ill": "txt:{3x} + 5 = 20|x = 5", "def": "Une équation où x n’a pas d’exposant : 3x + 5 = 20.", "man": "Équation qui peut s’écrire ax + b = 0 avec a ≠ 0 ; elle a une unique solution x = −b ÷ a.", "ph": ["3x + 5 = 20 est une [[équation du premier degré|equation-premier-degre]].", "Je résous l’[[équation du premier degré|equation-premier-degre]] 0,2x = 40."] },
+  { "id": "inequation", "mot": "inéquation", "art": "l’", "g": "f", "cat": "algebre", "ill": "l3:inequation", "def": "Comme une équation, mais avec <, >, ≤ ou ≥ à la place de =.", "man": "Inégalité contenant une inconnue ; ses solutions forment en général un intervalle.", "ph": ["18x + 45 ≤ 400 est une [[inéquation|inequation]].", "Je résous l’[[inéquation|inequation]] et j’écris un intervalle."] },
+  { "id": "intervalle", "mot": "intervalle", "art": "l’", "g": "m", "cat": "nombre", "ill": "l3:inter|2|5|[]", "def": "Tous les nombres entre deux nombres. On l’écrit avec des crochets : [2 ; 5].", "man": "[a ; b] = {x tel que a ≤ x ≤ b} ; crochets ouverts ou fermés selon que les bornes sont exclues ou incluses.", "vie": "un temps entre deux choses : « dans l’intervalle, il a mangé ».", "ph": ["L’[[intervalle]] [−25 ; −18] contient −20.", "J’écris les solutions avec un [[intervalle]]."] },
+  { "id": "borne", "mot": "borne", "art": "la", "g": "f", "cat": "nombre", "ill": "l3:inter|2|5|[[", "def": "Un nombre au bord d’un intervalle.", "man": "Extrémité d’un intervalle ; elle est incluse (crochet fermé) ou exclue (crochet ouvert).", "vie": "une borne kilométrique au bord de la route, ou une borne de recharge.", "ph": ["Dans [2 ; 5[, la [[borne]] 5 n’est pas comprise.", "Les [[bornes|borne]] de l’intervalle sont 2 et 5."] },
+  { "id": "infini", "mot": "plus l’infini", "art": "", "g": "m", "cat": "nombre", "sym": "+∞", "ill": "l3:inter|3|+inf|[[", "def": "Un symbole qui veut dire : sans fin, vers les très grands nombres.", "man": "+∞ et −∞ ne sont pas des nombres ; le crochet est toujours ouvert de leur côté.", "ph": ["[3 ; +∞[ se lit « de 3 à [[plus l’infini|infini]] ».", "Du côté de [[plus l’infini|infini]], le crochet est toujours ouvert."] },
+  { "id": "appartient", "mot": "appartient à", "art": "", "g": "m", "cat": "nombre", "sym": "∈", "ill": "txt:4 {∈} [2 ; 5]|7 ∉ [2 ; 5]", "def": "Le nombre est dans l’ensemble. On écrit ∈.", "man": "x ∈ I signifie que x est un élément de l’intervalle I ; x ∉ I sinon.", "ph": ["4 [[appartient à|appartient]] l’intervalle [2 ; 5].", "x ∈ [3 ; +∞[ se lit « x [[appartient à|appartient]] l’intervalle de 3 à plus l’infini »."] },
+  { "id": "inferieur-ou-egal", "mot": "inférieur ou égal", "art": "", "g": "m", "cat": "nombre", "sym": "≤", "ill": "txt:x {≤} 4|4 est compris", "def": "Plus petit ou égal. On écrit ≤.", "man": "a ≤ b : a < b ou a = b.", "ph": ["Le prix doit être [[inférieur ou égal|inferieur-ou-egal]] à 400 €.", "x ≤ 4 se lit « x est [[inférieur ou égal|inferieur-ou-egal]] à 4 »."] },
+  { "id": "superieur-ou-egal", "mot": "supérieur ou égal", "art": "", "g": "m", "cat": "nombre", "sym": "≥", "ill": "txt:x {≥} 3|3 est compris", "def": "Plus grand ou égal. On écrit ≥.", "man": "a ≥ b : a > b ou a = b.", "ph": ["x ≥ 3 se lit « x est [[supérieur ou égal|superieur-ou-egal]] à 3 ».", "L’âge doit être [[supérieur ou égal|superieur-ou-egal]] à 18 ans."] },
+  { "id": "ensemble-solutions", "mot": "ensemble des solutions", "art": "l’", "g": "m", "cat": "algebre", "sym": "S", "ill": "l3:inter|-inf|4|][|S = ]−∞ ; 4[", "def": "Tous les nombres qui sont solutions. On le note S.", "man": "Ensemble S des valeurs de l’inconnue qui vérifient l’équation ou l’inéquation.", "ph": ["L’[[ensemble des solutions|ensemble-solutions]] est S = ]−∞ ; 4[.", "J’écris l’[[ensemble des solutions|ensemble-solutions]] avec un intervalle."] },
+  { "id": "changer-de-sens", "mot": "changer de sens", "cat": "algebre", "ill": "l3:sens", "def": "Le signe < devient >, ou > devient <.", "man": "Multiplier ou diviser par un nombre strictement négatif change le sens d’une inégalité.", "vie": "changer de direction : faire demi-tour.", "ph": ["Je divise par −2 : l’inégalité [[change de sens|changer-de-sens]].", "Avec −3, l’inégalité [[change de sens|changer-de-sens]] : ≥ devient ≤."] },
+  { "id": "strictement", "mot": "strictement", "cat": "nombre", "ill": "txt:x {<} 4|4 n’est pas compris", "def": "Sans l’égalité : « strictement plus petit » veut dire < (le nombre n’est pas compris).", "man": "a < b : a strictement inférieur à b ; a > b : a strictement supérieur à b.", "ph": ["x < 4 : x est [[strictement]] inférieur à 4.", "Le prix doit être [[strictement]] plus petit que 100 €."] }
+ ]
+}

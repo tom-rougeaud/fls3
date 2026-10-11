@@ -1,0 +1,246 @@
+{
+ "id": "logique",
+ "annee": "1re",
+ "titre": "Logique et algorithmique",
+ "icone": "🧠",
+ "cat": "algo",
+ "domaine": "Algorithmique, programmation et raisonnement",
+ "intro": "Utiliser « et », « ou », « non », comprendre « si… alors », trouver un contre-exemple, et programmer avec des conditions et des listes.",
+ "objectifs": [
+  "Je sais **dire** si une proposition est vraie ou fausse.",
+  "Je sais **utiliser** les connecteurs et, ou, non (and, or, not en Python).",
+  "Je sais **distinguer** une implication et sa réciproque, et **trouver** un contre-exemple.",
+  "Je sais **parcourir** une liste en Python avec une boucle for."
+ ],
+ "situation": {
+  "metier": "🅿️ Gestion d’un parking",
+  "txt": [
+   "Un parking d’entreprise a une barrière automatique.",
+   "La barrière s’ouvre si le badge est valide et s’il reste au moins une place libre.",
+   "Le technicien doit écrire la condition dans le programme de la barrière."
+  ],
+  "question": "Comment écrire la condition d’ouverture de la barrière ?"
+ },
+ "cours": [
+  {
+   "titre": "Proposition vraie ou fausse",
+   "txt": [
+    "Une [[proposition]] est une phrase qui est soit vraie, soit fausse.",
+    "« 7 est un nombre pair » est une proposition fausse.",
+    "En Python, une condition vaut True (vrai) ou False (faux) : c’est un [[booléen|booleen]]."
+   ],
+   "man": [
+    "Une proposition est un énoncé mathématique auquel on peut attribuer une valeur de vérité : vrai ou faux.",
+    "En Python, les expressions de comparaison (==, <, >=…) renvoient un booléen : True ou False."
+   ],
+   "ex": [
+    "places > 0 vaut True s’il reste des places."
+   ],
+   "ill": "l3:console|>>> 7 % 2 == 0|False|>>> 3 < 5|True"
+  },
+  {
+   "titre": "Le connecteur « et »",
+   "txt": [
+    "« A [[et|connecteur-et]] B » est vrai seulement si A est vrai et B est vrai.",
+    "Si une des deux est fausse, « A et B » est faux.",
+    "En Python : and."
+   ],
+   "man": [
+    "La proposition « A et B » est vraie si et seulement si A et B sont vraies toutes les deux."
+   ],
+   "ex": [
+    "La barrière s’ouvre si badge_valide and places > 0."
+   ],
+   "ill": "l3:logic|et"
+  },
+  {
+   "titre": "Le connecteur « ou »",
+   "txt": [
+    "« A [[ou|connecteur-ou]] B » est vrai si au moins une des deux est vraie.",
+    "En maths, « ou » n’exclut pas les deux : si A et B sont vraies, « A ou B » est vrai.",
+    "En Python : or."
+   ],
+   "man": [
+    "La proposition « A ou B » est fausse si et seulement si A et B sont fausses toutes les deux (« ou » inclusif)."
+   ],
+   "ex": [
+    "L’alarme sonne si la porte est ouverte or un mouvement est détecté."
+   ],
+   "ill": "l3:logic|ou"
+  },
+  {
+   "titre": "La négation « non »",
+   "txt": [
+    "La [[négation|negation]] de A est « non A ». Elle est vraie quand A est fausse.",
+    "Non (x > 5) veut dire x ≤ 5.",
+    "En Python : not."
+   ],
+   "man": [
+    "La négation de « A et B » est « non A ou non B ». La négation de « A ou B » est « non A et non B »."
+   ],
+   "ex": [
+    "Le contraire de « le parking est plein » est « il reste au moins une place »."
+   ],
+   "ill": "l3:logic|non"
+  },
+  {
+   "titre": "Si… alors : l’implication",
+   "txt": [
+    "« Si A alors B » : chaque fois que A est vrai, B est vrai. C’est une [[implication]].",
+    "La [[réciproque|reciproque]] est « si B alors A ». Elle n’est pas toujours vraie.",
+    "Pour montrer qu’une phrase est fausse, il suffit d’un [[contre-exemple]]."
+   ],
+   "man": [
+    "L’implication « A ⇒ B » est fausse seulement si A est vraie et B fausse. Sa réciproque est « B ⇒ A ».",
+    "Un contre-exemple est un cas où A est vraie et B fausse."
+   ],
+   "ex": [
+    "« Si n est multiple de 6, alors n est pair » : vrai. Réciproque « si n est pair, alors n est multiple de 6 » : fausse (contre-exemple : 4)."
+   ],
+   "ill": "l3:logic|si"
+  },
+  {
+   "titre": "« Pour tout » et « il existe »",
+   "txt": [
+    "« [[Pour tout|quantificateur]] x, … » : c’est vrai pour tous les nombres, sans exception.",
+    "« Il existe x tel que … » : c’est vrai pour au moins un nombre.",
+    "Un seul contre-exemple suffit pour montrer qu’un « pour tout » est faux."
+   ],
+   "man": [
+    "Quantificateur universel : « pour tout x » ; quantificateur existentiel : « il existe x ». La négation de « pour tout x, P(x) » est « il existe x tel que non P(x) »."
+   ],
+   "ex": [
+    "« Pour tout x, x² ≥ x » est faux : pour x = 0,5, x² = 0,25 < 0,5."
+   ],
+   "ill": "l3:quantif|tout"
+  },
+  {
+   "titre": "Parcourir une liste",
+   "txt": [
+    "Une [[liste]] contient plusieurs valeurs : temp = [12, 15, 9, 18, 14].",
+    "for t in temp: prend chaque valeur de la liste, une par une.",
+    "Je peux compter, additionner ou chercher le plus grand."
+   ],
+   "man": [
+    "La boucle for x in L parcourt les éléments de la liste L. len(L) donne le nombre d’éléments, L.append(v) ajoute v à la fin."
+   ],
+   "ex": [
+    "Compter les températures supérieures à 13 : 15, 18 et 14 → 3 valeurs."
+   ],
+   "ill": "l3:liste|12,15,9,18"
+  }
+ ],
+ "methodes": [
+  {
+   "titre": "Évaluer une condition composée",
+   "etapes": [
+    "J’évalue chaque condition simple : vrai ou faux.",
+    "Avec and : vrai seulement si tout est vrai.",
+    "Avec or : vrai si au moins une est vraie.",
+    "Avec not : j’inverse."
+   ],
+   "exemple": {
+    "enonce": "badge = True et places = 0. **Détermine** la valeur de badge and places > 0.",
+    "ill": "l3:logic|et",
+    "etapes": [
+     { "t": "badge vaut True.", "c": "vrai" },
+     { "t": "places > 0 : 0 > 0.", "c": "faux" },
+     { "t": "vrai et faux.", "c": "False" }
+    ],
+    "reponse": "La condition vaut False : la barrière ne s’ouvre pas."
+   }
+  },
+  {
+   "titre": "Démontrer qu’une affirmation est fausse",
+   "etapes": [
+    "Je lis l’affirmation : « pour tout » ou « si… alors ».",
+    "Je cherche un exemple où la condition est vraie mais la conclusion est fausse.",
+    "Je vérifie mon contre-exemple par un calcul.",
+    "J’écris : « L’affirmation est fausse. Contre-exemple : … »."
+   ],
+   "exemple": {
+    "enonce": "« Pour tout nombre x, x² ≥ x. » **Montre** que c’est faux.",
+    "etapes": [
+     { "t": "J’essaie x = 0,5.", "c": "0,5² = 0,25" },
+     { "t": "Je compare.", "c": "0,25 < 0,5" }
+    ],
+    "reponse": "L’affirmation est fausse. Contre-exemple : x = 0,5."
+   }
+  },
+  {
+   "titre": "Compter les valeurs d’une liste qui vérifient une condition",
+   "outil": "Python",
+   "etapes": [
+    "Je crée un compteur à 0.",
+    "Je parcours la liste avec for.",
+    "Si la valeur vérifie la condition, j’ajoute 1 au compteur.",
+    "J’affiche le compteur après la boucle."
+   ],
+   "code": "temp = [12, 15, 9, 18, 14]\nc = 0\nfor t in temp:\n    if t > 13:\n        c = c + 1\nprint(c)",
+   "exemple": {
+    "enonce": "**Détermine** ce qu’affiche ce programme.",
+    "etapes": [
+     { "t": "12 > 13 ? non. 15 > 13 ? oui.", "c": "c = 1" },
+     { "t": "9 ? non. 18 ? oui.", "c": "c = 2" },
+     { "t": "14 ? oui.", "c": "c = 3" }
+    ],
+    "reponse": "Le programme affiche 3."
+   }
+  }
+ ],
+ "comprendre": [
+  { "t": "qcm", "txt": "A : « 4 est pair » (vrai). B : « 4 > 10 » (faux).", "q": "« A et B » est :", "o": ["faux", "vrai", "on ne peut pas savoir"], "a": 0, "exp": "Avec « et », il faut que les deux soient vraies. B est fausse." },
+  { "t": "qcm", "txt": "A : « 4 est pair » (vrai). B : « 4 > 10 » (faux).", "q": "« A ou B » est :", "o": ["vrai", "faux", "on ne peut pas savoir"], "a": 0, "exp": "Avec « ou », une seule vraie suffit." },
+  { "t": "qcm", "txt": "« x > 5 ».", "q": "Quelle est la négation ?", "o": ["x ≤ 5", "x < 5", "x > −5"], "a": 0, "exp": "Le contraire de « plus grand que 5 » est « inférieur ou égal à 5 »." },
+  { "t": "vf", "txt": "« Si un nombre est pair, alors il est multiple de 4. »", "q": "Cette phrase est vraie.", "a": false, "exp": "Contre-exemple : 6 est pair mais n’est pas multiple de 4." },
+  { "t": "qcm", "txt": "En Python : x = 7.", "q": "Que vaut x > 3 and x < 5 ?", "o": ["False", "True", "7"], "a": 0, "exp": "7 > 3 est vrai mais 7 < 5 est faux : and donne False." },
+  { "t": "question", "txt": ["La barrière s’ouvre si le badge est valide.", "Il faut aussi au moins une place libre.", "Quelle condition faut-il écrire dans le programme ?"], "q": "Touche la phrase qui est la question.", "a": 2, "exp": "La question finit par « ? »." },
+  { "t": "donnees", "txt": "Une liste contient 5 notes : 12, 8, 15, 9, 16. Le contrôle a duré 2 heures. Combien de notes sont au moins égales à 10 ?", "q": "Touche les notes au moins égales à 10.", "a": ["12", "15", "16"], "exp": "12, 15 et 16 sont ≥ 10 : il y en a 3." },
+  { "t": "ordre", "q": "Remets la phrase dans l’ordre.", "phrase": "Un seul contre-exemple suffit pour montrer que c’est faux." }
+ ],
+ "brevet": [
+  {
+   "id": "lo-b1",
+   "titre": "La barrière du parking",
+   "fig": "l3:py|def ouvrir(badge, places):|··if badge and places > 0:|····return \"ouverte\"|··else:|····return \"fermée\"",
+   "ctx": ["Le programme de la barrière utilise cette fonction.", "badge vaut True si le badge est valide, False sinon. places est le nombre de places libres."],
+   "qs": [
+    { "q": "Que renvoie ouvrir(True, 12) ?", "type": "qcm", "o": ["ouverte", "fermée", "True"], "a": 0, "aide": ["badge est vrai et 12 > 0 est vrai."], "corr": ["True and True → vrai : on renvoie « ouverte »."], "rep": "ouvrir(True, 12) renvoie « ouverte »." },
+    { "q": "Que renvoie ouvrir(True, 0) ?", "type": "qcm", "o": ["fermée", "ouverte", "0"], "a": 0, "aide": ["0 > 0 est faux."], "corr": ["True and False → faux : « fermée »."], "rep": "ouvrir(True, 0) renvoie « fermée » : le parking est plein." },
+    { "q": "Que renvoie ouvrir(False, 30) ?", "type": "qcm", "o": ["fermée", "ouverte", "30"], "a": 0, "aide": ["Le badge n’est pas valide."], "corr": ["False and True → faux : « fermée »."], "rep": "ouvrir(False, 30) renvoie « fermée »." },
+    { "q": "Le directeur veut que la barrière s’ouvre toujours pour les véhicules de secours (secours = True). **Choisis** la nouvelle condition.", "type": "qcm", "o": ["(badge and places > 0) or secours", "badge and places > 0 and secours", "not secours"], "a": 0, "aide": ["La barrière s’ouvre dans le cas normal OU pour les secours."], "corr": ["« ou » : une des deux situations suffit."], "rep": "La condition est (badge and places > 0) or secours." }
+   ]
+  },
+  {
+   "id": "lo-b2",
+   "titre": "Vrai ou faux ?",
+   "ctx": ["Un professeur écrit trois affirmations au tableau."],
+   "qs": [
+    { "q": "Affirmation 1 : « Si un nombre est multiple de 6, alors il est pair. »", "type": "vf", "a": true, "aide": ["Un multiple de 6 s’écrit 6 × k = 2 × (3k)."], "corr": ["6k = 2 × 3k : c’est un multiple de 2, donc pair."], "rep": "L’affirmation 1 est vraie." },
+    { "q": "Affirmation 2 (la réciproque) : « Si un nombre est pair, alors il est multiple de 6. »", "type": "vf", "a": false, "aide": ["Je cherche un nombre pair qui n’est pas dans la table de 6."], "corr": ["Contre-exemple : 4 est pair mais n’est pas multiple de 6."], "rep": "L’affirmation 2 est fausse." },
+    { "q": "Affirmation 3 : « Pour tout x, x² ≥ x. » **Donne** un contre-exemple parmi ces nombres.", "type": "qcm", "o": ["0,5", "2", "−3"], "a": 0, "aide": ["Je calcule x² pour chaque nombre et je compare avec x."], "corr": ["0,5² = 0,25 < 0,5", "2² = 4 ≥ 2 ; (−3)² = 9 ≥ −3"], "rep": "x = 0,5 est un contre-exemple : l’affirmation 3 est fausse." }
+   ]
+  },
+  {
+   "id": "lo-b3",
+   "titre": "Les températures de la serre",
+   "fig": "l3:py|temp = [12, 15, 9, 18, 14]|s = 0|c = 0|for t in temp:|··s = s + t|··if t > 13:|····c = c + 1|print(s / len(temp), c)",
+   "ctx": ["Un horticulteur relève la température de sa serre (en °C) pendant 5 jours.", "Il écrit ce programme."],
+   "qs": [
+    { "q": "**Calcule** la valeur de s à la fin de la boucle.", "type": "num", "a": 68, "aide": ["s additionne toutes les températures."], "corr": ["12 + 15 + 9 + 18 + 14 = 68"], "rep": "À la fin, s = 68." },
+    { "q": "**Détermine** le premier nombre affiché.", "type": "num", "a": 13.6, "unit": "°C", "aide": ["len(temp) = 5.", "68 ÷ 5."], "corr": ["68 ÷ 5 = 13,6"], "rep": "Le premier nombre affiché est 13,6 : c’est la température moyenne." },
+    { "q": "**Détermine** le deuxième nombre affiché.", "type": "num", "a": 3, "aide": ["c compte les températures supérieures à 13."], "corr": ["15, 18 et 14 sont > 13 : c = 3"], "rep": "Le deuxième nombre affiché est 3 : trois jours à plus de 13 °C." }
+   ]
+  }
+ ],
+ "calc": ["lo-et-ou", "lo-contre", "lo-liste", "py-if"],
+ "mots": [
+  { "id": "proposition", "mot": "proposition", "art": "la", "g": "f", "cat": "algo", "ill": "l3:console|>>> 7 % 2 == 0|False", "def": "Une phrase qui est soit vraie, soit fausse.", "man": "Énoncé auquel on peut attribuer une valeur de vérité (vrai ou faux).", "vie": "une proposition : une idée que l’on propose (« J’ai une proposition à te faire »).", "ph": ["« 7 est pair » est une [[proposition]] fausse.", "La [[proposition]] « 3 < 5 » est vraie."] },
+  { "id": "booleen", "mot": "booléen", "art": "le", "g": "m", "cat": "algo", "ill": "l3:console|>>> 3 < 5|True", "def": "Une valeur qui vaut vrai (True) ou faux (False).", "man": "Type de donnée à deux valeurs : True, False ; résultat d’une comparaison ou d’une opération logique.", "ph": ["La variable badge est un [[booléen|booleen]].", "Une comparaison donne un [[booléen|booleen]] : True ou False."] },
+  { "id": "connecteur-et", "mot": "connecteur « et »", "art": "le", "g": "m", "cat": "algo", "ill": "l3:logic|et", "def": "« A et B » est vrai seulement si A et B sont vraies. En Python : and.", "man": "Conjonction : vraie si et seulement si les deux propositions sont vraies.", "ph": ["Avec le [[connecteur « et »|connecteur-et]], il faut que tout soit vrai.", "badge and places > 0 utilise le [[connecteur « et »|connecteur-et]]."] },
+  { "id": "connecteur-ou", "mot": "connecteur « ou »", "art": "le", "g": "m", "cat": "algo", "ill": "l3:logic|ou", "def": "« A ou B » est vrai si au moins une des deux est vraie. En Python : or.", "man": "Disjonction (inclusive) : fausse si et seulement si les deux propositions sont fausses.", "ph": ["Avec le [[connecteur « ou »|connecteur-ou]], une seule vraie suffit.", "L’alarme utilise le [[connecteur « ou »|connecteur-ou]]."] },
+  { "id": "negation", "mot": "négation", "art": "la", "g": "f", "cat": "algo", "ill": "l3:logic|non", "def": "Le contraire d’une proposition. En Python : not.", "man": "non A est vraie si et seulement si A est fausse ; non(A et B) = non A ou non B.", "ph": ["La [[négation|negation]] de x > 5 est x ≤ 5.", "not True donne False : c’est la [[négation|negation]]."] },
+  { "id": "implication", "mot": "implication", "art": "l’", "g": "f", "cat": "algo", "sym": "⇒", "ill": "l3:logic|si", "def": "Une phrase « si A alors B ».", "man": "A ⇒ B est fausse seulement lorsque A est vraie et B est fausse.", "vie": "l’implication : le fait de s’engager, de participer.", "ph": ["« Si n est multiple de 6 alors n est pair » est une [[implication]] vraie.", "La réciproque d’une [[implication]] n’est pas toujours vraie."] },
+  { "id": "quantificateur", "mot": "pour tout, il existe", "art": "", "g": "m", "cat": "algo", "ill": "l3:quantif|tout", "def": "« Pour tout » : sans exception. « Il existe » : au moins un.", "man": "Quantificateurs universel (∀) et existentiel (∃).", "ph": ["« [[Pour tout|quantificateur]] x, x² ≥ 0 » est vrai.", "« [[Il existe|quantificateur]] x tel que x² = 4 » est vrai : x = 2."] }
+ ]
+}

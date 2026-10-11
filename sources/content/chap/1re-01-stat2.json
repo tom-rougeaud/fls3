@@ -1,0 +1,232 @@
+{
+ "id": "stat2",
+ "annee": "1re",
+ "titre": "Statistique à deux variables",
+ "icone": "📉",
+ "cat": "donnees",
+ "domaine": "Statistique et probabilités",
+ "intro": "Représenter une série à deux variables par un nuage de points, trouver le point moyen et faire des prévisions avec une droite d’ajustement.",
+ "objectifs": [
+  "Je sais **représenter** une série à deux variables par un nuage de points.",
+  "Je sais **calculer** les coordonnées du point moyen.",
+  "Je sais **obtenir** une droite d’ajustement avec la calculatrice ou le tableur.",
+  "Je sais **faire** une prévision par interpolation ou extrapolation, et **critiquer** le résultat."
+ ],
+ "situation": {
+  "metier": "🍦 Vente et commerce",
+  "txt": [
+   "Un glacier note chaque jour la température et le nombre de glaces vendues.",
+   "Quand il fait chaud, il vend plus de glaces. Il veut prévoir ses ventes pour commander les ingrédients.",
+   "La météo annonce 32 °C pour samedi."
+  ],
+  "question": "Combien de glaces peut-il prévoir de vendre samedi ?"
+ },
+ "cours": [
+  {
+   "titre": "Série statistique à deux variables",
+   "txt": [
+    "Pour chaque jour, je note deux nombres : la température x et les ventes y.",
+    "C’est une [[série à deux variables|serie-deux-variables]]. Je la range dans un tableau à deux lignes.",
+    "Je me demande : est-ce que y dépend de x ?"
+   ],
+   "man": [
+    "Une série statistique à deux variables est une liste de couples (xᵢ ; yᵢ) obtenus en observant deux caractères quantitatifs sur chaque individu."
+   ],
+   "ex": [
+    "Jour 1 : (18 ; 120). Jour 2 : (20 ; 140)…"
+   ],
+   "tab": [["Température x (°C)", "18", "20", "22", "26", "28", "30"], ["Ventes y", "120", "140", "160", "200", "215", "245"]],
+   "ill": "l3:tableau"
+  },
+  {
+   "titre": "Le nuage de points",
+   "txt": [
+    "Dans un repère, je place un point pour chaque couple (x ; y).",
+    "L’ensemble des points est le [[nuage de points|nuage-de-points]].",
+    "Si les points sont presque alignés, je peux tracer une droite qui passe près d’eux."
+   ],
+   "man": [
+    "Le nuage de points associé à la série est l’ensemble des points Mᵢ(xᵢ ; yᵢ) dans un repère orthogonal.",
+    "La forme du nuage indique si un ajustement affine est pertinent."
+   ],
+   "ex": [
+    "Les points des glaces sont presque alignés : un ajustement affine est adapté."
+   ],
+   "ill": "l3:nuage"
+  },
+  {
+   "titre": "Le point moyen",
+   "txt": [
+    "Le [[point moyen|point-moyen]] G a pour coordonnées : la moyenne des x et la moyenne des y.",
+    "On note G(x̄ ; ȳ).",
+    "La droite d’ajustement passe par G."
+   ],
+   "man": [
+    "Le point moyen du nuage est G(x̄ ; ȳ), où x̄ et ȳ sont les moyennes des valeurs xᵢ et yᵢ."
+   ],
+   "ex": [
+    "x̄ = (18 + 20 + 22 + 26 + 28 + 30) ÷ 6 = 24 ; ȳ = 1 080 ÷ 6 = 180. G(24 ; 180)."
+   ],
+   "ill": "l3:nuage|G"
+  },
+  {
+   "titre": "La droite d’ajustement",
+   "txt": [
+    "Une [[droite d’ajustement|droite-ajustement]] passe au plus près des points du nuage.",
+    "La calculatrice ou le tableur donne son équation : y = ax + b.",
+    "C’est la droite des « [[moindres carrés|moindres-carres]] »."
+   ],
+   "man": [
+    "La droite d’ajustement de y en x par la méthode des moindres carrés a pour équation y = ax + b ; ses coefficients sont donnés par la calculatrice (régression linéaire) ou le tableur (DROITEREG, courbe de tendance).",
+    "Elle passe par le point moyen G."
+   ],
+   "ex": [
+    "La calculatrice donne y = 10,09x − 62,14. Avec des coefficients arrondis : y ≈ 10,1x − 62,1."
+   ],
+   "ill": "l3:nuage|droite"
+  },
+  {
+   "titre": "Faire une prévision",
+   "txt": [
+    "Je remplace x par une valeur dans l’équation de la droite.",
+    "Si x est entre la plus petite et la plus grande valeur du tableau : c’est une [[interpolation]].",
+    "Si x est en dehors : c’est une [[extrapolation]]. Elle est moins sûre."
+   ],
+   "man": [
+    "Interpolation : estimation à l’intérieur de l’intervalle des valeurs observées. Extrapolation : estimation à l’extérieur, sous l’hypothèse que la tendance se maintient."
+   ],
+   "ex": [
+    "À 32 °C : y ≈ 10,1 × 32 − 62,1 ≈ 261 glaces (extrapolation)."
+   ],
+   "ill": "l3:nuage|extra"
+  },
+  {
+   "titre": "Un ajustement affine est-il adapté ?",
+   "txt": [
+    "Je regarde la forme du nuage.",
+    "Points presque alignés : la droite est adaptée.",
+    "Points en courbe ou dispersés partout : la droite n’est pas adaptée."
+   ],
+   "man": [
+    "Un ajustement affine est pertinent si le nuage a une forme allongée, proche d’une droite. Sinon, on cherche un autre modèle (exponentiel, polynôme…)."
+   ],
+   "ex": [
+    "Le nombre d’abonnés qui double chaque mois forme une courbe : un ajustement affine n’est pas adapté."
+   ],
+   "ill": "l3:nuage|courbe"
+  }
+ ],
+ "methodes": [
+  {
+   "titre": "Calculer le point moyen",
+   "etapes": [
+    "J’additionne toutes les valeurs de x, je divise par le nombre de points : c’est x̄.",
+    "Je fais pareil avec les valeurs de y : c’est ȳ.",
+    "J’écris G(x̄ ; ȳ) et je le place dans le repère."
+   ],
+   "exemple": {
+    "enonce": "Pièces fabriquées x : 10 ; 20 ; 30 ; 40 ; 50. Temps y (min) : 20 ; 28 ; 37 ; 44 ; 52. **Calcule** les coordonnées du point moyen.",
+    "etapes": [
+     { "t": "Moyenne des x.", "c": "150 ÷ 5 = 30" },
+     { "t": "Moyenne des y.", "c": "181 ÷ 5 = 36,2" }
+    ],
+    "reponse": "Le point moyen est G(30 ; 36,2)."
+   }
+  },
+  {
+   "titre": "Obtenir la droite d’ajustement",
+   "outil": "Calculatrice ou tableur",
+   "etapes": [
+    "Je saisis les x dans une liste (ou une colonne) et les y dans une autre.",
+    "Calculatrice : menu Statistiques, puis « régression linéaire » (y = ax + b).",
+    "Tableur : je sélectionne le nuage, j’ajoute une courbe de tendance linéaire et j’affiche l’équation.",
+    "J’arrondis a et b comme demandé."
+   ],
+   "exemple": {
+    "enonce": "Avec les données des glaces, **donne** l’équation de la droite d’ajustement, coefficients arrondis au dixième.",
+    "ill": "l3:nuage|droite",
+    "etapes": [
+     { "t": "La calculatrice affiche :", "c": "a ≈ 10,089 ; b ≈ −62,143" },
+     { "t": "J’arrondis au dixième.", "c": "a ≈ 10,1 ; b ≈ −62,1" }
+    ],
+    "reponse": "Une équation de la droite d’ajustement est y = 10,1x − 62,1."
+   }
+  },
+  {
+   "titre": "Prévoir avec la droite",
+   "etapes": [
+    "Je repère la valeur connue : x ou y.",
+    "Si je connais x, je calcule y = ax + b.",
+    "Si je connais y, je résous ax + b = y.",
+    "Je dis si c’est une interpolation ou une extrapolation, et je réponds avec une phrase."
+   ],
+   "exemple": {
+    "enonce": "Avec y = 10,1x − 62,1, **estime** la température pour vendre 300 glaces. **Arrondis** au dixième.",
+    "etapes": [
+     { "t": "J’écris l’équation.", "c": "10,1x − 62,1 = 300" },
+     { "t": "Je résous.", "c": "x = 362,1 ÷ 10,1 ≈ 35,9" }
+    ],
+    "reponse": "Il faudrait environ 35,9 °C pour vendre 300 glaces (extrapolation, à prendre avec prudence)."
+   }
+  }
+ ],
+ "comprendre": [
+  { "t": "qcm", "txt": "On note la taille x et la pointure y de 30 élèves.", "q": "C’est :", "o": ["une série à deux variables", "une série à une variable", "une seule valeur"], "a": 0, "exp": "Pour chaque élève, on note deux nombres : c’est une série à deux variables." },
+  { "t": "qcm", "txt": "x : 2 ; 4 ; 6. y : 10 ; 14 ; 21.", "q": "Quelles sont les coordonnées du point moyen ?", "o": ["G(4 ; 15)", "G(6 ; 21)", "G(4 ; 14)"], "a": 0, "exp": "x̄ = 12 ÷ 3 = 4 ; ȳ = 45 ÷ 3 = 15." },
+  { "t": "vf", "txt": "La droite d’ajustement est obtenue par la méthode des moindres carrés.", "q": "Elle passe par le point moyen G.", "a": true, "exp": "La droite des moindres carrés passe toujours par le point moyen G(x̄ ; ȳ)." },
+  { "t": "qcm", "txt": "Les températures du tableau vont de 18 °C à 30 °C. On fait une prévision pour 25 °C.", "q": "C’est :", "o": ["une interpolation", "une extrapolation", "un point moyen"], "a": 0, "exp": "25 °C est entre 18 °C et 30 °C : c’est une interpolation." },
+  { "t": "qcm", "txt": "Les points d’un nuage forment une courbe qui monte de plus en plus vite.", "q": "Un ajustement affine est-il adapté ?", "o": ["Non, les points ne sont pas alignés", "Oui, toujours", "Oui, car les points montent"], "a": 0, "exp": "Un ajustement affine demande des points presque alignés." },
+  { "t": "question", "txt": ["Un glacier note la température et ses ventes.", "La droite d’ajustement est y = 10,1x − 62,1.", "Combien de glaces peut-il vendre à 32 °C ?"], "q": "Touche la phrase qui est la question.", "a": 2, "exp": "La question finit par « ? »." },
+  { "t": "donnees", "txt": "La droite d’ajustement est y = 2,5x + 40. Le relevé a été fait pendant 12 semaines. Estime y pour x = 20.", "q": "Touche les trois données utiles.", "a": ["2,5", "40", "20"], "exp": "y = 2,5 × 20 + 40 = 90. Les 12 semaines ne servent pas." },
+  { "t": "ordre", "q": "Remets la phrase dans l’ordre.", "phrase": "La droite d’ajustement passe par le point moyen." }
+ ],
+ "brevet": [
+  {
+   "id": "s2-b1",
+   "titre": "Les glaces de l’été",
+   "tab": [["Température x (°C)", "18", "20", "22", "26", "28", "30"], ["Ventes y", "120", "140", "160", "200", "215", "245"]],
+   "fig": "l3:nuage|droite",
+   "ctx": ["Un glacier a noté la température et le nombre de glaces vendues pendant 6 jours.", "La calculatrice donne une droite d’ajustement : y = 10,1x − 62,1."],
+   "qs": [
+    { "q": "**Calcule** x̄, la température moyenne.", "type": "num", "a": 24, "unit": "°C", "aide": ["J’additionne les 6 températures, je divise par 6."], "corr": ["18 + 20 + 22 + 26 + 28 + 30 = 144", "144 ÷ 6 = 24"], "rep": "La température moyenne est 24 °C." },
+    { "q": "**Calcule** ȳ, le nombre moyen de glaces vendues.", "type": "num", "a": 180, "unit": "glaces", "aide": ["J’additionne les 6 ventes, je divise par 6."], "corr": ["120 + 140 + 160 + 200 + 215 + 245 = 1 080", "1 080 ÷ 6 = 180"], "rep": "Le nombre moyen de glaces vendues est 180." },
+    { "q": "**Estime** le nombre de glaces vendues pour 32 °C. **Arrondis** à l’unité.", "type": "num", "a": 261.1, "arr": 0, "unit": "glaces", "aide": ["Je remplace x par 32 dans y = 10,1x − 62,1."], "corr": ["10,1 × 32 − 62,1 = 323,2 − 62,1 = 261,1"], "rep": "Le glacier peut prévoir de vendre environ 261 glaces." },
+    { "q": "Cette prévision est :", "type": "qcm", "o": ["une extrapolation, car 32 °C est au-dessus de 30 °C", "une interpolation, car 32 °C est entre 18 °C et 30 °C", "une valeur exacte"], "a": 0, "aide": ["Les températures observées vont de 18 °C à 30 °C."], "corr": ["32 °C > 30 °C : on sort des valeurs observées."], "rep": "C’est une extrapolation : la prévision est moins sûre." }
+   ]
+  },
+  {
+   "id": "s2-b2",
+   "titre": "Le temps de fabrication",
+   "tab": [["Nombre de pièces x", "10", "20", "30", "40", "50"], ["Temps y (min)", "20", "28", "37", "44", "52"]],
+   "ctx": ["Dans un atelier, on mesure le temps nécessaire pour fabriquer des séries de pièces.", "Un ajustement affine donne : y = 0,8x + 12,2."],
+   "qs": [
+    { "q": "**Calcule** ȳ, le temps moyen.", "type": "num", "a": 36.2, "unit": "min", "aide": ["J’additionne les 5 temps, je divise par 5."], "corr": ["20 + 28 + 37 + 44 + 52 = 181", "181 ÷ 5 = 36,2"], "rep": "Le temps moyen est 36,2 minutes." },
+    { "q": "**Vérifie** : le point moyen G(30 ; 36,2) est sur la droite d’ajustement.", "type": "vf", "a": true, "aide": ["Je remplace x par 30 dans 0,8x + 12,2."], "corr": ["0,8 × 30 + 12,2 = 24 + 12,2 = 36,2 ✓"], "rep": "Oui, G est sur la droite d’ajustement." },
+    { "q": "**Estime** le temps pour fabriquer 75 pièces.", "type": "num", "a": 72.2, "unit": "min", "aide": ["y = 0,8 × 75 + 12,2."], "corr": ["0,8 × 75 = 60", "60 + 12,2 = 72,2"], "rep": "Il faut environ 72,2 minutes pour 75 pièces." },
+    { "q": "L’atelier a 1 h 30 min. **Estime** le nombre maximal de pièces. **Arrondis** à l’unité inférieure.", "type": "num", "a": 97, "unit": "pièces", "aide": ["1 h 30 min = 90 min.", "Je résous 0,8x + 12,2 = 90."], "corr": ["0,8x = 77,8", "x = 77,8 ÷ 0,8 = 97,25", "Nombre entier de pièces : 97"], "rep": "L’atelier peut fabriquer environ 97 pièces." }
+   ]
+  },
+  {
+   "id": "s2-b3",
+   "titre": "Les abonnés de la boutique",
+   "fig": "l3:nuage|courbe",
+   "ctx": ["Une boutique en ligne compte ses abonnés (en centaines) chaque mois.", "Mois 0 : 20 ; mois 2 : 30 ; mois 4 : 50 ; mois 6 : 88.", "Le gérant veut tracer une droite pour prévoir les abonnés du mois 12."],
+   "qs": [
+    { "q": "Un ajustement affine est-il adapté ?", "type": "qcm", "o": ["Non, les points forment une courbe", "Oui, les points sont alignés", "Oui, car le nombre d’abonnés augmente"], "a": 0, "aide": ["Je regarde la forme du nuage."], "corr": ["Les points ne sont pas alignés : ils forment une courbe qui monte de plus en plus vite."], "rep": "Non, un ajustement affine n’est pas adapté." },
+    { "q": "**Calcule** le taux d’évolution du nombre d’abonnés entre le mois 4 et le mois 6, en %.", "type": "num", "a": 76, "unit": "%", "aide": ["Taux = (arrivée − départ) ÷ départ."], "corr": ["(88 − 50) ÷ 50 = 0,76 = 76 %"], "rep": "Entre le mois 4 et le mois 6, le nombre d’abonnés augmente de 76 %." }
+   ]
+  }
+ ],
+ "calc": ["s2-moyen", "s2-pred", "s2-inter", "s2-ajust"],
+ "mots": [
+  { "id": "serie-deux-variables", "mot": "série à deux variables", "art": "la", "g": "f", "cat": "donnees", "ill": "l3:tableau", "def": "Une liste de couples de nombres (x ; y) : deux nombres pour chaque individu.", "man": "Liste de couples (xᵢ ; yᵢ) issus de l’observation de deux caractères quantitatifs.", "ph": ["La température et les ventes forment une [[série à deux variables|serie-deux-variables]].", "Je représente la [[série à deux variables|serie-deux-variables]] par un nuage de points."] },
+  { "id": "nuage-de-points", "mot": "nuage de points", "art": "le", "g": "m", "cat": "donnees", "ill": "l3:nuage", "def": "Tous les points (x ; y) placés dans un repère.", "man": "Ensemble des points Mᵢ(xᵢ ; yᵢ) représentant une série à deux variables.", "vie": "un nuage dans le ciel.", "ph": ["Le [[nuage de points|nuage-de-points]] a une forme allongée.", "Je trace le [[nuage de points|nuage-de-points]] avec le tableur."] },
+  { "id": "point-moyen", "mot": "point moyen", "art": "le", "g": "m", "cat": "donnees", "sym": "G", "ill": "l3:nuage|G", "def": "Le point qui a pour coordonnées la moyenne des x et la moyenne des y.", "man": "G(x̄ ; ȳ) ; la droite des moindres carrés passe par G.", "ph": ["Le [[point moyen|point-moyen]] est G(24 ; 180).", "La droite passe par le [[point moyen|point-moyen]] G."] },
+  { "id": "droite-ajustement", "mot": "droite d’ajustement", "art": "la", "g": "f", "cat": "donnees", "ill": "l3:nuage|droite", "def": "Une droite qui passe au plus près des points du nuage.", "man": "Droite d’équation y = ax + b qui résume la tendance du nuage (méthode des moindres carrés).", "ph": ["La [[droite d’ajustement|droite-ajustement]] a pour équation y = 10,1x − 62,1.", "Avec la [[droite d’ajustement|droite-ajustement]], je fais une prévision."] },
+  { "id": "ajustement-affine", "mot": "ajustement affine", "art": "l’", "g": "m", "cat": "donnees", "ill": "l3:nuage|droite", "def": "Remplacer le nuage de points par une droite.", "man": "Modélisation de la relation entre x et y par une fonction affine y = ax + b.", "ph": ["Un [[ajustement affine|ajustement-affine]] est adapté quand les points sont presque alignés.", "L’[[ajustement affine|ajustement-affine]] permet de prévoir les ventes."] },
+  { "id": "moindres-carres", "mot": "méthode des moindres carrés", "art": "la", "g": "f", "cat": "donnees", "ill": "l3:calculatrice|y=ax+b|a≈10,1 b≈−62,1", "def": "La méthode de la calculatrice pour trouver la meilleure droite.", "man": "Méthode qui donne la droite minimisant la somme des carrés des écarts verticaux entre les points et la droite.", "ph": ["La calculatrice utilise la [[méthode des moindres carrés|moindres-carres]].", "Avec les [[moindres carrés|moindres-carres]], la droite passe par G."] },
+  { "id": "interpolation", "mot": "interpolation", "art": "l’", "g": "f", "cat": "donnees", "ill": "l3:nuage|droite", "def": "Une prévision pour une valeur de x à l’intérieur du tableau.", "man": "Estimation d’une valeur à l’intérieur de l’intervalle des valeurs observées.", "ph": ["Pour 25 °C, je fais une [[interpolation]].", "Une [[interpolation]] est assez fiable."] },
+  { "id": "extrapolation", "mot": "extrapolation", "art": "l’", "g": "f", "cat": "donnees", "ill": "l3:nuage|extra", "def": "Une prévision pour une valeur de x en dehors du tableau. Elle est moins sûre.", "man": "Estimation hors de l’intervalle des valeurs observées, en supposant que la tendance se poursuit.", "ph": ["Pour 32 °C, c’est une [[extrapolation]].", "Une [[extrapolation]] trop lointaine peut être fausse."] },
+  { "id": "prevision", "mot": "prévision", "art": "la", "g": "f", "cat": "donnees", "ill": "l3:nuage|extra", "def": "Une estimation de ce qui va se passer.", "man": "Valeur estimée à l’aide d’un modèle (droite d’ajustement, fonction…).", "vie": "la prévision météo : le temps qu’il fera demain.", "ph": ["Ma [[prévision|prevision]] est 261 glaces pour samedi.", "Je fais une [[prévision|prevision]] avec la droite d’ajustement."] }
+ ]
+}

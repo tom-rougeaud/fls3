@@ -1,0 +1,245 @@
+{
+ "id": "proba1",
+ "annee": "1re",
+ "titre": "Probabilités : tableaux croisés et événements",
+ "icone": "🎯",
+ "cat": "donnees",
+ "domaine": "Statistique et probabilités",
+ "intro": "Utiliser un tableau croisé ou un arbre, calculer la probabilité de « A et B », de « A ou B » et de l’événement contraire.",
+ "objectifs": [
+  "Je sais **lire** et **compléter** un tableau croisé d’effectifs.",
+  "Je sais **décrire** les événements A ∩ B, A ∪ B et Ā.",
+  "Je sais **calculer** P(A ∪ B) = P(A) + P(B) − P(A ∩ B).",
+  "Je sais **utiliser** un arbre pour une expérience à deux épreuves."
+ ],
+ "situation": {
+  "metier": "🚗 Commerce automobile",
+  "txt": [
+   "Une concession automobile a vendu 200 voitures cette année : des voitures neuves et des voitures d’occasion, à essence ou électriques.",
+   "Pour une enquête de satisfaction, on choisit un client au hasard parmi les 200.",
+   "Le directeur veut connaître la probabilité que ce client ait acheté une voiture électrique ou neuve."
+  ],
+  "question": "Comment calculer la probabilité de « électrique ou neuve » ?"
+ },
+ "cours": [
+  {
+   "titre": "Le tableau croisé",
+   "txt": [
+    "Un [[tableau croisé|tableau-croise]] range les individus selon deux caractères : un en ligne, un en colonne.",
+    "La dernière ligne et la dernière colonne donnent les totaux.",
+    "Je vérifie toujours : les totaux s’additionnent."
+   ],
+   "man": [
+    "Un tableau croisé d’effectifs (ou à double entrée) donne la répartition d’une population selon deux caractères. Les totaux sont les effectifs marginaux."
+   ],
+   "ex": [
+    "60 voitures sont neuves et électriques. 110 voitures sont neuves."
+   ],
+   "tab": [["", "Essence", "Électrique", "Total"], ["Neuf", "50", "60", "110"], ["Occasion", "70", "20", "90"], ["Total", "120", "80", "200"]],
+   "ill": "l3:tabcroise|1,2"
+  },
+  {
+   "titre": "Probabilité avec un tableau",
+   "txt": [
+    "On choisit un individu au hasard : tous ont la même chance.",
+    "P(A) = effectif de A ÷ effectif total.",
+    "Je lis l’effectif dans le tableau."
+   ],
+   "man": [
+    "En situation d’équiprobabilité sur une population d’effectif N : P(A) = n(A) ÷ N."
+   ],
+   "ex": [
+    "E : « la voiture est électrique ». P(E) = 80 ÷ 200 = 0,4."
+   ],
+   "ill": "l3:tabcroise|3,2"
+  },
+  {
+   "titre": "A et B : l’intersection",
+   "txt": [
+    "« A et B » : les deux événements arrivent en même temps.",
+    "On l’écrit A ∩ B. On lit « A [[inter|intersection]] B ».",
+    "Dans le tableau, c’est une case au croisement d’une ligne et d’une colonne."
+   ],
+   "man": [
+    "L’intersection A ∩ B est l’événement réalisé lorsque A et B sont réalisés simultanément."
+   ],
+   "ex": [
+    "N : « neuve ». E ∩ N : « électrique et neuve ». P(E ∩ N) = 60 ÷ 200 = 0,3."
+   ],
+   "ill": "l3:venn|inter"
+  },
+  {
+   "titre": "A ou B : la réunion",
+   "txt": [
+    "« A ou B » : au moins un des deux arrive (A, ou B, ou les deux).",
+    "On l’écrit A ∪ B. On lit « A [[union|reunion]] B ».",
+    "P(A ∪ B) = P(A) + P(B) − P(A ∩ B). J’enlève P(A ∩ B) car je l’ai compté deux fois."
+   ],
+   "man": [
+    "La réunion A ∪ B est réalisée lorsque A ou B (au moins l’un des deux) est réalisé : P(A ∪ B) = P(A) + P(B) − P(A ∩ B)."
+   ],
+   "ex": [
+    "P(E ∪ N) = 0,4 + 0,55 − 0,3 = 0,65."
+   ],
+   "ill": "l3:venn|union"
+  },
+  {
+   "titre": "Événements incompatibles",
+   "txt": [
+    "Deux événements sont [[incompatibles]] s’ils ne peuvent pas arriver en même temps.",
+    "Alors P(A ∩ B) = 0 et P(A ∪ B) = P(A) + P(B).",
+    "A et son contraire Ā sont incompatibles : P(Ā) = 1 − P(A)."
+   ],
+   "man": [
+    "A et B sont incompatibles si A ∩ B = ∅. Dans ce cas, P(A ∪ B) = P(A) + P(B)."
+   ],
+   "ex": [
+    "Une voiture ne peut pas être « essence » et « électrique » ici : ces événements sont incompatibles."
+   ],
+   "ill": "l3:venn|incompat"
+  },
+  {
+   "titre": "Expérience à deux épreuves : l’arbre",
+   "txt": [
+    "Je fais deux expériences l’une après l’autre.",
+    "Un [[arbre]] montre toutes les issues : chaque chemin est une issue.",
+    "Si toutes les issues ont la même chance, je compte les chemins."
+   ],
+   "man": [
+    "Pour une expérience à deux épreuves, l’arbre des possibles dénombre les issues. En équiprobabilité, P(A) = nombre de chemins favorables ÷ nombre total de chemins."
+   ],
+   "ex": [
+    "Deux questions à 3 réponses : 3 × 3 = 9 chemins. Une seule façon d’avoir les deux justes : P = {{1/9}}."
+   ],
+   "ill": "proba:arbre"
+  },
+  {
+   "titre": "« Au moins un »",
+   "txt": [
+    "« [[Au moins un|au-moins-un]] » veut dire : un ou plus.",
+    "Son contraire est « aucun ».",
+    "Souvent, je calcule P(aucun), puis P(au moins un) = 1 − P(aucun)."
+   ],
+   "man": [
+    "L’événement « au moins un » est le contraire de « aucun » : P(au moins un) = 1 − P(aucun)."
+   ],
+   "ex": [
+    "P(aucune réponse juste) = {{4/9}}. P(au moins une juste) = 1 − {{4/9}} = {{5/9}}."
+   ],
+   "ill": "l3:venn|contraire"
+  }
+ ],
+ "methodes": [
+  {
+   "titre": "Compléter un tableau croisé",
+   "etapes": [
+    "Je repère une ligne ou une colonne où il manque une seule case.",
+    "J’utilise le total : case manquante = total − les autres cases.",
+    "Je recommence jusqu’à remplir tout le tableau.",
+    "Je vérifie que le total général est juste."
+   ],
+   "exemple": {
+    "enonce": "Neuf : 110 voitures, dont 50 essence. Total électrique : 80. **Complète** : neuf électrique et occasion électrique.",
+    "ill": "l3:tabcroise|marge",
+    "etapes": [
+     { "t": "Ligne « neuf ».", "c": "110 − 50 = 60" },
+     { "t": "Colonne « électrique ».", "c": "80 − 60 = 20" }
+    ],
+    "reponse": "60 voitures neuves sont électriques et 20 voitures d’occasion sont électriques."
+   }
+  },
+  {
+   "titre": "Calculer P(A ∪ B)",
+   "etapes": [
+    "Je calcule P(A) et P(B).",
+    "Je calcule P(A ∩ B) avec la case commune.",
+    "J’applique : P(A ∪ B) = P(A) + P(B) − P(A ∩ B).",
+    "Je vérifie en comptant directement les individus de A ∪ B."
+   ],
+   "exemple": {
+    "enonce": "P(E) = 0,4 ; P(N) = 0,55 ; P(E ∩ N) = 0,3. **Calcule** P(E ∪ N).",
+    "etapes": [
+     { "t": "Formule.", "c": "0,4 + 0,55 − 0,3" },
+     { "t": "Résultat.", "c": "= 0,65" },
+     { "t": "Vérification : 60 + 20 + 50 = 130.", "c": "130 ÷ 200 = 0,65 ✓" }
+    ],
+    "reponse": "La probabilité que la voiture soit électrique ou neuve est 0,65."
+   }
+  },
+  {
+   "titre": "Utiliser un arbre",
+   "etapes": [
+    "Je dessine les branches de la première épreuve.",
+    "Au bout de chaque branche, je dessine les branches de la deuxième épreuve.",
+    "Je compte tous les chemins, puis les chemins favorables.",
+    "P = chemins favorables ÷ tous les chemins (si équiprobabilité)."
+   ],
+   "exemple": {
+    "enonce": "On lance deux fois une pièce. **Calcule** la probabilité d’obtenir au moins une fois « pile ».",
+    "ill": "proba:arbre",
+    "etapes": [
+     { "t": "Chemins : PP, PF, FP, FF.", "c": "4 chemins" },
+     { "t": "Aucun pile : FF.", "c": "P(aucun) = {{1/4}}" },
+     { "t": "Contraire.", "c": "1 − {{1/4}} = {{3/4}}" }
+    ],
+    "reponse": "La probabilité d’obtenir au moins une fois « pile » est {{3/4}}."
+   }
+  }
+ ],
+ "comprendre": [
+  { "t": "qcm", "txt": "A : « le client est majeur ». B : « le client a une carte de fidélité ».", "q": "Que veut dire A ∩ B ?", "o": ["Le client est majeur et a une carte", "Le client est majeur ou a une carte", "Le client n’est pas majeur"], "a": 0, "exp": "∩ veut dire « et » : les deux en même temps." },
+  { "t": "qcm", "txt": "P(A) = 0,5 ; P(B) = 0,3 ; P(A ∩ B) = 0,1.", "q": "Combien vaut P(A ∪ B) ?", "o": ["0,7", "0,8", "0,9"], "a": 0, "exp": "0,5 + 0,3 − 0,1 = 0,7." },
+  { "t": "vf", "txt": "On lance un dé. A : « obtenir 1 ». B : « obtenir 6 ».", "q": "A et B sont incompatibles.", "a": true, "exp": "On ne peut pas obtenir 1 et 6 en même temps avec un seul dé." },
+  { "t": "qcm", "txt": "Un tableau croisé a un total général de 250. Une case vaut 50.", "q": "Quelle est la probabilité de cette case ?", "o": ["0,2", "0,5", "5"], "a": 0, "exp": "50 ÷ 250 = 0,2." },
+  { "t": "qcm", "txt": "P(« aucun défaut ») = 0,92.", "q": "Que vaut P(« au moins un défaut ») ?", "o": ["0,08", "0,92", "1,92"], "a": 0, "exp": "« Au moins un » est le contraire de « aucun » : 1 − 0,92 = 0,08." },
+  { "t": "question", "txt": ["La concession a vendu 200 voitures.", "80 voitures sont électriques.", "Quelle est la probabilité de choisir une voiture électrique ?"], "q": "Touche la phrase qui est la question.", "a": 2, "exp": "La question finit par « ? »." },
+  { "t": "donnees", "txt": "Dans un lycée de 600 élèves, 240 font du sport et 150 font de la musique. 90 font les deux. Le lycée a 30 classes. Combien d’élèves font du sport ou de la musique ?", "q": "Touche les trois données utiles.", "a": ["240", "150", "90"], "exp": "240 + 150 − 90 = 300 élèves. Le nombre de classes ne sert pas." },
+  { "t": "ordre", "q": "Remets la phrase dans l’ordre.", "phrase": "La probabilité de choisir une voiture électrique est zéro virgule quatre." }
+ ],
+ "brevet": [
+  {
+   "id": "p1-b1",
+   "titre": "L’enquête de la concession",
+   "tab": [["", "Essence", "Électrique", "Total"], ["Neuf", "50", "…", "110"], ["Occasion", "70", "…", "…"], ["Total", "120", "80", "200"]],
+   "ctx": ["La concession a vendu 200 voitures. On choisit un client au hasard.", "E : « la voiture est électrique ». N : « la voiture est neuve »."],
+   "qs": [
+    { "q": "**Calcule** le nombre de voitures neuves électriques.", "type": "num", "a": 60, "unit": "voitures", "aide": ["Ligne « neuf » : 110 voitures, dont 50 essence."], "corr": ["110 − 50 = 60"], "rep": "60 voitures neuves sont électriques." },
+    { "q": "**Calcule** P(E).", "type": "num", "a": 0.4, "aide": ["80 voitures électriques sur 200."], "corr": ["80 ÷ 200 = 0,4"], "rep": "P(E) = 0,4." },
+    { "q": "**Calcule** P(E ∩ N).", "type": "num", "a": 0.3, "aide": ["E ∩ N : électrique et neuve. Je lis la case."], "corr": ["60 ÷ 200 = 0,3"], "rep": "P(E ∩ N) = 0,3." },
+    { "q": "**Calcule** P(E ∪ N), la probabilité que la voiture soit électrique ou neuve.", "type": "num", "a": 0.65, "aide": ["P(N) = 110 ÷ 200 = 0,55.", "P(E ∪ N) = P(E) + P(N) − P(E ∩ N)."], "corr": ["P(N) = 0,55", "0,4 + 0,55 − 0,3 = 0,65"], "rep": "La probabilité que la voiture soit électrique ou neuve est 0,65." }
+   ]
+  },
+  {
+   "id": "p1-b2",
+   "titre": "Le QCM au hasard",
+   "fig": "proba:arbre",
+   "ctx": ["Un test a 2 questions. Chaque question a 3 réponses possibles, une seule est juste.", "Un candidat répond au hasard aux deux questions."],
+   "qs": [
+    { "q": "Combien y a-t-il de façons de répondre aux deux questions ?", "type": "num", "a": 9, "unit": "chemins", "aide": ["3 réponses pour la question 1, puis 3 pour la question 2."], "corr": ["3 × 3 = 9"], "rep": "Il y a 9 façons de répondre." },
+    { "q": "**Calcule** la probabilité d’avoir les deux réponses justes. Écris-la sous forme de fraction.", "type": "frac", "a": "1/9", "irr": true, "aide": ["Un seul chemin : juste puis juste."], "corr": ["1 chemin favorable sur 9"], "rep": "La probabilité d’avoir deux réponses justes est {{1/9}}." },
+    { "q": "**Calcule** la probabilité de n’avoir aucune réponse juste. Écris-la sous forme de fraction.", "type": "frac", "a": "4/9", "irr": true, "aide": ["2 réponses fausses pour chaque question.", "2 × 2 chemins."], "corr": ["2 × 2 = 4 chemins sur 9"], "rep": "La probabilité de n’avoir aucune réponse juste est {{4/9}}." },
+    { "q": "**Déduis**-en la probabilité d’avoir au moins une réponse juste.", "type": "frac", "a": "5/9", "irr": true, "aide": ["« Au moins une » est le contraire de « aucune »."], "corr": ["1 − {{4/9}} = {{5/9}}"], "rep": "La probabilité d’avoir au moins une réponse juste est {{5/9}}." }
+   ]
+  },
+  {
+   "id": "p1-b3",
+   "titre": "Les défauts des pièces",
+   "ctx": ["Un contrôleur examine 500 pièces.", "40 pièces ont un défaut d’aspect (A). 25 pièces ont un défaut de dimension (D). 10 pièces ont les deux défauts.", "On choisit une pièce au hasard."],
+   "qs": [
+    { "q": "Les événements A et D sont-ils incompatibles ?", "type": "qcm", "o": ["Non, car 10 pièces ont les deux défauts", "Oui, car 40 ≠ 25", "Oui, car ce sont deux défauts différents"], "a": 0, "aide": ["Incompatibles : impossible en même temps."], "corr": ["10 pièces ont A et D : A ∩ D n’est pas vide."], "rep": "Non, A et D ne sont pas incompatibles." },
+    { "q": "**Calcule** P(A ∪ D), la probabilité qu’une pièce ait au moins un défaut.", "type": "num", "a": 0.11, "aide": ["P(A) = 40 ÷ 500 ; P(D) = 25 ÷ 500 ; P(A ∩ D) = 10 ÷ 500."], "corr": ["0,08 + 0,05 − 0,02 = 0,11"], "rep": "La probabilité qu’une pièce ait au moins un défaut est 0,11." },
+    { "q": "**Déduis**-en la probabilité qu’une pièce n’ait aucun défaut.", "type": "num", "a": 0.89, "aide": ["« Aucun défaut » est le contraire de « au moins un défaut »."], "corr": ["1 − 0,11 = 0,89"], "rep": "La probabilité qu’une pièce n’ait aucun défaut est 0,89." }
+   ]
+  }
+ ],
+ "calc": ["p1-tab", "p1-union", "p1-arbre", "fl-contraire"],
+ "mots": [
+  { "id": "tableau-croise", "mot": "tableau croisé", "art": "le", "g": "m", "cat": "donnees", "ill": "l3:tabcroise|1,2", "def": "Un tableau qui range les individus selon deux caractères, en lignes et en colonnes, avec les totaux.", "man": "Tableau à double entrée donnant les effectifs conjoints de deux caractères et les effectifs marginaux.", "ph": ["Je lis le [[tableau croisé|tableau-croise]] : 60 voitures sont neuves et électriques.", "Je complète le [[tableau croisé|tableau-croise]] avec les totaux."] },
+  { "id": "intersection", "mot": "intersection", "art": "l’", "g": "f", "cat": "donnees", "sym": "A ∩ B", "ill": "l3:venn|inter", "def": "« A et B » : les deux événements en même temps.", "man": "A ∩ B est réalisé lorsque A et B sont réalisés simultanément.", "vie": "une intersection : un carrefour, là où deux routes se croisent.", "ph": ["L’[[intersection]] E ∩ N : « électrique et neuve ».", "P de l’[[intersection]] se lit dans une case du tableau."] },
+  { "id": "reunion", "mot": "réunion", "art": "la", "g": "f", "cat": "donnees", "sym": "A ∪ B", "ill": "l3:venn|union", "def": "« A ou B » : au moins un des deux événements.", "man": "A ∪ B est réalisé lorsque A ou B (au moins l’un) est réalisé ; P(A ∪ B) = P(A) + P(B) − P(A ∩ B).", "vie": "une réunion : un rendez-vous de travail à plusieurs.", "ph": ["La [[réunion|reunion]] E ∪ N : « électrique ou neuve ».", "P de la [[réunion|reunion]] vaut 0,65."] },
+  { "id": "incompatibles", "mot": "événements incompatibles", "art": "les", "g": "m", "cat": "donnees", "ill": "l3:venn|incompat", "def": "Deux événements qui ne peuvent pas arriver en même temps.", "man": "A et B incompatibles : A ∩ B = ∅, donc P(A ∪ B) = P(A) + P(B).", "vie": "incompatible : qui ne va pas ensemble, par exemple deux rendez-vous à la même heure.", "ph": ["« Obtenir 1 » et « obtenir 6 » sont des [[événements incompatibles|incompatibles]].", "A et Ā sont toujours [[incompatibles]]."] },
+  { "id": "au-moins-un", "mot": "au moins un", "cat": "donnees", "ill": "l3:venn|contraire", "def": "Un ou plus. Le contraire est « aucun ».", "man": "P(au moins un) = 1 − P(aucun).", "ph": ["La probabilité d’avoir [[au moins une|au-moins-un]] réponse juste est {{5/9}}.", "[[Au moins un|au-moins-un]] défaut : c’est le contraire de « aucun défaut »."] },
+  { "id": "deux-epreuves", "mot": "expérience à deux épreuves", "art": "l’", "g": "f", "cat": "donnees", "ill": "proba:arbre", "def": "Deux expériences aléatoires faites l’une après l’autre.", "man": "Expérience composée de deux épreuves successives, représentée par un arbre.", "vie": "une épreuve : un examen, ou un moment difficile.", "ph": ["Lancer deux fois une pièce est une [[expérience à deux épreuves|deux-epreuves]].", "Pour une [[expérience à deux épreuves|deux-epreuves]], je dessine un arbre."] },
+  { "id": "ensemble-vide", "mot": "ensemble vide", "art": "l’", "g": "m", "cat": "donnees", "sym": "∅", "ill": "l3:venn|incompat", "def": "Un ensemble sans aucun élément. On l’écrit ∅.", "man": "A ∩ B = ∅ signifie que A et B n’ont aucune issue commune.", "ph": ["A ∩ B = ∅ : l’intersection est l’[[ensemble vide|ensemble-vide]].", "L’événement impossible correspond à l’[[ensemble vide|ensemble-vide]]."] }
+ ]
+}

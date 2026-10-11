@@ -1,0 +1,214 @@
+{
+ "id": "degre3",
+ "annee": "tle",
+ "titre": "Fonctions polynômes de degré 3",
+ "icone": "📦",
+ "cat": "fonction",
+ "domaine": "Algèbre et analyse",
+ "intro": "Dériver une fonction polynôme de degré 3, étudier le signe de sa dérivée et trouver un maximum pour optimiser une situation.",
+ "objectifs": [
+  "Je sais **calculer** la dérivée de ax³ + bx² + cx + d.",
+  "Je sais **étudier** le signe de la dérivée (polynôme du second degré).",
+  "Je sais **dresser** le tableau de variations et **trouver** les extremums.",
+  "Je sais **résoudre** un problème d’optimisation."
+ ],
+ "situation": {
+  "metier": "📦 Emballage",
+  "txt": [
+   "Une entreprise fabrique des boîtes sans couvercle à partir de plaques carrées de carton de 30 cm de côté.",
+   "Dans chaque coin, on découpe un carré de côté x cm, puis on plie les bords.",
+   "Le volume de la boîte est V(x) = x(30 − 2x)² = 4x³ − 120x² + 900x."
+  ],
+  "question": "Quelle valeur de x donne la boîte de plus grand volume ?"
+ },
+ "cours": [
+  {
+   "titre": "Fonction polynôme de degré 3",
+   "txt": [
+    "Une [[fonction polynôme de degré 3|polynome-degre3]] s’écrit f(x) = ax³ + bx² + cx + d, avec a ≠ 0.",
+    "La plus simple est la [[fonction cube|fonction-cube]] : f(x) = x³.",
+    "x³ = x × x × x. Le cube d’un nombre négatif est négatif."
+   ],
+   "man": [
+    "Une fonction polynôme de degré 3 est définie sur ℝ par f(x) = ax³ + bx² + cx + d, où a, b, c, d sont réels et a ≠ 0. La fonction cube x ↦ x³ est croissante sur ℝ."
+   ],
+   "ex": [
+    "(−2)³ = −8 ; 2³ = 8 ; 0,5³ = 0,125."
+   ],
+   "ill": "l3:cubique|cube"
+  },
+  {
+   "titre": "Dériver un polynôme de degré 3",
+   "txt": [
+    "La dérivée de x³ est 3x².",
+    "Donc la dérivée de ax³ + bx² + cx + d est 3ax² + 2bx + c.",
+    "La dérivée est un polynôme du second degré."
+   ],
+   "man": [
+    "(x³)′ = 3x² ; (x²)′ = 2x ; (x)′ = 1 ; (k)′ = 0. f′(x) = 3ax² + 2bx + c."
+   ],
+   "ex": [
+    "V(x) = 4x³ − 120x² + 900x → V′(x) = 12x² − 240x + 900."
+   ],
+   "ill": "txt:ax³ + bx² + cx + d|→ {3ax² + 2bx + c}"
+  },
+  {
+   "titre": "Signe de la dérivée",
+   "txt": [
+    "f′(x) est du second degré : je calcule son discriminant Δ.",
+    "Si Δ > 0 : f′ a deux racines. f′ a le signe de son coefficient 3a à l’extérieur des racines, le signe contraire entre.",
+    "Si Δ ≤ 0 : f′ garde le même signe (celui de 3a), sauf peut-être une valeur où elle vaut 0."
+   ],
+   "man": [
+    "Le signe de f′(x) = 3ax² + 2bx + c est donné par le signe d’un trinôme : signe de 3a à l’extérieur des racines, signe contraire entre les racines."
+   ],
+   "ex": [
+    "V′(x) = 12x² − 240x + 900 : Δ = 14 400, racines 5 et 15. V′ > 0 avant 5, V′ < 0 entre 5 et 15."
+   ],
+   "ill": "l3:tabder|0;5;15|+,−|0;2000;0|V"
+  },
+  {
+   "titre": "Maximum et minimum locaux",
+   "txt": [
+    "Quand f′ change de signe, la courbe fait une bosse ou un creux.",
+    "Bosse : [[maximum local|maximum-local]]. Creux : [[minimum local|minimum-local]].",
+    "« Local » veut dire : le plus haut (ou le plus bas) seulement autour de ce point."
+   ],
+   "man": [
+    "Si f′ s’annule en a en passant de + à −, f admet un maximum local en a ; de − à +, un minimum local."
+   ],
+   "ex": [
+    "f(x) = x³ − 3x : f′(x) = 3x² − 3, racines −1 et 1. Maximum local f(−1) = 2, minimum local f(1) = −2."
+   ],
+   "ill": "l3:cubique|local"
+  },
+  {
+   "titre": "Optimiser",
+   "txt": [
+    "[[Optimiser|optimiser]], c’est trouver la meilleure valeur : le plus grand volume, le plus petit coût…",
+    "J’écris la grandeur comme une fonction de x, sur un intervalle possible.",
+    "Avec la dérivée, je trouve le maximum ou le minimum."
+   ],
+   "man": [
+    "Problème d’optimisation : modéliser la grandeur par une fonction f sur un intervalle I, étudier ses variations, et déterminer son extremum sur I."
+   ],
+   "ex": [
+    "x = 5 cm : V(5) = 5 × 20² = 2 000 cm³, soit 2 L. C’est le volume maximal."
+   ],
+   "ill": "l3:cubique|boite"
+  }
+ ],
+ "methodes": [
+  {
+   "titre": "Étudier les variations d’un polynôme de degré 3",
+   "etapes": [
+    "Je calcule f′(x) = 3ax² + 2bx + c.",
+    "Je calcule Δ de f′ et ses racines.",
+    "Je fais le tableau de signes de f′.",
+    "J’en déduis les variations de f et je calcule les valeurs aux flèches."
+   ],
+   "exemple": {
+    "enonce": "f(x) = x³ − 3x sur [−2 ; 2]. **Dresse** le tableau de variations de f.",
+    "ill": "l3:tabder|−2;−1;1;2|+,−,+|−2;2;−2;2|f",
+    "etapes": [
+     { "t": "Dérivée.", "c": "f′(x) = 3x² − 3" },
+     { "t": "Racines de f′.", "c": "3x² = 3 → x = −1 ou x = 1" },
+     { "t": "Signe : + , − , +.", "c": "f(−2) = −2 ; f(−1) = 2 ; f(1) = −2 ; f(2) = 2" }
+    ],
+    "reponse": "f croît sur [−2 ; −1], décroît sur [−1 ; 1], croît sur [1 ; 2]."
+   }
+  },
+  {
+   "titre": "Résoudre un problème d’optimisation",
+   "etapes": [
+    "Je repère l’intervalle des valeurs possibles de x.",
+    "Je calcule la dérivée et je cherche où elle s’annule.",
+    "Je garde les solutions qui sont dans l’intervalle.",
+    "Je dresse le tableau de variations et je conclus avec une phrase."
+   ],
+   "exemple": {
+    "enonce": "V(x) = 4x³ − 120x² + 900x pour x dans [0 ; 15]. **Détermine** le volume maximal.",
+    "ill": "l3:boite",
+    "etapes": [
+     { "t": "Dérivée.", "c": "V′(x) = 12x² − 240x + 900" },
+     { "t": "Δ = 240² − 4 × 12 × 900 = 14 400.", "c": "x = (240 − 120) ÷ 24 = 5 ; x = (240 + 120) ÷ 24 = 15" },
+     { "t": "V′ > 0 sur [0 ; 5[, V′ < 0 sur ]5 ; 15[.", "c": "V(5) = 2 000" }
+    ],
+    "reponse": "Le volume maximal est 2 000 cm³, pour x = 5 cm."
+   }
+  },
+  {
+   "titre": "Vérifier avec la calculatrice",
+   "outil": "Calculatrice",
+   "etapes": [
+    "Je saisis la fonction.",
+    "Je règle la fenêtre selon l’intervalle de la situation.",
+    "J’utilise « maximum » ou « minimum ».",
+    "Je compare avec mon calcul."
+   ],
+   "exemple": {
+    "enonce": "**Vérifie** le maximum de V(x) = 4x³ − 120x² + 900x sur [0 ; 15].",
+    "ill": "l3:calculatrice|MAX x=5 y=2000",
+    "etapes": [
+     { "t": "Fenêtre : x de 0 à 15 ; y de 0 à 2 200.", "c": "" },
+     { "t": "Menu maximum.", "c": "x = 5 ; y = 2 000" }
+    ],
+    "reponse": "La calculatrice confirme : maximum 2 000 cm³ pour x = 5 cm."
+   }
+  }
+ ],
+ "comprendre": [
+  { "t": "qcm", "txt": "f(x) = x³.", "q": "Que vaut f(−3) ?", "o": ["−27", "27", "−9"], "a": 0, "exp": "(−3) × (−3) × (−3) = −27." },
+  { "t": "qcm", "txt": "f(x) = 2x³ − 5x² + x − 4.", "q": "Quelle est la dérivée ?", "o": ["6x² − 10x + 1", "6x² − 5x + 1", "2x² − 10x + 1"], "a": 0, "exp": "2x³ → 6x² ; −5x² → −10x ; x → 1 ; −4 → 0." },
+  { "t": "vf", "txt": "f′(x) passe de + à − en x = 3.", "q": "f a un maximum local en x = 3.", "a": true, "exp": "f croît puis décroît : il y a une bosse, donc un maximum local." },
+  { "t": "qcm", "txt": "f′(x) = 3x² + 6 (Δ < 0, coefficient 3 > 0).", "q": "Que peut-on dire de f ?", "o": ["f est croissante sur ℝ", "f est décroissante sur ℝ", "f a un maximum"], "a": 0, "exp": "f′(x) > 0 pour tout x : f est croissante." },
+  { "t": "qcm", "txt": "Pour une boîte, x est le côté du carré découpé dans un carton de 30 cm.", "q": "Quel intervalle est possible pour x ?", "o": ["[0 ; 15]", "[0 ; 30]", "[−15 ; 15]"], "a": 0, "exp": "On découpe 2x sur 30 cm : 2x ≤ 30, donc x ≤ 15. Et x ≥ 0." },
+  { "t": "question", "txt": ["On découpe un carré de x cm dans chaque coin.", "On plie les bords pour faire une boîte.", "Pour quelle valeur de x le volume est-il maximal ?"], "q": "Touche la phrase qui est la question.", "a": 2, "exp": "La question finit par « ? »." },
+  { "t": "donnees", "txt": "Le carton mesure 30 cm de côté et pèse 80 g. On découpe des carrés de 4 cm. Calcule le volume de la boîte.", "q": "Touche les deux données utiles.", "a": ["30", "4"], "exp": "V = 4 × (30 − 8)² = 1 936 cm³. La masse ne sert pas." },
+  { "t": "ordre", "q": "Remets la phrase dans l’ordre.", "phrase": "Le volume est maximal quand x vaut cinq centimètres." }
+ ],
+ "brevet": [
+  {
+   "id": "d3-b1",
+   "titre": "La boîte en carton",
+   "fig": "l3:boite",
+   "ctx": ["On découpe un carré de côté x cm dans chaque coin d’un carton carré de 30 cm, puis on plie.", "Le volume de la boîte est V(x) = 4x³ − 120x² + 900x, pour x dans [0 ; 15]."],
+   "qs": [
+    { "q": "**Calcule** V(2).", "type": "num", "a": 1352, "unit": "cm³", "aide": ["V(2) = 2 × (30 − 4)²."], "corr": ["2 × 26² = 2 × 676 = 1 352"], "rep": "Pour x = 2 cm, le volume est 1 352 cm³." },
+    { "q": "**Calcule** V′(x).", "type": "expr", "a": "12x^2-240x+900", "form": "red", "aide": ["(x³)′ = 3x² ; (x²)′ = 2x."], "corr": ["V′(x) = 12x² − 240x + 900"], "rep": "V′(x) = 12x² − 240x + 900." },
+    { "q": "**Calcule** la plus petite solution de V′(x) = 0.", "type": "num", "a": 5, "aide": ["Δ = 240² − 4 × 12 × 900 = 14 400 ; √Δ = 120.", "x = (240 − 120) ÷ 24."], "corr": ["x₁ = (240 − 120) ÷ 24 = 5", "x₂ = (240 + 120) ÷ 24 = 15"], "rep": "Les solutions sont 5 et 15 ; la plus petite est 5." },
+    { "q": "**Calcule** le volume maximal de la boîte.", "type": "num", "a": 2000, "unit": "cm³", "aide": ["V′ > 0 avant 5 et V′ < 0 après : le maximum est V(5)."], "corr": ["V(5) = 5 × (30 − 10)² = 5 × 400 = 2 000"], "rep": "Le volume maximal est 2 000 cm³, soit 2 L." }
+   ]
+  },
+  {
+   "id": "d3-b2",
+   "titre": "Le coût de production",
+   "ctx": ["Une entreprise fabrique x centaines d’objets, x entre 0 et 10.", "Le coût de production, en centaines d’euros, est C(x) = x³ − 12x² + 60x + 50."],
+   "qs": [
+    { "q": "**Calcule** C(2).", "type": "num", "a": 130, "aide": ["8 − 48 + 120 + 50."], "corr": ["2³ − 12 × 4 + 60 × 2 + 50 = 130"], "rep": "Pour 200 objets, le coût est 130 centaines d’euros, soit 13 000 €." },
+    { "q": "**Calcule** C′(x).", "type": "expr", "a": "3x^2-24x+60", "form": "red", "aide": ["x³ → 3x² ; −12x² → −24x ; 60x → 60."], "corr": ["C′(x) = 3x² − 24x + 60"], "rep": "C′(x) = 3x² − 24x + 60." },
+    { "q": "**Calcule** le discriminant de C′(x).", "type": "num", "a": -144, "aide": ["Δ = (−24)² − 4 × 3 × 60."], "corr": ["576 − 720 = −144"], "rep": "Δ = −144." },
+    { "q": "**Conclus** sur les variations de C.", "type": "qcm", "o": ["C est croissante sur [0 ; 10]", "C est décroissante sur [0 ; 10]", "C a un maximum"], "a": 0, "aide": ["Δ < 0 : C′ a le signe de 3, partout."], "corr": ["Δ < 0 et 3 > 0 : C′(x) > 0, C croissante."], "rep": "Le coût augmente toujours avec la production : C est croissante." }
+   ]
+  },
+  {
+   "id": "d3-b3",
+   "titre": "Le profil du toboggan",
+   "fig": "l3:cubique|local",
+   "ctx": ["Le profil d’un toboggan est donné par f(x) = x³ − 3x, pour x dans [−2 ; 2] (en mètres)."],
+   "qs": [
+    { "q": "**Calcule** f′(x).", "type": "expr", "a": "3x^2-3", "form": "red", "aide": ["(x³)′ = 3x² ; (−3x)′ = −3."], "corr": ["f′(x) = 3x² − 3"], "rep": "f′(x) = 3x² − 3." },
+    { "q": "**Résous** f′(x) = 0. **Donne** la solution positive.", "type": "num", "a": 1, "aide": ["3x² = 3, donc x² = 1."], "corr": ["x = −1 ou x = 1"], "rep": "f′(x) = 0 pour x = −1 et x = 1 ; la solution positive est 1." },
+    { "q": "**Calcule** la hauteur du point le plus haut entre −2 et 1 (maximum local en x = −1).", "type": "num", "a": 2, "unit": "m", "aide": ["Je calcule f(−1)."], "corr": ["(−1)³ − 3 × (−1) = −1 + 3 = 2"], "rep": "Le maximum local est 2 m." }
+   ]
+  }
+ ],
+ "calc": ["d3-cube", "de-deriv", "d3-extr", "d2-delta"],
+ "mots": [
+  { "id": "polynome-degre3", "mot": "fonction polynôme de degré 3", "art": "la", "g": "f", "cat": "fonction", "ill": "l3:cubique|local", "def": "Une fonction qui s’écrit ax³ + bx² + cx + d, avec a ≠ 0.", "man": "f(x) = ax³ + bx² + cx + d (a ≠ 0) ; f′(x) = 3ax² + 2bx + c.", "ph": ["V est une [[fonction polynôme de degré 3|polynome-degre3]].", "La dérivée d’une [[fonction de degré 3|polynome-degre3]] est du second degré."] },
+  { "id": "fonction-cube", "mot": "fonction cube", "art": "la", "g": "f", "cat": "fonction", "ill": "l3:cubique|cube", "def": "La fonction f(x) = x³.", "man": "x ↦ x³, définie et croissante sur ℝ ; (x³)′ = 3x².", "ph": ["Avec la [[fonction cube|fonction-cube]], l’image de 2 est 8.", "La [[fonction cube|fonction-cube]] est toujours croissante."] },
+  { "id": "maximum-local", "mot": "maximum local", "art": "le", "g": "m", "cat": "fonction", "ill": "l3:cubique|local", "def": "Le haut d’une bosse de la courbe.", "man": "f admet un maximum local en a si f(a) ≥ f(x) pour tout x proche de a.", "ph": ["f(−1) = 2 est un [[maximum local|maximum-local]].", "La dérivée passe de + à − au [[maximum local|maximum-local]]."] },
+  { "id": "minimum-local", "mot": "minimum local", "art": "le", "g": "m", "cat": "fonction", "ill": "l3:cubique|local", "def": "Le bas d’un creux de la courbe.", "man": "f admet un minimum local en a si f(a) ≤ f(x) pour tout x proche de a.", "ph": ["f(1) = −2 est un [[minimum local|minimum-local]].", "La dérivée passe de − à + au [[minimum local|minimum-local]]."] },
+  { "id": "optimiser", "mot": "optimiser", "cat": "fonction", "ill": "l3:cubique|boite", "f": { "c": "Optimise · Optimisez", "je": "j’optimise" }, "def": "Trouver la meilleure solution : le plus grand, le plus petit…", "man": "Déterminer la valeur de la variable qui rend une grandeur maximale ou minimale.", "ph": ["J’[[optimise|optimiser]] le volume de la boîte.", "Pour [[optimiser]], j’étudie les variations de la fonction."] }
+ ]
+}

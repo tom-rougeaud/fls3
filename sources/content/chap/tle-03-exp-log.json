@@ -1,0 +1,226 @@
+{
+ "id": "exp-log",
+ "annee": "tle",
+ "grp": ["A", "B"],
+ "titre": "Fonctions exponentielles et logarithme décimal",
+ "icone": "🔊",
+ "cat": "fonction",
+ "domaine": "Algèbre et analyse",
+ "intro": "Utiliser les fonctions x ↦ qˣ, le logarithme décimal et ses propriétés, résoudre qˣ = b et calculer un niveau sonore en décibels.",
+ "objectifs": [
+  "Je connais la fonction x ↦ qˣ et son sens de variation.",
+  "Je sais **utiliser** le logarithme décimal et ses propriétés.",
+  "Je sais **résoudre** une équation qˣ = b avec le logarithme.",
+  "Je sais **calculer** un niveau sonore en décibels."
+ ],
+ "situation": {
+  "metier": "🔧 Sécurité au travail",
+  "txt": [
+   "Dans un atelier de mécanique, une machine produit beaucoup de bruit.",
+   "Le niveau sonore se calcule avec L = 10 × log(I ÷ I₀), en décibels (dB). I est l’intensité sonore et I₀ = 10⁻¹² W/m².",
+   "La loi impose de porter un casque anti-bruit à partir de 85 dB."
+  ],
+  "question": "Avec une ou deux machines, faut-il porter un casque ?"
+ },
+ "cours": [
+  {
+   "titre": "La fonction x ↦ qˣ",
+   "txt": [
+    "Pour q > 0, la [[fonction exponentielle|fonction-exponentielle]] de base q est f(x) = qˣ.",
+    "Elle prolonge la suite géométrique : x peut être un nombre décimal.",
+    "Sa courbe passe toujours par le point (0 ; 1), car q⁰ = 1."
+   ],
+   "man": [
+    "Pour q > 0, la fonction x ↦ qˣ est définie sur ℝ, à valeurs strictement positives. qᵃ⁺ᵇ = qᵃ × qᵇ."
+   ],
+   "ex": [
+    "Concentration d’un médicament : C(t) = 20 × 0,8ᵗ. C(1,5) = 20 × 0,8¹·⁵ ≈ 14,3 mg/L."
+   ],
+   "ill": "l3:expo|2"
+  },
+  {
+   "titre": "Sens de variation",
+   "txt": [
+    "Si q > 1, x ↦ qˣ est croissante : [[croissance exponentielle|croissance-exponentielle]].",
+    "Si 0 < q < 1, x ↦ qˣ est décroissante : décroissance exponentielle.",
+    "Pour k > 0, x ↦ k × qˣ a le même sens de variation que qˣ."
+   ],
+   "man": [
+    "x ↦ qˣ est strictement croissante sur ℝ si q > 1, strictement décroissante si 0 < q < 1."
+   ],
+   "ex": [
+    "C(t) = 20 × 0,8ᵗ : 0,8 < 1, la concentration diminue."
+   ],
+   "ill": "l3:expo|0.5"
+  },
+  {
+   "titre": "Le logarithme décimal",
+   "txt": [
+    "Le [[logarithme décimal|logarithme-decimal]] de x, noté log x, répond à la question : 10 puissance combien donne x ?",
+    "log 10 = 1 ; log 100 = 2 ; log 1 000 = 3 ; log 1 = 0 ; log 0,01 = −2.",
+    "log x existe seulement pour x > 0."
+   ],
+   "man": [
+    "La fonction logarithme décimal est définie sur ]0 ; +∞[ ; pour x > 0, y = log x ⟺ 10ʸ = x. Elle est croissante. log(10ⁿ) = n."
+   ],
+   "ex": [
+    "log(10⁹) = 9."
+   ],
+   "ill": "l3:log"
+  },
+  {
+   "titre": "Les propriétés du logarithme",
+   "txt": [
+    "log(a × b) = log a + log b : un produit devient une somme.",
+    "log(a ÷ b) = log a − log b.",
+    "log(aⁿ) = n × log a."
+   ],
+   "man": [
+    "Pour a > 0, b > 0 et n réel : log(ab) = log a + log b ; log(a/b) = log a − log b ; log(aⁿ) = n log a."
+   ],
+   "ex": [
+    "log(2 × 10⁹) = log 2 + 9 ≈ 0,301 + 9 = 9,301."
+   ],
+   "ill": "txt:log(a × b)|= {log a + log b}"
+  },
+  {
+   "titre": "Résoudre qˣ = b",
+   "txt": [
+    "Je prends le log des deux côtés : log(qˣ) = log b.",
+    "Donc x × log q = log b.",
+    "x = log b ÷ log q."
+   ],
+   "man": [
+    "Pour q > 0, q ≠ 1 et b > 0 : qˣ = b ⟺ x = log b / log q. On résout de même qˣ > b en faisant attention au signe de log q."
+   ],
+   "ex": [
+    "0,8ᵗ = 0,25 → t = log 0,25 ÷ log 0,8 ≈ 6,2."
+   ],
+   "ill": "txt:qˣ = b|x = {log b ÷ log q}"
+  },
+  {
+   "titre": "Le niveau sonore en décibels",
+   "txt": [
+    "Le niveau sonore L, en [[décibels|decibel]], est L = 10 × log(I ÷ I₀).",
+    "Si l’intensité I est multipliée par 10, on ajoute 10 dB.",
+    "Si l’intensité I est multipliée par 2 (deux machines), on ajoute environ 3 dB."
+   ],
+   "man": [
+    "L = 10 log(I/I₀) avec I₀ = 10⁻¹² W/m². C’est une [[échelle logarithmique|echelle-logarithmique]] : 10 log(2I/I₀) = L + 10 log 2 ≈ L + 3 dB."
+   ],
+   "ex": [
+    "I = 10⁻³ W/m² : L = 10 × log(10⁹) = 90 dB."
+   ],
+   "ill": "l3:decibel"
+  }
+ ],
+ "methodes": [
+  {
+   "titre": "Calculer un niveau sonore",
+   "etapes": [
+    "Je calcule le rapport I ÷ I₀.",
+    "Je calcule le log de ce rapport (touche log).",
+    "Je multiplie par 10.",
+    "Je compare au seuil de 85 dB."
+   ],
+   "exemple": {
+    "enonce": "Une machine produit I = 10⁻³ W/m². **Calcule** le niveau sonore.",
+    "ill": "l3:decibel",
+    "etapes": [
+     { "t": "Rapport.", "c": "10⁻³ ÷ 10⁻¹² = 10⁹" },
+     { "t": "Log.", "c": "log(10⁹) = 9" },
+     { "t": "× 10.", "c": "L = 90 dB" }
+    ],
+    "reponse": "Le niveau sonore est 90 dB : il faut un casque."
+   }
+  },
+  {
+   "titre": "Résoudre qˣ = b",
+   "etapes": [
+    "J’isole qˣ : je divise par le nombre devant si besoin.",
+    "J’écris x = log b ÷ log q.",
+    "Je calcule à la calculatrice et j’arrondis.",
+    "Je vérifie en calculant q puissance x."
+   ],
+   "exemple": {
+    "enonce": "C(t) = 20 × 0,8ᵗ. **Résous** C(t) = 5. **Arrondis** au dixième.",
+    "etapes": [
+     { "t": "J’isole.", "c": "0,8ᵗ = 5 ÷ 20 = 0,25" },
+     { "t": "Logarithme.", "c": "t = log 0,25 ÷ log 0,8" },
+     { "t": "Calcul.", "c": "t ≈ 6,2" }
+    ],
+    "reponse": "La concentration est 5 mg/L au bout d’environ 6,2 heures."
+   }
+  },
+  {
+   "titre": "Utiliser les propriétés du log",
+   "etapes": [
+    "J’écris le nombre comme un produit ou une puissance.",
+    "Je transforme : produit → somme, quotient → différence, puissance → multiplication.",
+    "Je calcule."
+   ],
+   "exemple": {
+    "enonce": "**Calcule** log(5 000) en sachant que log 5 ≈ 0,699.",
+    "etapes": [
+     { "t": "5 000 = 5 × 10³.", "c": "" },
+     { "t": "log(5 × 10³) = log 5 + log 10³.", "c": "≈ 0,699 + 3" }
+    ],
+    "reponse": "log(5 000) ≈ 3,699."
+   }
+  }
+ ],
+ "comprendre": [
+  { "t": "qcm", "txt": "f(x) = 3ˣ.", "q": "Que vaut f(0) ?", "o": ["1", "0", "3"], "a": 0, "exp": "3⁰ = 1 : toute courbe y = qˣ passe par (0 ; 1)." },
+  { "t": "qcm", "txt": "g(x) = 0,6ˣ.", "q": "g est :", "o": ["décroissante", "croissante", "constante"], "a": 0, "exp": "0 < 0,6 < 1 : la fonction est décroissante." },
+  { "t": "qcm", "txt": "log(1 000).", "q": "Combien vaut-il ?", "o": ["3", "1 000", "30"], "a": 0, "exp": "10³ = 1 000, donc log 1 000 = 3." },
+  { "t": "vf", "txt": "log(2 × 5).", "q": "C’est égal à log 2 + log 5.", "a": true, "exp": "Le log d’un produit est la somme des log : log 2 + log 5 = log 10 = 1." },
+  { "t": "qcm", "txt": "Une machine fait 80 dB. On ajoute une deuxième machine identique.", "q": "Quel est le niveau sonore ?", "o": ["environ 83 dB", "160 dB", "80 dB"], "a": 0, "exp": "Intensité × 2 : + 10 log 2 ≈ + 3 dB." },
+  { "t": "question", "txt": ["La machine produit une intensité de 10⁻³ W/m².", "Le casque est obligatoire à partir de 85 dB.", "Le niveau sonore dépasse-t-il 85 dB ?"], "q": "Touche la phrase qui est la question.", "a": 2, "exp": "La question finit par « ? »." },
+  { "t": "donnees", "txt": "Une culture compte 1 000 bactéries. Leur nombre est multiplié par 1,5 chaque heure. Le laboratoire a 3 salles. Combien y a-t-il de bactéries après 4 heures ?", "q": "Touche les trois données utiles.", "a": ["1 000", "1,5", "4"], "exp": "1 000 × 1,5⁴ = 5 062,5. Les salles ne servent pas." },
+  { "t": "ordre", "q": "Remets la phrase dans l’ordre.", "phrase": "Le logarithme transforme un produit en somme." }
+ ],
+ "brevet": [
+  {
+   "id": "el-b1",
+   "titre": "Le bruit dans l’atelier",
+   "fig": "l3:decibel",
+   "ctx": ["Le niveau sonore est L = 10 × log(I ÷ I₀), avec I₀ = 10⁻¹² W/m².", "Une machine produit une intensité I = 10⁻³ W/m². Le casque est obligatoire à partir de 85 dB."],
+   "qs": [
+    { "q": "**Calcule** le rapport I ÷ I₀. Donne l’exposant n tel que I ÷ I₀ = 10ⁿ.", "type": "num", "a": 9, "aide": ["10⁻³ ÷ 10⁻¹² = 10⁻³⁺¹²."], "corr": ["10⁻³ ÷ 10⁻¹² = 10⁹"], "rep": "I ÷ I₀ = 10⁹." },
+    { "q": "**Calcule** le niveau sonore de la machine.", "type": "num", "a": 90, "unit": "dB", "aide": ["L = 10 × log(10⁹)."], "corr": ["log(10⁹) = 9", "L = 10 × 9 = 90"], "rep": "Le niveau sonore est 90 dB." },
+    { "q": "On met en marche une deuxième machine identique : l’intensité double. **Calcule** le nouveau niveau sonore. **Arrondis** à l’unité.", "type": "num", "a": 93.0103, "arr": 0, "unit": "dB", "aide": ["L = 10 × log(2 × 10⁹) = 10 × (log 2 + 9)."], "corr": ["10 × (0,301 + 9) ≈ 93,01"], "rep": "Avec deux machines, le niveau sonore est environ 93 dB." },
+    { "q": "Le casque est-il obligatoire avec une seule machine ?", "type": "qcm", "o": ["Oui, car 90 dB ≥ 85 dB", "Non, car 90 dB < 120 dB", "Non, il faut deux machines"], "a": 0, "aide": ["Je compare 90 dB et 85 dB."], "corr": ["90 ≥ 85 : casque obligatoire."], "rep": "Oui, le casque est obligatoire même avec une seule machine." }
+   ]
+  },
+  {
+   "id": "el-b2",
+   "titre": "La concentration du médicament",
+   "fig": "l3:expo|0.5",
+   "ctx": ["Après une injection, la concentration d’un médicament dans le sang est C(t) = 20 × 0,8ᵗ (en mg/L), t en heures.", "Le médicament n’agit plus quand la concentration est inférieure à 5 mg/L."],
+   "qs": [
+    { "q": "**Calcule** C(0).", "type": "num", "a": 20, "unit": "mg/L", "aide": ["0,8⁰ = 1."], "corr": ["C(0) = 20 × 1 = 20"], "rep": "Juste après l’injection, la concentration est 20 mg/L." },
+    { "q": "**Calcule** C(3). **Arrondis** au centième.", "type": "num", "a": 10.24, "arr": 2, "unit": "mg/L", "aide": ["C(3) = 20 × 0,8³."], "corr": ["0,8³ = 0,512", "20 × 0,512 = 10,24"], "rep": "Au bout de 3 heures, la concentration est 10,24 mg/L." },
+    { "q": "La fonction C est-elle croissante ou décroissante ?", "type": "qcm", "o": ["Décroissante, car 0 < 0,8 < 1", "Croissante, car 20 > 0", "Croissante, car 0,8 > 0"], "a": 0, "aide": ["Je regarde la base q = 0,8."], "corr": ["0 < q < 1 : décroissante."], "rep": "La concentration diminue avec le temps." },
+    { "q": "**Résous** C(t) = 5. **Arrondis** au dixième.", "type": "num", "a": 6.21256744, "arr": 1, "unit": "h", "aide": ["0,8ᵗ = 5 ÷ 20 = 0,25.", "t = log 0,25 ÷ log 0,8."], "corr": ["0,8ᵗ = 0,25", "t = log 0,25 ÷ log 0,8 ≈ 6,2"], "rep": "Le médicament n’agit plus au bout d’environ 6,2 heures." }
+   ]
+  },
+  {
+   "id": "el-b3",
+   "titre": "La culture de bactéries",
+   "fig": "l3:expo|1.5",
+   "ctx": ["Un laboratoire étudie une culture de bactéries.", "Le nombre de bactéries est N(t) = 1 000 × 1,5ᵗ, où t est le temps en heures."],
+   "qs": [
+    { "q": "**Calcule** le nombre de bactéries après 4 heures.", "type": "num", "a": 5062.5, "aide": ["N(4) = 1 000 × 1,5⁴."], "corr": ["1,5⁴ = 5,0625", "1 000 × 5,0625 = 5 062,5"], "rep": "Après 4 heures, il y a environ 5 063 bactéries." },
+    { "q": "**Détermine** au bout de combien de temps il y a 10 000 bactéries. **Arrondis** au dixième.", "type": "num", "a": 5.67887359, "arr": 1, "unit": "h", "aide": ["1,5ᵗ = 10.", "t = log 10 ÷ log 1,5 = 1 ÷ log 1,5."], "corr": ["1,5ᵗ = 10 000 ÷ 1 000 = 10", "t = 1 ÷ log 1,5 ≈ 5,7"], "rep": "Il y a 10 000 bactéries au bout d’environ 5,7 heures." }
+   ]
+  }
+ ],
+ "calc": ["el-expo", "el-log", "el-resol", "el-db"],
+ "mots": [
+  { "id": "fonction-exponentielle", "mot": "fonction exponentielle de base q", "art": "la", "g": "f", "cat": "fonction", "sym": "qˣ", "ill": "l3:expo|2", "def": "La fonction f(x) = qˣ, avec q > 0. Sa courbe passe par (0 ; 1).", "man": "x ↦ qˣ (q > 0) : croissante si q > 1, décroissante si 0 < q < 1 ; qᵃ⁺ᵇ = qᵃ × qᵇ.", "ph": ["C(t) = 20 × 0,8ᵗ utilise une [[fonction exponentielle|fonction-exponentielle]].", "La courbe d’une [[fonction exponentielle|fonction-exponentielle]] passe par (0 ; 1)."] },
+  { "id": "logarithme-decimal", "mot": "logarithme décimal", "art": "le", "g": "m", "cat": "fonction", "sym": "log", "ill": "l3:log", "def": "log x = l’exposant de 10 qui donne x. log 1 000 = 3.", "man": "Fonction définie sur ]0 ; +∞[ par y = log x ⟺ 10ʸ = x ; log(ab) = log a + log b.", "ph": ["Le [[logarithme décimal|logarithme-decimal]] de 100 est 2.", "J’utilise le [[logarithme|logarithme-decimal]] pour résoudre 0,8ᵗ = 0,25."] },
+  { "id": "decibel", "mot": "décibel", "art": "le", "g": "m", "cat": "mesure", "sym": "dB", "ill": "l3:decibel", "def": "L’unité du niveau sonore.", "man": "L = 10 log(I/I₀) en dB, avec I₀ = 10⁻¹² W/m² ; doubler l’intensité ajoute environ 3 dB.", "ph": ["La machine fait 90 [[décibels|decibel]].", "Au-dessus de 85 [[décibels|decibel]], il faut un casque."] },
+  { "id": "echelle-logarithmique", "mot": "échelle logarithmique", "art": "l’", "g": "f", "cat": "fonction", "ill": "l3:decibel", "def": "Une échelle où chaque pas multiplie la grandeur par 10.", "man": "Graduation proportionnelle au logarithme de la grandeur (décibels, pH, magnitude…).", "ph": ["Les décibels forment une [[échelle logarithmique|echelle-logarithmique]].", "Sur une [[échelle logarithmique|echelle-logarithmique]], + 10 dB = intensité × 10."] },
+  { "id": "decroissance-exponentielle", "mot": "décroissance exponentielle", "art": "la", "g": "f", "cat": "fonction", "ill": "l3:expo|0.5", "def": "Une diminution avec le même pourcentage à chaque fois : vite au début, puis lentement.", "man": "Évolution modélisée par x ↦ k × qˣ avec k > 0 et 0 < q < 1.", "ph": ["La concentration du médicament suit une [[décroissance exponentielle|decroissance-exponentielle]].", "Avec une [[décroissance exponentielle|decroissance-exponentielle]], la valeur ne devient jamais nulle."] }
+ ]
+}

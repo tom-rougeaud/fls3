@@ -1,0 +1,268 @@
+{
+ "id": "fonctions",
+ "annee": "2de",
+ "titre": "Fonctions",
+ "icone": "📈",
+ "cat": "fonction",
+ "domaine": "Algèbre et analyse",
+ "intro": "Calculer et lire des images, décrire les variations d’une fonction, résoudre graphiquement f(x) = k.",
+ "objectifs": [
+  "Je sais **calculer** l’image d’un nombre et **lire** une image sur une courbe.",
+  "Je sais **décrire** les variations d’une fonction avec un tableau de variations.",
+  "Je sais **trouver** le maximum et le minimum d’une fonction.",
+  "Je sais **résoudre** graphiquement une équation f(x) = k.",
+  "Je connais les fonctions affines et la fonction carré."
+ ],
+ "situation": {
+  "metier": "🪚 Menuiserie",
+  "txt": [
+   "Un atelier de menuiserie fabrique des tabourets. Il peut en fabriquer entre 0 et 20 par jour.",
+   "Le gérant calcule le bénéfice B(x) quand l’atelier fabrique x tabourets.",
+   "S’il fabrique trop peu, il perd de l’argent. S’il fabrique trop, il ne vend pas tout."
+  ],
+  "question": "Combien de tabourets faut-il fabriquer pour avoir le plus grand bénéfice ?"
+ },
+ "cours": [
+  {
+   "titre": "Une fonction, une image",
+   "txt": [
+    "Une [[fonction]] f donne à chaque nombre x un seul nombre : f(x).",
+    "f(x) est l’[[image]] de x. x est un [[antécédent|antecedent]] de f(x).",
+    "Les nombres x possibles forment l’[[ensemble de définition|ensemble-definition]]."
+   ],
+   "man": [
+    "Une fonction f définie sur un intervalle I associe à chaque réel x de I un unique réel f(x), appelé image de x.",
+    "Si f(a) = b, a est un antécédent de b. Un nombre peut avoir plusieurs antécédents."
+   ],
+   "ex": [
+    "B(x) = −2x² + 48x − 160 sur [0 ; 20]. B(10) = −200 + 480 − 160 = 120 : l’image de 10 est 120."
+   ],
+   "ill": "l3:fonction|image"
+  },
+  {
+   "titre": "La courbe représentative",
+   "txt": [
+    "Dans un repère, je place les points de coordonnées (x ; f(x)).",
+    "Tous ces points forment la [[courbe représentative|courbe-representative]] de f.",
+    "Pour lire l’image de x : je pars de x sur l’axe horizontal, je monte jusqu’à la courbe, je lis sur l’axe vertical."
+   ],
+   "man": [
+    "La courbe représentative de f est l’ensemble des points M(x ; f(x)) pour x dans l’ensemble de définition. On la note souvent 𝒞f.",
+    "Un point M(a ; b) est sur 𝒞f si et seulement si f(a) = b."
+   ],
+   "ex": [
+    "Le point (10 ; 120) est sur la courbe de B, car B(10) = 120."
+   ],
+   "ill": "l3:fonction|courbe"
+  },
+  {
+   "titre": "Croissante, décroissante",
+   "txt": [
+    "Quand x augmente, si f(x) augmente : f est [[croissante]]. La courbe monte.",
+    "Quand x augmente, si f(x) diminue : f est [[décroissante|decroissante]]. La courbe descend.",
+    "Je lis toujours la courbe de gauche à droite."
+   ],
+   "man": [
+    "f est croissante sur I si, pour tous a et b de I, a < b entraîne f(a) ≤ f(b).",
+    "f est décroissante sur I si a < b entraîne f(a) ≥ f(b)."
+   ],
+   "ex": [
+    "B est croissante sur [0 ; 12] et décroissante sur [12 ; 20]."
+   ],
+   "ill": "l3:fonction|croissante"
+  },
+  {
+   "titre": "Le tableau de variations",
+   "txt": [
+    "Un [[tableau de variations|tableau-variations]] résume la courbe.",
+    "Ligne du haut : les valeurs de x. Ligne du bas : des flèches qui montent ↗ ou descendent ↘.",
+    "Au bout des flèches, j’écris les valeurs de f(x)."
+   ],
+   "man": [
+    "Le tableau de variations indique les intervalles sur lesquels f est croissante ou décroissante, et les extremums."
+   ],
+   "ex": [
+    "B : de x = 0 à x = 12, ↗ de −160 à 128 ; de x = 12 à x = 20, ↘ de 128 à 0."
+   ],
+   "ill": "l3:tabvar|0,12,20|−160,128,0|B(x)"
+  },
+  {
+   "titre": "Maximum et minimum",
+   "txt": [
+    "Le [[maximum|maximum-f]] est la plus grande valeur de f(x). Il est en haut d’une bosse.",
+    "Le [[minimum|minimum-f]] est la plus petite valeur de f(x). Il est en bas d’un creux.",
+    "Je donne la valeur et je dis pour quel x elle est atteinte."
+   ],
+   "man": [
+    "f admet un maximum M sur I atteint en a si f(a) = M et f(x) ≤ M pour tout x de I. Même définition pour le minimum avec ≥."
+   ],
+   "ex": [
+    "Le maximum de B est 128, atteint pour x = 12 : 12 tabourets donnent le plus grand bénéfice."
+   ],
+   "ill": "l3:fonction|maximum"
+  },
+  {
+   "titre": "Résoudre graphiquement f(x) = k",
+   "txt": [
+    "Je trace la droite horizontale y = k.",
+    "Je cherche les points où cette droite coupe la courbe.",
+    "Les abscisses de ces points sont les solutions. Il peut y en avoir 0, 1 ou plusieurs."
+   ],
+   "man": [
+    "Les solutions de f(x) = k sont les abscisses des points d’intersection de 𝒞f et de la droite d’équation y = k."
+   ],
+   "ex": [
+    "B(x) = 0 : la courbe coupe l’axe des abscisses en x = 4 et x = 20."
+   ],
+   "ill": "l3:grapheq|2.4"
+  },
+  {
+   "titre": "Les fonctions affines",
+   "txt": [
+    "f(x) = ax + b : c’est une [[fonction affine|fonction-affine]]. Sa courbe est une droite.",
+    "a est le [[coefficient directeur|coefficient-directeur]] : si a > 0, f est croissante ; si a < 0, f est décroissante.",
+    "b est l’[[ordonnée à l’origine|ordonnee-a-l-origine]] : la droite coupe l’axe vertical en b."
+   ],
+   "man": [
+    "Une fonction affine est définie sur ℝ par f(x) = ax + b. Sa représentation graphique est une droite.",
+    "f est croissante si a > 0, décroissante si a < 0, constante si a = 0."
+   ],
+   "ex": [
+    "f(x) = 0,4x + 50 (tarif d’une location) : a = 0,4 > 0, f est croissante."
+   ],
+   "ill": "l3:affine|0.5|1"
+  },
+  {
+   "titre": "La fonction carré",
+   "txt": [
+    "La [[fonction carré|fonction-carre]] : f(x) = x². Sa courbe est une [[parabole]].",
+    "Elle est décroissante sur ]−∞ ; 0], puis croissante sur [0 ; +∞[.",
+    "Son minimum est 0, atteint pour x = 0. Un carré n’est jamais négatif."
+   ],
+   "man": [
+    "La fonction carré est définie sur ℝ par f(x) = x². Sa courbe est une parabole symétrique par rapport à l’axe des ordonnées.",
+    "Pour tout réel x, x² ≥ 0 ; (−x)² = x²."
+   ],
+   "ex": [
+    "(−3)² = 9 et 3² = 9 : 9 a deux antécédents, −3 et 3."
+   ],
+   "ill": "l3:carre"
+  }
+ ],
+ "methodes": [
+  {
+   "titre": "Calculer une image",
+   "etapes": [
+    "Je remplace x par le nombre dans l’expression de f(x).",
+    "Je mets des parenthèses si le nombre est négatif.",
+    "Je calcule en respectant les priorités : puissances, puis × et ÷, puis + et −."
+   ],
+   "exemple": {
+    "enonce": "B(x) = −2x² + 48x − 160. **Calcule** B(5).",
+    "etapes": [
+     { "t": "Je remplace x par 5.", "c": "B(5) = −2 × 5² + 48 × 5 − 160" },
+     { "t": "Je calcule la puissance.", "c": "= −2 × 25 + 240 − 160" },
+     { "t": "Je termine.", "c": "= −50 + 240 − 160 = 30" }
+    ],
+    "reponse": "B(5) = 30 : avec 5 tabourets, le bénéfice est 30 €."
+   }
+  },
+  {
+   "titre": "Lire graphiquement une image et des antécédents",
+   "etapes": [
+    "Image de a : je pars de a sur l’axe des abscisses, je vais jusqu’à la courbe, puis je lis l’ordonnée.",
+    "Antécédents de b : je pars de b sur l’axe des ordonnées, je trace l’horizontale, je lis les abscisses des points sur la courbe.",
+    "Je fais des pointillés et je regarde bien l’échelle."
+   ],
+   "exemple": {
+    "enonce": "La courbe donne la température d’un four (°C) en fonction du temps (min). **Lis** la température au bout de 10 min.",
+    "ill": "l3:plot|0,30,0,240,5,40,10,40|0:20;5:110;10:170;15:205;20:220;25:200;30:180|smooth,v=10,nx=t,ny=T",
+    "etapes": [
+     { "t": "Je pars de 10 sur l’axe horizontal.", "c": "" },
+     { "t": "Je monte jusqu’à la courbe, puis je vais vers l’axe vertical.", "c": "" },
+     { "t": "Je lis.", "c": "T(10) = 170" }
+    ],
+    "reponse": "Au bout de 10 minutes, la température du four est 170 °C."
+   }
+  },
+  {
+   "titre": "Dresser le tableau de variations à partir d’une courbe",
+   "etapes": [
+    "Je lis la courbe de gauche à droite.",
+    "Je note les x où la courbe change de sens (bosse ou creux), et les bornes.",
+    "Je dessine une flèche ↗ quand la courbe monte, ↘ quand elle descend.",
+    "J’écris les valeurs de f(x) au bout des flèches."
+   ],
+   "exemple": {
+    "enonce": "La courbe du four monte de t = 0 à t = 20, puis descend jusqu’à t = 30. **Dresse** le tableau de variations.",
+    "ill": "l3:tabvar|0,20,30|20,220,180|T(t)",
+    "etapes": [
+     { "t": "Valeurs de t : 0 ; 20 ; 30.", "c": "" },
+     { "t": "De 0 à 20 : ↗ de 20 à 220.", "c": "" },
+     { "t": "De 20 à 30 : ↘ de 220 à 180.", "c": "" }
+    ],
+    "reponse": "La température est maximale (220 °C) au bout de 20 minutes."
+   }
+  }
+ ],
+ "comprendre": [
+  { "t": "qcm", "txt": "f(x) = 3x − 4.", "q": "Quelle est l’image de 2 ?", "o": ["2", "−2", "10"], "a": 0, "exp": "f(2) = 3 × 2 − 4 = 6 − 4 = 2." },
+  { "t": "vf", "txt": "f(5) = 12.", "q": "5 est un antécédent de 12.", "a": true, "exp": "f(5) = 12 : 12 est l’image de 5, et 5 est un antécédent de 12." },
+  { "t": "qcm", "txt": "La courbe d’une fonction monte de x = −2 à x = 3, puis descend de x = 3 à x = 6.", "q": "Que peut-on dire ?", "o": ["f a un maximum en x = 3", "f a un minimum en x = 3", "f est croissante sur [3 ; 6]"], "a": 0, "exp": "La courbe monte puis descend : en x = 3, il y a une bosse, donc un maximum." },
+  { "t": "qcm", "txt": "f(x) = −2x + 7.", "q": "Cette fonction est :", "o": ["décroissante", "croissante", "constante"], "a": 0, "exp": "C’est une fonction affine avec a = −2 < 0 : elle est décroissante." },
+  { "t": "vf", "txt": "f(x) = x².", "q": "L’image de −4 est −16.", "a": false, "exp": "(−4)² = (−4) × (−4) = 16. Un carré n’est jamais négatif." },
+  { "t": "question", "txt": ["Le gérant fabrique entre 0 et 20 tabourets.", "Le bénéfice est B(x) = −2x² + 48x − 160.", "Quel est le bénéfice pour 10 tabourets ?"], "q": "Touche la phrase qui est la question.", "a": 2, "exp": "La question finit par « ? »." },
+  { "t": "donnees", "txt": "Un taxi coûte 4 € de prise en charge et 1,50 € par kilomètre. Le chauffeur travaille 8 heures. Exprime le prix P(x) pour x kilomètres.", "q": "Touche les deux données utiles.", "a": ["4", "1,50"], "exp": "P(x) = 1,5x + 4. La durée de travail ne sert pas." },
+  { "t": "ordre", "q": "Remets la phrase dans l’ordre.", "phrase": "Le bénéfice est maximal pour douze tabourets." }
+ ],
+ "brevet": [
+  {
+   "id": "fo-b1",
+   "titre": "Le bénéfice de l’atelier",
+   "fig": "l3:tabvar|0,12,20|−160,128,0|B(x)",
+   "ctx": ["Un atelier fabrique x tabourets par jour, avec x entre 0 et 20.", "Le bénéfice, en euros, est B(x) = −2x² + 48x − 160.", "Voici le tableau de variations de B."],
+   "qs": [
+    { "q": "**Calcule** B(10).", "type": "num", "a": 120, "unit": "€", "aide": ["Je remplace x par 10.", "−2 × 10² = −200."], "corr": ["B(10) = −2 × 10² + 48 × 10 − 160", "= −200 + 480 − 160 = 120"], "rep": "Avec 10 tabourets, le bénéfice est 120 €." },
+    { "q": "**Donne** le nombre de tabourets à fabriquer pour avoir le bénéfice maximal.", "type": "num", "a": 12, "unit": "tabourets", "aide": ["Je regarde le tableau : où est la plus grande valeur de B(x) ?"], "corr": ["La flèche monte jusqu’à x = 12, puis descend."], "rep": "Il faut fabriquer 12 tabourets." },
+    { "q": "**Donne** le bénéfice maximal.", "type": "num", "a": 128, "unit": "€", "aide": ["C’est la valeur en haut de la flèche."], "corr": ["Maximum : B(12) = 128"], "rep": "Le bénéfice maximal est 128 €." },
+    { "q": "On sait que B(4) = 0 et B(20) = 0. Pour quels nombres de tabourets l’atelier ne perd-il pas d’argent ?", "type": "qcm", "o": ["De 4 à 20 tabourets", "De 0 à 4 tabourets", "De 0 à 12 tabourets"], "a": 0, "aide": ["Je cherche les x pour lesquels B(x) ≥ 0."], "corr": ["B(x) ≥ 0 entre x = 4 et x = 20."], "rep": "L’atelier ne perd pas d’argent de 4 à 20 tabourets." }
+   ]
+  },
+  {
+   "id": "fo-b2",
+   "titre": "La cuisson au four",
+   "fig": "l3:plot|0,30,0,240,5,40,10,40|0:20;5:110;10:170;15:205;20:220;25:200;30:180|smooth,pts,nx=t,ny=T",
+   "ctx": ["Un pâtissier allume son four. La courbe donne la température T (en °C) en fonction du temps t (en minutes).", "À t = 20 min, il ouvre la porte pour enfourner un gâteau."],
+   "qs": [
+    { "q": "**Lis** la température du four à t = 5 min.", "type": "num", "a": 110, "unit": "°C", "aide": ["Je pars de 5 sur l’axe horizontal, je monte jusqu’à la courbe."], "corr": ["T(5) = 110"], "rep": "À 5 minutes, la température est 110 °C." },
+    { "q": "**Donne** la température maximale du four.", "type": "num", "a": 220, "unit": "°C", "aide": ["Je cherche le point le plus haut de la courbe."], "corr": ["Le point le plus haut est (20 ; 220)."], "rep": "La température maximale est 220 °C." },
+    { "q": "Sur quel intervalle la température diminue-t-elle ?", "type": "qcm", "o": ["[20 ; 30]", "[0 ; 20]", "[0 ; 30]"], "a": 0, "aide": ["Je cherche où la courbe descend."], "corr": ["La courbe descend de t = 20 à t = 30."], "rep": "La température diminue sur l’intervalle [20 ; 30]." },
+    { "q": "La recette dit : enfourner quand le four dépasse 200 °C. **Lis** le premier instant (parmi les points marqués) où T dépasse 200 °C.", "type": "num", "a": 15, "unit": "min", "aide": ["Je regarde les points marqués de gauche à droite."], "corr": ["T(10) = 170 ; T(15) = 205 > 200"], "rep": "Le four dépasse 200 °C à 15 minutes." }
+   ]
+  },
+  {
+   "id": "fo-b3",
+   "titre": "Le carrelage carré",
+   "ctx": ["Un carreleur pose des dalles carrées. Le côté d’une dalle mesure c mètres.", "L’aire d’une dalle est A(c) = c², en m².", "La pose coûte 35 € par m²."],
+   "qs": [
+    { "q": "**Calcule** l’aire d’une dalle de côté 1,2 m.", "type": "num", "a": 1.44, "unit": "m²", "aide": ["A(1,2) = 1,2²."], "corr": ["1,2² = 1,2 × 1,2 = 1,44"], "rep": "L’aire de la dalle est 1,44 m²." },
+    { "q": "**Calcule** le prix de la pose de cette dalle.", "type": "num", "a": 50.4, "unit": "€", "aide": ["35 € pour chaque m²."], "corr": ["1,44 × 35 = 50,4"], "rep": "La pose coûte 50,40 €." },
+    { "q": "Une autre dalle a une aire de 2,25 m². **Détermine** son côté.", "type": "num", "a": 1.5, "unit": "m", "aide": ["Je cherche c positif tel que c² = 2,25.", "J’utilise la racine carrée."], "corr": ["c² = 2,25", "c = √2,25 = 1,5 (c est une longueur, donc positive)"], "rep": "Le côté de la dalle est 1,5 m." }
+   ]
+  }
+ ],
+ "calc": ["fo-img", "fo-lect", "fo-var", "fo-graph", "fo-affine", "fo-carre"],
+ "mots": [
+  { "id": "courbe-representative", "mot": "courbe représentative", "art": "la", "g": "f", "cat": "fonction", "sym": "𝒞f", "ill": "l3:fonction|courbe", "def": "Le dessin de la fonction dans un repère : tous les points (x ; f(x)).", "man": "Ensemble des points M(x ; f(x)) du plan, pour x dans l’ensemble de définition de f.", "ph": ["Je trace la [[courbe représentative|courbe-representative]] de f.", "Le point (10 ; 120) est sur la [[courbe représentative|courbe-representative]] de B."] },
+  { "id": "ensemble-definition", "mot": "ensemble de définition", "art": "l’", "g": "m", "cat": "fonction", "ill": "l3:fonction|domaine", "def": "Tous les nombres x que l’on peut choisir pour la fonction.", "man": "Ensemble des réels x pour lesquels f(x) existe ; souvent un intervalle imposé par la situation.", "ph": ["L’[[ensemble de définition|ensemble-definition]] de B est [0 ; 20].", "On ne peut pas fabriquer −3 tabourets : −3 n’est pas dans l’[[ensemble de définition|ensemble-definition]]."] },
+  { "id": "croissante", "mot": "croissante", "cat": "fonction", "ill": "l3:fonction|croissante", "def": "Une fonction qui augmente : quand x augmente, f(x) augmente. La courbe monte.", "man": "f est croissante sur I si pour tous a < b dans I, f(a) ≤ f(b).", "vie": "« la lune croissante » : la lune qui grandit.", "ph": ["La fonction B est [[croissante]] sur [0 ; 12].", "Si a > 0, la fonction affine est [[croissante]]."] },
+  { "id": "decroissante", "mot": "décroissante", "cat": "fonction", "ill": "l3:fonction|decroissante", "def": "Une fonction qui diminue : quand x augmente, f(x) diminue. La courbe descend.", "man": "f est décroissante sur I si pour tous a < b dans I, f(a) ≥ f(b).", "ph": ["La température est [[décroissante|decroissante]] sur [20 ; 30].", "La fonction carré est [[décroissante|decroissante]] sur ]−∞ ; 0]."] },
+  { "id": "tableau-variations", "mot": "tableau de variations", "art": "le", "g": "m", "cat": "fonction", "ill": "l3:tabvar|0,12,20|−160,128,0|B(x)", "def": "Un tableau avec des flèches qui montrent quand la fonction monte ou descend.", "man": "Tableau donnant les intervalles de monotonie de f et ses extremums.", "ph": ["Je dresse le [[tableau de variations|tableau-variations]] de la fonction B.", "Dans le [[tableau de variations|tableau-variations]], la flèche monte jusqu’à 128."] },
+  { "id": "maximum-f", "mot": "maximum d’une fonction", "art": "le", "g": "m", "cat": "fonction", "ill": "l3:fonction|maximum", "def": "La plus grande valeur de f(x). Elle est en haut d’une bosse de la courbe.", "man": "M est le maximum de f sur I s’il existe a dans I tel que f(a) = M et f(x) ≤ M pour tout x de I.", "ph": ["Le [[maximum de la fonction|maximum-f]] B est 128, atteint pour x = 12.", "Je lis le [[maximum|maximum-f]] sur la courbe."] },
+  { "id": "minimum-f", "mot": "minimum d’une fonction", "art": "le", "g": "m", "cat": "fonction", "ill": "l3:fonction|minimum", "def": "La plus petite valeur de f(x). Elle est en bas d’un creux de la courbe.", "man": "m est le minimum de f sur I s’il existe a dans I tel que f(a) = m et f(x) ≥ m pour tout x de I.", "ph": ["Le [[minimum de la fonction|minimum-f]] carré est 0.", "Le [[minimum|minimum-f]] est atteint pour x = 3."] },
+  { "id": "fonction-carre", "mot": "fonction carré", "art": "la", "g": "f", "cat": "fonction", "ill": "l3:carre", "def": "La fonction qui donne le carré du nombre : f(x) = x².", "man": "Fonction définie sur ℝ par f(x) = x² ; décroissante sur ]−∞ ; 0], croissante sur [0 ; +∞[.", "ph": ["Avec la [[fonction carré|fonction-carre]], l’image de 3 est 9.", "La courbe de la [[fonction carré|fonction-carre]] est une parabole."] },
+  { "id": "parabole", "mot": "parabole", "art": "la", "g": "f", "cat": "fonction", "ill": "l3:carre", "def": "Une courbe en forme de U (ou de U à l’envers).", "man": "Courbe représentative d’une fonction polynôme du second degré ; elle a un axe de symétrie vertical.", "vie": "une antenne parabolique ; une parabole est aussi une petite histoire qui donne une leçon.", "ph": ["La courbe de x² est une [[parabole]].", "Le sommet de la [[parabole]] est en bas."] },
+  { "id": "resoudre-graphiquement", "mot": "résoudre graphiquement", "cat": "fonction", "ill": "l3:grapheq|2.4", "f": { "c": "Résous graphiquement · Résolvez graphiquement", "je": "je résous graphiquement" }, "def": "Trouver les solutions en lisant sur la courbe, pas en calculant.", "man": "Les solutions de f(x) = k sont les abscisses des points d’intersection de 𝒞f avec la droite d’équation y = k.", "ph": ["Je [[résous graphiquement|resoudre-graphiquement]] f(x) = 2 avec la droite y = 2.", "[[Résoudre graphiquement|resoudre-graphiquement]] l’équation B(x) = 0."] },
+  { "id": "variation", "mot": "sens de variation", "art": "le", "g": "m", "cat": "fonction", "ill": "l3:fonction|maximum", "def": "Si la fonction monte (croissante) ou descend (décroissante).", "man": "Étudier le sens de variation de f : déterminer les intervalles où f est croissante, décroissante.", "vie": "une variation : un changement, par exemple de météo.", "ph": ["Le [[sens de variation|variation]] de B change en x = 12.", "Le tableau donne le [[sens de variation|variation]] de la fonction."] }
+ ]
+}

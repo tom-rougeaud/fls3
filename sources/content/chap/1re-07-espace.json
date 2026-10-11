@@ -1,0 +1,228 @@
+{
+ "id": "espace",
+ "annee": "1re",
+ "titre": "Géométrie dans l’espace : positions, sections et calculs",
+ "icone": "📦",
+ "cat": "geometrie",
+ "domaine": "Géométrie",
+ "intro": "Reconnaître les positions de droites et de plans, trouver la forme d’une section, calculer une longueur dans l’espace, utiliser un agrandissement ou une réduction.",
+ "objectifs": [
+  "Je sais **reconnaître** des droites coplanaires, des plans parallèles, une droite perpendiculaire à un plan.",
+  "Je sais **donner** la forme de la section d’un solide par un plan.",
+  "Je sais **calculer** une longueur dans un solide avec Pythagore.",
+  "Je sais **utiliser** le coefficient k pour les longueurs, k² pour les aires, k³ pour les volumes."
+ ],
+ "situation": {
+  "metier": "📦 Logistique",
+  "txt": [
+   "Un magasinier doit ranger une barre de métal de 1,2 m dans une caisse.",
+   "La caisse est un pavé droit : 1 m de long, 0,6 m de large, 0,4 m de haut.",
+   "Posée à plat au fond de la caisse, la barre ne rentre pas."
+  ],
+  "question": "La barre peut-elle rentrer si on la met en diagonale dans la caisse ?"
+ },
+ "cours": [
+  {
+   "titre": "Droites et plans dans l’espace",
+   "txt": [
+    "Deux droites [[coplanaires]] sont dans un même plan. Elles sont parallèles ou sécantes.",
+    "Deux droites non coplanaires ne se coupent jamais, mais ne sont pas parallèles.",
+    "Deux [[plans parallèles|plans-paralleles]] n’ont aucun point commun (comme le sol et le plafond)."
+   ],
+   "man": [
+    "Deux droites de l’espace sont coplanaires (parallèles ou sécantes) ou non coplanaires.",
+    "Deux plans sont parallèles ou sécants ; deux plans sécants se coupent selon une droite."
+   ],
+   "ex": [
+    "Dans la caisse : le fond et le couvercle sont des plans parallèles."
+   ],
+   "ill": "l3:plans|paralleles"
+  },
+  {
+   "titre": "Droite perpendiculaire à un plan",
+   "txt": [
+    "Une droite est [[perpendiculaire à un plan|droite-perpendiculaire-plan]] si elle est perpendiculaire à toutes les droites du plan qui passent par son pied.",
+    "Exemple : un poteau vertical sur un sol horizontal.",
+    "Dans un pavé, chaque arête verticale est perpendiculaire au fond."
+   ],
+   "man": [
+    "Une droite est orthogonale à un plan si elle est orthogonale à deux droites sécantes de ce plan ; elle est alors orthogonale à toutes les droites du plan."
+   ],
+   "ex": [
+    "L’arête [AE] du pavé ABCDEFGH est perpendiculaire au plan (ABC)."
+   ],
+   "ill": "l3:plans|perp"
+  },
+  {
+   "titre": "Sections planes",
+   "txt": [
+    "Je coupe un solide avec un plan : la surface obtenue est une [[section]].",
+    "Pavé coupé parallèlement à une face : un rectangle. Cylindre coupé parallèlement à la base : un disque.",
+    "Une boule coupée par un plan : un disque."
+   ],
+   "man": [
+    "Section d’un pavé par un plan parallèle à une face : rectangle de mêmes dimensions que la face. Section d’un cylindre par un plan parallèle à l’axe : rectangle.",
+    "Section d’une boule de rayon R par un plan à la distance d du centre (d < R) : disque de rayon r tel que r² = R² − d²."
+   ],
+   "ex": [
+    "Un saucisson coupé en tranches : chaque tranche est un disque."
+   ],
+   "ill": "sol:section"
+  },
+  {
+   "titre": "Section d’une boule",
+   "txt": [
+    "Si le plan passe par le centre, la section est un [[grand cercle|grand-cercle]] : son rayon est R.",
+    "Sinon, le rayon r est plus petit. Je le calcule avec Pythagore : r² = R² − d².",
+    "d est la distance entre le centre et le plan."
+   ],
+   "man": [
+    "Si d = 0, la section est un grand cercle de rayon R. Si 0 < d < R, son rayon est r = √(R² − d²)."
+   ],
+   "ex": [
+    "Ballon de rayon 11 cm, plan à 6 cm du centre : r = √(121 − 36) = √85 ≈ 9,2 cm."
+   ],
+   "ill": "l3:sectsphere"
+  },
+  {
+   "titre": "Longueurs dans un pavé",
+   "txt": [
+    "Je cherche un triangle rectangle dans le solide.",
+    "Diagonale du fond : d² = L² + l².",
+    "[[Diagonale du pavé|diagonale-pave]] : D² = L² + l² + h²."
+   ],
+   "man": [
+    "Dans un pavé droit de dimensions L, l, h, la diagonale mesure D = √(L² + l² + h²) (théorème de Pythagore appliqué deux fois)."
+   ],
+   "ex": [
+    "Caisse 1 m × 0,6 m × 0,4 m : D = √(1 + 0,36 + 0,16) = √1,52 ≈ 1,23 m."
+   ],
+   "ill": "l3:pave|diag"
+  },
+  {
+   "titre": "Agrandissement et réduction",
+   "txt": [
+    "Une [[maquette]] est une réduction : toutes les longueurs sont multipliées par k (k < 1).",
+    "Les aires sont multipliées par k². Les volumes sont multipliés par k³.",
+    "Pour un agrandissement, k > 1."
+   ],
+   "man": [
+    "Dans un agrandissement ou une réduction de rapport k : longueurs × k, aires × k², volumes × k³."
+   ],
+   "ex": [
+    "Maquette à l’échelle {{1/40}} : un volume de 1 920 m³ devient 1 920 ÷ 40³ = 0,03 m³ = 30 L."
+   ],
+   "ill": "txt:longueurs × {k}|aires × {k²}|volumes × {k³}"
+  }
+ ],
+ "methodes": [
+  {
+   "titre": "Calculer la diagonale d’un pavé",
+   "etapes": [
+    "Je calcule la diagonale du fond avec Pythagore : d² = L² + l².",
+    "J’utilise le triangle rectangle formé par d, la hauteur h et la diagonale D.",
+    "D² = d² + h² = L² + l² + h².",
+    "Je prends la racine carrée."
+   ],
+   "exemple": {
+    "enonce": "Une caisse mesure 1 m × 0,6 m × 0,4 m. **Calcule** la longueur de sa diagonale. **Arrondis** au centième.",
+    "ill": "l3:pave|diag",
+    "etapes": [
+     { "t": "Diagonale du fond.", "c": "d² = 1² + 0,6² = 1,36" },
+     { "t": "Diagonale du pavé.", "c": "D² = 1,36 + 0,4² = 1,52" },
+     { "t": "Racine carrée.", "c": "D = √1,52 ≈ 1,23" }
+    ],
+    "reponse": "La diagonale de la caisse mesure environ 1,23 m."
+   }
+  },
+  {
+   "titre": "Utiliser le coefficient de réduction",
+   "etapes": [
+    "Je trouve k = longueur réduite ÷ longueur réelle.",
+    "Longueurs : × k. Aires : × k². Volumes : × k³.",
+    "Je fais attention aux unités."
+   ],
+   "exemple": {
+    "enonce": "Un hangar a un volume de 1 920 m³. Sa maquette est à l’échelle {{1/40}}. **Calcule** le volume de la maquette en litres.",
+    "etapes": [
+     { "t": "k³.", "c": "40³ = 64 000" },
+     { "t": "Volume de la maquette.", "c": "1 920 ÷ 64 000 = 0,03 m³" },
+     { "t": "En litres.", "c": "0,03 × 1 000 = 30 L" }
+    ],
+    "reponse": "Le volume de la maquette est 30 L."
+   }
+  },
+  {
+   "titre": "Calculer le rayon d’une section de boule",
+   "etapes": [
+    "Je repère le rayon R de la boule et la distance d du centre au plan.",
+    "J’écris r² = R² − d² (triangle rectangle).",
+    "Je calcule r = √(R² − d²)."
+   ],
+   "exemple": {
+    "enonce": "Une boule a un rayon de 10 cm. On la coupe à 6 cm du centre. **Calcule** le rayon de la section.",
+    "ill": "l3:sectsphere",
+    "etapes": [
+     { "t": "r² = 10² − 6².", "c": "= 100 − 36 = 64" },
+     { "t": "Racine carrée.", "c": "r = 8" }
+    ],
+    "reponse": "La section est un disque de rayon 8 cm."
+   }
+  }
+ ],
+ "comprendre": [
+  { "t": "qcm", "txt": "On coupe un cylindre par un plan parallèle à sa base.", "q": "Quelle est la forme de la section ?", "o": ["un disque", "un rectangle", "un triangle"], "a": 0, "exp": "Parallèlement à la base, on obtient un disque identique à la base." },
+  { "t": "qcm", "txt": "Dans une pièce, on regarde le sol et le plafond.", "q": "Ces deux plans sont :", "o": ["parallèles", "sécants", "perpendiculaires"], "a": 0, "exp": "Le sol et le plafond n’ont aucun point commun : ils sont parallèles." },
+  { "t": "vf", "txt": "Deux droites de l’espace ne se coupent pas.", "q": "Elles sont forcément parallèles.", "a": false, "exp": "Dans l’espace, deux droites peuvent ne pas se couper sans être parallèles : elles ne sont pas coplanaires." },
+  { "t": "qcm", "txt": "Une maquette est à l’échelle {{1/10}}.", "q": "Par quel nombre est divisé le volume ?", "o": ["1 000", "100", "10"], "a": 0, "exp": "Volumes × k³ : 10³ = 1 000." },
+  { "t": "qcm", "txt": "Un pavé mesure 3 m × 4 m × 12 m.", "q": "Combien mesure sa diagonale ?", "o": ["13 m", "19 m", "5 m"], "a": 0, "exp": "D² = 9 + 16 + 144 = 169, donc D = 13 m." },
+  { "t": "question", "txt": ["La caisse mesure 1 m × 0,6 m × 0,4 m.", "La barre mesure 1,2 m.", "La barre peut-elle rentrer dans la caisse ?"], "q": "Touche la phrase qui est la question.", "a": 2, "exp": "La question finit par « ? »." },
+  { "t": "donnees", "txt": "Un ballon a un rayon de 12 cm et pèse 450 g. On le coupe par un plan à 7 cm du centre. Calcule le rayon de la section.", "q": "Touche les deux données utiles.", "a": ["12", "7"], "exp": "r² = 12² − 7² = 95. La masse ne sert pas." },
+  { "t": "ordre", "q": "Remets la phrase dans l’ordre.", "phrase": "La section d’une boule par un plan est un disque." }
+ ],
+ "brevet": [
+  {
+   "id": "es-b1",
+   "titre": "La barre dans la caisse",
+   "fig": "l3:pave|diag",
+   "ctx": ["Une caisse est un pavé droit : 1 m de long, 0,6 m de large, 0,4 m de haut.", "Le magasinier veut ranger une barre de 1,2 m."],
+   "qs": [
+    { "q": "**Calcule** la diagonale du fond de la caisse. **Arrondis** au centième.", "type": "num", "a": 1.16619038, "arr": 2, "unit": "m", "aide": ["Le fond est un rectangle de 1 m sur 0,6 m.", "d² = 1² + 0,6²."], "corr": ["d² = 1 + 0,36 = 1,36", "d = √1,36 ≈ 1,17"], "rep": "La diagonale du fond mesure environ 1,17 m." },
+    { "q": "La barre peut-elle être posée à plat au fond de la caisse ?", "type": "qcm", "o": ["Non, car 1,17 m < 1,2 m", "Oui, car 1,17 m < 1,2 m", "Oui, car 1 m < 1,2 m"], "a": 0, "aide": ["La plus grande longueur à plat est la diagonale du fond."], "corr": ["1,17 m < 1,2 m : la barre est trop longue pour le fond."], "rep": "Non, la barre ne rentre pas à plat." },
+    { "q": "**Calcule** la diagonale de la caisse (du coin du bas au coin opposé du haut). **Arrondis** au centième.", "type": "num", "a": 1.23288280, "arr": 2, "unit": "m", "aide": ["D² = 1² + 0,6² + 0,4²."], "corr": ["D² = 1,36 + 0,16 = 1,52", "D = √1,52 ≈ 1,23"], "rep": "La diagonale de la caisse mesure environ 1,23 m." },
+    { "q": "**Conclus** : la barre peut-elle rentrer dans la caisse ?", "type": "qcm", "o": ["Oui, en diagonale, car 1,23 m > 1,2 m", "Non, jamais", "Oui, à plat"], "a": 0, "aide": ["Je compare la diagonale de la caisse et 1,2 m."], "corr": ["1,23 m ≥ 1,2 m : la barre rentre en diagonale."], "rep": "Oui, la barre rentre si on la place en diagonale." }
+   ]
+  },
+  {
+   "id": "es-b2",
+   "titre": "La maquette du hangar",
+   "ctx": ["Un hangar est un pavé droit de 20 m × 12 m × 8 m.", "Un architecte fait une maquette à l’échelle {{1/40}}."],
+   "qs": [
+    { "q": "**Calcule** la longueur de la maquette, en cm.", "type": "num", "a": 50, "unit": "cm", "aide": ["20 m = 2 000 cm.", "Je divise par 40."], "corr": ["2 000 ÷ 40 = 50"], "rep": "La maquette mesure 50 cm de long." },
+    { "q": "**Calcule** le volume réel du hangar.", "type": "num", "a": 1920, "unit": "m³", "aide": ["V = L × l × h."], "corr": ["20 × 12 × 8 = 1 920"], "rep": "Le volume du hangar est 1 920 m³." },
+    { "q": "**Calcule** le volume de la maquette, en litres.", "type": "num", "a": 30, "unit": "L", "aide": ["Les volumes sont divisés par 40³ = 64 000.", "1 m³ = 1 000 L."], "corr": ["1 920 ÷ 64 000 = 0,03 m³", "0,03 m³ = 30 L"], "rep": "Le volume de la maquette est 30 L." },
+    { "q": "Par quel nombre la surface du sol est-elle divisée sur la maquette ?", "type": "num", "a": 1600, "aide": ["Les aires sont multipliées par k² = ({{1/40}})²."], "corr": ["40² = 1 600"], "rep": "La surface du sol est divisée par 1 600." }
+   ]
+  },
+  {
+   "id": "es-b3",
+   "titre": "Le ballon coupé",
+   "fig": "l3:sectsphere",
+   "ctx": ["Pour une affiche, un graphiste dessine la coupe d’un ballon de rayon 11 cm.", "Le plan de coupe est à 6 cm du centre du ballon."],
+   "qs": [
+    { "q": "Quelle est la forme de la section ?", "type": "qcm", "o": ["un disque", "un rectangle", "un carré"], "a": 0, "aide": ["La section d’une boule par un plan est toujours…"], "corr": ["La section d’une boule par un plan est un disque."], "rep": "La section est un disque." },
+    { "q": "**Calcule** le rayon de la section. **Arrondis** au dixième.", "type": "num", "a": 9.21954446, "arr": 1, "unit": "cm", "aide": ["r² = R² − d² = 11² − 6²."], "corr": ["r² = 121 − 36 = 85", "r = √85 ≈ 9,2"], "rep": "Le rayon de la section est environ 9,2 cm." },
+    { "q": "Pour quelle distance au centre la section est-elle un grand cercle ?", "type": "num", "a": 0, "unit": "cm", "aide": ["Le grand cercle passe par le centre."], "corr": ["d = 0 : le plan passe par le centre."], "rep": "Pour une distance de 0 cm, la section est un grand cercle." }
+   ]
+  }
+ ],
+ "calc": ["es-diag", "es-echelle", "es-sphere", "es-section"],
+ "mots": [
+  { "id": "coplanaires", "mot": "coplanaires", "cat": "geometrie", "ill": "l3:plans|coplan", "def": "Qui sont dans un même plan.", "man": "Des points ou des droites sont coplanaires s’il existe un plan qui les contient tous.", "ph": ["Les droites (AB) et (CD) sont [[coplanaires]].", "Deux droites [[coplanaires]] sont parallèles ou sécantes."] },
+  { "id": "plans-paralleles", "mot": "plans parallèles", "art": "les", "g": "m", "cat": "geometrie", "ill": "l3:plans|paralleles", "def": "Deux plans qui ne se coupent jamais.", "man": "Deux plans sans point commun (ou confondus).", "ph": ["Le sol et le plafond sont des [[plans parallèles|plans-paralleles]].", "Les faces opposées d’un pavé sont dans des [[plans parallèles|plans-paralleles]]."] },
+  { "id": "droite-perpendiculaire-plan", "mot": "droite perpendiculaire à un plan", "art": "la", "g": "f", "cat": "geometrie", "ill": "l3:plans|perp", "def": "Une droite « bien droite » sur un plan, comme un poteau sur le sol.", "man": "Droite orthogonale à deux droites sécantes du plan.", "ph": ["Le poteau est une [[droite perpendiculaire au plan|droite-perpendiculaire-plan]] du sol.", "L’arête [AE] est [[perpendiculaire au plan|droite-perpendiculaire-plan]] (ABC)."] },
+  { "id": "diagonale-pave", "mot": "diagonale d’un pavé", "art": "la", "g": "f", "cat": "geometrie", "ill": "l3:pave|diag", "def": "Le segment qui va d’un coin du pavé au coin opposé, à travers le pavé.", "man": "D = √(L² + l² + h²) pour un pavé de dimensions L, l, h.", "ph": ["La [[diagonale du pavé|diagonale-pave]] mesure 1,23 m.", "Je calcule la [[diagonale du pavé|diagonale-pave]] avec Pythagore deux fois."] },
+  { "id": "grand-cercle", "mot": "grand cercle", "art": "le", "g": "m", "cat": "geometrie", "ill": "sol:sphere", "def": "La section d’une boule par un plan qui passe par son centre. Son rayon est le rayon de la boule.", "man": "Cercle de centre O et de rayon R, intersection de la sphère avec un plan passant par O.", "ph": ["L’équateur est un [[grand cercle|grand-cercle]] de la Terre.", "Le [[grand cercle|grand-cercle]] a le même rayon que la boule."] },
+  { "id": "maquette", "mot": "maquette", "art": "la", "g": "f", "cat": "geometrie", "ill": "txt:échelle {1/40}|50 cm ↔ 20 m", "def": "Un modèle plus petit d’un objet ou d’un bâtiment, à l’échelle.", "man": "Réduction de rapport k < 1 : longueurs × k, aires × k², volumes × k³.", "ph": ["La [[maquette]] du hangar mesure 50 cm de long.", "Le volume de la [[maquette]] est 30 L."] }
+ ]
+}

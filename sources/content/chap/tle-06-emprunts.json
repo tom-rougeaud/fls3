@@ -1,0 +1,212 @@
+{
+ "id": "emprunts",
+ "annee": "tle",
+ "spe": "sans-pc",
+ "titre": "Emprunts et remboursements",
+ "icone": "🚐",
+ "cat": "nombre",
+ "domaine": "Calculs commerciaux et financiers",
+ "intro": "Calculer une mensualité avec la formule, lire et compléter un tableau d’amortissement, comparer le coût de plusieurs emprunts.",
+ "objectifs": [
+  "Je sais **calculer** un taux mensuel et une mensualité avec la formule.",
+  "Je sais **compléter** une ligne d’un tableau d’amortissement.",
+  "Je sais **calculer** le coût total d’un emprunt.",
+  "Je sais **comparer** des emprunts de durées différentes."
+ ],
+ "situation": {
+  "metier": "🔨 Artisanat",
+  "txt": [
+   "Lucas est plombier à son compte. Il doit acheter un véhicule utilitaire à 18 000 €.",
+   "La banque lui propose un emprunt au taux annuel de 4,8 %, remboursé par mensualités constantes.",
+   "Il hésite entre 3 ans, 4 ans et 5 ans de remboursement."
+  ],
+  "question": "Combien Lucas paiera-t-il chaque mois, et combien lui coûtera l’emprunt ?"
+ },
+ "cours": [
+  {
+   "titre": "L’emprunt à mensualités constantes",
+   "txt": [
+    "Lucas emprunte un capital C. Il rembourse chaque mois la même somme : la [[mensualité|mensualite]].",
+    "Chaque mensualité paie les intérêts du mois et rembourse une partie du capital : l’[[amortissement]].",
+    "Mensualité = intérêts + amortissement."
+   ],
+   "man": [
+    "Dans un [[emprunt]] à mensualités constantes, chaque mensualité m se décompose en intérêts (calculés sur le capital restant dû) et amortissement du capital : m = I + A."
+   ],
+   "ex": [
+    "Mois 1 : intérêts 72 € ; amortissement 340,90 € ; mensualité 412,90 €."
+   ],
+   "ill": "l3:amort"
+  },
+  {
+   "titre": "Le taux mensuel",
+   "txt": [
+    "La banque donne un taux annuel. Pour les mensualités, j’utilise le [[taux mensuel|taux-mensuel]].",
+    "Taux mensuel = taux annuel ÷ 12 (taux proportionnel).",
+    "4,8 % par an → 0,4 % par mois → t = 0,004."
+   ],
+   "man": [
+    "Avec un taux proportionnel, t (mensuel) = taux annuel ÷ 12. Certaines banques utilisent un taux équivalent ; l’énoncé précise toujours le taux à utiliser."
+   ],
+   "ex": [
+    "4,8 % ÷ 12 = 0,4 %."
+   ],
+   "ill": "txt:4,8 % par an|÷ 12|{0,4 % par mois}"
+  },
+  {
+   "titre": "La formule de la mensualité",
+   "txt": [
+    "La mensualité m se calcule avec la formule : m = C × t ÷ (1 − (1 + t)⁻ⁿ).",
+    "C : capital emprunté. t : taux mensuel (en décimal). n : nombre de mensualités.",
+    "Je tape la formule avec des parenthèses à la calculatrice."
+   ],
+   "man": [
+    "Mensualité constante d’un emprunt de capital C, au taux périodique t, sur n périodes : m = C × t / (1 − (1 + t)⁻ⁿ)."
+   ],
+   "ex": [
+    "m = 18 000 × 0,004 ÷ (1 − 1,004⁻⁴⁸) ≈ 412,90 €."
+   ],
+   "ill": "l3:calculatrice|18000*0.004/(1-1.004^-48)|≈ 412,90"
+  },
+  {
+   "titre": "Le tableau d’amortissement",
+   "txt": [
+    "Le [[tableau d’amortissement|tableau-amortissement]] montre chaque mois : le [[capital restant dû|capital-restant-du]], les intérêts, l’amortissement.",
+    "Intérêts du mois = capital restant dû × t.",
+    "Amortissement = mensualité − intérêts. Nouveau capital dû = ancien − amortissement."
+   ],
+   "man": [
+    "Pour chaque période k : Iₖ = Cₖ × t ; Aₖ = m − Iₖ ; Cₖ₊₁ = Cₖ − Aₖ. Le capital restant dû est nul après la dernière mensualité."
+   ],
+   "ex": [
+    "Mois 1 : 18 000 × 0,004 = 72 € d’intérêts ; 412,90 − 72 = 340,90 € ; reste 17 659,10 €."
+   ],
+   "ill": "l3:amort|interets"
+  },
+  {
+   "titre": "Le coût de l’emprunt",
+   "txt": [
+    "Total remboursé = mensualité × nombre de mensualités.",
+    "[[Coût du crédit|cout-credit]] = total remboursé − capital emprunté.",
+    "Plus la [[durée de l’emprunt|duree-emprunt]] est longue, plus la mensualité est petite, mais plus le coût est grand."
+   ],
+   "man": [
+    "Coût total des intérêts = n × m − C. Allonger la durée diminue la mensualité mais augmente le coût total."
+   ],
+   "ex": [
+    "48 × 412,90 = 19 819,20 € ; coût : 1 819,20 €."
+   ],
+   "ill": "txt:48 × 412,90 = 19 819,20|− 18 000 = {1 819,20 €}"
+  }
+ ],
+ "methodes": [
+  {
+   "titre": "Calculer une mensualité",
+   "outil": "Calculatrice",
+   "etapes": [
+    "Je calcule le taux mensuel t (en décimal).",
+    "Je compte le nombre de mensualités n (années × 12).",
+    "Je tape : C × t ÷ (1 − (1 + t)^(−n)).",
+    "J’arrondis au centime."
+   ],
+   "exemple": {
+    "enonce": "18 000 € empruntés à 4,8 % par an sur 4 ans. **Calcule** la mensualité.",
+    "ill": "l3:calculatrice|18000*0.004/(1-1.004^-48)|≈ 412,90",
+    "etapes": [
+     { "t": "t et n.", "c": "t = 0,004 ; n = 48" },
+     { "t": "Formule.", "c": "18 000 × 0,004 ÷ (1 − 1,004⁻⁴⁸)" },
+     { "t": "Résultat.", "c": "≈ 412,90" }
+    ],
+    "reponse": "La mensualité est environ 412,90 €."
+   }
+  },
+  {
+   "titre": "Compléter une ligne du tableau d’amortissement",
+   "etapes": [
+    "Intérêts = capital restant dû × taux mensuel.",
+    "Amortissement = mensualité − intérêts.",
+    "Capital restant dû suivant = capital restant dû − amortissement."
+   ],
+   "exemple": {
+    "enonce": "Mois 2 : capital dû 17 659,10 € ; t = 0,004 ; m = 412,90 €. **Complète** la ligne.",
+    "ill": "l3:amort|amort",
+    "etapes": [
+     { "t": "Intérêts.", "c": "17 659,10 × 0,004 ≈ 70,64" },
+     { "t": "Amortissement.", "c": "412,90 − 70,64 = 342,26" },
+     { "t": "Nouveau capital dû.", "c": "17 659,10 − 342,26 = 17 316,84" }
+    ],
+    "reponse": "Mois 2 : intérêts 70,64 € ; amortissement 342,26 € ; il reste 17 316,84 € à rembourser."
+   }
+  },
+  {
+   "titre": "Comparer deux durées",
+   "etapes": [
+    "Je calcule la mensualité pour chaque durée.",
+    "Je calcule le coût total de chaque emprunt.",
+    "Je compare : mensualité supportable ? coût le plus faible ?"
+   ],
+   "exemple": {
+    "enonce": "3 ans : 537,86 € par mois. 5 ans : 338,04 € par mois. **Compare** les coûts.",
+    "etapes": [
+     { "t": "3 ans.", "c": "36 × 537,86 − 18 000 = 1 362,96" },
+     { "t": "5 ans.", "c": "60 × 338,04 − 18 000 = 2 282,40" }
+    ],
+    "reponse": "Sur 5 ans, la mensualité est plus faible, mais l’emprunt coûte 919,44 € de plus."
+   }
+  }
+ ],
+ "comprendre": [
+  { "t": "qcm", "txt": "Taux annuel : 6 %.", "q": "Quel est le taux mensuel proportionnel ?", "o": ["0,5 %", "6 %", "0,6 %"], "a": 0, "exp": "6 % ÷ 12 = 0,5 %." },
+  { "t": "qcm", "txt": "Un emprunt dure 5 ans avec des mensualités.", "q": "Combien y a-t-il de mensualités ?", "o": ["60", "5", "12"], "a": 0, "exp": "5 × 12 = 60." },
+  { "t": "vf", "txt": "Mensualité = 300 € ; intérêts du mois = 40 €.", "q": "L’amortissement du mois est 260 €.", "a": true, "exp": "Amortissement = mensualité − intérêts = 300 − 40 = 260 €." },
+  { "t": "qcm", "txt": "Deux emprunts du même capital, au même taux : 3 ans ou 5 ans.", "q": "Lequel coûte le moins cher au total ?", "o": ["3 ans", "5 ans", "le même prix"], "a": 0, "exp": "Plus l’emprunt est court, moins on paie d’intérêts au total." },
+  { "t": "qcm", "txt": "Capital restant dû : 10 000 € ; taux mensuel : 0,5 %.", "q": "Quels sont les intérêts du mois ?", "o": ["50 €", "500 €", "5 €"], "a": 0, "exp": "10 000 × 0,005 = 50 €." },
+  { "t": "question", "txt": ["Lucas emprunte 18 000 €.", "Il rembourse 48 mensualités de 412,90 €.", "Combien lui coûte l’emprunt ?"], "q": "Touche la phrase qui est la question.", "a": 2, "exp": "La question finit par « ? »." },
+  { "t": "donnees", "txt": "Un artisan emprunte 12 000 € et rembourse 36 mensualités de 360 €. Son entreprise a 3 salariés. Calcule le coût de l’emprunt.", "q": "Touche les trois données utiles.", "a": ["12 000", "36", "360"], "exp": "36 × 360 − 12 000 = 960 €. Les salariés ne servent pas." },
+  { "t": "ordre", "q": "Remets la phrase dans l’ordre.", "phrase": "La mensualité est la somme des intérêts et de l’amortissement." }
+ ],
+ "brevet": [
+  {
+   "id": "em-b1",
+   "titre": "L’utilitaire de Lucas",
+   "ctx": ["Lucas emprunte 18 000 € au taux annuel de 4,8 %, sur 4 ans, par mensualités constantes.", "La mensualité est m = C × t ÷ (1 − (1 + t)⁻ⁿ), avec t le taux mensuel et n le nombre de mensualités."],
+   "qs": [
+    { "q": "**Calcule** le taux mensuel t (nombre décimal).", "type": "num", "a": 0.004, "aide": ["4,8 % ÷ 12 = 0,4 %."], "corr": ["4,8 ÷ 12 = 0,4 %", "t = 0,004"], "rep": "Le taux mensuel est t = 0,004." },
+    { "q": "**Donne** le nombre de mensualités.", "type": "num", "a": 48, "aide": ["4 ans × 12 mois."], "corr": ["4 × 12 = 48"], "rep": "Lucas paie 48 mensualités." },
+    { "q": "**Calcule** la mensualité. **Arrondis** au centime.", "type": "num", "a": 412.8985, "arr": 2, "unit": "€", "aide": ["18 000 × 0,004 ÷ (1 − 1,004^(−48))."], "corr": ["1,004⁻⁴⁸ ≈ 0,8256", "72 ÷ 0,1744 ≈ 412,90"], "rep": "La mensualité est environ 412,90 €." },
+    { "q": "**Calcule** le coût de l’emprunt avec une mensualité de 412,90 €.", "type": "num", "a": 1819.2, "unit": "€", "aide": ["Total : 48 × 412,90.", "Coût = total − 18 000."], "corr": ["48 × 412,90 = 19 819,20", "19 819,20 − 18 000 = 1 819,20"], "rep": "L’emprunt coûte 1 819,20 € à Lucas." }
+   ]
+  },
+  {
+   "id": "em-b2",
+   "titre": "Le tableau d’amortissement",
+   "fig": "l3:amort|capital",
+   "ctx": ["Lucas emprunte 18 000 €. Le taux mensuel est 0,4 %. La mensualité est 412,90 €."],
+   "qs": [
+    { "q": "**Calcule** les intérêts du premier mois.", "type": "num", "a": 72, "unit": "€", "aide": ["18 000 × 0,004."], "corr": ["18 000 × 0,004 = 72"], "rep": "Les intérêts du premier mois sont 72 €." },
+    { "q": "**Calcule** l’amortissement du premier mois.", "type": "num", "a": 340.9, "unit": "€", "aide": ["Mensualité − intérêts."], "corr": ["412,90 − 72 = 340,90"], "rep": "L’amortissement du premier mois est 340,90 €." },
+    { "q": "**Calcule** le capital restant dû au début du deuxième mois.", "type": "num", "a": 17659.1, "unit": "€", "aide": ["18 000 − amortissement."], "corr": ["18 000 − 340,90 = 17 659,10"], "rep": "Au début du deuxième mois, Lucas doit encore 17 659,10 €." },
+    { "q": "**Calcule** les intérêts du deuxième mois. **Arrondis** au centime.", "type": "num", "a": 70.6364, "arr": 2, "unit": "€", "aide": ["17 659,10 × 0,004."], "corr": ["17 659,10 × 0,004 ≈ 70,64"], "rep": "Les intérêts du deuxième mois sont environ 70,64 € : ils diminuent chaque mois." }
+   ]
+  },
+  {
+   "id": "em-b3",
+   "titre": "3 ans ou 5 ans ?",
+   "tab": [["Durée", "3 ans", "4 ans", "5 ans"], ["Mensualité", "537,86 €", "412,90 €", "338,04 €"]],
+   "ctx": ["Lucas compare trois durées pour emprunter 18 000 €.", "Il ne veut pas payer plus de 450 € par mois."],
+   "qs": [
+    { "q": "**Calcule** le coût de l’emprunt sur 3 ans.", "type": "num", "a": 1362.96, "unit": "€", "aide": ["36 × 537,86 − 18 000."], "corr": ["36 × 537,86 = 19 362,96", "19 362,96 − 18 000 = 1 362,96"], "rep": "Sur 3 ans, l’emprunt coûte 1 362,96 €." },
+    { "q": "**Calcule** le coût de l’emprunt sur 5 ans.", "type": "num", "a": 2282.4, "unit": "€", "aide": ["60 × 338,04 − 18 000."], "corr": ["60 × 338,04 = 20 282,40", "20 282,40 − 18 000 = 2 282,40"], "rep": "Sur 5 ans, l’emprunt coûte 2 282,40 €." },
+    { "q": "**Choisis** la meilleure durée pour Lucas.", "type": "qcm", "o": ["4 ans : mensualité ≤ 450 € et coût plus faible qu’en 5 ans", "3 ans : c’est le moins cher", "5 ans : la mensualité est la plus petite"], "a": 0, "aide": ["La mensualité doit être ≤ 450 €.", "Parmi les durées possibles, je prends le coût le plus faible."], "corr": ["3 ans : 537,86 € > 450 € : impossible.", "4 ans (1 819,20 €) coûte moins que 5 ans (2 282,40 €)."], "rep": "Lucas doit choisir 4 ans." }
+   ]
+  }
+ ],
+ "calc": ["em-mensualite", "em-ligne", "em-cout", "in-compose"],
+ "mots": [
+  { "id": "emprunt", "mot": "emprunt", "art": "l’", "g": "m", "cat": "nombre", "ill": "l3:amort", "def": "De l’argent prêté par la banque, que l’on rembourse avec des intérêts.", "man": "Capital C prêté, remboursé par versements périodiques comprenant intérêts et amortissement.", "vie": "un emprunt à la bibliothèque : un livre que l’on rend après.", "ph": ["Lucas fait un [[emprunt]] de 18 000 €.", "Cet [[emprunt]] dure 4 ans."] },
+  { "id": "amortissement", "mot": "amortissement", "art": "l’", "g": "m", "cat": "nombre", "ill": "l3:amort|amort", "def": "La partie de la mensualité qui rembourse le capital emprunté.", "man": "Aₖ = m − Iₖ ; la somme des amortissements est égale au capital emprunté.", "vie": "un amortisseur de voiture : il absorbe les chocs.", "ph": ["L’[[amortissement]] du premier mois est 340,90 €.", "Chaque mois, l’[[amortissement]] augmente un peu."] },
+  { "id": "capital-restant-du", "mot": "capital restant dû", "art": "le", "g": "m", "cat": "nombre", "ill": "l3:amort|capital", "def": "L’argent qu’il reste à rembourser à la banque.", "man": "Cₖ₊₁ = Cₖ − Aₖ ; il est nul à la fin de l’emprunt.", "ph": ["Le [[capital restant dû|capital-restant-du]] au début du mois 2 est 17 659,10 €.", "Les intérêts sont calculés sur le [[capital restant dû|capital-restant-du]]."] },
+  { "id": "tableau-amortissement", "mot": "tableau d’amortissement", "art": "le", "g": "m", "cat": "nombre", "ill": "l3:amort|interets", "def": "Un tableau qui montre, mois par mois, les intérêts, l’amortissement et le capital restant dû.", "man": "Tableau donnant pour chaque période : capital dû, intérêts, amortissement, mensualité.", "ph": ["Je complète la première ligne du [[tableau d’amortissement|tableau-amortissement]].", "Le [[tableau d’amortissement|tableau-amortissement]] a 48 lignes."] },
+  { "id": "duree-emprunt", "mot": "durée d’un emprunt", "art": "la", "g": "f", "cat": "nombre", "ill": "txt:3 ans · 4 ans · 5 ans|plus long = {plus cher}", "def": "Le temps pour rembourser tout l’emprunt.", "man": "Nombre de périodes n ; une durée plus longue réduit la mensualité mais augmente le coût total.", "ph": ["La [[durée de l’emprunt|duree-emprunt]] est de 4 ans.", "Si la [[durée|duree-emprunt]] augmente, la mensualité baisse."] }
+ ]
+}

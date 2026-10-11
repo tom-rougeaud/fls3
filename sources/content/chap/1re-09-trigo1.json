@@ -1,0 +1,232 @@
+{
+ "id": "trigo1",
+ "annee": "1re",
+ "grp": ["A", "B"],
+ "titre": "Trigonométrie : cercle trigonométrique et radian",
+ "icone": "🌀",
+ "cat": "geometrie",
+ "domaine": "Géométrie et analyse",
+ "intro": "Mesurer un angle en radians, lire le cosinus et le sinus sur le cercle trigonométrique, connaître les fonctions sinus et cosinus.",
+ "objectifs": [
+  "Je sais **convertir** des degrés en radians et inversement.",
+  "Je sais **placer** un point sur le cercle trigonométrique et **lire** cos θ et sin θ.",
+  "Je connais les valeurs de cos et sin pour 0, π/6, π/4, π/3, π/2 et π.",
+  "Je connais la courbe et la période des fonctions sinus et cosinus."
+ ],
+ "situation": {
+  "metier": "🌬️ Énergies renouvelables",
+  "txt": [
+   "Une éolienne a son axe à 80 m de haut. Chaque pale mesure 40 m.",
+   "Un technicien doit inspecter le bout d’une pale. Il a besoin de connaître sa hauteur selon l’angle de la pale.",
+   "La hauteur du bout de la pale est h = 80 + 40 × sin θ, où θ est l’angle de la pale avec l’horizontale."
+  ],
+  "question": "À quelle hauteur est le bout de la pale quand l’angle est 30° ? Quelle est la hauteur maximale ?"
+ },
+ "cours": [
+  {
+   "titre": "Le cercle trigonométrique",
+   "txt": [
+    "Le [[cercle trigonométrique|cercle-trigonometrique]] a pour centre l’origine O et pour rayon 1.",
+    "On tourne dans le [[sens trigonométrique|sens-trigonometrique]] : le sens inverse des aiguilles d’une montre.",
+    "On part du point I(1 ; 0)."
+   ],
+   "man": [
+    "Dans un repère orthonormé (O ; I, J), le cercle trigonométrique est le cercle de centre O et de rayon 1, orienté dans le sens direct (sens inverse des aiguilles d’une montre)."
+   ],
+   "ex": [
+    "Le point J(0 ; 1) correspond à un quart de tour : 90°."
+   ],
+   "ill": "l3:cercle|sens"
+  },
+  {
+   "titre": "Le radian",
+   "txt": [
+    "Le [[radian]] est une autre unité pour mesurer les angles.",
+    "1 tour = 360° = 2π radians. Un demi-tour = 180° = π radians.",
+    "Pour passer des degrés aux radians : je multiplie par π et je divise par 180."
+   ],
+   "man": [
+    "Un angle de 1 radian intercepte sur un cercle de rayon R un arc de longueur R. On a π rad = 180°.",
+    "Mesure en radians = mesure en degrés × π ÷ 180."
+   ],
+   "ex": [
+    "30° = 30 × π ÷ 180 = π/6 rad ≈ 0,52 rad. 90° = π/2 rad."
+   ],
+   "ill": "l3:cercle|radian|1"
+  },
+  {
+   "titre": "Cosinus et sinus d’un angle",
+   "txt": [
+    "J’« [[enroule|enroulement]] » l’angle θ sur le cercle : j’obtiens un point M.",
+    "Le cosinus de θ est l’abscisse de M. Le sinus de θ est l’ordonnée de M.",
+    "M(cos θ ; sin θ). Ces nombres sont toujours entre −1 et 1."
+   ],
+   "man": [
+    "Si M est le point du cercle trigonométrique associé au réel θ, alors M a pour coordonnées (cos θ ; sin θ).",
+    "Pour tout θ : −1 ≤ cos θ ≤ 1, −1 ≤ sin θ ≤ 1 et cos²θ + sin²θ = 1."
+   ],
+   "ex": [
+    "θ = π/2 : M = J(0 ; 1). cos(π/2) = 0 et sin(π/2) = 1."
+   ],
+   "ill": "l3:cercle|point|1.0472"
+  },
+  {
+   "titre": "Les valeurs à connaître",
+   "txt": [
+    "cos 0 = 1 et sin 0 = 0.",
+    "cos(π/6) = √3/2 ≈ 0,87 et sin(π/6) = 0,5. cos(π/3) = 0,5 et sin(π/3) ≈ 0,87.",
+    "cos(π/4) = sin(π/4) = √2/2 ≈ 0,71. cos π = −1 et sin π = 0."
+   ],
+   "man": [
+    "Valeurs remarquables (θ en rad) : 0 ; π/6 ; π/4 ; π/3 ; π/2 ; π. cos : 1 ; √3/2 ; √2/2 ; 1/2 ; 0 ; −1. sin : 0 ; 1/2 ; √2/2 ; √3/2 ; 1 ; 0."
+   ],
+   "ex": [
+    "sin 30° = 0,5 : h = 80 + 40 × 0,5 = 100 m."
+   ],
+   "tab": [["θ (rad)", "0", "π/6", "π/4", "π/3", "π/2", "π"], ["θ (degrés)", "0", "30", "45", "60", "90", "180"], ["cos θ", "1", "√3/2", "√2/2", "1/2", "0", "−1"], ["sin θ", "0", "1/2", "√2/2", "√3/2", "1", "0"]],
+   "ill": "l3:cercle|point|0.5236"
+  },
+  {
+   "titre": "Les fonctions sinus et cosinus",
+   "txt": [
+    "La [[fonction sinus|fonction-sinus]] associe à x le nombre sin x. Sa courbe est une vague.",
+    "Elle se répète tous les 2π : c’est sa [[période|periode]].",
+    "La fonction cosinus a la même forme, décalée de π/2."
+   ],
+   "man": [
+    "Les fonctions sin et cos sont définies sur ℝ, à valeurs dans [−1 ; 1], et périodiques de période 2π : sin(x + 2π) = sin x."
+   ],
+   "ex": [
+    "sin x = 0 pour x = 0, π, 2π… Le maximum 1 est atteint en π/2."
+   ],
+   "ill": "l3:sinus|sin|1|1|0|periode"
+  },
+  {
+   "titre": "Longueur d’un arc",
+   "txt": [
+    "Sur un cercle de rayon R, un angle θ en radians découpe un arc.",
+    "La [[longueur de l’arc|longueur-arc]] est l = R × θ.",
+    "Pour un tour complet : l = R × 2π = 2πR, le périmètre."
+   ],
+   "man": [
+    "Longueur d’un arc de cercle de rayon R intercepté par un angle de θ radians : l = Rθ."
+   ],
+   "ex": [
+    "Roue de rayon 0,35 m qui tourne de 2 rad : l = 0,35 × 2 = 0,70 m."
+   ],
+   "ill": "l3:cercle|enroul|1"
+  }
+ ],
+ "methodes": [
+  {
+   "titre": "Convertir des degrés en radians, et inversement",
+   "etapes": [
+    "Je retiens : 180° = π rad.",
+    "Degrés → radians : je multiplie par π, puis je divise par 180.",
+    "Radians → degrés : je multiplie par 180, puis je divise par π.",
+    "Je simplifie la fraction si possible."
+   ],
+   "exemple": {
+    "enonce": "**Convertis** 135° en radians.",
+    "etapes": [
+     { "t": "Je multiplie par π et je divise par 180.", "c": "135π/180" },
+     { "t": "Je simplifie par 45.", "c": "3π/4" }
+    ],
+    "reponse": "135° = 3π/4 rad ≈ 2,36 rad."
+   }
+  },
+  {
+   "titre": "Calculer un cosinus ou un sinus à la calculatrice",
+   "outil": "Calculatrice",
+   "etapes": [
+    "Je regarde l’unité de l’angle : degrés ou radians.",
+    "Je règle la calculatrice dans le bon mode (Degré ou Radian).",
+    "Je tape cos( ) ou sin( ) avec l’angle.",
+    "Je vérifie que le résultat est entre −1 et 1."
+   ],
+   "exemple": {
+    "enonce": "**Calcule** sin(2) (2 en radians). **Arrondis** au centième.",
+    "ill": "l3:calculatrice|sin(2)|mode Radian",
+    "etapes": [
+     { "t": "Mode Radian.", "c": "" },
+     { "t": "sin(2).", "c": "≈ 0,909" }
+    ],
+    "reponse": "sin(2) ≈ 0,91."
+   }
+  },
+  {
+   "titre": "Utiliser h = R × sin θ dans une situation",
+   "etapes": [
+    "Je repère le centre de rotation et le rayon.",
+    "J’écris la hauteur : hauteur du centre + R × sin θ.",
+    "Je calcule sin θ (valeur connue ou calculatrice).",
+    "Je réponds avec l’unité."
+   ],
+   "exemple": {
+    "enonce": "Éolienne : h = 80 + 40 sin θ. **Calcule** la hauteur du bout de la pale pour θ = 210°.",
+    "ill": "l3:cercle|sin|3.6652",
+    "etapes": [
+     { "t": "sin 210° (mode Degré).", "c": "−0,5" },
+     { "t": "Je calcule.", "c": "80 + 40 × (−0,5) = 60" }
+    ],
+    "reponse": "Le bout de la pale est à 60 m de haut."
+   }
+  }
+ ],
+ "comprendre": [
+  { "t": "qcm", "txt": "On tourne d’un demi-tour sur le cercle.", "q": "Combien de radians cela fait-il ?", "o": ["π", "2π", "180"], "a": 0, "exp": "Un demi-tour = 180° = π rad." },
+  { "t": "qcm", "txt": "θ = 60°.", "q": "Combien vaut θ en radians ?", "o": ["π/3", "π/6", "π/60"], "a": 0, "exp": "60 × π ÷ 180 = π/3." },
+  { "t": "vf", "txt": "Pour un angle θ quelconque.", "q": "sin θ peut valoir 2.", "a": false, "exp": "Le sinus est l’ordonnée d’un point du cercle de rayon 1 : il est toujours entre −1 et 1." },
+  { "t": "qcm", "txt": "M est le point du cercle trigonométrique associé à θ = π/2.", "q": "Quelles sont les coordonnées de M ?", "o": ["(0 ; 1)", "(1 ; 0)", "(−1 ; 0)"], "a": 0, "exp": "π/2 = un quart de tour : M = J(0 ; 1)." },
+  { "t": "qcm", "txt": "La fonction sinus.", "q": "Quelle est sa période ?", "o": ["2π", "π", "1"], "a": 0, "exp": "La courbe se répète tous les 2π." },
+  { "t": "question", "txt": ["L’axe de l’éolienne est à 80 m.", "Les pales mesurent 40 m.", "Quelle est la hauteur maximale du bout d’une pale ?"], "q": "Touche la phrase qui est la question.", "a": 2, "exp": "La question finit par « ? »." },
+  { "t": "donnees", "txt": "Une roue de vélo pèse 1,2 kg et a un rayon de 0,35 m. Elle tourne de 3 radians. Calcule la longueur de l’arc parcouru.", "q": "Touche les deux données utiles.", "a": ["0,35", "3"], "exp": "l = 0,35 × 3 = 1,05 m. La masse ne sert pas." },
+  { "t": "ordre", "q": "Remets la phrase dans l’ordre.", "phrase": "Un demi-tour mesure pi radians." }
+ ],
+ "brevet": [
+  {
+   "id": "t1-b1",
+   "titre": "Le bout de la pale",
+   "fig": "l3:cercle|sin|0.5236",
+   "ctx": ["L’axe d’une éolienne est à 80 m de haut. Une pale mesure 40 m.", "La hauteur du bout de la pale est h = 80 + 40 sin θ, où θ est l’angle entre la pale et l’horizontale."],
+   "qs": [
+    { "q": "**Convertis** 30° en radians. **Arrondis** au centième.", "type": "num", "a": 0.52359878, "arr": 2, "unit": "rad", "aide": ["30 × π ÷ 180 = π/6."], "corr": ["30 × π ÷ 180 = π/6 ≈ 0,52"], "rep": "30° ≈ 0,52 rad." },
+    { "q": "**Calcule** la hauteur du bout de la pale pour θ = 30°.", "type": "num", "a": 100, "unit": "m", "aide": ["sin 30° = 0,5."], "corr": ["80 + 40 × 0,5 = 80 + 20 = 100"], "rep": "Pour θ = 30°, le bout de la pale est à 100 m." },
+    { "q": "**Donne** la hauteur maximale du bout de la pale.", "type": "num", "a": 120, "unit": "m", "aide": ["La plus grande valeur de sin θ est 1 (pour θ = 90°)."], "corr": ["80 + 40 × 1 = 120"], "rep": "La hauteur maximale est 120 m." },
+    { "q": "**Calcule** la hauteur pour θ = 210°.", "type": "num", "a": 60, "unit": "m", "aide": ["sin 210° = −0,5."], "corr": ["80 + 40 × (−0,5) = 80 − 20 = 60"], "rep": "Pour θ = 210°, le bout de la pale est à 60 m." }
+   ]
+  },
+  {
+   "id": "t1-b2",
+   "titre": "La roue du vélo",
+   "ctx": ["Une roue de vélo a un rayon de 0,35 m.", "Quand la roue tourne d’un angle θ (en radians), le vélo avance de l = 0,35 × θ mètres."],
+   "qs": [
+    { "q": "**Calcule** la distance parcourue quand la roue tourne de 2 radians.", "type": "num", "a": 0.7, "unit": "m", "aide": ["l = R × θ."], "corr": ["0,35 × 2 = 0,70"], "rep": "Le vélo avance de 0,70 m." },
+    { "q": "**Calcule** la distance parcourue en un tour de roue. **Arrondis** au centième.", "type": "num", "a": 2.19911486, "arr": 2, "unit": "m", "aide": ["Un tour = 2π rad."], "corr": ["0,35 × 2π = 0,7π ≈ 2,20"], "rep": "En un tour, le vélo avance d’environ 2,20 m." },
+    { "q": "**Calcule** le nombre de tours de roue pour parcourir 1 km. **Arrondis** à l’unité.", "type": "num", "a": 454.728409, "arr": 0, "unit": "tours", "aide": ["1 km = 1 000 m.", "Je divise 1 000 par la distance d’un tour."], "corr": ["1 000 ÷ 0,7π ≈ 454,7"], "rep": "La roue fait environ 455 tours pour 1 km." }
+   ]
+  },
+  {
+   "id": "t1-b3",
+   "titre": "La courbe du sinus",
+   "fig": "l3:sinus|sin|1|1|0|periode",
+   "ctx": ["La courbe représente la fonction sinus sur [0 ; 2π]."],
+   "qs": [
+    { "q": "**Lis** la valeur maximale de sin x.", "type": "num", "a": 1, "aide": ["Je cherche le point le plus haut de la courbe."], "corr": ["Le maximum est 1, atteint en x = π/2."], "rep": "La valeur maximale de sin x est 1." },
+    { "q": "Combien de fois sin x = 0 sur [0 ; 2π] ?", "type": "num", "a": 3, "unit": "fois", "aide": ["Je compte les points où la courbe coupe l’axe horizontal."], "corr": ["x = 0, x = π et x = 2π"], "rep": "sin x = 0 trois fois sur [0 ; 2π]." },
+    { "q": "**Donne** la période de la fonction sinus. **Arrondis** au centième.", "type": "num", "a": 6.28318531, "arr": 2, "aide": ["La période est 2π."], "corr": ["2π ≈ 6,28"], "rep": "La période est 2π ≈ 6,28." }
+   ]
+  }
+ ],
+ "calc": ["t1-conv", "t1-valeur", "t1-arc", "t1-hauteur"],
+ "mots": [
+  { "id": "cercle-trigonometrique", "mot": "cercle trigonométrique", "art": "le", "g": "m", "cat": "geometrie", "ill": "l3:cercle|point|1.0472", "def": "Un cercle de centre O et de rayon 1, sur lequel on tourne pour mesurer les angles.", "man": "Cercle de centre O, de rayon 1, orienté dans le sens direct.", "ph": ["Je place le point M sur le [[cercle trigonométrique|cercle-trigonometrique]].", "Le rayon du [[cercle trigonométrique|cercle-trigonometrique]] est 1."] },
+  { "id": "radian", "mot": "radian", "art": "le", "g": "m", "cat": "geometrie", "sym": "rad", "ill": "l3:cercle|radian|1", "def": "Une unité d’angle : un demi-tour = π radians = 180°.", "man": "Angle qui intercepte un arc de longueur égale au rayon ; π rad = 180°.", "ph": ["90° = π/2 [[radians|radian]].", "Je règle la calculatrice en mode [[radian]]."] },
+  { "id": "sens-trigonometrique", "mot": "sens trigonométrique", "art": "le", "g": "m", "cat": "geometrie", "ill": "l3:cercle|sens", "def": "Le sens inverse des aiguilles d’une montre.", "man": "Sens direct (positif) de rotation sur le cercle trigonométrique.", "ph": ["Je tourne dans le [[sens trigonométrique|sens-trigonometrique]].", "Le [[sens trigonométrique|sens-trigonometrique]] est le sens positif."] },
+  { "id": "enroulement", "mot": "enroulement", "art": "l’", "g": "m", "cat": "geometrie", "ill": "l3:cercle|enroul|1", "def": "On enroule la droite des nombres sur le cercle pour associer un point M à chaque nombre.", "man": "À tout réel θ on associe un unique point M du cercle trigonométrique par enroulement de la droite numérique.", "vie": "enrouler un câble, une corde.", "ph": ["Par [[enroulement]], le nombre π/2 donne le point J.", "L’[[enroulement]] associe un point du cercle à chaque nombre."] },
+  { "id": "fonction-sinus", "mot": "fonction sinus", "art": "la", "g": "f", "cat": "fonction", "ill": "l3:sinus|sin", "def": "La fonction qui donne sin x. Sa courbe est une vague qui se répète.", "man": "x ↦ sin x, définie sur ℝ, à valeurs dans [−1 ; 1], de période 2π.", "ph": ["La courbe de la [[fonction sinus|fonction-sinus]] est une sinusoïde.", "La [[fonction sinus|fonction-sinus]] a pour maximum 1."] },
+  { "id": "fonction-cosinus", "mot": "fonction cosinus", "art": "la", "g": "f", "cat": "fonction", "ill": "l3:sinus|cos", "def": "La fonction qui donne cos x. Sa courbe est une vague qui commence en haut.", "man": "x ↦ cos x, définie sur ℝ, à valeurs dans [−1 ; 1], de période 2π.", "ph": ["La [[fonction cosinus|fonction-cosinus]] vaut 1 pour x = 0.", "La courbe de la [[fonction cosinus|fonction-cosinus]] ressemble à celle du sinus."] },
+  { "id": "periode", "mot": "période", "art": "la", "g": "f", "cat": "fonction", "sym": "T", "ill": "l3:sinus|sin|1|1|0|periode", "def": "La durée (ou la longueur) après laquelle la courbe se répète.", "man": "T est une période de f si f(x + T) = f(x) pour tout x ; sin et cos ont pour période 2π.", "vie": "une période : un moment, une durée (« la période des soldes »).", "ph": ["La [[période|periode]] du sinus est 2π.", "Le signal se répète : sa [[période|periode]] est 20 ms."] },
+  { "id": "longueur-arc", "mot": "longueur d’un arc", "art": "la", "g": "f", "cat": "geometrie", "ill": "l3:cercle|radian|1", "def": "La longueur d’un morceau de cercle : l = R × θ, avec θ en radians.", "man": "l = Rθ, où θ est la mesure en radians de l’angle au centre.", "ph": ["La [[longueur de l’arc|longueur-arc]] est 0,35 × 2 = 0,70 m.", "Pour la [[longueur d’un arc|longueur-arc]], l’angle doit être en radians."] }
+ ]
+}

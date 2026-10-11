@@ -1,0 +1,231 @@
+{
+ "id": "degre2",
+ "annee": "1re",
+ "titre": "Fonctions polynômes du second degré",
+ "icone": "⛲",
+ "cat": "fonction",
+ "domaine": "Algèbre et analyse",
+ "intro": "Étudier une fonction f(x) = ax² + bx + c : sa parabole, son sommet, ses variations, et résoudre ax² + bx + c = 0 avec le discriminant.",
+ "objectifs": [
+  "Je sais **reconnaître** une fonction polynôme du second degré et **lire** a, b et c.",
+  "Je sais **calculer** les coordonnées du sommet de la parabole.",
+  "Je sais **dresser** le tableau de variations selon le signe de a.",
+  "Je sais **résoudre** ax² + bx + c = 0 avec le discriminant Δ."
+ ],
+ "situation": {
+  "metier": "🌳 Aménagement paysager",
+  "txt": [
+   "Un paysagiste installe une fontaine. Le jet d’eau sort d’un tuyau à 1 m du sol.",
+   "La hauteur de l’eau est h(x) = −0,5x² + 2x + 1, où x est la distance horizontale (en m) depuis le tuyau.",
+   "Il doit placer le bassin à l’endroit où l’eau retombe."
+  ],
+  "question": "Quelle est la hauteur maximale du jet, et à quelle distance l’eau touche-t-elle le sol ?"
+ },
+ "cours": [
+  {
+   "titre": "La fonction ax² + bx + c",
+   "txt": [
+    "Une [[fonction polynôme du second degré|polynome-second-degre]] s’écrit f(x) = ax² + bx + c, avec a ≠ 0.",
+    "a, b et c sont des nombres. a est devant x², b devant x, c est seul.",
+    "Sa courbe est une [[parabole]]."
+   ],
+   "man": [
+    "Une fonction polynôme de degré 2 est définie sur ℝ par f(x) = ax² + bx + c, où a, b, c sont des réels et a ≠ 0. Sa représentation graphique est une parabole."
+   ],
+   "ex": [
+    "h(x) = −0,5x² + 2x + 1 : a = −0,5 ; b = 2 ; c = 1."
+   ],
+   "ill": "l3:parabole|jet"
+  },
+  {
+   "titre": "Le signe de a et la forme",
+   "txt": [
+    "Si a > 0, la parabole est « tournée vers le haut » (forme de U). Elle a un minimum.",
+    "Si a < 0, la parabole est « tournée vers le bas » (forme de ∩). Elle a un maximum.",
+    "Le point le plus bas ou le plus haut est le [[sommet|sommet-parabole]]."
+   ],
+   "man": [
+    "Si a > 0, f est décroissante puis croissante ; si a < 0, f est croissante puis décroissante. L’extremum est atteint au sommet de la parabole."
+   ],
+   "ex": [
+    "h : a = −0,5 < 0. La parabole est tournée vers le bas : le jet a une hauteur maximale."
+   ],
+   "ill": "l3:parabole|down"
+  },
+  {
+   "titre": "Le sommet de la parabole",
+   "txt": [
+    "L’abscisse du sommet est α = −b ÷ (2a).",
+    "Son ordonnée est f(α).",
+    "La droite verticale x = α est l’[[axe de symétrie|axe-symetrie-parabole]] de la parabole."
+   ],
+   "man": [
+    "Le sommet S de la parabole a pour coordonnées (α ; f(α)) avec α = −b/(2a). La droite d’équation x = α est axe de symétrie."
+   ],
+   "ex": [
+    "α = −2 ÷ (2 × (−0,5)) = 2 ; h(2) = −2 + 4 + 1 = 3. S(2 ; 3) : le jet monte à 3 m."
+   ],
+   "ill": "l3:parabole|axe"
+  },
+  {
+   "titre": "Le tableau de variations",
+   "txt": [
+    "Je place α au milieu de la ligne des x.",
+    "a < 0 : la flèche monte jusqu’à f(α), puis descend.",
+    "a > 0 : la flèche descend jusqu’à f(α), puis monte."
+   ],
+   "man": [
+    "a < 0 : f croissante sur ]−∞ ; α], décroissante sur [α ; +∞[, maximum f(α). a > 0 : l’inverse, minimum f(α)."
+   ],
+   "ex": [
+    "h croît sur [0 ; 2], décroît sur [2 ; 4,45]. Maximum : 3 m."
+   ],
+   "ill": "l3:tabvar|0;2;4,45|1;3;0|h(x)"
+  },
+  {
+   "titre": "Le discriminant",
+   "txt": [
+    "Pour résoudre ax² + bx + c = 0, je calcule le [[discriminant]] : Δ = b² − 4ac.",
+    "Si Δ > 0 : deux solutions. Si Δ = 0 : une solution. Si Δ < 0 : aucune solution.",
+    "Les solutions sont les [[racines|racine-polynome]] du polynôme."
+   ],
+   "man": [
+    "Δ = b² − 4ac. Si Δ > 0 : x₁ = (−b − √Δ)/(2a) et x₂ = (−b + √Δ)/(2a). Si Δ = 0 : x₀ = −b/(2a). Si Δ < 0 : pas de solution réelle."
+   ],
+   "ex": [
+    "−0,5x² + 2x + 1 = 0 : Δ = 2² − 4 × (−0,5) × 1 = 6 > 0 : deux solutions."
+   ],
+   "ill": "l3:delta|+"
+  },
+  {
+   "titre": "Racines et forme factorisée",
+   "txt": [
+    "Les racines sont les abscisses des points où la parabole coupe l’axe des abscisses.",
+    "Si Δ > 0 : f(x) = a(x − x₁)(x − x₂). C’est la [[forme factorisée|forme-factorisee]].",
+    "Entre les racines, f(x) a le signe contraire de a. À l’extérieur, le signe de a."
+   ],
+   "man": [
+    "Si Δ > 0, f(x) = a(x − x₁)(x − x₂) ; f(x) est du signe de a à l’extérieur des racines et du signe de −a entre les racines."
+   ],
+   "ex": [
+    "B(x) = −x² + 14x − 40 a pour racines 4 et 10 : B(x) = −(x − 4)(x − 10), positif entre 4 et 10."
+   ],
+   "ill": "l3:parabole|racines"
+  }
+ ],
+ "methodes": [
+  {
+   "titre": "Trouver le sommet et le maximum (ou le minimum)",
+   "etapes": [
+    "Je lis a et b dans f(x) = ax² + bx + c.",
+    "Je calcule α = −b ÷ (2a).",
+    "Je calcule f(α).",
+    "a < 0 : f(α) est le maximum. a > 0 : f(α) est le minimum."
+   ],
+   "exemple": {
+    "enonce": "Un enclos rectangulaire a une aire A(x) = −2x² + 40x (en m²). **Détermine** l’aire maximale.",
+    "etapes": [
+     { "t": "a = −2 ; b = 40.", "c": "α = −40 ÷ (2 × (−2)) = 10" },
+     { "t": "Je calcule A(10).", "c": "−2 × 100 + 400 = 200" },
+     { "t": "a < 0 : c’est un maximum.", "c": "" }
+    ],
+    "reponse": "L’aire maximale est 200 m², pour x = 10 m."
+   }
+  },
+  {
+   "titre": "Résoudre ax² + bx + c = 0",
+   "etapes": [
+    "Je lis a, b et c (avec leurs signes).",
+    "Je calcule Δ = b² − 4ac.",
+    "Je regarde le signe de Δ.",
+    "Si Δ > 0, je calcule x₁ = (−b − √Δ) ÷ (2a) et x₂ = (−b + √Δ) ÷ (2a)."
+   ],
+   "exemple": {
+    "enonce": "**Résous** −x² + 14x − 40 = 0.",
+    "ill": "l3:delta|+",
+    "etapes": [
+     { "t": "a = −1 ; b = 14 ; c = −40.", "c": "" },
+     { "t": "Discriminant.", "c": "Δ = 196 − 4 × (−1) × (−40) = 36" },
+     { "t": "Δ > 0 : deux solutions.", "c": "x₁ = (−14 − 6) ÷ (−2) = 10 ; x₂ = (−14 + 6) ÷ (−2) = 4" }
+    ],
+    "reponse": "Les solutions sont 4 et 10."
+   }
+  },
+  {
+   "titre": "Utiliser la calculatrice pour vérifier",
+   "outil": "Calculatrice",
+   "etapes": [
+    "Je saisis la fonction dans le menu « Fonctions » (ou « Graphe »).",
+    "Je règle la fenêtre (x min, x max, y min, y max).",
+    "J’utilise « maximum » ou « minimum » pour le sommet, « zéro » ou « racine » pour les solutions.",
+    "Je compare avec mes calculs."
+   ],
+   "exemple": {
+    "enonce": "**Vérifie** avec la calculatrice le sommet de h(x) = −0,5x² + 2x + 1.",
+    "ill": "l3:calculatrice|MAX x=2 y=3",
+    "etapes": [
+     { "t": "Fenêtre : x de 0 à 5, y de 0 à 4.", "c": "" },
+     { "t": "Menu « maximum ».", "c": "x = 2 ; y = 3" }
+    ],
+    "reponse": "La calculatrice confirme : le sommet est S(2 ; 3)."
+   }
+  }
+ ],
+ "comprendre": [
+  { "t": "qcm", "txt": "f(x) = 3x² − 5x + 2.", "q": "Que vaut b ?", "o": ["−5", "5", "3"], "a": 0, "exp": "b est le nombre devant x, avec son signe : b = −5." },
+  { "t": "qcm", "txt": "f(x) = −2x² + 8x − 1.", "q": "La parabole est tournée :", "o": ["vers le bas", "vers le haut", "on ne peut pas savoir"], "a": 0, "exp": "a = −2 < 0 : la parabole est tournée vers le bas, elle a un maximum." },
+  { "t": "qcm", "txt": "f(x) = x² − 6x + 4.", "q": "Quelle est l’abscisse du sommet ?", "o": ["3", "−3", "6"], "a": 0, "exp": "α = −b ÷ (2a) = 6 ÷ 2 = 3." },
+  { "t": "vf", "txt": "Pour x² + 2x + 5 = 0, on trouve Δ = 4 − 20 = −16.", "q": "L’équation a deux solutions.", "a": false, "exp": "Δ < 0 : l’équation n’a aucune solution réelle." },
+  { "t": "qcm", "txt": "Δ = 0.", "q": "Combien l’équation a-t-elle de solutions ?", "o": ["une", "deux", "aucune"], "a": 0, "exp": "Si Δ = 0, il y a une seule solution : x₀ = −b ÷ (2a)." },
+  { "t": "question", "txt": ["Le jet sort à 1 m du sol.", "Sa hauteur est h(x) = −0,5x² + 2x + 1.", "À quelle distance l’eau touche-t-elle le sol ?"], "q": "Touche la phrase qui est la question.", "a": 2, "exp": "La question finit par « ? »." },
+  { "t": "donnees", "txt": "Un éleveur a 40 m de grillage et 25 moutons. Il fait un enclos rectangulaire contre un mur. Les deux côtés perpendiculaires au mur mesurent 10 m. Calcule la longueur du côté parallèle au mur.", "q": "Touche les deux données utiles.", "a": ["40", "10"], "exp": "40 − 2 × 10 = 20 m. Les 25 moutons ne servent pas." },
+  { "t": "ordre", "q": "Remets la phrase dans l’ordre.", "phrase": "Le sommet de la parabole est le point le plus haut." }
+ ],
+ "brevet": [
+  {
+   "id": "d2-b1",
+   "titre": "Le jet d’eau de la fontaine",
+   "fig": "l3:parabole|jet",
+   "ctx": ["La hauteur du jet d’eau (en m) est h(x) = −0,5x² + 2x + 1.", "x est la distance horizontale (en m) depuis le tuyau, x ≥ 0."],
+   "qs": [
+    { "q": "**Calcule** h(0). **Interprète** ce résultat.", "type": "num", "a": 1, "unit": "m", "aide": ["Je remplace x par 0."], "corr": ["h(0) = 0 + 0 + 1 = 1"], "rep": "h(0) = 1 : l’eau sort du tuyau à 1 m du sol." },
+    { "q": "**Calcule** l’abscisse α du sommet de la parabole.", "type": "num", "a": 2, "unit": "m", "aide": ["α = −b ÷ (2a), avec a = −0,5 et b = 2."], "corr": ["α = −2 ÷ (2 × (−0,5)) = −2 ÷ (−1) = 2"], "rep": "Le sommet est à 2 m du tuyau." },
+    { "q": "**Calcule** la hauteur maximale du jet.", "type": "num", "a": 3, "unit": "m", "aide": ["Je calcule h(2)."], "corr": ["h(2) = −0,5 × 4 + 2 × 2 + 1 = −2 + 4 + 1 = 3"], "rep": "La hauteur maximale du jet est 3 m." },
+    { "q": "**Calcule** le discriminant de −0,5x² + 2x + 1 = 0.", "type": "num", "a": 6, "aide": ["Δ = b² − 4ac."], "corr": ["Δ = 2² − 4 × (−0,5) × 1 = 4 + 2 = 6"], "rep": "Le discriminant est Δ = 6." },
+    { "q": "**Détermine** la distance où l’eau touche le sol (solution positive). **Arrondis** au centième.", "type": "num", "a": 4.44948974, "arr": 2, "unit": "m", "aide": ["x = (−b ± √Δ) ÷ (2a).", "2a = −1. Je garde la solution positive."], "corr": ["x₁ = (−2 + √6) ÷ (−1) ≈ −0,45 (refusée : x ≥ 0)", "x₂ = (−2 − √6) ÷ (−1) = 2 + √6 ≈ 4,45"], "rep": "L’eau touche le sol à environ 4,45 m du tuyau." }
+   ]
+  },
+  {
+   "id": "d2-b2",
+   "titre": "L’enclos le long du mur",
+   "ctx": ["Un éleveur a 40 m de grillage. Il construit un enclos rectangulaire le long d’un mur (pas de grillage le long du mur).", "Les deux côtés perpendiculaires au mur mesurent x mètres. Le côté parallèle au mur mesure 40 − 2x mètres.", "L’aire de l’enclos est A(x) = −2x² + 40x."],
+   "qs": [
+    { "q": "**Calcule** A(5).", "type": "num", "a": 150, "unit": "m²", "aide": ["A(5) = −2 × 25 + 40 × 5."], "corr": ["−50 + 200 = 150"], "rep": "Pour x = 5 m, l’aire est 150 m²." },
+    { "q": "**Calcule** la valeur de x qui donne l’aire maximale.", "type": "num", "a": 10, "unit": "m", "aide": ["α = −b ÷ (2a), avec a = −2 et b = 40."], "corr": ["α = −40 ÷ (−4) = 10"], "rep": "L’aire est maximale pour x = 10 m." },
+    { "q": "**Calcule** l’aire maximale.", "type": "num", "a": 200, "unit": "m²", "aide": ["Je calcule A(10)."], "corr": ["A(10) = −2 × 100 + 400 = 200"], "rep": "L’aire maximale de l’enclos est 200 m²." },
+    { "q": "**Donne** la longueur du côté parallèle au mur dans ce cas.", "type": "num", "a": 20, "unit": "m", "aide": ["40 − 2x avec x = 10."], "corr": ["40 − 2 × 10 = 20"], "rep": "Le côté parallèle au mur mesure 20 m." }
+   ]
+  },
+  {
+   "id": "d2-b3",
+   "titre": "Le bénéfice de l’imprimerie",
+   "ctx": ["Une imprimerie fabrique x centaines d’affiches par jour, avec x entre 0 et 12.", "Son bénéfice, en centaines d’euros, est B(x) = −x² + 14x − 40."],
+   "qs": [
+    { "q": "**Calcule** le discriminant de −x² + 14x − 40.", "type": "num", "a": 36, "aide": ["a = −1 ; b = 14 ; c = −40.", "Δ = b² − 4ac."], "corr": ["Δ = 14² − 4 × (−1) × (−40) = 196 − 160 = 36"], "rep": "Δ = 36." },
+    { "q": "**Donne** la plus petite racine de B(x).", "type": "num", "a": 4, "aide": ["x = (−b ± √Δ) ÷ (2a), avec √36 = 6 et 2a = −2."], "corr": ["(−14 + 6) ÷ (−2) = 4", "(−14 − 6) ÷ (−2) = 10"], "rep": "Les racines sont 4 et 10 ; la plus petite est 4." },
+    { "q": "Pour quelles productions le bénéfice est-il positif ?", "type": "qcm", "o": ["Entre 4 et 10 centaines d’affiches", "Moins de 4 centaines d’affiches", "Plus de 10 centaines d’affiches"], "a": 0, "aide": ["a < 0 : B(x) est positif entre les racines."], "corr": ["a = −1 < 0 : B(x) ≥ 0 entre 4 et 10."], "rep": "Le bénéfice est positif entre 400 et 1 000 affiches." },
+    { "q": "**Calcule** le bénéfice maximal (en centaines d’euros).", "type": "num", "a": 9, "aide": ["α = −14 ÷ (−2) = 7.", "Je calcule B(7)."], "corr": ["B(7) = −49 + 98 − 40 = 9"], "rep": "Le bénéfice maximal est 9 centaines d’euros, soit 900 €." }
+   ]
+  }
+ ],
+ "calc": ["d2-coef", "d2-sommet", "d2-delta", "d2-racines", "d2-image"],
+ "mots": [
+  { "id": "polynome-second-degre", "mot": "fonction polynôme du second degré", "art": "la", "g": "f", "cat": "fonction", "ill": "l3:parabole|up", "def": "Une fonction qui s’écrit ax² + bx + c, avec a ≠ 0.", "man": "f(x) = ax² + bx + c (a ≠ 0), définie sur ℝ ; sa courbe est une parabole.", "ph": ["h est une [[fonction polynôme du second degré|polynome-second-degre]].", "La courbe d’une [[fonction du second degré|polynome-second-degre]] est une parabole."] },
+  { "id": "sommet-parabole", "mot": "sommet d’une parabole", "art": "le", "g": "m", "cat": "fonction", "sym": "S", "ill": "l3:parabole|sommet", "def": "Le point le plus haut (ou le plus bas) de la parabole.", "man": "S(α ; f(α)) avec α = −b/(2a) ; f(α) est l’extremum de f.", "ph": ["Le [[sommet de la parabole|sommet-parabole]] est S(2 ; 3).", "J’ai calculé l’abscisse du [[sommet|sommet-parabole]] : α = 10."] },
+  { "id": "axe-symetrie-parabole", "mot": "axe de symétrie d’une parabole", "art": "l’", "g": "m", "cat": "fonction", "ill": "l3:parabole|axe", "def": "La droite verticale qui passe par le sommet. Elle coupe la parabole en deux parties pareilles.", "man": "Droite d’équation x = α, avec α = −b/(2a).", "ph": ["L’[[axe de symétrie|axe-symetrie-parabole]] a pour équation x = 2.", "La parabole est symétrique par rapport à son [[axe|axe-symetrie-parabole]]."] },
+  { "id": "discriminant", "mot": "discriminant", "art": "le", "g": "m", "cat": "fonction", "sym": "Δ", "ill": "l3:delta|+", "def": "Le nombre Δ = b² − 4ac. Son signe dit combien il y a de solutions.", "man": "Δ = b² − 4ac : Δ > 0 deux racines, Δ = 0 une racine double, Δ < 0 aucune racine réelle.", "ph": ["Le [[discriminant]] vaut Δ = 36.", "Je calcule le [[discriminant]] avant de résoudre."] },
+  { "id": "racine-polynome", "mot": "racine d’un polynôme", "art": "la", "g": "f", "cat": "fonction", "ill": "l3:parabole|racines", "def": "Un nombre x qui donne f(x) = 0. La parabole coupe l’axe des abscisses en ce point.", "man": "Solution de l’équation ax² + bx + c = 0.", "vie": "la racine d’une plante, sous la terre.", "ph": ["Les [[racines|racine-polynome]] de B sont 4 et 10.", "Une [[racine|racine-polynome]] est une solution de f(x) = 0."] },
+  { "id": "forme-factorisee", "mot": "forme factorisée", "art": "la", "g": "f", "cat": "fonction", "ill": "txt:−(x − 4)(x − 10)|= −x² + 14x − 40", "def": "L’écriture de f(x) comme un produit : a(x − x₁)(x − x₂).", "man": "Si Δ > 0, f(x) = a(x − x₁)(x − x₂), où x₁ et x₂ sont les racines.", "ph": ["La [[forme factorisée|forme-factorisee]] de B(x) est −(x − 4)(x − 10).", "Avec la [[forme factorisée|forme-factorisee]], je lis les racines."] },
+  { "id": "extremum", "mot": "extremum", "art": "l’", "g": "m", "cat": "fonction", "ill": "l3:parabole|down", "def": "Un maximum ou un minimum.", "man": "Valeur maximale ou minimale prise par une fonction sur un intervalle.", "ph": ["L’[[extremum]] de h est un maximum : 3 m.", "Pour une parabole, l’[[extremum]] est au sommet."] }
+ ]
+}

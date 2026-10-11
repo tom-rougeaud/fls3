@@ -1,0 +1,235 @@
+{
+ "id": "suites-geo",
+ "annee": "tle",
+ "titre": "Suites géométriques",
+ "icone": "📈",
+ "cat": "fonction",
+ "domaine": "Algèbre et analyse",
+ "intro": "Reconnaître une évolution à pourcentage constant, calculer les termes d’une suite géométrique, chercher un seuil et calculer une somme de termes.",
+ "objectifs": [
+  "Je sais **reconnaître** une suite géométrique et **trouver** sa raison q.",
+  "Je sais **utiliser** la formule uₙ = u₀ × qⁿ.",
+  "Je sais **comparer** une évolution arithmétique et une évolution géométrique.",
+  "Je sais **trouver** un seuil et **calculer** la somme de termes consécutifs."
+ ],
+ "situation": {
+  "metier": "🏭 Gestion d’entreprise",
+  "txt": [
+   "Une entreprise achète une machine 24 000 €.",
+   "Chaque année, la machine perd 20 % de sa valeur : c’est la dépréciation.",
+   "Le comptable veut savoir quand la machine vaudra moins de 5 000 €, pour prévoir son remplacement."
+  ],
+  "question": "Au bout de combien d’années la machine vaudra-t-elle moins de 5 000 € ?"
+ },
+ "cours": [
+  {
+   "titre": "Évolution à pourcentage constant",
+   "txt": [
+    "Chaque année, la valeur baisse de 20 % : je multiplie par 0,8.",
+    "Je multiplie toujours par le même nombre : c’est une [[suite géométrique|suite-geometrique]].",
+    "Ce nombre est la [[raison]], notée q. Ici q = 0,8."
+   ],
+   "man": [
+    "(uₙ) est géométrique de raison q si, pour tout n, uₙ₊₁ = q × uₙ.",
+    "Une évolution de t % par période correspond à une suite géométrique de raison q = 1 + t (coefficient multiplicateur)."
+   ],
+   "ex": [
+    "u₀ = 24 000 ; u₁ = 24 000 × 0,8 = 19 200 ; u₂ = 15 360."
+   ],
+   "ill": "l3:suite|geo|24000|0.8"
+  },
+  {
+   "titre": "Reconnaître une suite géométrique",
+   "txt": [
+    "Je divise chaque terme par le terme d’avant : u₁ ÷ u₀, u₂ ÷ u₁…",
+    "Si je trouve toujours le même nombre, la suite est géométrique.",
+    "Ce quotient est la raison q."
+   ],
+   "man": [
+    "Si tous les termes sont non nuls et si les quotients uₙ₊₁ ÷ uₙ sont égaux, la suite est géométrique de raison q égale à ce quotient."
+   ],
+   "ex": [
+    "19 200 ÷ 24 000 = 0,8 et 15 360 ÷ 19 200 = 0,8 : q = 0,8."
+   ],
+   "ill": "txt:19 200 ÷ 24 000 = {0,8}|15 360 ÷ 19 200 = {0,8}"
+  },
+  {
+   "titre": "La formule uₙ = u₀ × qⁿ",
+   "txt": [
+    "Pour calculer un terme loin, je n’ai pas besoin de tous les autres.",
+    "uₙ = u₀ × qⁿ (si je pars de u₀). uₙ = u₁ × qⁿ⁻¹ (si je pars de u₁).",
+    "J’utilise la touche puissance de la calculatrice."
+   ],
+   "man": [
+    "Pour une suite géométrique de premier terme u₀ et de raison q : uₙ = u₀ × qⁿ. Plus généralement, uₙ = uₚ × qⁿ⁻ᵖ."
+   ],
+   "ex": [
+    "Valeur après 3 ans : u₃ = 24 000 × 0,8³ = 12 288 €."
+   ],
+   "ill": "txt:uₙ = u₀ × {qⁿ}|u₃ = 24 000 × 0,8³"
+  },
+  {
+   "titre": "Sens de variation",
+   "txt": [
+    "Si u₀ > 0 et q > 1 : la suite est [[croissante]] (hausse en %).",
+    "Si u₀ > 0 et 0 < q < 1 : la suite est [[décroissante|decroissante]] (baisse en %).",
+    "Les points (n ; uₙ) ne sont pas alignés : ils forment une courbe."
+   ],
+   "man": [
+    "Pour u₀ > 0 : si q > 1, (uₙ) est croissante ; si 0 < q < 1, (uₙ) est décroissante ; si q = 1, elle est constante."
+   ],
+   "ex": [
+    "q = 0,8 < 1 : la valeur de la machine diminue chaque année."
+   ],
+   "ill": "l3:suitegr|geo|1|1.5"
+  },
+  {
+   "titre": "Arithmétique ou géométrique ?",
+   "txt": [
+    "Arithmétique : j’ajoute le même nombre (hausse en euros).",
+    "Géométrique : je multiplie par le même nombre (hausse en %).",
+    "À long terme, une hausse géométrique dépasse toujours une hausse arithmétique."
+   ],
+   "man": [
+    "Une croissance arithmétique est linéaire ; une croissance géométrique (q > 1) est exponentielle."
+   ],
+   "ex": [
+    "1 200 abonnés : + 60 par mois → 1 920 après 12 mois ; + 5 % par mois → environ 2 155."
+   ],
+   "ill": "l3:suitegr|geo|1|1.4"
+  },
+  {
+   "titre": "Chercher un seuil",
+   "txt": [
+    "Je cherche le premier n tel que uₙ dépasse (ou passe sous) une valeur : c’est un [[seuil]].",
+    "Je calcule les termes avec la calculatrice (tableau de valeurs), le tableur ou Python.",
+    "Je donne le premier rang qui convient."
+   ],
+   "man": [
+    "Algorithme de seuil : tant que uₙ ne vérifie pas la condition, on calcule le terme suivant et on augmente n de 1."
+   ],
+   "ex": [
+    "u₇ ≈ 5 033 € et u₈ ≈ 4 027 € : la machine vaut moins de 5 000 € au bout de 8 ans."
+   ],
+   "ill": "l3:py|u = 24000|n = 0|while u >= 5000:|··u = u * 0.8|··n = n + 1|print(n)"
+  },
+  {
+   "titre": "Somme de termes",
+   "txt": [
+    "Parfois, je veux le total de plusieurs termes (par exemple la production de 6 mois).",
+    "Je peux additionner les termes un par un.",
+    "Ou utiliser la formule de la [[somme des termes|somme-termes]] : premier terme × (1 − qⁿ) ÷ (1 − q)."
+   ],
+   "man": [
+    "Somme des n premiers termes d’une suite géométrique de premier terme u₁ et de raison q ≠ 1 : S = u₁ × (1 − qⁿ) ÷ (1 − q)."
+   ],
+   "ex": [
+    "Production : 500 pièces le premier mois, + 10 % par mois. Sur 6 mois : 500 × (1 − 1,1⁶) ÷ (1 − 1,1) ≈ 3 858 pièces."
+   ],
+   "ill": "txt:S = u₁ × (1 − qⁿ) ÷ (1 − q)"
+  }
+ ],
+ "methodes": [
+  {
+   "titre": "Montrer qu’une suite est géométrique",
+   "etapes": [
+    "Je calcule les quotients de deux termes qui se suivent.",
+    "S’ils sont tous égaux, la suite est géométrique.",
+    "Dans une situation : « augmente (ou baisse) de t % chaque année » → q = 1 ± t ÷ 100."
+   ],
+   "exemple": {
+    "enonce": "Une machine de 24 000 € perd 20 % de sa valeur chaque année. On note uₙ sa valeur après n années. **Montre** que (uₙ) est géométrique.",
+    "etapes": [
+     { "t": "Baisse de 20 %.", "c": "× (1 − 0,20) = × 0,8" },
+     { "t": "Donc uₙ₊₁ = 0,8 × uₙ.", "c": "q = 0,8 ; u₀ = 24 000" }
+    ],
+    "reponse": "(uₙ) est géométrique de raison 0,8 et de premier terme 24 000."
+   }
+  },
+  {
+   "titre": "Calculer un terme avec la formule",
+   "etapes": [
+    "Je repère u₀ (ou u₁) et q.",
+    "J’écris uₙ = u₀ × qⁿ.",
+    "Je calcule qⁿ avec la touche puissance, puis je multiplie."
+   ],
+   "exemple": {
+    "enonce": "1 200 abonnés, + 5 % par mois. **Calcule** le nombre d’abonnés au bout de 12 mois. **Arrondis** à l’unité.",
+    "etapes": [
+     { "t": "u₀ = 1 200 ; q = 1,05.", "c": "" },
+     { "t": "u₁₂ = 1 200 × 1,05¹².", "c": "≈ 1 200 × 1,7959 ≈ 2 155" }
+    ],
+    "reponse": "Au bout de 12 mois, il y aura environ 2 155 abonnés."
+   }
+  },
+  {
+   "titre": "Trouver un seuil avec la calculatrice",
+   "outil": "Calculatrice ou tableur",
+   "etapes": [
+    "J’entre la suite (ou la fonction u₀ × qˣ) dans le menu « Suites » ou « Tableau ».",
+    "Je regarde le tableau de valeurs.",
+    "Je repère le premier rang où la condition est vraie."
+   ],
+   "exemple": {
+    "enonce": "uₙ = 24 000 × 0,8ⁿ. **Détermine** le premier n tel que uₙ < 5 000.",
+    "etapes": [
+     { "t": "Tableau de valeurs.", "c": "u₇ ≈ 5 033 ; u₈ ≈ 4 027" },
+     { "t": "Premier rang sous 5 000.", "c": "n = 8" }
+    ],
+    "reponse": "La machine vaut moins de 5 000 € au bout de 8 ans."
+   }
+  }
+ ],
+ "comprendre": [
+  { "t": "qcm", "txt": "Un loyer augmente de 2 % chaque année.", "q": "Quelle est la raison de la suite géométrique ?", "o": ["1,02", "0,02", "2"], "a": 0, "exp": "Hausse de 2 % : × 1,02." },
+  { "t": "qcm", "txt": "Suite : 5 ; 15 ; 45 ; 135…", "q": "Quelle est la raison ?", "o": ["3", "10", "5"], "a": 0, "exp": "15 ÷ 5 = 3 ; 45 ÷ 15 = 3." },
+  { "t": "vf", "txt": "Suite : 100 ; 110 ; 120 ; 130.", "q": "Cette suite est géométrique.", "a": false, "exp": "On ajoute 10 : elle est arithmétique. 110 ÷ 100 = 1,1 mais 120 ÷ 110 ≈ 1,09." },
+  { "t": "qcm", "txt": "u₀ = 500 et q = 2.", "q": "Que vaut u₃ ?", "o": ["4 000", "3 000", "1 000"], "a": 0, "exp": "500 × 2³ = 500 × 8 = 4 000." },
+  { "t": "qcm", "txt": "u₀ = 800 et q = 0,9.", "q": "La suite est :", "o": ["décroissante", "croissante", "constante"], "a": 0, "exp": "0 < q < 1 : chaque terme est plus petit que le précédent." },
+  { "t": "question", "txt": ["La machine coûte 24 000 €.", "Elle perd 20 % de sa valeur par an.", "Combien vaut-elle au bout de 3 ans ?"], "q": "Touche la phrase qui est la question.", "a": 2, "exp": "La question finit par « ? »." },
+  { "t": "donnees", "txt": "Une ville a 15 000 habitants. Sa population augmente de 3 % par an. Elle a 4 écoles. Combien d’habitants aura-t-elle dans 10 ans ?", "q": "Touche les trois données utiles.", "a": ["15 000", "3", "10"], "exp": "15 000 × 1,03¹⁰. Les écoles ne servent pas." },
+  { "t": "ordre", "q": "Remets la phrase dans l’ordre.", "phrase": "Chaque année, la valeur est multipliée par zéro virgule huit." }
+ ],
+ "brevet": [
+  {
+   "id": "sg-b1",
+   "titre": "La dépréciation de la machine",
+   "ctx": ["Une entreprise achète une machine 24 000 €. Chaque année, la machine perd 20 % de sa valeur.", "On note uₙ la valeur de la machine (en €) après n années. Ainsi u₀ = 24 000."],
+   "qs": [
+    { "q": "**Calcule** u₁.", "type": "num", "a": 19200, "unit": "€", "aide": ["Baisse de 20 % : × 0,8."], "corr": ["24 000 × 0,8 = 19 200"], "rep": "Après 1 an, la machine vaut 19 200 €." },
+    { "q": "**Donne** la raison q de la suite géométrique (uₙ).", "type": "num", "a": 0.8, "aide": ["1 − 20 ÷ 100."], "corr": ["q = 1 − 0,20 = 0,8"], "rep": "La raison est q = 0,8." },
+    { "q": "**Calcule** la valeur de la machine au bout de 3 ans.", "type": "num", "a": 12288, "unit": "€", "aide": ["u₃ = 24 000 × 0,8³."], "corr": ["0,8³ = 0,512", "24 000 × 0,512 = 12 288"], "rep": "Au bout de 3 ans, la machine vaut 12 288 €." },
+    { "q": "**Détermine** au bout de combien d’années la machine vaut moins de 5 000 €. (0,8⁷ ≈ 0,210 ; 0,8⁸ ≈ 0,168)", "type": "num", "a": 8, "unit": "ans", "aide": ["Je calcule u₇ et u₈."], "corr": ["u₇ = 24 000 × 0,8⁷ ≈ 5 033 ≥ 5 000", "u₈ = 24 000 × 0,8⁸ ≈ 4 027 < 5 000"], "rep": "La machine vaut moins de 5 000 € au bout de 8 ans." }
+   ]
+  },
+  {
+   "id": "sg-b2",
+   "titre": "Les abonnés de la salle de sport",
+   "ctx": ["Une salle de sport a 1 200 abonnés.", "Prévision A : + 60 abonnés par mois. Prévision B : + 5 % par mois.", "On compare les deux prévisions au bout de 12 mois."],
+   "qs": [
+    { "q": "La prévision A correspond à une suite :", "type": "qcm", "o": ["arithmétique de raison 60", "géométrique de raison 60", "géométrique de raison 1,05"], "a": 0, "aide": ["On ajoute le même nombre chaque mois."], "corr": ["+ 60 chaque mois : arithmétique, r = 60."], "rep": "La prévision A est une suite arithmétique de raison 60." },
+    { "q": "**Calcule** le nombre d’abonnés au bout de 12 mois avec la prévision A.", "type": "num", "a": 1920, "unit": "abonnés", "aide": ["1 200 + 12 × 60."], "corr": ["1 200 + 720 = 1 920"], "rep": "Avec la prévision A, il y aura 1 920 abonnés." },
+    { "q": "**Calcule** le nombre d’abonnés au bout de 12 mois avec la prévision B. **Arrondis** à l’unité.", "type": "num", "a": 2155.02765, "arr": 0, "unit": "abonnés", "aide": ["1 200 × 1,05¹²."], "corr": ["1,05¹² ≈ 1,7959", "1 200 × 1,05¹² ≈ 2 155"], "rep": "Avec la prévision B, il y aura environ 2 155 abonnés." },
+    { "q": "Quelle prévision donne le plus d’abonnés au bout de 12 mois ?", "type": "qcm", "o": ["La prévision B", "La prévision A", "Elles sont égales"], "a": 0, "aide": ["Je compare 1 920 et 2 155."], "corr": ["2 155 > 1 920"], "rep": "La prévision B donne le plus d’abonnés." }
+   ]
+  },
+  {
+   "id": "sg-b3",
+   "titre": "La production de l’atelier",
+   "ctx": ["Un atelier fabrique 500 pièces le premier mois.", "Chaque mois, la production augmente de 10 %.", "On note uₙ la production du mois n. Ainsi u₁ = 500."],
+   "qs": [
+    { "q": "**Calcule** la production du mois 2.", "type": "num", "a": 550, "unit": "pièces", "aide": ["500 × 1,1."], "corr": ["500 × 1,1 = 550"], "rep": "Le mois 2, l’atelier fabrique 550 pièces." },
+    { "q": "**Calcule** la production du mois 6. **Arrondis** à l’unité.", "type": "num", "a": 805.255, "arr": 0, "unit": "pièces", "aide": ["uₙ = u₁ × qⁿ⁻¹, donc u₆ = 500 × 1,1⁵."], "corr": ["1,1⁵ = 1,61051", "500 × 1,61051 ≈ 805"], "rep": "Le mois 6, l’atelier fabrique environ 805 pièces." },
+    { "q": "**Calcule** la production totale des 6 premiers mois. **Arrondis** à l’unité.", "type": "num", "a": 3857.805, "arr": 0, "unit": "pièces", "aide": ["S = u₁ × (1 − q⁶) ÷ (1 − q).", "1,1⁶ = 1,771561."], "corr": ["S = 500 × (1 − 1,771561) ÷ (1 − 1,1)", "= 500 × 7,71561 ≈ 3 858"], "rep": "En 6 mois, l’atelier fabrique environ 3 858 pièces." }
+   ]
+  }
+ ],
+ "calc": ["sg-terme", "sg-raison", "sg-formule", "sg-seuil", "sg-somme"],
+ "mots": [
+  { "id": "suite-geometrique", "mot": "suite géométrique", "art": "la", "g": "f", "cat": "fonction", "ill": "l3:suite|geo|24000|0.8", "def": "Une suite où je multiplie toujours par le même nombre pour avoir le terme suivant.", "man": "Suite telle que uₙ₊₁ = q × uₙ ; uₙ = u₀ × qⁿ.", "ph": ["La valeur de la machine est une [[suite géométrique|suite-geometrique]] de raison 0,8.", "Une hausse de 5 % par mois donne une [[suite géométrique|suite-geometrique]]."] },
+  { "id": "depreciation", "mot": "dépréciation", "art": "la", "g": "f", "cat": "nombre", "ill": "l3:suite|geo|24000|0.8", "def": "La perte de valeur d’un objet avec le temps.", "man": "Diminution de la valeur d’un bien ; souvent modélisée par un pourcentage annuel constant.", "ph": ["La [[dépréciation|depreciation]] de la machine est de 20 % par an.", "À cause de la [[dépréciation|depreciation]], une voiture vaut moins chaque année."] },
+  { "id": "seuil", "mot": "seuil", "art": "le", "g": "m", "cat": "fonction", "ill": "l3:py|while u >= 5000:|··u = u * 0.8|··n = n + 1", "def": "Une valeur limite à dépasser (ou à ne pas dépasser).", "man": "On cherche le plus petit rang n tel que uₙ franchit une valeur donnée.", "vie": "le seuil d’une porte : le bas de l’entrée.", "ph": ["Le [[seuil]] de 5 000 € est franchi au bout de 8 ans.", "Avec une boucle while, je cherche le [[seuil]]."] },
+  { "id": "somme-termes", "mot": "somme de termes", "art": "la", "g": "f", "cat": "fonction", "ill": "txt:S = u₁ × (1 − qⁿ) ÷ (1 − q)", "def": "Le total de plusieurs termes de la suite qui se suivent.", "man": "Pour une suite géométrique de raison q ≠ 1 : u₁ + … + uₙ = u₁(1 − qⁿ)/(1 − q).", "ph": ["La [[somme des termes|somme-termes]] donne la production totale.", "J’utilise la formule de la [[somme de termes|somme-termes]] géométrique."] },
+  { "id": "croissance-exponentielle", "mot": "croissance exponentielle", "art": "la", "g": "f", "cat": "fonction", "ill": "l3:suitegr|geo|1|1.5", "def": "Une augmentation de plus en plus rapide, avec le même pourcentage à chaque fois.", "man": "Évolution modélisée par une suite géométrique de raison q > 1 (ou une fonction exponentielle).", "ph": ["Les abonnés ont une [[croissance exponentielle|croissance-exponentielle]] : + 5 % par mois.", "Une [[croissance exponentielle|croissance-exponentielle]] finit par dépasser une croissance linéaire."] }
+ ]
+}

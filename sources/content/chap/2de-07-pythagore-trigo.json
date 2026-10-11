@@ -1,0 +1,230 @@
+{
+ "id": "pythagore-trigo",
+ "annee": "2de",
+ "titre": "Triangles rectangles : Pythagore et trigonométrie",
+ "icone": "📐",
+ "cat": "geometrie",
+ "domaine": "Géométrie",
+ "intro": "Calculer des longueurs et des angles dans un triangle rectangle, et calculer une pente.",
+ "objectifs": [
+  "Je sais **utiliser** le théorème de Pythagore et sa réciproque.",
+  "Je sais **choisir** entre cosinus, sinus et tangente.",
+  "Je sais **calculer** une longueur ou un angle avec la calculatrice.",
+  "Je sais **calculer** une pente en pourcentage."
+ ],
+ "situation": {
+  "metier": "♿ Bâtiment et accessibilité",
+  "txt": [
+   "L’entrée d’une boulangerie a une marche de 30 cm. Une personne en fauteuil roulant ne peut pas entrer.",
+   "La mairie demande une rampe d’accès. La règle dit : la pente doit être de 5 % au maximum.",
+   "Le maçon doit calculer la longueur de la rampe."
+  ],
+  "question": "Quelle doit être la longueur de la rampe, et quel angle fait-elle avec le sol ?"
+ },
+ "cours": [
+  {
+   "titre": "Le théorème de Pythagore",
+   "txt": [
+    "Dans un [[triangle rectangle|triangle-rectangle]], l’[[hypoténuse]] est le plus grand côté, en face de l’angle droit.",
+    "[[Théorème de Pythagore|theoreme-pythagore]] : hypoténuse² = côté 1² + côté 2².",
+    "Je l’utilise pour calculer une longueur quand je connais les deux autres."
+   ],
+   "man": [
+    "Si le triangle ABC est rectangle en A, alors BC² = AB² + AC²."
+   ],
+   "ex": [
+    "Chevron d’un toit : 3 m et 4 m. BC² = 3² + 4² = 25, donc BC = 5 m."
+   ],
+   "ill": "tri:pyth"
+  },
+  {
+   "titre": "La réciproque : est-ce un angle droit ?",
+   "txt": [
+    "Je connais les trois côtés. Je veux savoir si le triangle est rectangle.",
+    "Je calcule le carré du plus grand côté, puis la somme des carrés des deux autres.",
+    "Si c’est égal : le triangle est rectangle ([[réciproque|reciproque]]). Sinon, il n’est pas rectangle ([[contraposée|contraposee]])."
+   ],
+   "man": [
+    "Réciproque : si BC² = AB² + AC², alors ABC est rectangle en A.",
+    "Contraposée : si BC² ≠ AB² + AC² (BC étant le plus grand côté), alors ABC n’est pas rectangle."
+   ],
+   "ex": [
+    "Le maçon mesure 60 cm, 80 cm et 100 cm : 100² = 10 000 et 60² + 80² = 10 000. L’angle est droit."
+   ],
+   "ill": "tri:rect"
+  },
+  {
+   "titre": "Les trois côtés pour un angle",
+   "txt": [
+    "Je choisis un angle aigu α du triangle rectangle.",
+    "Le [[côté opposé|cote-oppose]] est en face de α. Le [[côté adjacent|cote-adjacent]] touche α (ce n’est pas l’hypoténuse).",
+    "La [[trigonométrie|trigonometrie]] relie un angle et deux côtés."
+   ],
+   "man": [
+    "Dans un triangle rectangle, pour un angle aigu α : cos α = adjacent ÷ hypoténuse ; sin α = opposé ÷ hypoténuse ; tan α = opposé ÷ adjacent."
+   ],
+   "ex": [
+    "Rampe : le dénivelé est opposé à l’angle α ; la distance horizontale est adjacente."
+   ],
+   "ill": "l3:trigo3"
+  },
+  {
+   "titre": "Calculer une longueur",
+   "txt": [
+    "J’écris la formule avec l’angle connu : [[cos|cosinus]], [[sin|sinus]] ou [[tan|tangente]].",
+    "Je remplace par les valeurs.",
+    "Je calcule avec la calculatrice en mode degrés."
+   ],
+   "man": [
+    "Exemple : si cos α = AB ÷ BC, alors AB = BC × cos α et BC = AB ÷ cos α."
+   ],
+   "ex": [
+    "Échelle de 5 m, angle de 70° avec le sol : hauteur = 5 × sin 70° ≈ 4,70 m."
+   ],
+   "ill": "tri:echelle"
+  },
+  {
+   "titre": "Calculer un angle",
+   "txt": [
+    "Je calcule le rapport : par exemple cos α = 1,5 ÷ 5 = 0,3.",
+    "J’utilise la [[touche inverse|touche-inverse]] de la calculatrice : cos⁻¹, sin⁻¹ ou tan⁻¹.",
+    "Je trouve α en degrés."
+   ],
+   "man": [
+    "Si cos α = k, alors α = cos⁻¹(k) (touche « Arccos » ou « cos⁻¹ »). De même avec sin⁻¹ et tan⁻¹."
+   ],
+   "ex": [
+    "cos α = 0,3 → α = cos⁻¹(0,3) ≈ 72,5°."
+   ],
+   "ill": "l3:calculatrice|cos⁻¹(0.3)|≈ 72,5°"
+  },
+  {
+   "titre": "La pente",
+   "txt": [
+    "La [[pente]] dit si une rampe ou une route monte beaucoup.",
+    "Pente = [[dénivelé|denivele]] ÷ [[distance horizontale|distance-horizontale]].",
+    "Je l’écris souvent en pourcentage : 5 % veut dire 5 cm de montée pour 100 cm à l’horizontale."
+   ],
+   "man": [
+    "La pente p d’une rampe d’[[angle d’inclinaison|inclinaison]] α est p = tan α = dénivelé ÷ distance horizontale."
+   ],
+   "ex": [
+    "Marche de 30 cm, pente 5 % : distance horizontale = 0,30 ÷ 0,05 = 6 m."
+   ],
+   "ill": "l3:pente"
+  }
+ ],
+ "methodes": [
+  {
+   "titre": "Calculer une longueur avec Pythagore",
+   "etapes": [
+    "Je repère l’angle droit et l’hypoténuse.",
+    "J’écris l’égalité : hypoténuse² = côté² + côté².",
+    "Je remplace et je calcule le carré cherché.",
+    "Je prends la racine carrée, puis j’arrondis."
+   ],
+   "exemple": {
+    "enonce": "Une échelle de 5 m est posée contre un mur. Le pied est à 1,5 m du mur. **Calcule** la hauteur atteinte. **Arrondis** au centième.",
+    "ill": "tri:echelle",
+    "etapes": [
+     { "t": "L’échelle est l’hypoténuse.", "c": "5² = 1,5² + h²" },
+     { "t": "Je calcule h².", "c": "h² = 25 − 2,25 = 22,75" },
+     { "t": "Racine carrée.", "c": "h = √22,75 ≈ 4,77" }
+    ],
+    "reponse": "L’échelle atteint environ 4,77 m de haut."
+   }
+  },
+  {
+   "titre": "Choisir cos, sin ou tan",
+   "etapes": [
+    "Je repère l’angle α (connu ou cherché).",
+    "Je nomme les côtés par rapport à α : opposé, adjacent, hypoténuse.",
+    "Je regarde les deux côtés utiles (connu et cherché) et je choisis : adj et hyp → cos ; opp et hyp → sin ; opp et adj → tan.",
+    "J’écris l’égalité et je calcule."
+   ],
+   "exemple": {
+    "enonce": "Une rampe a un dénivelé de 0,30 m et une distance horizontale de 6 m. **Calcule** l’angle α avec le sol. **Arrondis** au dixième.",
+    "ill": "l3:pente|angle",
+    "etapes": [
+     { "t": "Opposé : 0,30 m. Adjacent : 6 m.", "c": "→ tangente" },
+     { "t": "J’écris l’égalité.", "c": "tan α = 0,30 ÷ 6 = 0,05" },
+     { "t": "Touche tan⁻¹.", "c": "α ≈ 2,9°" }
+    ],
+    "reponse": "La rampe fait un angle d’environ 2,9° avec le sol."
+   }
+  },
+  {
+   "titre": "Calculer avec une pente en %",
+   "etapes": [
+    "J’écris la pente en nombre décimal : 5 % = 0,05.",
+    "Pente = dénivelé ÷ distance horizontale.",
+    "Pour trouver la distance : distance = dénivelé ÷ pente.",
+    "Pour trouver le dénivelé : dénivelé = distance × pente."
+   ],
+   "exemple": {
+    "enonce": "Une route a une pente de 8 %. **Calcule** le dénivelé sur 2 km à l’horizontale.",
+    "etapes": [
+     { "t": "Pente en décimal.", "c": "8 % = 0,08" },
+     { "t": "Dénivelé = distance × pente.", "c": "2 000 × 0,08 = 160" }
+    ],
+    "reponse": "Sur 2 km, la route monte de 160 m."
+   }
+  }
+ ],
+ "comprendre": [
+  { "t": "qcm", "txt": "Le triangle ABC est rectangle en A.", "q": "Quel côté est l’hypoténuse ?", "o": ["[BC]", "[AB]", "[AC]"], "a": 0, "exp": "L’hypoténuse est en face de l’angle droit A : c’est [BC]." },
+  { "t": "qcm", "txt": "Dans un triangle rectangle, je connais le côté opposé à α et l’hypoténuse.", "q": "Quelle formule j’utilise ?", "o": ["sin α", "cos α", "tan α"], "a": 0, "exp": "Opposé et hypoténuse : sin α = opposé ÷ hypoténuse." },
+  { "t": "vf", "txt": "Un triangle a des côtés de 5 cm, 6 cm et 8 cm.", "q": "Ce triangle est rectangle.", "a": false, "exp": "8² = 64 et 5² + 6² = 61. 64 ≠ 61 : le triangle n’est pas rectangle." },
+  { "t": "qcm", "txt": "Une rampe a une pente de 4 %.", "q": "Que veut dire 4 % ?", "o": ["4 cm de montée pour 100 cm à l’horizontale", "Un angle de 4°", "4 m de montée pour 1 m"], "a": 0, "exp": "Pente 4 % = 0,04 : 4 cm de dénivelé pour 100 cm de distance horizontale." },
+  { "t": "qcm", "txt": "cos α = 0,5.", "q": "Quelle touche j’utilise pour trouver α ?", "o": ["cos⁻¹", "cos", "√"], "a": 0, "exp": "Pour trouver l’angle, j’utilise la touche inverse : α = cos⁻¹(0,5) = 60°." },
+  { "t": "question", "txt": ["Une échelle mesure 5 m.", "Son pied est à 1,5 m du mur.", "Quel angle fait l’échelle avec le sol ?"], "q": "Touche la phrase qui est la question.", "a": 2, "exp": "La question finit par « ? »." },
+  { "t": "donnees", "txt": "Un toit a une pente de 30 %. La maison a 4 fenêtres. La distance horizontale du pan est 6 m. Calcule le dénivelé du toit.", "q": "Touche les deux données utiles.", "a": ["30", "6"], "exp": "Dénivelé = 6 × 0,30 = 1,8 m. Les fenêtres ne servent pas." },
+  { "t": "ordre", "q": "Remets la phrase dans l’ordre.", "phrase": "La rampe doit mesurer au moins six mètres." }
+ ],
+ "brevet": [
+  {
+   "id": "pt-b1",
+   "titre": "La rampe de la boulangerie",
+   "fig": "l3:pente",
+   "ctx": ["L’entrée de la boulangerie a une marche de 0,30 m de haut.", "La pente de la rampe doit être de 5 % au maximum.", "La rampe peut prendre au plus 7 m sur le trottoir (distance horizontale)."],
+   "qs": [
+    { "q": "**Calcule** la distance horizontale minimale de la rampe.", "type": "num", "a": 6, "unit": "m", "aide": ["Pente = dénivelé ÷ distance horizontale.", "Distance = dénivelé ÷ pente = 0,30 ÷ 0,05."], "corr": ["5 % = 0,05", "0,30 ÷ 0,05 = 6"], "rep": "La distance horizontale doit être d’au moins 6 m." },
+    { "q": "La rampe peut-elle être construite sur ce trottoir ?", "type": "qcm", "o": ["Oui, car 6 m ≤ 7 m", "Non, car 6 m < 7 m", "Non, car 0,30 m < 5 %"], "a": 0, "aide": ["Je compare 6 m et la place disponible, 7 m."], "corr": ["6 m ≤ 7 m : il y a assez de place."], "rep": "Oui, la rampe peut être construite." },
+    { "q": "**Calcule** la longueur de la rampe (l’hypoténuse) pour une distance horizontale de 6 m. **Arrondis** au centième.", "type": "num", "a": 6.00749532, "arr": 2, "unit": "m", "aide": ["Théorème de Pythagore : L² = 6² + 0,30²."], "corr": ["L² = 36 + 0,09 = 36,09", "L = √36,09 ≈ 6,01"], "rep": "La rampe mesure environ 6,01 m." },
+    { "q": "**Calcule** l’angle α entre la rampe et le sol. **Arrondis** au dixième.", "type": "num", "a": 2.86240523, "arr": 1, "unit": "°", "aide": ["Opposé : 0,30 m ; adjacent : 6 m.", "tan α = 0,30 ÷ 6."], "corr": ["tan α = 0,05", "α = tan⁻¹(0,05) ≈ 2,9°"], "rep": "La rampe fait un angle d’environ 2,9° avec le sol." }
+   ]
+  },
+  {
+   "id": "pt-b2",
+   "titre": "La charpente du garage",
+   "fig": "tri:toit",
+   "ctx": ["Un charpentier construit le toit d’un garage. Le toit a deux pans identiques.", "La largeur du garage est 8 m. Le haut du toit est 3 m au-dessus des murs, au milieu.", "Le garage mesure 10 m de long."],
+   "qs": [
+    { "q": "**Calcule** la longueur d’un chevron (un pan du toit, de la gouttière au sommet).", "type": "num", "a": 5, "unit": "m", "aide": ["Le triangle rectangle a pour côtés 4 m (moitié de 8 m) et 3 m.", "Chevron² = 4² + 3²."], "corr": ["4² + 3² = 16 + 9 = 25", "√25 = 5"], "rep": "Un chevron mesure 5 m." },
+    { "q": "**Calcule** l’angle du toit avec l’horizontale. **Arrondis** au dixième.", "type": "num", "a": 36.8698976, "arr": 1, "unit": "°", "aide": ["Opposé : 3 m ; adjacent : 4 m.", "tan α = 3 ÷ 4."], "corr": ["tan α = 3 ÷ 4 = 0,75", "α = tan⁻¹(0,75) ≈ 36,9°"], "rep": "Le toit fait un angle d’environ 36,9° avec l’horizontale." },
+    { "q": "**Calcule** la surface totale du toit (les deux pans).", "type": "num", "a": 100, "unit": "m²", "aide": ["Un pan est un rectangle de 5 m sur 10 m.", "Il y a deux pans."], "corr": ["5 × 10 = 50", "2 × 50 = 100"], "rep": "La surface du toit est 100 m²." }
+   ]
+  },
+  {
+   "id": "pt-b3",
+   "titre": "L’échelle en sécurité",
+   "fig": "tri:echelle",
+   "ctx": ["Un peintre pose une échelle de 5 m contre un mur vertical.", "Le pied de l’échelle est à 1,5 m du mur.", "Pour la sécurité, l’angle entre l’échelle et le sol doit être entre 65° et 75°."],
+   "qs": [
+    { "q": "**Calcule** la hauteur atteinte par le haut de l’échelle. **Arrondis** au centième.", "type": "num", "a": 4.76969600, "arr": 2, "unit": "m", "aide": ["L’échelle est l’hypoténuse.", "h² = 5² − 1,5²."], "corr": ["h² = 25 − 2,25 = 22,75", "h = √22,75 ≈ 4,77"], "rep": "L’échelle atteint environ 4,77 m." },
+    { "q": "**Calcule** l’angle entre l’échelle et le sol. **Arrondis** au dixième.", "type": "num", "a": 72.5423969, "arr": 1, "unit": "°", "aide": ["Adjacent : 1,5 m ; hypoténuse : 5 m.", "cos α = 1,5 ÷ 5."], "corr": ["cos α = 1,5 ÷ 5 = 0,3", "α = cos⁻¹(0,3) ≈ 72,5°"], "rep": "L’échelle fait un angle d’environ 72,5° avec le sol." },
+    { "q": "L’échelle est-elle placée en sécurité ?", "type": "qcm", "o": ["Oui, car 65° ≤ 72,5° ≤ 75°", "Non, car 72,5° > 65°", "Non, car 4,77 m < 5 m"], "a": 0, "aide": ["Je regarde si l’angle est entre 65° et 75°."], "corr": ["72,5° est entre 65° et 75°."], "rep": "Oui, l’échelle est placée en sécurité." }
+   ]
+  }
+ ],
+ "calc": ["py-hyp", "py-cote", "py-rec", "tr-long", "tr-angle", "pt-pente"],
+ "mots": [
+  { "id": "trigonometrie", "mot": "trigonométrie", "art": "la", "g": "f", "cat": "geometrie", "ill": "l3:trigo3", "def": "La partie des maths qui relie les angles et les longueurs des triangles.", "man": "Dans un triangle rectangle, les rapports cosinus, sinus et tangente relient un angle aigu et les longueurs des côtés.", "ph": ["Avec la [[trigonométrie|trigonometrie]], je calcule l’angle de la rampe.", "La [[trigonométrie|trigonometrie]] utilise cos, sin et tan."] },
+  { "id": "pente", "mot": "pente", "art": "la", "g": "f", "cat": "geometrie", "ill": "l3:pente|pente", "def": "Ce qui dit si ça monte beaucoup : dénivelé ÷ distance horizontale. Souvent en %.", "man": "Pente p = dénivelé ÷ distance horizontale = tan α, où α est l’angle d’inclinaison.", "vie": "une pente de ski : une piste qui descend.", "ph": ["La [[pente]] de la rampe est 5 %.", "Une [[pente]] de 8 % : 8 m de montée pour 100 m."] },
+  { "id": "denivele", "mot": "dénivelé", "art": "le", "g": "m", "cat": "geometrie", "ill": "l3:pente|denivele", "def": "La différence de hauteur entre le bas et le haut.", "man": "Différence d’altitude entre deux points.", "ph": ["Le [[dénivelé|denivele]] de la rampe est 0,30 m.", "Sur cette randonnée, le [[dénivelé|denivele]] est de 600 m."] },
+  { "id": "distance-horizontale", "mot": "distance horizontale", "art": "la", "g": "f", "cat": "geometrie", "ill": "l3:pente|distance", "def": "La longueur mesurée à plat, sur le sol.", "man": "Longueur de la projection horizontale d’un trajet ou d’une rampe.", "ph": ["La [[distance horizontale|distance-horizontale]] de la rampe est 6 m.", "Pente = dénivelé ÷ [[distance horizontale|distance-horizontale]]."] },
+  { "id": "inclinaison", "mot": "angle d’inclinaison", "art": "l’", "g": "m", "cat": "geometrie", "ill": "l3:pente|angle", "def": "L’angle entre la rampe (ou le toit) et l’horizontale.", "man": "Angle α entre une droite et l’horizontale ; tan α = pente.", "ph": ["L’[[angle d’inclinaison|inclinaison]] de la rampe est environ 2,9°.", "Je calcule l’[[angle d’inclinaison|inclinaison]] du toit avec tan⁻¹."] },
+  { "id": "touche-inverse", "mot": "touche cos⁻¹ (sin⁻¹, tan⁻¹)", "art": "la", "g": "f", "cat": "geometrie", "ill": "l3:calculatrice|cos⁻¹(0.3)|≈ 72,5°", "def": "La touche de la calculatrice qui donne l’angle quand je connais cos, sin ou tan.", "man": "Fonctions réciproques Arccos, Arcsin, Arctan : α = cos⁻¹(k) si cos α = k.", "ph": ["J’utilise la [[touche cos⁻¹|touche-inverse]] pour trouver l’angle.", "Avec la [[touche tan⁻¹|touche-inverse]], tan⁻¹(0,75) ≈ 36,9°."] },
+  { "id": "contraposee", "mot": "contraposée", "art": "la", "g": "f", "cat": "geometrie", "ill": "txt:8² = 64|5² + 6² = 61|{non rectangle}", "def": "Elle sert à montrer qu’un triangle n’est pas rectangle : les deux calculs ne sont pas égaux.", "man": "Contraposée de Pythagore : si BC² ≠ AB² + AC² ([BC] plus grand côté), alors ABC n’est pas rectangle.", "ph": ["D’après la [[contraposée|contraposee]], le triangle n’est pas rectangle.", "64 ≠ 61, j’utilise la [[contraposée|contraposee]] du théorème de Pythagore."] }
+ ]
+}

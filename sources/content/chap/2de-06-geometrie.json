@@ -1,0 +1,265 @@
+{
+ "id": "geometrie",
+ "annee": "2de",
+ "titre": "Géométrie dans l’espace",
+ "icone": "🧊",
+ "cat": "geometrie",
+ "domaine": "Géométrie",
+ "intro": "Reconnaître et représenter des solides, calculer des aires et des volumes, convertir en litres.",
+ "objectifs": [
+  "Je sais **reconnaître** un solide, ses faces, ses arêtes et ses sommets.",
+  "Je sais **lire** une perspective cavalière, un patron et des vues.",
+  "Je sais **calculer** le volume d’un solide usuel et d’un solide composé.",
+  "Je sais **calculer** une aire latérale et **convertir** un volume en litres."
+ ],
+ "situation": {
+  "metier": "🌾 Agriculture",
+  "txt": [
+   "Une coopérative agricole stocke le blé dans des silos.",
+   "Un silo est formé d’un cylindre (rayon 2 m, hauteur 6 m) et d’un cône en dessous (hauteur 1,5 m).",
+   "Un camion apporte 60 tonnes de blé. 1 m³ de blé pèse environ 0,75 tonne."
+  ],
+  "question": "Le silo est-il assez grand pour le blé du camion ?"
+ },
+ "cours": [
+  {
+   "titre": "Les solides",
+   "txt": [
+    "Un solide a des [[faces|face]] (surfaces plates), des [[arêtes|arete]] (les bords) et des [[sommets|sommet]] (les coins).",
+    "[[Pavé droit|pave-droit]], [[cube]], [[prisme]], [[pyramide]] : ils ont des faces plates.",
+    "[[Cylindre]], [[cône|cone]], [[boule]] : ils ont des surfaces courbes."
+   ],
+   "man": [
+    "Un polyèdre est un solide limité par des polygones (faces). Un pavé droit a 6 faces, 12 arêtes et 8 sommets.",
+    "Le cylindre, le cône et la boule sont des solides de révolution."
+   ],
+   "ex": [
+    "Un carton de déménagement est un pavé droit : 6 faces, 12 arêtes, 8 sommets."
+   ],
+   "ill": "l3:pave|arete"
+  },
+  {
+   "titre": "Représenter un solide",
+   "txt": [
+    "En [[perspective cavalière|perspective-cavaliere]], je dessine le solide « en 3D » sur une feuille.",
+    "Les arêtes cachées sont en pointillés.",
+    "Un [[patron]] est le solide « déplié » : je peux le découper et le plier."
+   ],
+   "man": [
+    "En perspective cavalière, les faces avant sont en vraie grandeur, les arêtes fuyantes sont parallèles et réduites ; les arêtes cachées sont en pointillés.",
+    "Le patron d’un solide est une figure plane qui, après pliage, permet de construire ce solide."
+   ],
+   "ex": [
+    "Le patron d’un cube a 6 carrés. Le patron d’un cylindre a 2 disques et 1 rectangle."
+   ],
+   "ill": "l3:patron|cube"
+  },
+  {
+   "titre": "Les vues",
+   "txt": [
+    "La [[vue de face|vue-de-face]] : ce que je vois quand je suis devant le solide.",
+    "La [[vue de dessus|vue-de-dessus]] : ce que je vois d’en haut.",
+    "Sur les plans techniques, on dessine souvent ces vues."
+   ],
+   "man": [
+    "Les vues (de face, de dessus, de côté) sont des projections orthogonales du solide sur des plans."
+   ],
+   "ex": [
+    "Un cylindre debout : vue de face = un rectangle ; vue de dessus = un disque."
+   ],
+   "ill": "l3:vues"
+  },
+  {
+   "titre": "Volumes des solides droits",
+   "txt": [
+    "Pavé droit : V = longueur × largeur × hauteur.",
+    "[[Prisme]] et [[cylindre]] : V = aire de la [[base]] × hauteur.",
+    "Cylindre : V = π × r² × h."
+   ],
+   "man": [
+    "Prisme droit, cylindre : V = 𝒜(base) × h. Cylindre de rayon r et de hauteur h : V = πr²h."
+   ],
+   "ex": [
+    "Cylindre du silo : V = π × 2² × 6 = 24π ≈ 75,4 m³."
+   ],
+   "ill": "sol:cylindre|2 m|6 m"
+  },
+  {
+   "titre": "Volumes des solides « pointus » et de la boule",
+   "txt": [
+    "[[Pyramide]] et [[cône|cone]] : V = aire de la base × hauteur ÷ 3.",
+    "Cône : V = π × r² × h ÷ 3.",
+    "[[Boule]] de rayon r : V = 4 ÷ 3 × π × r³."
+   ],
+   "man": [
+    "Pyramide, cône : V = (1/3) × 𝒜(base) × h. Boule de rayon r : V = (4/3)πr³."
+   ],
+   "ex": [
+    "Cône du silo : V = π × 2² × 1,5 ÷ 3 = 2π ≈ 6,3 m³."
+   ],
+   "ill": "sol:cone"
+  },
+  {
+   "titre": "Solide composé",
+   "txt": [
+    "Un [[solide composé|solide-compose]] est fait de plusieurs solides collés.",
+    "Je calcule le volume de chaque partie.",
+    "J’additionne les volumes."
+   ],
+   "man": [
+    "Le volume d’un solide composé est la somme des volumes des solides qui le composent (ou une différence pour un solide évidé)."
+   ],
+   "ex": [
+    "Silo : 24π + 2π = 26π ≈ 81,7 m³."
+   ],
+   "ill": "l3:silo"
+  },
+  {
+   "titre": "Aire latérale d’un cylindre",
+   "txt": [
+    "L’[[aire latérale|aire-laterale]] est l’aire « autour » du solide, sans le dessus et le dessous.",
+    "Si je déplie le côté d’un cylindre, j’ai un rectangle.",
+    "Longueur du rectangle = périmètre du disque = 2 × π × r. Aire latérale = 2 × π × r × h."
+   ],
+   "man": [
+    "Aire latérale d’un cylindre de rayon r et de hauteur h : 𝒜 = 2πrh. Aire totale : 2πrh + 2πr²."
+   ],
+   "ex": [
+    "Cuve de rayon 0,6 m et de hauteur 1,5 m : 𝒜 = 2 × π × 0,6 × 1,5 ≈ 5,65 m²."
+   ],
+   "ill": "l3:alat"
+  },
+  {
+   "titre": "Volume et contenance",
+   "txt": [
+    "La [[contenance]] est le volume de liquide qu’un récipient peut contenir. Elle s’exprime en [[litres|litre]].",
+    "1 L = 1 dm³. 1 m³ = 1 000 L. 1 cm³ = 1 mL.",
+    "Pour passer des m³ aux litres, je multiplie par 1 000."
+   ],
+   "man": [
+    "1 m³ = 1 000 dm³ = 1 000 L ; 1 dm³ = 1 L = 1 000 cm³ ; 1 cm³ = 1 mL."
+   ],
+   "ex": [
+    "1,696 m³ = 1 696 L."
+   ],
+   "ill": "l3:contenance|1,5 L"
+  }
+ ],
+ "methodes": [
+  {
+   "titre": "Calculer le volume d’un cylindre ou d’un cône",
+   "etapes": [
+    "Je repère le rayon r et la hauteur h, dans la même unité.",
+    "Je calcule l’aire de la base : π × r².",
+    "Cylindre : je multiplie par h. Cône : je multiplie par h, puis je divise par 3.",
+    "J’arrondis comme demandé et j’écris l’unité de volume (m³, cm³…)."
+   ],
+   "exemple": {
+    "enonce": "Le cône du silo a un rayon de 2 m et une hauteur de 1,5 m. **Calcule** son volume. **Arrondis** au dixième.",
+    "ill": "sol:cone",
+    "etapes": [
+     { "t": "Aire de la base.", "c": "π × 2² = 4π" },
+     { "t": "Je multiplie par h et je divise par 3.", "c": "4π × 1,5 ÷ 3 = 2π" },
+     { "t": "J’arrondis.", "c": "2π ≈ 6,3" }
+    ],
+    "reponse": "Le volume du cône est environ 6,3 m³."
+   }
+  },
+  {
+   "titre": "Calculer le volume d’un solide composé",
+   "etapes": [
+    "Je découpe le solide en solides connus.",
+    "Je calcule chaque volume avec sa formule, en valeur exacte si possible.",
+    "J’additionne (ou je soustrais pour un trou).",
+    "J’arrondis seulement à la fin."
+   ],
+   "exemple": {
+    "enonce": "Le silo est formé d’un cylindre (r = 2 m, h = 6 m) et d’un cône (r = 2 m, h = 1,5 m). **Calcule** son volume. **Arrondis** au dixième.",
+    "ill": "l3:silo",
+    "etapes": [
+     { "t": "Cylindre.", "c": "π × 2² × 6 = 24π" },
+     { "t": "Cône.", "c": "π × 2² × 1,5 ÷ 3 = 2π" },
+     { "t": "J’additionne et j’arrondis.", "c": "26π ≈ 81,7" }
+    ],
+    "reponse": "Le volume du silo est environ 81,7 m³."
+   }
+  },
+  {
+   "titre": "Passer d’un volume à une contenance",
+   "etapes": [
+    "Je calcule le volume dans une unité de volume (m³, dm³, cm³).",
+    "Je convertis : 1 m³ = 1 000 L ; 1 dm³ = 1 L ; 1 cm³ = 1 mL.",
+    "J’écris la contenance en litres."
+   ],
+   "exemple": {
+    "enonce": "Un aquarium mesure 80 cm × 35 cm × 40 cm. **Calcule** sa contenance en litres.",
+    "ill": "l3:pave",
+    "etapes": [
+     { "t": "Volume en cm³.", "c": "80 × 35 × 40 = 112 000 cm³" },
+     { "t": "Je convertis : 1 000 cm³ = 1 L.", "c": "112 000 ÷ 1 000 = 112" }
+    ],
+    "reponse": "La contenance de l’aquarium est 112 L."
+   }
+  }
+ ],
+ "comprendre": [
+  { "t": "qcm", "txt": "Un pavé droit est dessiné en perspective cavalière.", "q": "Combien a-t-il d’arêtes ?", "o": ["12", "8", "6"], "a": 0, "exp": "Un pavé droit a 6 faces, 12 arêtes et 8 sommets." },
+  { "t": "qcm", "txt": "Le patron d’un solide a 2 disques et 1 rectangle.", "q": "Quel est ce solide ?", "o": ["un cylindre", "un cône", "un prisme"], "a": 0, "exp": "Les 2 disques sont les bases, le rectangle est la surface autour : c’est un cylindre." },
+  { "t": "vf", "txt": "Un cône et un cylindre ont la même base et la même hauteur.", "q": "Le volume du cône est le tiers du volume du cylindre.", "a": true, "exp": "Cylindre : πr²h. Cône : πr²h ÷ 3." },
+  { "t": "qcm", "txt": "Une cuve a un volume de 2,5 m³.", "q": "Quelle est sa contenance ?", "o": ["2 500 L", "250 L", "25 L"], "a": 0, "exp": "1 m³ = 1 000 L : 2,5 × 1 000 = 2 500 L." },
+  { "t": "qcm", "txt": "Une boîte de conserve a la forme d’un cylindre.", "q": "Quelle formule donne son aire latérale ?", "o": ["2 × π × r × h", "π × r² × h", "π × r²"], "a": 0, "exp": "Aire latérale = périmètre de la base × hauteur = 2πr × h. π × r² × h est le volume." },
+  { "t": "question", "txt": ["Une piscine a la forme d’un pavé droit.", "Elle mesure 8 m sur 4 m, et 1,5 m de profondeur.", "Combien de litres d’eau faut-il pour la remplir ?"], "q": "Touche la phrase qui est la question.", "a": 2, "exp": "La question finit par « ? »." },
+  { "t": "donnees", "txt": "Un seau cylindrique a un rayon de 15 cm et une hauteur de 30 cm. Il est rouge et pèse 400 g. Calcule son volume.", "q": "Touche les deux données utiles.", "a": ["15", "30"], "exp": "V = π × 15² × 30. La couleur et la masse ne servent pas." },
+  { "t": "ordre", "q": "Remets la phrase dans l’ordre.", "phrase": "Le volume du silo est environ quatre-vingt-deux mètres cubes." }
+ ],
+ "brevet": [
+  {
+   "id": "ge-b1",
+   "titre": "Le silo à blé",
+   "fig": "l3:silo",
+   "ctx": ["Le silo est formé d’un cylindre de rayon 2 m et de hauteur 6 m, et d’un cône de même rayon et de hauteur 1,5 m.", "Un camion apporte 60 tonnes de blé. 1 m³ de blé pèse 0,75 tonne."],
+   "qs": [
+    { "q": "**Calcule** le volume du cylindre. **Arrondis** au dixième.", "type": "num", "a": 75.3982237, "arr": 1, "unit": "m³", "aide": ["V = π × r² × h."], "corr": ["π × 2² × 6 = 24π ≈ 75,4"], "rep": "Le volume du cylindre est environ 75,4 m³." },
+    { "q": "**Calcule** le volume du cône. **Arrondis** au dixième.", "type": "num", "a": 6.28318531, "arr": 1, "unit": "m³", "aide": ["V = π × r² × h ÷ 3."], "corr": ["π × 2² × 1,5 ÷ 3 = 2π ≈ 6,3"], "rep": "Le volume du cône est environ 6,3 m³." },
+    { "q": "**Calcule** le volume total du silo. **Arrondis** au dixième.", "type": "num", "a": 81.6814090, "arr": 1, "unit": "m³", "aide": ["J’additionne les deux volumes exacts : 24π + 2π."], "corr": ["24π + 2π = 26π ≈ 81,7"], "rep": "Le volume du silo est environ 81,7 m³." },
+    { "q": "**Calcule** la masse de blé que peut contenir le silo. **Arrondis** à l’unité.", "type": "num", "a": 61.2610567, "arr": 0, "unit": "t", "aide": ["1 m³ pèse 0,75 t : je multiplie le volume par 0,75."], "corr": ["26π × 0,75 ≈ 61"], "rep": "Le silo peut contenir environ 61 tonnes de blé." },
+    { "q": "Le silo est-il assez grand pour les 60 tonnes du camion ?", "type": "qcm", "o": ["Oui, car 61 t > 60 t", "Non, car 61 t < 81,7 m³", "Non, car 60 t > 61 t"], "a": 0, "aide": ["Je compare la masse que peut contenir le silo et 60 t."], "corr": ["61 t ≥ 60 t : le silo est assez grand, mais il sera presque plein."], "rep": "Oui, le silo peut contenir les 60 tonnes de blé." }
+   ]
+  },
+  {
+   "id": "ge-b2",
+   "titre": "La cuve à peindre",
+   "fig": "sol:cylindre|0,6 m|1,5 m",
+   "ctx": ["Un agent d’entretien doit peindre le côté d’une cuve cylindrique (pas le dessus ni le dessous).", "La cuve a un rayon de 0,6 m et une hauteur de 1,5 m.", "Un pot de peinture permet de peindre 4 m²."],
+   "qs": [
+    { "q": "**Calcule** l’aire latérale de la cuve. **Arrondis** au centième.", "type": "num", "a": 5.65486678, "arr": 2, "unit": "m²", "aide": ["Aire latérale = 2 × π × r × h."], "corr": ["2 × π × 0,6 × 1,5 = 1,8π ≈ 5,65"], "rep": "L’aire latérale est environ 5,65 m²." },
+    { "q": "**Détermine** le nombre de pots de peinture à acheter.", "type": "num", "a": 2, "unit": "pots", "aide": ["Un pot couvre 4 m².", "5,65 ÷ 4 ≈ 1,4 : un seul pot ne suffit pas."], "corr": ["5,65 ÷ 4 ≈ 1,41", "Il faut un nombre entier de pots : 2 pots."], "rep": "Il faut acheter 2 pots de peinture." },
+    { "q": "**Calcule** la contenance de la cuve, en litres. **Arrondis** au litre.", "type": "num", "a": 1696.46003, "arr": 0, "unit": "L", "aide": ["V = π × r² × h, en m³.", "1 m³ = 1 000 L."], "corr": ["π × 0,6² × 1,5 = 0,54π ≈ 1,696 m³", "1,696 × 1 000 ≈ 1 696 L"], "rep": "La cuve contient environ 1 696 litres." }
+   ]
+  },
+  {
+   "id": "ge-b3",
+   "titre": "L’aquarium du magasin",
+   "fig": "l3:pave",
+   "ctx": ["Une animalerie installe un aquarium en forme de pavé droit, sans couvercle.", "Dimensions : longueur 80 cm, largeur 35 cm, hauteur 40 cm.", "On remplit l’aquarium à 90 % de sa hauteur."],
+   "qs": [
+    { "q": "Combien de faces en verre a l’aquarium sans couvercle ?", "type": "num", "a": 5, "unit": "faces", "aide": ["Un pavé droit a 6 faces. Il manque le dessus."], "corr": ["6 − 1 = 5"], "rep": "L’aquarium a 5 faces en verre." },
+    { "q": "**Calcule** le volume de l’aquarium, en cm³.", "type": "num", "a": 112000, "unit": "cm³", "aide": ["V = longueur × largeur × hauteur."], "corr": ["80 × 35 × 40 = 112 000"], "rep": "Le volume de l’aquarium est 112 000 cm³." },
+    { "q": "**Calcule** le volume d’eau, en litres.", "type": "num", "a": 100.8, "unit": "L", "aide": ["112 000 cm³ = 112 L.", "90 % de 112 L : 112 × 0,9."], "corr": ["112 000 cm³ = 112 L", "112 × 0,9 = 100,8"], "rep": "Il y a 100,8 litres d’eau dans l’aquarium." }
+   ]
+  }
+ ],
+ "calc": ["av-vol", "av-conv", "ge-contenance", "ge-alat", "ge-comp", "ge-solide"],
+ "mots": [
+  { "id": "arete", "mot": "arête", "art": "l’", "g": "f", "cat": "geometrie", "ill": "l3:pave|arete", "def": "Un bord d’un solide : là où deux faces se touchent.", "man": "Segment commun à deux faces d’un polyèdre.", "vie": "l’arête d’un poisson : un petit os.", "ph": ["Un cube a 12 [[arêtes|arete]] de même longueur.", "Cette [[arête|arete]] mesure 40 cm."] },
+  { "id": "perspective-cavaliere", "mot": "perspective cavalière", "art": "la", "g": "f", "cat": "geometrie", "ill": "l3:pave|cache", "def": "Une façon de dessiner un solide en 3D sur une feuille. Les arêtes cachées sont en pointillés.", "man": "Représentation plane où la face avant est en vraie grandeur et les fuyantes sont parallèles, inclinées et réduites.", "ph": ["Le pavé est dessiné en [[perspective cavalière|perspective-cavaliere]].", "En [[perspective cavalière|perspective-cavaliere]], je trace les arêtes cachées en pointillés."] },
+  { "id": "patron", "mot": "patron", "art": "le", "g": "m", "cat": "geometrie", "ill": "l3:patron|cube", "def": "Le solide déplié à plat. Je peux le découper et le plier pour faire le solide.", "man": "Figure plane qui, après découpage et pliage, permet de construire le solide.", "vie": "le patron : le chef d’une entreprise.", "ph": ["Le [[patron]] du cylindre a deux disques et un rectangle.", "Je dessine le [[patron]] d’un cube."] },
+  { "id": "vue-de-face", "mot": "vue de face", "art": "la", "g": "f", "cat": "geometrie", "ill": "l3:vues", "def": "Ce que je vois quand je regarde le solide de devant.", "man": "Projection orthogonale du solide sur un plan vertical placé devant lui.", "ph": ["La [[vue de face|vue-de-face]] du cylindre est un rectangle.", "Sur le plan, je dessine la [[vue de face|vue-de-face]] de la pièce."] },
+  { "id": "vue-de-dessus", "mot": "vue de dessus", "art": "la", "g": "f", "cat": "geometrie", "ill": "l3:vues", "def": "Ce que je vois quand je regarde le solide d’en haut.", "man": "Projection orthogonale du solide sur un plan horizontal.", "ph": ["La [[vue de dessus|vue-de-dessus]] du cylindre est un disque.", "Je compare la [[vue de dessus|vue-de-dessus]] et la vue de face."] },
+  { "id": "solide-compose", "mot": "solide composé", "art": "le", "g": "m", "cat": "geometrie", "ill": "l3:silo", "def": "Un solide fait de plusieurs solides collés.", "man": "Solide obtenu par assemblage (ou retrait) de solides usuels ; son volume est la somme (ou la différence) des volumes.", "ph": ["Le silo est un [[solide composé|solide-compose]] : un cylindre et un cône.", "Pour un [[solide composé|solide-compose]], j’additionne les volumes."] },
+  { "id": "aire-laterale", "mot": "aire latérale", "art": "l’", "g": "f", "cat": "mesure", "ill": "l3:alat", "def": "L’aire de la surface autour du solide, sans le dessus ni le dessous.", "man": "Aire latérale d’un cylindre de rayon r et de hauteur h : 2πrh.", "ph": ["L’[[aire latérale|aire-laterale]] de la cuve est environ 5,65 m².", "Je calcule l’[[aire latérale|aire-laterale]] pour savoir combien de peinture acheter."] },
+  { "id": "contenance", "mot": "contenance", "art": "la", "g": "f", "cat": "mesure", "ill": "l3:contenance|1,5 L", "def": "La quantité de liquide qu’un récipient peut contenir, en litres.", "man": "Volume intérieur d’un récipient, exprimé en L, mL, hL… (1 L = 1 dm³).", "vie": "garder sa contenance : rester calme.", "ph": ["La [[contenance]] de la bouteille est 1,5 L.", "Je calcule la [[contenance]] de l’aquarium en litres."] },
+  { "id": "solide-revolution", "mot": "solide de révolution", "art": "le", "g": "m", "cat": "geometrie", "ill": "sol:cylindre", "def": "Un solide qui tourne autour d’un axe : cylindre, cône, boule.", "man": "Solide engendré par la rotation d’une figure plane autour d’un axe.", "vie": "une révolution : un grand changement dans un pays.", "ph": ["Le cône est un [[solide de révolution|solide-revolution]].", "Une boule est un [[solide de révolution|solide-revolution]]."] },
+  { "id": "polyedre", "mot": "polyèdre", "art": "le", "g": "m", "cat": "geometrie", "ill": "sol:pyramide", "def": "Un solide qui a seulement des faces plates (des polygones).", "man": "Solide limité par des polygones : pavé, prisme, pyramide…", "ph": ["La pyramide est un [[polyèdre|polyedre]].", "Un cylindre n’est pas un [[polyèdre|polyedre]] : il a une surface courbe."] }
+ ]
+}

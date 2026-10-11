@@ -1,0 +1,3 @@
+sources/dist/
+sources/test/node_modules
+sources/test/e2e/site/

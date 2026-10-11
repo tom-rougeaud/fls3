@@ -1,0 +1,212 @@
+{
+ "id": "interets",
+ "annee": "1re",
+ "spe": "sans-pc",
+ "titre": "Calculs financiers : intérêts composés et crédit",
+ "icone": "🏦",
+ "cat": "nombre",
+ "domaine": "Calculs commerciaux et financiers",
+ "intro": "Comparer intérêts simples et intérêts composés, calculer une valeur acquise et le coût d’un crédit.",
+ "objectifs": [
+  "Je sais **calculer** une valeur acquise avec des intérêts composés : C₀ × (1 + t)ⁿ.",
+  "Je sais **comparer** un placement à intérêts simples et à intérêts composés.",
+  "Je sais **calculer** le coût d’un crédit remboursé par mensualités.",
+  "Je sais **trouver** une durée de placement avec le tableur ou Python."
+ ],
+ "situation": {
+  "metier": "🏦 Banque et conseil",
+  "txt": [
+   "Inès a 2 000 €. Elle veut les placer pendant 5 ans pour payer plus tard son permis de conduire.",
+   "Banque A : 3 % par an, à intérêts composés. Banque B : 3,1 % par an, à intérêts simples.",
+   "Le conseiller dit : « Chez nous, les intérêts rapportent aussi des intérêts. »"
+  ],
+  "question": "Quelle banque rapporte le plus au bout de 5 ans ?"
+ },
+ "cours": [
+  {
+   "titre": "Rappel : les intérêts simples",
+   "txt": [
+    "Avec des intérêts simples, je reçois chaque année la même somme : C × t.",
+    "Au bout de n années : I = C × t × n.",
+    "La [[valeur acquise|valeur-acquise]] est C + I."
+   ],
+   "man": [
+    "Intérêts simples : I = C₀ × t × n ; valeur acquise Cₙ = C₀(1 + nt). Les intérêts ne sont calculés que sur le capital initial."
+   ],
+   "ex": [
+    "Banque B : 2 000 × 0,031 × 5 = 310 €. Valeur acquise : 2 310 €."
+   ],
+   "ill": "l3:interets|simple"
+  },
+  {
+   "titre": "Les intérêts composés",
+   "txt": [
+    "Avec des [[intérêts composés|interets-composes]], les intérêts de chaque année s’ajoutent au capital.",
+    "L’année suivante, ils rapportent aussi des intérêts : c’est la [[capitalisation]].",
+    "Chaque année, le capital est multiplié par 1 + t."
+   ],
+   "man": [
+    "Intérêts composés au taux annuel t : chaque année, Cₖ₊₁ = Cₖ × (1 + t). Au bout de n années : Cₙ = C₀ × (1 + t)ⁿ."
+   ],
+   "ex": [
+    "Banque A : 2 000 → 2 060 → 2 121,80 → … Au bout de 5 ans : 2 000 × 1,03⁵ ≈ 2 318,55 €."
+   ],
+   "ill": "l3:interets|compose"
+  },
+  {
+   "titre": "Comparer deux placements",
+   "txt": [
+    "Je calcule la valeur acquise de chaque placement à la même date.",
+    "Sur une courte durée, les deux types sont proches.",
+    "Sur une longue durée, les intérêts composés rapportent beaucoup plus."
+   ],
+   "man": [
+    "À taux égal, les intérêts composés rapportent plus que les intérêts simples dès que n > 1, et l’écart augmente avec la durée."
+   ],
+   "ex": [
+    "5 ans : A (composés 3 %) → 2 318,55 € ; B (simples 3,1 %) → 2 310 €. A rapporte plus."
+   ],
+   "ill": "txt:A : {2 318,55 €}|B : 2 310 €"
+  },
+  {
+   "titre": "Le crédit et les mensualités",
+   "txt": [
+    "Un crédit permet d’acheter maintenant et de payer plus tard.",
+    "Je rembourse chaque mois la même somme : la [[mensualité|mensualite]].",
+    "Le [[coût du crédit|cout-credit]] = total remboursé − somme empruntée."
+   ],
+   "man": [
+    "Coût du crédit = n × mensualité − capital emprunté. Le taux annuel effectif global (TAEG) permet de comparer les offres."
+   ],
+   "ex": [
+    "Scooter à 1 800 €, 12 mensualités de 160 € : 12 × 160 = 1 920 €. Coût du crédit : 120 €."
+   ],
+   "ill": "txt:12 × 160 = 1 920|1 920 − 1 800 = {120 €}"
+  },
+  {
+   "titre": "Taux annuel et taux mensuel",
+   "txt": [
+    "Les banques donnent souvent un taux par an.",
+    "Pour des intérêts simples, le [[taux mensuel|taux-mensuel]] proportionnel est le taux annuel ÷ 12.",
+    "Exemple : 6 % par an → 0,5 % par mois."
+   ],
+   "man": [
+    "Taux proportionnel : taux mensuel = taux annuel ÷ 12 (utilisé pour les intérêts simples et certains crédits)."
+   ],
+   "ex": [
+    "1 000 € à 6 % par an pendant 4 mois (intérêts simples) : 1 000 × 0,005 × 4 = 20 €."
+   ],
+   "ill": "txt:6 % par an|÷ 12|{0,5 % par mois}"
+  }
+ ],
+ "methodes": [
+  {
+   "titre": "Calculer une valeur acquise à intérêts composés",
+   "etapes": [
+    "J’écris le coefficient multiplicateur : 1 + t (t en décimal).",
+    "Je calcule (1 + t)ⁿ avec la touche puissance de la calculatrice (^ ou xʸ).",
+    "Je multiplie par le capital C₀.",
+    "J’arrondis au centime."
+   ],
+   "exemple": {
+    "enonce": "2 000 € sont placés à 3 % par an à intérêts composés. **Calcule** la valeur acquise au bout de 5 ans.",
+    "etapes": [
+     { "t": "Coefficient.", "c": "1 + 0,03 = 1,03" },
+     { "t": "Puissance.", "c": "1,03⁵ ≈ 1,159274" },
+     { "t": "Valeur acquise.", "c": "2 000 × 1,03⁵ ≈ 2 318,55" }
+    ],
+    "reponse": "Au bout de 5 ans, la valeur acquise est environ 2 318,55 €."
+   }
+  },
+  {
+   "titre": "Calculer le coût d’un crédit",
+   "etapes": [
+    "Je calcule le total remboursé : nombre de mensualités × mensualité.",
+    "J’ajoute les frais de dossier s’il y en a.",
+    "Coût du crédit = total remboursé − somme empruntée.",
+    "Je peux l’exprimer en % de la somme empruntée."
+   ],
+   "exemple": {
+    "enonce": "Un scooter coûte 1 800 €. Crédit : 12 mensualités de 160 €. **Calcule** le coût du crédit en % du prix.",
+    "etapes": [
+     { "t": "Total remboursé.", "c": "12 × 160 = 1 920" },
+     { "t": "Coût du crédit.", "c": "1 920 − 1 800 = 120" },
+     { "t": "En pourcentage.", "c": "120 ÷ 1 800 ≈ 6,67 %" }
+    ],
+    "reponse": "Le crédit coûte 120 €, soit environ 6,67 % du prix."
+   }
+  },
+  {
+   "titre": "Trouver une durée de placement",
+   "outil": "Tableur ou Python",
+   "etapes": [
+    "Je calcule la valeur acquise année après année (tableur : =B2*1,05 recopié vers le bas).",
+    "Je regarde la première année où l’objectif est atteint.",
+    "Avec Python : une boucle while multiplie le capital tant que l’objectif n’est pas atteint."
+   ],
+   "code": "capital = 1000\nn = 0\nwhile capital < 2000:\n    capital = capital * 1.05\n    n = n + 1\nprint(n)",
+   "exemple": {
+    "enonce": "1 000 € à 5 % par an à intérêts composés. **Détermine** au bout de combien d’années le capital a doublé.",
+    "etapes": [
+     { "t": "Après 14 ans.", "c": "1 000 × 1,05¹⁴ ≈ 1 979,93 < 2 000" },
+     { "t": "Après 15 ans.", "c": "1 000 × 1,05¹⁵ ≈ 2 078,93 ≥ 2 000" }
+    ],
+    "reponse": "Le capital a doublé au bout de 15 ans."
+   }
+  }
+ ],
+ "comprendre": [
+  { "t": "qcm", "txt": "On place 1 000 € à 4 % par an à intérêts composés.", "q": "Quel calcul donne la valeur acquise au bout de 3 ans ?", "o": ["1 000 × 1,04³", "1 000 × 0,04 × 3", "1 000 × 1,12"], "a": 0, "exp": "Chaque année, × 1,04. Trois années : × 1,04³." },
+  { "t": "vf", "txt": "Avec les intérêts simples, on reçoit la même somme d’intérêts chaque année.", "q": "C’est vrai.", "a": true, "exp": "Les intérêts simples sont toujours calculés sur le capital de départ." },
+  { "t": "qcm", "txt": "Crédit : 24 mensualités de 50 € pour un achat de 1 100 €.", "q": "Quel est le coût du crédit ?", "o": ["100 €", "50 €", "1 200 €"], "a": 0, "exp": "24 × 50 = 1 200 € ; 1 200 − 1 100 = 100 €." },
+  { "t": "qcm", "txt": "Taux annuel : 12 %.", "q": "Quel est le taux mensuel proportionnel ?", "o": ["1 %", "12 %", "0,12 %"], "a": 0, "exp": "12 % ÷ 12 = 1 % par mois." },
+  { "t": "qcm", "txt": "Deux placements au même taux, pendant 20 ans.", "q": "Lequel rapporte le plus ?", "o": ["Les intérêts composés", "Les intérêts simples", "Ils rapportent pareil"], "a": 0, "exp": "Avec les intérêts composés, les intérêts rapportent aussi des intérêts." },
+  { "t": "question", "txt": ["Inès place 2 000 € à 3 % par an.", "Les intérêts sont composés.", "Combien aura-t-elle au bout de 5 ans ?"], "q": "Touche la phrase qui est la question.", "a": 2, "exp": "La question finit par « ? »." },
+  { "t": "donnees", "txt": "Karim emprunte 3 000 € pour une moto de 125 cm³. Il rembourse 36 mensualités de 95 €. Calcule le coût du crédit.", "q": "Touche les trois données utiles.", "a": ["3 000", "36", "95"], "exp": "36 × 95 = 3 420 € ; coût : 420 €. La cylindrée ne sert pas." },
+  { "t": "ordre", "q": "Remets la phrase dans l’ordre.", "phrase": "Les intérêts composés rapportent plus que les intérêts simples." }
+ ],
+ "brevet": [
+  {
+   "id": "in-b1",
+   "titre": "Deux banques pour Inès",
+   "ctx": ["Inès place 2 000 € pendant 5 ans.", "Banque A : 3 % par an, à intérêts composés.", "Banque B : 3,1 % par an, à intérêts simples."],
+   "qs": [
+    { "q": "**Calcule** la valeur acquise après 1 an à la banque A.", "type": "num", "a": 2060, "unit": "€", "aide": ["2 000 × 1,03."], "corr": ["2 000 × 1,03 = 2 060"], "rep": "Après 1 an, Inès a 2 060 € à la banque A." },
+    { "q": "**Calcule** la valeur acquise après 5 ans à la banque A. **Arrondis** au centime.", "type": "num", "a": 2318.54815, "arr": 2, "unit": "€", "aide": ["2 000 × 1,03⁵."], "corr": ["1,03⁵ ≈ 1,159274", "2 000 × 1,03⁵ ≈ 2 318,55"], "rep": "Après 5 ans, Inès a environ 2 318,55 € à la banque A." },
+    { "q": "**Calcule** la valeur acquise après 5 ans à la banque B.", "type": "num", "a": 2310, "unit": "€", "aide": ["Intérêts : 2 000 × 0,031 × 5."], "corr": ["2 000 × 0,031 × 5 = 310", "2 000 + 310 = 2 310"], "rep": "Après 5 ans, Inès a 2 310 € à la banque B." },
+    { "q": "**Conclus** : quelle banque Inès doit-elle choisir ?", "type": "qcm", "o": ["La banque A", "La banque B", "Les deux rapportent pareil"], "a": 0, "aide": ["Je compare 2 318,55 € et 2 310 €."], "corr": ["2 318,55 € > 2 310 €"], "rep": "Inès doit choisir la banque A : elle gagne 8,55 € de plus." }
+   ]
+  },
+  {
+   "id": "in-b2",
+   "titre": "Le scooter à crédit",
+   "ctx": ["Un scooter coûte 1 800 €.", "Le vendeur propose un crédit : 12 mensualités de 160 €, sans frais de dossier."],
+   "qs": [
+    { "q": "**Calcule** le total remboursé.", "type": "num", "a": 1920, "unit": "€", "aide": ["12 mensualités de 160 €."], "corr": ["12 × 160 = 1 920"], "rep": "Le total remboursé est 1 920 €." },
+    { "q": "**Calcule** le coût du crédit.", "type": "num", "a": 120, "unit": "€", "aide": ["Total remboursé − prix du scooter."], "corr": ["1 920 − 1 800 = 120"], "rep": "Le crédit coûte 120 €." },
+    { "q": "**Calcule** le coût du crédit en pourcentage du prix. **Arrondis** au centième.", "type": "num", "a": 6.6666667, "arr": 2, "unit": "%", "aide": ["120 ÷ 1 800, puis × 100."], "corr": ["120 ÷ 1 800 ≈ 0,0667", "≈ 6,67 %"], "rep": "Le coût du crédit représente environ 6,67 % du prix." }
+   ]
+  },
+  {
+   "id": "in-b3",
+   "titre": "Doubler son capital",
+   "fig": "l3:py|capital = 1000|n = 0|while capital < 2000:|··capital = capital * 1.05|··n = n + 1|print(n)",
+   "ctx": ["On place 1 000 € à 5 % par an, à intérêts composés.", "On veut savoir quand le capital aura doublé."],
+   "qs": [
+    { "q": "**Calcule** la valeur acquise après 2 ans.", "type": "num", "a": 1102.5, "unit": "€", "aide": ["1 000 × 1,05²."], "corr": ["1 000 × 1,05 = 1 050", "1 050 × 1,05 = 1 102,50"], "rep": "Après 2 ans, le capital est 1 102,50 €." },
+    { "q": "Que représente le nombre affiché par le programme ?", "type": "qcm", "o": ["Le nombre d’années pour que le capital atteigne 2 000 €", "Le capital au bout d’un an", "Le taux d’intérêt"], "a": 0, "aide": ["n augmente de 1 à chaque année."], "corr": ["La boucle s’arrête quand le capital atteint 2 000 € ; n compte les années."], "rep": "Le programme affiche le nombre d’années pour doubler le capital." },
+    { "q": "**Détermine** le nombre affiché. (1,05¹⁴ ≈ 1,98 et 1,05¹⁵ ≈ 2,08)", "type": "num", "a": 15, "unit": "ans", "aide": ["Après 14 ans : 1 980 € environ. Après 15 ans : 2 079 € environ."], "corr": ["1 000 × 1,05¹⁴ ≈ 1 979,93 < 2 000", "1 000 × 1,05¹⁵ ≈ 2 078,93 ≥ 2 000"], "rep": "Le programme affiche 15 : le capital double en 15 ans." }
+   ]
+  }
+ ],
+ "calc": ["in-compose", "in-compare", "in-credit", "co-interets"],
+ "mots": [
+  { "id": "interets-composes", "mot": "intérêts composés", "art": "les", "g": "m", "cat": "nombre", "ill": "l3:interets|compose", "def": "Les intérêts de chaque année s’ajoutent au capital et rapportent à leur tour des intérêts.", "man": "Cₙ = C₀(1 + t)ⁿ : le capital est multiplié chaque année par 1 + t.", "ph": ["Avec les [[intérêts composés|interets-composes]], 2 000 € deviennent 2 318,55 € en 5 ans.", "Les [[intérêts composés|interets-composes]] rapportent plus sur une longue durée."] },
+  { "id": "valeur-acquise", "mot": "valeur acquise", "art": "la", "g": "f", "cat": "nombre", "sym": "Cₙ", "ill": "l3:interets|compose", "def": "La somme qu’on a à la fin du placement : capital + intérêts.", "man": "Valeur du capital après n périodes de placement.", "ph": ["La [[valeur acquise|valeur-acquise]] après 5 ans est 2 310 €.", "Je calcule la [[valeur acquise|valeur-acquise]] avec 1,03⁵."] },
+  { "id": "capitalisation", "mot": "capitalisation", "art": "la", "g": "f", "cat": "nombre", "ill": "l3:interets|compose", "def": "Ajouter les intérêts au capital pour qu’ils rapportent eux aussi.", "man": "Incorporation périodique des intérêts au capital (principe des intérêts composés).", "ph": ["Grâce à la [[capitalisation]], les intérêts rapportent des intérêts.", "La [[capitalisation]] est annuelle sur ce livret."] },
+  { "id": "mensualite", "mot": "mensualité", "art": "la", "g": "f", "cat": "nombre", "ill": "txt:12 × {160 €}|chaque mois", "def": "La somme à payer chaque mois pour rembourser un crédit.", "man": "Versement mensuel constant d’un emprunt.", "ph": ["La [[mensualité|mensualite]] est de 160 €.", "Il paie 12 [[mensualités|mensualite]]."] },
+  { "id": "cout-credit", "mot": "coût du crédit", "art": "le", "g": "m", "cat": "nombre", "ill": "txt:12 × 160 = 1 920|1 920 − 1 800 = {120 €}", "def": "Ce que le crédit coûte en plus : total remboursé − somme empruntée.", "man": "Coût total = somme des remboursements (et frais) − capital emprunté.", "ph": ["Le [[coût du crédit|cout-credit]] est de 120 €.", "Je compare le [[coût du crédit|cout-credit]] de deux offres."] },
+  { "id": "taux-mensuel", "mot": "taux mensuel", "art": "le", "g": "m", "cat": "nombre", "ill": "txt:6 % par an|÷ 12|{0,5 % par mois}", "def": "Le taux d’intérêt par mois.", "man": "Taux mensuel proportionnel : taux annuel ÷ 12.", "ph": ["Le [[taux mensuel|taux-mensuel]] est 0,5 %.", "Je divise le taux annuel par 12 pour avoir le [[taux mensuel|taux-mensuel]]."] },
+  { "id": "placement", "mot": "placement", "art": "le", "g": "m", "cat": "nombre", "ill": "l3:interets|simple", "def": "De l’argent mis à la banque pour qu’il rapporte des intérêts.", "man": "Opération financière où un capital produit des intérêts pendant une durée donnée.", "vie": "le placement : la façon de placer des personnes (à table, dans une salle).", "ph": ["Ce [[placement]] rapporte 3 % par an.", "Je compare deux [[placements|placement]] sur 5 ans."] }
+ ]
+}

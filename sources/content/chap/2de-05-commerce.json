@@ -1,0 +1,255 @@
+{
+ "id": "commerce",
+ "annee": "2de",
+ "titre": "Calculs commerciaux",
+ "icone": "🧾",
+ "cat": "nombre",
+ "domaine": "Proportionnalité et pourcentages",
+ "intro": "Calculer un prix HT ou TTC, une remise, une marge, un taux d’évolution, et des intérêts simples.",
+ "objectifs": [
+  "Je sais **passer** du prix HT au prix TTC, et inversement.",
+  "Je sais **utiliser** un coefficient multiplicateur pour une hausse ou une baisse.",
+  "Je sais **calculer** un taux d’évolution et des évolutions successives.",
+  "Je sais **calculer** une marge et des intérêts simples."
+ ],
+ "situation": {
+  "metier": "👕 Vente en boutique",
+  "txt": [
+   "Lina est vendeuse dans une boutique de vêtements. C’est la période des soldes.",
+   "Une veste coûte 80 €. Elle est soldée à − 30 %. La dernière semaine, il y a encore − 20 % sur le prix soldé.",
+   "Une cliente dit : « 30 % puis 20 %, ça fait 50 % de réduction ! »"
+  ],
+  "question": "La cliente a-t-elle raison ? Quel est le prix final de la veste ?"
+ },
+ "cours": [
+  {
+   "titre": "Prix HT, TVA et prix TTC",
+   "txt": [
+    "Le [[prix HT|prix-ht]] est le prix « hors taxes ».",
+    "La [[TVA|tva]] est une taxe : un pourcentage du prix HT. Souvent 20 %.",
+    "Le [[prix TTC|prix-ttc]] (« toutes taxes comprises ») = prix HT + TVA. C’est le prix payé par le client."
+   ],
+   "man": [
+    "Montant de la TVA = prix HT × taux de TVA. Prix TTC = prix HT × (1 + t).",
+    "Avec une TVA à 20 % : prix TTC = prix HT × 1,2 et prix HT = prix TTC ÷ 1,2."
+   ],
+   "ex": [
+    "Prix HT 50 € ; TVA 20 % : 50 × 0,2 = 10 €. Prix TTC = 60 €."
+   ],
+   "ill": "l3:ht|50|20"
+  },
+  {
+   "titre": "Le coefficient multiplicateur",
+   "txt": [
+    "Augmenter de t % : je multiplie par 1 + t ÷ 100. Exemple : + 20 % → × 1,2.",
+    "Baisser de t % : je multiplie par 1 − t ÷ 100. Exemple : − 30 % → × 0,7.",
+    "Ce nombre est le [[coefficient multiplicateur|coefficient-multiplicateur]]."
+   ],
+   "man": [
+    "Une évolution de taux t (t > 0 hausse, t < 0 baisse) correspond à une multiplication par CM = 1 + t.",
+    "Valeur finale = valeur initiale × CM."
+   ],
+   "ex": [
+    "Veste à 80 €, − 30 % : 80 × 0,7 = 56 €."
+   ],
+   "ill": "l3:coef|80 €|× 0,7|56 €|− 30 %"
+  },
+  {
+   "titre": "Remise et réduction",
+   "txt": [
+    "Une [[remise]] est une baisse du prix, souvent en pourcentage.",
+    "Montant de la remise = prix × pourcentage.",
+    "Nouveau prix = prix − remise, ou directement prix × (1 − t ÷ 100)."
+   ],
+   "man": [
+    "Prix net = prix initial × (1 − taux de remise)."
+   ],
+   "ex": [
+    "80 € avec 30 % de remise : remise = 80 × 0,3 = 24 € ; nouveau prix = 56 €."
+   ],
+   "ill": "l3:remise|− 30 %|80 € → 56 €"
+  },
+  {
+   "titre": "Le taux d’évolution",
+   "txt": [
+    "Le [[taux d’évolution|taux-evolution]] dit de combien de % une valeur a changé.",
+    "Taux = (valeur d’arrivée − valeur de départ) ÷ valeur de départ.",
+    "Si le taux est positif, c’est une hausse. S’il est négatif, c’est une baisse."
+   ],
+   "man": [
+    "t = (V₁ − V₀) ÷ V₀, où V₀ est la valeur de départ et V₁ la valeur d’arrivée. On a aussi CM = V₁ ÷ V₀ et t = CM − 1."
+   ],
+   "ex": [
+    "Un loyer passe de 500 € à 520 € : (520 − 500) ÷ 500 = 0,04 = + 4 %."
+   ],
+   "ill": "l3:evol|80|100"
+  },
+  {
+   "titre": "Évolutions successives",
+   "txt": [
+    "Deux évolutions de suite : je multiplie les coefficients.",
+    "− 30 % puis − 20 % : 0,7 × 0,8 = 0,56. C’est une baisse de 44 %, pas de 50 % !",
+    "On n’additionne pas les pourcentages."
+   ],
+   "man": [
+    "Le coefficient multiplicateur global de [[évolutions successives|evolutions-successives]] est le produit des coefficients : CM = CM₁ × CM₂.",
+    "Taux global = CM − 1."
+   ],
+   "ex": [
+    "+ 10 % puis − 10 % : 1,1 × 0,9 = 0,99 : baisse de 1 %."
+   ],
+   "note": "30 % + 20 % ne donne pas 50 % : on multiplie 0,7 × 0,8.",
+   "ill": "txt:× 0,7 puis × 0,8|= {× 0,56}|− 44 %"
+  },
+  {
+   "titre": "Prix d’achat, prix de vente, marge",
+   "txt": [
+    "Le commerçant achète un objet : c’est le [[prix d’achat|prix-achat]].",
+    "Il le vend plus cher : c’est le [[prix de vente|prix-vente]].",
+    "La [[marge]] = prix de vente − prix d’achat. C’est ce qu’il gagne (avant les autres frais)."
+   ],
+   "man": [
+    "Marge brute = prix de vente HT − prix d’achat HT.",
+    "Taux de marge = marge ÷ prix d’achat HT (en %)."
+   ],
+   "ex": [
+    "Vélo acheté 240 €, vendu 360 € : marge = 120 € ; taux de marge = 120 ÷ 240 = 50 %."
+   ],
+   "ill": "l3:marge"
+  },
+  {
+   "titre": "Les intérêts simples",
+   "txt": [
+    "Je place un [[capital]] (une somme d’argent) à la banque.",
+    "Chaque année, la banque me donne des [[intérêts|interets-simples]] : un pourcentage du capital.",
+    "Avec les intérêts simples, je reçois la même somme chaque année."
+   ],
+   "man": [
+    "Intérêts simples : I = C × t × n, où C est le capital, t le [[taux annuel|taux-interet]] et n le nombre d’années.",
+    "Valeur acquise : A = C + I."
+   ],
+   "ex": [
+    "1 500 € à 2 % par an pendant 3 ans : I = 1 500 × 0,02 × 3 = 90 €. Valeur acquise : 1 590 €."
+   ],
+   "ill": "l3:interets|simple"
+  }
+ ],
+ "methodes": [
+  {
+   "titre": "Passer du HT au TTC, et du TTC au HT",
+   "etapes": [
+    "Je trouve le coefficient : 1 + taux de TVA. Pour 20 % : 1,2.",
+    "HT → TTC : je multiplie par 1,2.",
+    "TTC → HT : je divise par 1,2.",
+    "Je vérifie : le prix TTC est plus grand que le prix HT."
+   ],
+   "exemple": {
+    "enonce": "Une perceuse coûte 114 € TTC (TVA 20 %). **Calcule** son prix HT.",
+    "etapes": [
+     { "t": "Coefficient de la TVA à 20 %.", "c": "1,2" },
+     { "t": "TTC → HT : je divise.", "c": "114 ÷ 1,2 = 95" },
+     { "t": "Je vérifie.", "c": "95 × 1,2 = 114 ✓" }
+    ],
+    "reponse": "Le prix HT de la perceuse est 95 €."
+   }
+  },
+  {
+   "titre": "Calculer un taux d’évolution",
+   "etapes": [
+    "Je repère la valeur de départ et la valeur d’arrivée.",
+    "Je calcule la différence : arrivée − départ.",
+    "Je divise par la valeur de départ.",
+    "Je multiplie par 100 pour avoir un pourcentage."
+   ],
+   "exemple": {
+    "enonce": "Le prix d’un menu passe de 12,50 € à 13,50 €. **Calcule** le taux d’évolution.",
+    "etapes": [
+     { "t": "Différence.", "c": "13,50 − 12,50 = 1" },
+     { "t": "Je divise par la valeur de départ.", "c": "1 ÷ 12,50 = 0,08" },
+     { "t": "En pourcentage.", "c": "+ 8 %" }
+    ],
+    "reponse": "Le prix du menu a augmenté de 8 %."
+   }
+  },
+  {
+   "titre": "Enchaîner deux évolutions",
+   "etapes": [
+    "J’écris le coefficient de chaque évolution.",
+    "Je multiplie les deux coefficients.",
+    "Je calcule le taux global : coefficient − 1.",
+    "Je l’écris en pourcentage."
+   ],
+   "exemple": {
+    "enonce": "Une veste est soldée à − 30 %, puis à − 20 % sur le prix soldé. **Calcule** la baisse totale en %.",
+    "etapes": [
+     { "t": "Coefficients.", "c": "0,7 et 0,8" },
+     { "t": "Je multiplie.", "c": "0,7 × 0,8 = 0,56" },
+     { "t": "Taux global.", "c": "0,56 − 1 = − 0,44" }
+    ],
+    "reponse": "La baisse totale est de 44 %, pas de 50 %."
+   }
+  }
+ ],
+ "comprendre": [
+  { "t": "qcm", "txt": "Un prix augmente de 15 %.", "q": "Par quel nombre faut-il multiplier le prix ?", "o": ["1,15", "0,15", "0,85"], "a": 0, "exp": "Hausse de 15 % : 1 + 0,15 = 1,15." },
+  { "t": "qcm", "txt": "Un prix baisse de 25 %.", "q": "Quel est le coefficient multiplicateur ?", "o": ["0,75", "1,25", "0,25"], "a": 0, "exp": "Baisse de 25 % : 1 − 0,25 = 0,75." },
+  { "t": "vf", "txt": "Un article à 100 € augmente de 10 %, puis baisse de 10 %.", "q": "Il revient à 100 €.", "a": false, "exp": "100 × 1,1 = 110, puis 110 × 0,9 = 99 €. Il ne revient pas à 100 €." },
+  { "t": "qcm", "txt": "Prix HT : 200 €. TVA : 20 %.", "q": "Quel est le prix TTC ?", "o": ["240 €", "220 €", "160 €"], "a": 0, "exp": "200 × 1,2 = 240 €." },
+  { "t": "qcm", "txt": "Un commerçant achète un sac 30 € et le vend 45 €.", "q": "Quelle est la marge ?", "o": ["15 €", "45 €", "75 €"], "a": 0, "exp": "Marge = prix de vente − prix d’achat = 45 − 30 = 15 €." },
+  { "t": "question", "txt": ["Lina vend une veste à 80 €.", "La veste est soldée à − 30 %.", "Quel est le prix soldé ?"], "q": "Touche la phrase qui est la question.", "a": 2, "exp": "La question finit par « ? »." },
+  { "t": "donnees", "txt": "Karim place 2 000 € à intérêts simples, au taux de 3 % par an. Il a 19 ans. Calcule les intérêts au bout de 4 ans.", "q": "Touche les trois données utiles.", "a": ["2 000", "3", "4"], "exp": "I = 2 000 × 0,03 × 4 = 240 €. L’âge de Karim ne sert pas." },
+  { "t": "ordre", "q": "Remets la phrase dans l’ordre.", "phrase": "La baisse totale est de quarante-quatre pour cent." }
+ ],
+ "brevet": [
+  {
+   "id": "co-b1",
+   "titre": "Les soldes de la veste",
+   "ctx": ["Une veste coûte 80 €. Elle est soldée à − 30 %.", "La dernière semaine, la boutique fait encore − 20 % sur le prix soldé.", "Une cliente dit : « Au total, cela fait − 50 %. »"],
+   "qs": [
+    { "q": "**Choisis** le coefficient multiplicateur d’une baisse de 30 %.", "type": "qcm", "o": ["0,7", "0,3", "1,3"], "a": 0, "aide": ["Baisse de t % : 1 − t ÷ 100."], "corr": ["1 − 0,30 = 0,7"], "rep": "Le coefficient multiplicateur est 0,7." },
+    { "q": "**Calcule** le prix soldé de la veste.", "type": "num", "a": 56, "unit": "€", "aide": ["Je multiplie 80 par 0,7."], "corr": ["80 × 0,7 = 56"], "rep": "Le prix soldé est 56 €." },
+    { "q": "**Calcule** le prix final, après la deuxième baisse de 20 %.", "type": "num", "a": 44.8, "unit": "€", "aide": ["Baisse de 20 % : × 0,8.", "Je pars du prix soldé : 56 €."], "corr": ["56 × 0,8 = 44,8"], "rep": "Le prix final est 44,80 €." },
+    { "q": "**Calcule** le pourcentage de baisse total.", "type": "num", "a": 44, "unit": "%", "aide": ["Coefficient global : 0,7 × 0,8.", "Ou : (80 − 44,80) ÷ 80."], "corr": ["0,7 × 0,8 = 0,56", "1 − 0,56 = 0,44 = 44 %"], "rep": "La baisse totale est de 44 %." },
+    { "q": "La cliente a-t-elle raison ?", "type": "qcm", "o": ["Non : la baisse totale est 44 %", "Oui : 30 % + 20 % = 50 %", "Non : la baisse totale est 56 %"], "a": 0, "aide": ["Je compare 44 % et 50 %."], "corr": ["On multiplie les coefficients, on n’additionne pas les pourcentages."], "rep": "La cliente a tort : la baisse totale est de 44 %." }
+   ]
+  },
+  {
+   "id": "co-b2",
+   "titre": "La facture de l’électricien",
+   "tab": [["Désignation", "Quantité", "Prix unitaire HT", "Montant HT"], ["Matériel", "1", "450,00 €", "450,00 €"], ["Main-d’œuvre", "3 h", "45,00 €", "…"], ["Total HT", "", "", "…"], ["TVA 20 %", "", "", "…"], ["Total TTC", "", "", "…"]],
+   "ctx": ["Un électricien prépare la facture d’un client."],
+   "qs": [
+    { "q": "**Calcule** le montant HT de la main-d’œuvre.", "type": "num", "a": 135, "unit": "€", "aide": ["3 heures à 45 € l’heure."], "corr": ["3 × 45 = 135"], "rep": "La main-d’œuvre coûte 135 € HT." },
+    { "q": "**Calcule** le total HT.", "type": "num", "a": 585, "unit": "€", "aide": ["J’additionne le matériel et la main-d’œuvre."], "corr": ["450 + 135 = 585"], "rep": "Le total HT est 585 €." },
+    { "q": "**Calcule** le montant de la TVA.", "type": "num", "a": 117, "unit": "€", "aide": ["TVA = total HT × 20 %."], "corr": ["585 × 0,2 = 117"], "rep": "Le montant de la TVA est 117 €." },
+    { "q": "**Calcule** le total TTC.", "type": "num", "a": 702, "unit": "€", "aide": ["TTC = HT + TVA, ou HT × 1,2."], "corr": ["585 + 117 = 702", "Vérification : 585 × 1,2 = 702"], "rep": "Le total TTC de la facture est 702 €." }
+   ]
+  },
+  {
+   "id": "co-b3",
+   "titre": "La marge du vélociste",
+   "ctx": ["Un vendeur de vélos achète un vélo électrique 1 200 € HT.", "Il le vend 1 500 € HT.", "Il veut un taux de marge d’au moins 20 %."],
+   "qs": [
+    { "q": "**Calcule** la marge sur ce vélo.", "type": "num", "a": 300, "unit": "€", "aide": ["Marge = prix de vente − prix d’achat."], "corr": ["1 500 − 1 200 = 300"], "rep": "La marge est 300 €." },
+    { "q": "**Calcule** le taux de marge, en %.", "type": "num", "a": 25, "unit": "%", "aide": ["Taux de marge = marge ÷ prix d’achat."], "corr": ["300 ÷ 1 200 = 0,25 = 25 %"], "rep": "Le taux de marge est 25 %." },
+    { "q": "Pendant les soldes, il vend le vélo 1 380 € HT. **Valide** : le taux de marge est-il encore d’au moins 20 % ?", "type": "qcm", "o": ["Non : il est de 15 %", "Oui : il est de 20 %", "Oui : il est de 25 %"], "a": 0, "aide": ["Nouvelle marge : 1 380 − 1 200.", "Je divise par 1 200."], "corr": ["1 380 − 1 200 = 180", "180 ÷ 1 200 = 0,15 = 15 % < 20 %"], "rep": "Non, le taux de marge n’est plus que de 15 %." }
+   ]
+  }
+ ],
+ "calc": ["co-ttc", "co-coef", "co-evol", "co-succ", "co-marge", "co-interets"],
+ "mots": [
+  { "id": "prix-ht", "mot": "prix hors taxes", "art": "le", "g": "m", "cat": "nombre", "sym": "HT", "ill": "l3:ht|50|20", "def": "Le prix sans la TVA.", "man": "Prix d’un bien ou d’un service avant application de la TVA.", "ph": ["Le [[prix HT|prix-ht]] de la perceuse est 95 €.", "Je divise le prix TTC par 1,2 pour avoir le [[prix hors taxes|prix-ht]]."] },
+  { "id": "prix-ttc", "mot": "prix toutes taxes comprises", "art": "le", "g": "m", "cat": "nombre", "sym": "TTC", "ill": "l3:ticket|2", "def": "Le prix avec la TVA. C’est le prix que le client paie.", "man": "Prix TTC = prix HT + montant de la TVA = prix HT × (1 + taux de TVA).", "ph": ["Le [[prix TTC|prix-ttc]] de la facture est 702 €.", "Sur l’étiquette, je lis le [[prix toutes taxes comprises|prix-ttc]]."] },
+  { "id": "tva", "mot": "taxe sur la valeur ajoutée", "art": "la", "g": "f", "sym": "TVA", "cat": "nombre", "ill": "l3:ticket|1", "def": "Une taxe payée par le client. C’est un pourcentage du prix HT (souvent 20 %).", "man": "Montant de TVA = prix HT × taux de TVA ; taux normal en France : 20 %.", "ph": ["La [[TVA|tva]] est de 20 % sur ce produit.", "Je calcule le montant de la [[TVA|tva]] : 585 × 0,2 = 117 €."] },
+  { "id": "coefficient-multiplicateur", "mot": "coefficient multiplicateur", "art": "le", "g": "m", "cat": "nombre", "sym": "CM", "ill": "l3:coef|50 €|× 1,2|60 €|+ 20 %", "def": "Le nombre par lequel je multiplie pour une hausse ou une baisse.", "man": "Pour une évolution de taux t : CM = 1 + t ; valeur finale = valeur initiale × CM.", "ph": ["Pour une hausse de 20 %, le [[coefficient multiplicateur|coefficient-multiplicateur]] est 1,2.", "Le [[coefficient multiplicateur|coefficient-multiplicateur]] de − 30 % est 0,7."] },
+  { "id": "remise", "mot": "remise", "art": "la", "g": "f", "cat": "nombre", "ill": "l3:remise|− 30 %|80 € → 56 €", "def": "Une baisse du prix accordée au client.", "man": "Réduction de prix ; prix net = prix initial × (1 − taux de remise).", "vie": "une petite pièce pour ranger des outils ; « remettre » quelque chose.", "ph": ["Le client a une [[remise]] de 10 %.", "Le montant de la [[remise]] est 24 €."] },
+  { "id": "taux-evolution", "mot": "taux d’évolution", "art": "le", "g": "m", "cat": "nombre", "ill": "l3:evol|80|100", "def": "Le pourcentage de hausse ou de baisse entre deux valeurs.", "man": "t = (V₁ − V₀) ÷ V₀ ; t > 0 : hausse ; t < 0 : baisse.", "ph": ["Le [[taux d’évolution|taux-evolution]] du loyer est + 4 %.", "Je calcule le [[taux d’évolution|taux-evolution]] entre 2024 et 2025."] },
+  { "id": "evolutions-successives", "mot": "évolutions successives", "art": "les", "g": "f", "cat": "nombre", "ill": "txt:× 0,7 puis × 0,8|= {× 0,56}|− 44 %", "def": "Plusieurs hausses ou baisses, l’une après l’autre.", "man": "Le coefficient multiplicateur global est le produit des coefficients multiplicateurs.", "ph": ["Pour des [[évolutions successives|evolutions-successives]], je multiplie les coefficients.", "Deux [[évolutions successives|evolutions-successives]] de − 30 % et − 20 % donnent − 44 %."] },
+  { "id": "prix-achat", "mot": "prix d’achat", "art": "le", "g": "m", "cat": "nombre", "ill": "l3:marge", "def": "Le prix que le commerçant paie pour acheter l’objet.", "man": "Coût d’achat HT de la marchandise auprès du fournisseur.", "ph": ["Le [[prix d’achat|prix-achat]] du vélo est 1 200 € HT.", "La marge est calculée à partir du [[prix d’achat|prix-achat]]."] },
+  { "id": "prix-vente", "mot": "prix de vente", "art": "le", "g": "m", "cat": "nombre", "ill": "l3:marge", "def": "Le prix auquel le commerçant vend l’objet.", "man": "Prix de vente HT = prix d’achat HT + marge.", "ph": ["Le [[prix de vente|prix-vente]] du vélo est 1 500 € HT.", "Le [[prix de vente|prix-vente]] doit être plus grand que le prix d’achat."] },
+  { "id": "marge", "mot": "marge", "art": "la", "g": "f", "cat": "nombre", "ill": "l3:marge", "def": "Ce que gagne le commerçant : prix de vente − prix d’achat.", "man": "Marge brute = prix de vente HT − prix d’achat HT ; taux de marge = marge ÷ prix d’achat HT.", "vie": "l’espace blanc au bord d’une feuille.", "ph": ["La [[marge]] sur ce vélo est 300 €.", "Le taux de [[marge]] est 25 %."] },
+  { "id": "capital", "mot": "capital", "art": "le", "g": "m", "cat": "nombre", "sym": "C", "ill": "l3:interets|simple", "def": "La somme d’argent que je place ou que j’emprunte.", "man": "Somme placée (ou empruntée) à la date initiale, notée C ou C₀.", "vie": "la capitale : la ville principale d’un pays (avec un e).", "ph": ["Karim place un [[capital]] de 2 000 €.", "Le [[capital]] rapporte des intérêts chaque année."] },
+  { "id": "interets-simples", "mot": "intérêts simples", "art": "les", "g": "m", "cat": "nombre", "ill": "l3:interets|simple", "def": "L’argent que rapporte un placement : la même somme chaque année.", "man": "I = C × t × n ; les intérêts sont calculés chaque année sur le capital initial seulement.", "vie": "l’intérêt : ce qui attire l’attention, la curiosité.", "ph": ["Les [[intérêts simples|interets-simples]] sont 1 500 × 0,02 × 3 = 90 €.", "Avec les [[intérêts simples|interets-simples]], je reçois 30 € chaque année."] },
+  { "id": "taux-interet", "mot": "taux d’intérêt", "art": "le", "g": "m", "cat": "nombre", "sym": "t", "ill": "txt:{2 %} par an|100 € → 2 €", "def": "Le pourcentage que rapporte un placement, par an.", "man": "Taux annuel t appliqué au capital pour calculer les intérêts.", "ph": ["Le [[taux d’intérêt|taux-interet]] du livret est 2 % par an.", "Avec un [[taux d’intérêt|taux-interet]] de 3 %, 100 € rapportent 3 € par an."] }
+ ]
+}

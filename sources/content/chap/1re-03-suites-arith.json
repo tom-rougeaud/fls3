@@ -1,0 +1,226 @@
+{
+ "id": "suites-arith",
+ "annee": "1re",
+ "titre": "Suites numériques et suites arithmétiques",
+ "icone": "🔢",
+ "cat": "fonction",
+ "domaine": "Algèbre et analyse",
+ "intro": "Calculer les termes d’une suite, reconnaître une suite arithmétique et utiliser sa formule pour prévoir.",
+ "objectifs": [
+  "Je sais **calculer** les premiers termes d’une suite.",
+  "Je sais **reconnaître** une suite arithmétique et **trouver** sa raison.",
+  "Je sais **utiliser** la formule uₙ = u₀ + n × r.",
+  "Je sais **représenter** une suite par des points et **donner** son sens de variation."
+ ],
+ "situation": {
+  "metier": "💶 Gestion d’un budget",
+  "txt": [
+   "Mehdi est apprenti. Il a déjà 300 € sur son compte.",
+   "Chaque mois, il met 45 € de côté.",
+   "Il veut acheter un scooter d’occasion à 1 000 €."
+  ],
+  "question": "Au bout de combien de mois Mehdi aura-t-il assez d’argent ?"
+ },
+ "cours": [
+  {
+   "titre": "Une suite de nombres",
+   "txt": [
+    "Une [[suite numérique|suite-numerique]] est une liste de nombres dans un ordre : u₀, u₁, u₂…",
+    "Chaque nombre est un [[terme|terme-suite]]. Le petit nombre en bas est le [[rang]] : uₙ est le terme de rang n.",
+    "u₀ est souvent le point de départ : le [[premier terme|premier-terme]]."
+   ],
+   "man": [
+    "Une suite numérique (uₙ) associe à chaque entier naturel n un réel uₙ, appelé terme de rang n (ou d’indice n)."
+   ],
+   "ex": [
+    "Épargne de Mehdi : u₀ = 300 (au départ), u₁ = 345 (après 1 mois), u₂ = 390…"
+   ],
+   "ill": "l3:suite|arith|300|45"
+  },
+  {
+   "titre": "La suite arithmétique",
+   "txt": [
+    "Dans une [[suite arithmétique|suite-arithmetique]], j’ajoute toujours le même nombre pour passer d’un terme au suivant.",
+    "Ce nombre est la [[raison]], notée r.",
+    "On écrit : uₙ₊₁ = uₙ + r. C’est la [[relation de récurrence|relation-recurrence]]."
+   ],
+   "man": [
+    "(uₙ) est arithmétique de raison r si, pour tout entier n, uₙ₊₁ = uₙ + r.",
+    "Pour vérifier, on calcule les différences uₙ₊₁ − uₙ : elles sont toutes égales à r."
+   ],
+   "ex": [
+    "345 − 300 = 45 ; 390 − 345 = 45. La suite est arithmétique de raison r = 45."
+   ],
+   "ill": "l3:suite|arith|300|45"
+  },
+  {
+   "titre": "La formule explicite",
+   "txt": [
+    "Pour calculer u₁₂ sans calculer tous les termes, j’utilise une [[formule explicite|formule-explicite]].",
+    "Si je pars de u₀ : uₙ = u₀ + n × r.",
+    "Si je pars de u₁ : uₙ = u₁ + (n − 1) × r."
+   ],
+   "man": [
+    "Pour une suite arithmétique de premier terme u₀ et de raison r : uₙ = u₀ + nr. Plus généralement, uₙ = uₚ + (n − p)r."
+   ],
+   "ex": [
+    "uₙ = 300 + 45n. Après 12 mois : u₁₂ = 300 + 45 × 12 = 840 €."
+   ],
+   "ill": "txt:uₙ = u₀ + {n × r}|u₁₂ = 300 + 45 × 12"
+  },
+  {
+   "titre": "Représentation graphique",
+   "txt": [
+    "Je place les points de coordonnées (n ; uₙ).",
+    "Les points sont séparés : je ne les relie pas.",
+    "Pour une suite arithmétique, les points sont alignés."
+   ],
+   "man": [
+    "La représentation graphique d’une suite est l’ensemble des points isolés (n ; uₙ). Pour une suite arithmétique, ces points sont alignés sur une droite de coefficient directeur r."
+   ],
+   "ex": [
+    "Les points (0 ; 300), (1 ; 345), (2 ; 390)… sont alignés."
+   ],
+   "ill": "l3:suitegr|arith|2|1.5"
+  },
+  {
+   "titre": "Sens de variation",
+   "txt": [
+    "Si r > 0, la suite est [[croissante]] : les termes augmentent.",
+    "Si r < 0, la suite est [[décroissante|decroissante]] : les termes diminuent.",
+    "Si r = 0, tous les termes sont égaux."
+   ],
+   "man": [
+    "Une suite arithmétique de raison r est croissante si r > 0, décroissante si r < 0, constante si r = 0."
+   ],
+   "ex": [
+    "Un stock de 180 pièces diminue de 12 chaque semaine : r = −12, la suite est décroissante."
+   ],
+   "ill": "l3:suitegr|arith|9|-1.2"
+  },
+  {
+   "titre": "Trouver un rang avec une condition",
+   "txt": [
+    "Je cherche à partir de quel rang n la suite dépasse une valeur.",
+    "J’écris une inéquation avec la formule, puis je la résous.",
+    "n est un nombre entier : je prends le premier entier qui convient."
+   ],
+   "man": [
+    "On résout uₙ ≥ S (ou uₙ ≤ S) dans l’ensemble des entiers naturels, ou on utilise un tableau de valeurs (calculatrice, tableur, Python)."
+   ],
+   "ex": [
+    "300 + 45n ≥ 1 000 → n ≥ 15,6 → n = 16 : il faut 16 mois."
+   ],
+   "ill": "l3:inter|15.6|+inf|[["
+  }
+ ],
+ "methodes": [
+  {
+   "titre": "Montrer qu’une suite est arithmétique",
+   "etapes": [
+    "Je calcule la différence entre deux termes qui se suivent : u₁ − u₀, u₂ − u₁…",
+    "Si toutes les différences sont égales, la suite est arithmétique.",
+    "La différence commune est la raison r."
+   ],
+   "exemple": {
+    "enonce": "Loyers : 600 € ; 615 € ; 630 € ; 645 €. **Montre** que ces loyers forment une suite arithmétique.",
+    "etapes": [
+     { "t": "Différences.", "c": "615 − 600 = 15 ; 630 − 615 = 15 ; 645 − 630 = 15" },
+     { "t": "Toutes égales.", "c": "r = 15" }
+    ],
+    "reponse": "Les loyers forment une suite arithmétique de raison 15 €."
+   }
+  },
+  {
+   "titre": "Calculer un terme avec la formule",
+   "etapes": [
+    "Je repère le premier terme (u₀ ou u₁) et la raison r.",
+    "J’écris la formule : uₙ = u₀ + n × r (ou u₁ + (n − 1) × r).",
+    "Je remplace n par le rang demandé et je calcule."
+   ],
+   "exemple": {
+    "enonce": "Dans un amphithéâtre, la rangée 1 a 20 places. Chaque rangée a 3 places de plus. **Calcule** le nombre de places de la rangée 15.",
+    "etapes": [
+     { "t": "u₁ = 20 ; r = 3.", "c": "uₙ = 20 + (n − 1) × 3" },
+     { "t": "Je remplace n par 15.", "c": "u₁₅ = 20 + 14 × 3 = 62" }
+    ],
+    "reponse": "La rangée 15 a 62 places."
+   }
+  },
+  {
+   "titre": "Calculer les termes avec le tableur ou Python",
+   "outil": "Tableur ou Python",
+   "etapes": [
+    "Tableur : en A1, j’écris u₀. En A2, j’écris =A1+45, puis je recopie vers le bas.",
+    "Python : une boucle for ajoute r à chaque tour.",
+    "Je lis les valeurs et je cherche le premier rang qui convient."
+   ],
+   "code": "u = 300\nn = 0\nwhile u < 1000:\n    u = u + 45\n    n = n + 1\nprint(n)",
+   "exemple": {
+    "enonce": "**Détermine** ce qu’affiche ce programme.",
+    "etapes": [
+     { "t": "u augmente de 45 à chaque tour.", "c": "" },
+     { "t": "Au tour 15 : u = 975 < 1 000.", "c": "on continue" },
+     { "t": "Au tour 16 : u = 1 020 ≥ 1 000.", "c": "on s’arrête" }
+    ],
+    "reponse": "Le programme affiche 16 : Mehdi aura 1 000 € au bout de 16 mois."
+   }
+  }
+ ],
+ "comprendre": [
+  { "t": "qcm", "txt": "u₀ = 5 et uₙ₊₁ = uₙ + 4.", "q": "Que vaut u₂ ?", "o": ["13", "9", "20"], "a": 0, "exp": "u₁ = 5 + 4 = 9 ; u₂ = 9 + 4 = 13." },
+  { "t": "qcm", "txt": "Suite : 50 ; 44 ; 38 ; 32…", "q": "Quelle est la raison ?", "o": ["−6", "6", "44"], "a": 0, "exp": "44 − 50 = −6. On enlève 6 à chaque fois : r = −6." },
+  { "t": "vf", "txt": "Suite : 2 ; 4 ; 8 ; 16…", "q": "C’est une suite arithmétique.", "a": false, "exp": "4 − 2 = 2 mais 8 − 4 = 4 : les différences ne sont pas égales. On multiplie par 2 : ce n’est pas arithmétique." },
+  { "t": "qcm", "txt": "uₙ = 100 + 7n.", "q": "Que vaut u₁₀ ?", "o": ["170", "107", "1 070"], "a": 0, "exp": "u₁₀ = 100 + 7 × 10 = 170." },
+  { "t": "qcm", "txt": "Une suite arithmétique a pour raison r = −3.", "q": "Cette suite est :", "o": ["décroissante", "croissante", "constante"], "a": 0, "exp": "r < 0 : les termes diminuent, la suite est décroissante." },
+  { "t": "question", "txt": ["Mehdi a 300 € sur son compte.", "Chaque mois, il ajoute 45 €.", "Combien aura-t-il dans un an ?"], "q": "Touche la phrase qui est la question.", "a": 2, "exp": "La question finit par « ? »." },
+  { "t": "donnees", "txt": "Un abonnement coûte 25 € le premier mois. Le prix augmente de 2 € chaque mois. L’abonné a 34 ans. Calcule le prix au 12e mois.", "q": "Touche les deux données utiles.", "a": ["25", "2"], "exp": "u₁ = 25, r = 2 : u₁₂ = 25 + 11 × 2 = 47 €. L’âge ne sert pas." },
+  { "t": "ordre", "q": "Remets la phrase dans l’ordre.", "phrase": "La suite est arithmétique de raison quarante-cinq." }
+ ],
+ "brevet": [
+  {
+   "id": "sa-b1",
+   "titre": "Le scooter de Mehdi",
+   "ctx": ["Mehdi a 300 € sur son compte. Chaque mois, il ajoute 45 €.", "On note uₙ la somme sur son compte après n mois. Ainsi u₀ = 300.", "Il veut acheter un scooter à 1 000 €."],
+   "qs": [
+    { "q": "**Calcule** u₁ et u₂. Donne u₂.", "type": "num", "a": 390, "unit": "€", "aide": ["u₁ = u₀ + 45.", "u₂ = u₁ + 45."], "corr": ["u₁ = 300 + 45 = 345", "u₂ = 345 + 45 = 390"], "rep": "u₂ = 390 € : après 2 mois, Mehdi a 390 €." },
+    { "q": "La suite (uₙ) est arithmétique. **Donne** sa raison.", "type": "num", "a": 45, "aide": ["Chaque mois, on ajoute le même nombre."], "corr": ["uₙ₊₁ = uₙ + 45 : r = 45"], "rep": "La raison de la suite est 45." },
+    { "q": "**Exprime** uₙ en fonction de n.", "type": "expr", "v": "n", "a": "300+45n", "form": "any", "aide": ["uₙ = u₀ + n × r."], "corr": ["uₙ = 300 + 45n"], "rep": "uₙ = 300 + 45n." },
+    { "q": "**Calcule** la somme sur le compte après 12 mois.", "type": "num", "a": 840, "unit": "€", "aide": ["Je calcule u₁₂ avec la formule."], "corr": ["u₁₂ = 300 + 45 × 12 = 300 + 540 = 840"], "rep": "Après 12 mois, Mehdi a 840 €." },
+    { "q": "**Détermine** le nombre de mois nécessaires pour avoir au moins 1 000 €.", "type": "num", "a": 16, "unit": "mois", "aide": ["Je résous 300 + 45n ≥ 1 000.", "45n ≥ 700, donc n ≥ 15,6. n est entier."], "corr": ["45n ≥ 700", "n ≥ 700 ÷ 45 ≈ 15,6", "Premier entier : n = 16 (u₁₆ = 1 020 €)"], "rep": "Mehdi aura au moins 1 000 € au bout de 16 mois." }
+   ]
+  },
+  {
+   "id": "sa-b2",
+   "titre": "Les places de l’amphithéâtre",
+   "ctx": ["Dans un amphithéâtre, la première rangée a 20 places.", "Chaque rangée a 3 places de plus que la précédente.", "On note uₙ le nombre de places de la rangée n. Ainsi u₁ = 20."],
+   "qs": [
+    { "q": "**Calcule** u₃.", "type": "num", "a": 26, "unit": "places", "aide": ["u₂ = 23 ; u₃ = u₂ + 3."], "corr": ["u₂ = 20 + 3 = 23", "u₃ = 23 + 3 = 26"], "rep": "La rangée 3 a 26 places." },
+    { "q": "**Calcule** le nombre de places de la rangée 15.", "type": "num", "a": 62, "unit": "places", "aide": ["uₙ = u₁ + (n − 1) × r."], "corr": ["u₁₅ = 20 + 14 × 3 = 62"], "rep": "La rangée 15 a 62 places." },
+    { "q": "**Détermine** la rangée qui a 50 places.", "type": "num", "a": 11, "aide": ["Je résous 20 + (n − 1) × 3 = 50."], "corr": ["(n − 1) × 3 = 30", "n − 1 = 10", "n = 11"], "rep": "C’est la rangée 11 qui a 50 places." }
+   ]
+  },
+  {
+   "id": "sa-b3",
+   "titre": "Le stock de l’entrepôt",
+   "fig": "l3:suitegr|arith|180|-12|nodroite",
+   "ctx": ["Un entrepôt a 180 cartons en stock. Chaque semaine, il en expédie 12 et n’en reçoit aucun.", "On note uₙ le nombre de cartons après n semaines."],
+   "qs": [
+    { "q": "La suite (uₙ) est :", "type": "qcm", "o": ["arithmétique de raison −12, décroissante", "arithmétique de raison 12, croissante", "arithmétique de raison 180"], "a": 0, "aide": ["Chaque semaine, on enlève 12 cartons."], "corr": ["uₙ₊₁ = uₙ − 12 : raison r = −12 < 0, suite décroissante."], "rep": "La suite est arithmétique de raison −12 et décroissante." },
+    { "q": "**Calcule** le nombre de cartons après 8 semaines.", "type": "num", "a": 84, "unit": "cartons", "aide": ["uₙ = 180 − 12n."], "corr": ["u₈ = 180 − 12 × 8 = 180 − 96 = 84"], "rep": "Après 8 semaines, il reste 84 cartons." },
+    { "q": "**Détermine** au bout de combien de semaines le stock est vide.", "type": "num", "a": 15, "unit": "semaines", "aide": ["Je résous 180 − 12n = 0."], "corr": ["12n = 180", "n = 15"], "rep": "Le stock est vide au bout de 15 semaines." }
+   ]
+  }
+ ],
+ "calc": ["sa-terme", "sa-raison", "sa-formule", "sa-rang"],
+ "mots": [
+  { "id": "suite-numerique", "mot": "suite numérique", "art": "la", "g": "f", "cat": "fonction", "sym": "(uₙ)", "ill": "l3:suite|arith|300|45", "def": "Une liste de nombres dans un ordre : u₀, u₁, u₂…", "man": "Fonction définie sur les entiers naturels : à chaque n, elle associe un réel uₙ.", "vie": "une suite à l’hôtel : une grande chambre ; « tout de suite » : maintenant.", "ph": ["Les sommes de Mehdi forment une [[suite numérique|suite-numerique]].", "Je calcule les premiers termes de la [[suite|suite-numerique]]."] },
+  { "id": "terme-suite", "mot": "terme d’une suite", "art": "le", "g": "m", "cat": "fonction", "sym": "uₙ", "ill": "l3:suite|arith|300|45", "def": "Un des nombres de la suite.", "man": "uₙ est le terme de rang n de la suite (uₙ).", "vie": "à terme : à la fin ; un terme : un mot.", "ph": ["Le [[terme|terme-suite]] u₂ vaut 390.", "Je calcule le [[terme|terme-suite]] de rang 12."] },
+  { "id": "rang", "mot": "rang", "art": "le", "g": "m", "cat": "fonction", "sym": "n", "ill": "txt:u{₁₂}|rang 12", "def": "La place du terme dans la suite : le petit nombre en bas, n.", "man": "Indice n du terme uₙ.", "vie": "un rang : une ligne de personnes ou de places.", "ph": ["Le terme de [[rang]] 12 est u₁₂.", "Je cherche le premier [[rang]] n tel que uₙ ≥ 1 000."] },
+  { "id": "premier-terme", "mot": "premier terme", "art": "le", "g": "m", "cat": "fonction", "ill": "l3:suite|arith|300|45", "def": "Le nombre du début de la suite : souvent u₀, parfois u₁.", "man": "Terme initial de la suite (u₀ ou u₁ selon la situation).", "ph": ["Le [[premier terme|premier-terme]] est u₀ = 300.", "Dans l’amphithéâtre, le [[premier terme|premier-terme]] est u₁ = 20."] },
+  { "id": "suite-arithmetique", "mot": "suite arithmétique", "art": "la", "g": "f", "cat": "fonction", "ill": "l3:suite|arith|300|45", "def": "Une suite où j’ajoute toujours le même nombre pour avoir le terme suivant.", "man": "Suite telle que uₙ₊₁ = uₙ + r pour tout n ; uₙ = u₀ + nr.", "ph": ["L’épargne de Mehdi est une [[suite arithmétique|suite-arithmetique]].", "Les points d’une [[suite arithmétique|suite-arithmetique]] sont alignés."] },
+  { "id": "raison", "mot": "raison d’une suite", "art": "la", "g": "f", "cat": "fonction", "sym": "r", "ill": "txt:345 − 300 = {45}|r = 45", "def": "Le nombre que j’ajoute (suite arithmétique) ou par lequel je multiplie (suite géométrique).", "man": "Pour une suite arithmétique : r = uₙ₊₁ − uₙ ; pour une suite géométrique : q = uₙ₊₁ ÷ uₙ.", "vie": "avoir raison : dire quelque chose de juste ; la raison : la cause.", "ph": ["La [[raison]] de la suite est 45.", "La [[raison]] est négative : la suite diminue."] },
+  { "id": "relation-recurrence", "mot": "relation de récurrence", "art": "la", "g": "f", "cat": "fonction", "ill": "txt:u{ₙ₊₁} = uₙ + 45", "def": "Une règle pour calculer un terme à partir du terme d’avant.", "man": "Égalité qui exprime uₙ₊₁ en fonction de uₙ, par exemple uₙ₊₁ = uₙ + r.", "ph": ["La [[relation de récurrence|relation-recurrence]] est uₙ₊₁ = uₙ + 45.", "Avec la [[relation de récurrence|relation-recurrence]], je calcule les termes un par un."] },
+  { "id": "formule-explicite", "mot": "formule explicite", "art": "la", "g": "f", "cat": "fonction", "ill": "txt:uₙ = 300 + {45n}", "def": "Une formule qui donne directement uₙ avec n.", "man": "Expression de uₙ en fonction de n ; pour une suite arithmétique : uₙ = u₀ + nr.", "ph": ["La [[formule explicite|formule-explicite]] est uₙ = 300 + 45n.", "Avec la [[formule explicite|formule-explicite]], je calcule u₁₂ directement."] }
+ ]
+}

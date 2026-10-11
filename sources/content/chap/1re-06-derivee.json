@@ -1,0 +1,214 @@
+{
+ "id": "derivee",
+ "annee": "1re",
+ "titre": "Dérivation",
+ "icone": "📐",
+ "cat": "fonction",
+ "domaine": "Algèbre et analyse",
+ "intro": "Lire un nombre dérivé sur une tangente, calculer la fonction dérivée d’un polynôme et en déduire les variations.",
+ "objectifs": [
+  "Je sais **lire** graphiquement un nombre dérivé avec la tangente.",
+  "Je sais **calculer** la dérivée de ax² + bx + c.",
+  "Je sais **étudier** le signe de f′ et **dresser** le tableau de variations de f.",
+  "Je sais **trouver** un maximum ou un minimum avec la dérivée."
+ ],
+ "situation": {
+  "metier": "🚌 Transport",
+  "txt": [
+   "Un chauffeur de bus freine devant un obstacle.",
+   "La distance parcourue depuis le début du freinage est d(t) = −1,5t² + 15t (en mètres), t en secondes.",
+   "La vitesse du bus à l’instant t est donnée par la dérivée : v(t) = d′(t)."
+  ],
+  "question": "Au bout de combien de secondes le bus s’arrête-t-il, et quelle distance a-t-il parcourue ?"
+ },
+ "cours": [
+  {
+   "titre": "La tangente et le nombre dérivé",
+   "txt": [
+    "La [[tangente|tangente-courbe]] en un point A est la droite qui « touche » la courbe en A, en suivant sa direction.",
+    "Son coefficient directeur s’appelle le [[nombre dérivé|nombre-derive]] de f en a. On le note f′(a).",
+    "f′(a) dit si la courbe monte (f′(a) > 0) ou descend (f′(a) < 0) en A, et à quelle vitesse."
+   ],
+   "man": [
+    "Le nombre dérivé de f en a, noté f′(a), est le coefficient directeur de la tangente à la courbe 𝒞f au point d’abscisse a.",
+    "La tangente en A(a ; f(a)) a pour équation y = f′(a)(x − a) + f(a)."
+   ],
+   "ex": [
+    "La tangente en A(3 ; 4) passe aussi par (4 ; 6) : f′(3) = (6 − 4) ÷ (4 − 3) = 2."
+   ],
+   "ill": "l3:tangente|pente"
+  },
+  {
+   "titre": "Lire un nombre dérivé",
+   "txt": [
+    "Je prends deux points de la tangente.",
+    "Je calcule : f′(a) = (différence des y) ÷ (différence des x).",
+    "Si la tangente est horizontale, f′(a) = 0."
+   ],
+   "man": [
+    "f′(a) = (yB − yA) ÷ (xB − xA) pour deux points A et B de la tangente. Une tangente horizontale correspond à f′(a) = 0."
+   ],
+   "ex": [
+    "Au sommet d’une parabole, la tangente est horizontale : f′(α) = 0."
+   ],
+   "ill": "l3:tangente|horiz"
+  },
+  {
+   "titre": "La fonction dérivée",
+   "txt": [
+    "La [[fonction dérivée|fonction-derivee]] f′ donne le nombre dérivé pour chaque x.",
+    "Règles : la dérivée de x² est 2x ; de x est 1 ; d’un nombre seul est 0.",
+    "Donc la dérivée de ax² + bx + c est 2ax + b."
+   ],
+   "man": [
+    "Si f(x) = k (constante), f′(x) = 0 ; si f(x) = x, f′(x) = 1 ; si f(x) = x², f′(x) = 2x ; (au)′ = au′ ; (u + v)′ = u′ + v′.",
+    "Pour f(x) = ax² + bx + c : f′(x) = 2ax + b."
+   ],
+   "ex": [
+    "d(t) = −1,5t² + 15t → d′(t) = −3t + 15."
+   ],
+   "ill": "txt:f(x) = ax² + bx + c|f′(x) = {2ax + b}"
+  },
+  {
+   "titre": "Signe de la dérivée et variations",
+   "txt": [
+    "Si f′(x) > 0 sur un intervalle, f est croissante sur cet intervalle.",
+    "Si f′(x) < 0, f est décroissante.",
+    "Quand f′ change de signe, f a un maximum ou un minimum."
+   ],
+   "man": [
+    "Si f′ est positive sur I, f est croissante sur I ; si f′ est négative sur I, f est décroissante sur I.",
+    "Si f′ s’annule en changeant de signe en a, f admet un extremum en a."
+   ],
+   "ex": [
+    "B′(x) = −2x + 14 : positive avant 7, négative après 7. B a un maximum en x = 7."
+   ],
+   "ill": "l3:tabder|0;7;12|+,−|−40;9;−16|B"
+  },
+  {
+   "titre": "Dérivée et vitesse",
+   "txt": [
+    "Si d(t) est une distance en fonction du temps, d′(t) est la [[vitesse instantanée|vitesse-instantanee]].",
+    "Quand la vitesse est 0, le véhicule est arrêté.",
+    "La dérivée mesure à quelle vitesse une grandeur change."
+   ],
+   "man": [
+    "Le nombre dérivé représente un taux de variation instantané : vitesse instantanée, débit, coût marginal…"
+   ],
+   "ex": [
+    "v(t) = −3t + 15 = 0 pour t = 5 : le bus s’arrête au bout de 5 s."
+   ],
+   "ill": "txt:d′(t) = v(t)|v(5) = {0} : arrêt"
+  }
+ ],
+ "methodes": [
+  {
+   "titre": "Calculer la dérivée d’un polynôme du second degré",
+   "etapes": [
+    "Je lis a, b et c.",
+    "Je dérive terme par terme : ax² devient 2ax, bx devient b, c disparaît.",
+    "J’écris f′(x) = 2ax + b."
+   ],
+   "exemple": {
+    "enonce": "f(x) = 3x² − 5x + 7. **Calcule** f′(x).",
+    "etapes": [
+     { "t": "3x² → 2 × 3x", "c": "6x" },
+     { "t": "−5x → −5 ; 7 → 0", "c": "" }
+    ],
+    "reponse": "f′(x) = 6x − 5."
+   }
+  },
+  {
+   "titre": "Étudier les variations avec la dérivée",
+   "etapes": [
+    "Je calcule f′(x).",
+    "Je résous f′(x) = 0.",
+    "J’étudie le signe de f′(x) (fonction affine) dans un tableau.",
+    "Je dresse le tableau de variations de f et je calcule les valeurs aux flèches."
+   ],
+   "exemple": {
+    "enonce": "B(x) = −x² + 14x − 40 sur [0 ; 12]. **Dresse** le tableau de variations de B.",
+    "ill": "l3:tabder|0;7;12|+,−|−40;9;−16|B",
+    "etapes": [
+     { "t": "Dérivée.", "c": "B′(x) = −2x + 14" },
+     { "t": "B′(x) = 0.", "c": "x = 7" },
+     { "t": "Signe : + avant 7, − après 7.", "c": "B(0) = −40 ; B(7) = 9 ; B(12) = −16" }
+    ],
+    "reponse": "B est croissante sur [0 ; 7], décroissante sur [7 ; 12], avec un maximum de 9 en x = 7."
+   }
+  },
+  {
+   "titre": "Lire f′(a) sur un graphique",
+   "etapes": [
+    "Je repère la tangente au point d’abscisse a.",
+    "Je choisis deux points de la tangente faciles à lire.",
+    "Je calcule (y₂ − y₁) ÷ (x₂ − x₁)."
+   ],
+   "exemple": {
+    "enonce": "La tangente en A(3 ; 4) passe par B(4 ; 6). **Lis** f′(3).",
+    "ill": "l3:tangente|pente",
+    "etapes": [
+     { "t": "Différence des y.", "c": "6 − 4 = 2" },
+     { "t": "Différence des x.", "c": "4 − 3 = 1" },
+     { "t": "Je divise.", "c": "2 ÷ 1 = 2" }
+    ],
+    "reponse": "f′(3) = 2."
+   }
+  }
+ ],
+ "comprendre": [
+  { "t": "qcm", "txt": "f(x) = x².", "q": "Quelle est la dérivée ?", "o": ["f′(x) = 2x", "f′(x) = x", "f′(x) = 2"], "a": 0, "exp": "La dérivée de x² est 2x." },
+  { "t": "qcm", "txt": "f(x) = 4x² + 3x − 1.", "q": "Quelle est la dérivée ?", "o": ["8x + 3", "4x + 3", "8x + 3 − 1"], "a": 0, "exp": "4x² → 8x ; 3x → 3 ; −1 → 0. f′(x) = 8x + 3." },
+  { "t": "vf", "txt": "f′(x) > 0 sur l’intervalle [2 ; 6].", "q": "f est croissante sur [2 ; 6].", "a": true, "exp": "Dérivée positive : la fonction est croissante." },
+  { "t": "qcm", "txt": "La tangente à la courbe au point d’abscisse 1 est horizontale.", "q": "Que vaut f′(1) ?", "o": ["0", "1", "on ne peut pas savoir"], "a": 0, "exp": "Une droite horizontale a un coefficient directeur égal à 0." },
+  { "t": "qcm", "txt": "f′(x) = −2x + 10.", "q": "Pour quelle valeur f′(x) = 0 ?", "o": ["5", "−5", "10"], "a": 0, "exp": "−2x + 10 = 0, donc x = 5." },
+  { "t": "question", "txt": ["Le bus freine.", "Sa distance est d(t) = −1,5t² + 15t.", "Quand le bus s’arrête-t-il ?"], "q": "Touche la phrase qui est la question.", "a": 2, "exp": "La question finit par « ? »." },
+  { "t": "donnees", "txt": "La tangente en A(2 ; 5) passe par B(4 ; 11). La courbe est tracée en bleu. Calcule le nombre dérivé au point A.", "q": "Touche les quatre coordonnées utiles.", "a": ["2", "5", "4", "11"], "exp": "f′(2) = (11 − 5) ÷ (4 − 2) = 3." },
+  { "t": "ordre", "q": "Remets la phrase dans l’ordre.", "phrase": "La dérivée est positive donc la fonction est croissante." }
+ ],
+ "brevet": [
+  {
+   "id": "de-b1",
+   "titre": "Le freinage du bus",
+   "ctx": ["Un bus freine. La distance parcourue depuis le début du freinage est d(t) = −1,5t² + 15t (en m), où t est le temps en secondes.", "La vitesse du bus (en m/s) est v(t) = d′(t)."],
+   "qs": [
+    { "q": "**Calcule** d′(t).", "type": "expr", "v": "t", "a": "-3t+15", "form": "red", "aide": ["−1,5t² → 2 × (−1,5)t.", "15t → 15."], "corr": ["d′(t) = −3t + 15"], "rep": "d′(t) = −3t + 15." },
+    { "q": "**Calcule** la vitesse du bus au début du freinage (t = 0).", "type": "num", "a": 15, "unit": "m/s", "aide": ["v(0) = −3 × 0 + 15."], "corr": ["v(0) = 15"], "rep": "Au début du freinage, la vitesse est 15 m/s (54 km/h)." },
+    { "q": "**Détermine** l’instant où le bus s’arrête.", "type": "num", "a": 5, "unit": "s", "aide": ["Le bus est arrêté quand v(t) = 0."], "corr": ["−3t + 15 = 0", "t = 15 ÷ 3 = 5"], "rep": "Le bus s’arrête au bout de 5 secondes." },
+    { "q": "**Calcule** la distance de freinage.", "type": "num", "a": 37.5, "unit": "m", "aide": ["Je calcule d(5)."], "corr": ["d(5) = −1,5 × 25 + 15 × 5 = −37,5 + 75 = 37,5"], "rep": "La distance de freinage est 37,5 m." },
+    { "q": "L’obstacle est à 40 m. Le bus s’arrête-t-il à temps ?", "type": "qcm", "o": ["Oui, car 37,5 m < 40 m", "Non, car 37,5 m < 40 m", "Non, car 5 s > 0 s"], "a": 0, "aide": ["Je compare la distance de freinage et 40 m."], "corr": ["37,5 m < 40 m : il reste 2,5 m."], "rep": "Oui, le bus s’arrête 2,5 m avant l’obstacle." }
+   ]
+  },
+  {
+   "id": "de-b2",
+   "titre": "Le bénéfice maximal",
+   "ctx": ["Une imprimerie fabrique x centaines d’affiches par jour, x entre 0 et 12.", "Son bénéfice, en centaines d’euros, est B(x) = −x² + 14x − 40."],
+   "qs": [
+    { "q": "**Calcule** B′(x).", "type": "expr", "a": "-2x+14", "form": "red", "aide": ["−x² → −2x ; 14x → 14 ; −40 → 0."], "corr": ["B′(x) = −2x + 14"], "rep": "B′(x) = −2x + 14." },
+    { "q": "**Résous** B′(x) = 0.", "type": "num", "a": 7, "aide": ["−2x + 14 = 0."], "corr": ["−2x = −14", "x = 7"], "rep": "B′(x) = 0 pour x = 7." },
+    { "q": "Sur [0 ; 7], B′(x) est positive. Que peut-on dire de B ?", "type": "qcm", "o": ["B est croissante sur [0 ; 7]", "B est décroissante sur [0 ; 7]", "B est constante"], "a": 0, "aide": ["Dérivée positive → fonction croissante."], "corr": ["B′(x) ≥ 0 sur [0 ; 7] donc B est croissante."], "rep": "B est croissante sur [0 ; 7]." },
+    { "q": "**Calcule** le bénéfice maximal, en euros.", "type": "num", "a": 900, "unit": "€", "aide": ["Le maximum est atteint en x = 7.", "B(7) est en centaines d’euros."], "corr": ["B(7) = −49 + 98 − 40 = 9", "9 centaines d’euros = 900 €"], "rep": "Le bénéfice maximal est 900 €, pour 700 affiches." }
+   ]
+  },
+  {
+   "id": "de-b3",
+   "titre": "La tangente au point A",
+   "fig": "l3:tangente|pente",
+   "ctx": ["La courbe représente la fonction f(x) = 0,5x² − x + 2,5.", "On a tracé la tangente à la courbe au point A(3 ; 4). Elle passe par le point B(4 ; 6)."],
+   "qs": [
+    { "q": "**Lis** graphiquement f′(3).", "type": "num", "a": 2, "aide": ["f′(3) est le coefficient directeur de la tangente.", "(6 − 4) ÷ (4 − 3)."], "corr": ["f′(3) = (6 − 4) ÷ (4 − 3) = 2"], "rep": "f′(3) = 2." },
+    { "q": "**Calcule** f′(x).", "type": "expr", "a": "x-1", "form": "red", "aide": ["0,5x² → 2 × 0,5x = x.", "−x → −1."], "corr": ["f′(x) = x − 1"], "rep": "f′(x) = x − 1." },
+    { "q": "**Vérifie** par le calcul : f′(3) = 2.", "type": "vf", "a": true, "aide": ["Je remplace x par 3 dans f′(x) = x − 1."], "corr": ["f′(3) = 3 − 1 = 2 ✓"], "rep": "Le calcul confirme : f′(3) = 2." }
+   ]
+  }
+ ],
+ "calc": ["de-deriv", "de-nombre", "de-lect", "de-extr"],
+ "mots": [
+  { "id": "nombre-derive", "mot": "nombre dérivé", "art": "le", "g": "m", "cat": "fonction", "sym": "f′(a)", "ill": "l3:tangente|pente", "def": "Le coefficient directeur de la tangente à la courbe au point d’abscisse a.", "man": "f′(a) : coefficient directeur de la tangente à 𝒞f au point d’abscisse a ; taux de variation instantané.", "ph": ["Le [[nombre dérivé|nombre-derive]] de f en 3 est f′(3) = 2.", "Je lis le [[nombre dérivé|nombre-derive]] sur la tangente."] },
+  { "id": "tangente-courbe", "mot": "tangente à une courbe", "art": "la", "g": "f", "cat": "fonction", "ill": "l3:tangente", "def": "La droite qui touche la courbe en un point et suit sa direction.", "man": "Droite passant par A(a ; f(a)) de coefficient directeur f′(a) : y = f′(a)(x − a) + f(a).", "vie": "prendre la tangente : partir discrètement. En trigonométrie, tan est aussi appelée tangente.", "ph": ["La [[tangente|tangente-courbe]] en A passe par B(4 ; 6).", "Au sommet, la [[tangente|tangente-courbe]] est horizontale."] },
+  { "id": "fonction-derivee", "mot": "fonction dérivée", "art": "la", "g": "f", "cat": "fonction", "sym": "f′", "ill": "txt:f(x) = ax² + bx + c|f′(x) = {2ax + b}", "def": "La fonction qui donne le nombre dérivé pour chaque x.", "man": "f′ : x ↦ f′(x). (x²)′ = 2x ; (x)′ = 1 ; (k)′ = 0 ; (ax² + bx + c)′ = 2ax + b.", "ph": ["La [[fonction dérivée|fonction-derivee]] de d est v(t) = −3t + 15.", "J’étudie le signe de la [[fonction dérivée|fonction-derivee]]."] },
+  { "id": "deriver", "mot": "dériver", "cat": "fonction", "ill": "txt:3x² − 5x + 7|→ {6x − 5}", "f": { "c": "Dérive · Dérivez", "je": "je dérive" }, "def": "Calculer la fonction dérivée.", "man": "Déterminer f′ à partir de l’expression de f, avec les formules de dérivation.", "vie": "un bateau qui dérive : il s’éloigne, poussé par le vent.", "ph": ["Je [[dérive|deriver]] f(x) = 3x² − 5x + 7 : f′(x) = 6x − 5.", "Pour trouver le maximum, je [[dérive|deriver]] la fonction."] },
+  { "id": "vitesse-instantanee", "mot": "vitesse instantanée", "art": "la", "g": "f", "cat": "fonction", "ill": "txt:d′(t) = v(t)|v(5) = {0} : arrêt", "def": "La vitesse à un instant précis. C’est la dérivée de la distance.", "man": "v(t) = d′(t) : nombre dérivé de la distance par rapport au temps.", "ph": ["La [[vitesse instantanée|vitesse-instantanee]] du bus à t = 2 s est 9 m/s.", "La [[vitesse instantanée|vitesse-instantanee]] est nulle quand le bus est arrêté."] },
+  { "id": "tableau-signes-variations", "mot": "tableau de signes et de variations", "art": "le", "g": "m", "cat": "fonction", "ill": "l3:tabder|0;7;12|+,−|−40;9;−16|B", "def": "Un tableau avec le signe de f′ (+ ou −) et les flèches de f.", "man": "Tableau réunissant le signe de f′(x) et les variations de f qui en découlent.", "ph": ["Dans le [[tableau de signes et de variations|tableau-signes-variations]], f′ est positive puis négative.", "Je complète le [[tableau de variations|tableau-signes-variations]] avec B(7) = 9."] }
+ ]
+}

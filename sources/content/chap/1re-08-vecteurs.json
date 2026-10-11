@@ -1,0 +1,231 @@
+{
+ "id": "vecteurs",
+ "annee": "1re",
+ "grp": ["A", "B"],
+ "titre": "Vecteurs du plan",
+ "icone": "➡️",
+ "cat": "geometrie",
+ "domaine": "Géométrie",
+ "intro": "Décrire un déplacement ou une force par un vecteur, calculer ses coordonnées et sa norme, additionner des vecteurs.",
+ "objectifs": [
+  "Je sais **décrire** un vecteur : direction, sens, norme.",
+  "Je sais **calculer** les coordonnées d’un vecteur et sa norme.",
+  "Je sais **additionner** deux vecteurs et **utiliser** la relation de Chasles.",
+  "Je sais **reconnaître** deux vecteurs colinéaires."
+ ],
+ "situation": {
+  "metier": "🤖 Logistique automatisée",
+  "txt": [
+   "Dans un entrepôt, un robot transporte des colis. Le sol est quadrillé : 1 carreau = 1 m.",
+   "Le robot part du point A(1 ; 2), va au point B(4 ; 6), puis au point C(9 ; 4).",
+   "Le responsable veut connaître la distance parcourue et le déplacement total."
+  ],
+  "question": "Quelle distance le robot parcourt-il, et quel est son déplacement de A à C ?"
+ },
+ "cours": [
+  {
+   "titre": "Qu’est-ce qu’un vecteur ?",
+   "txt": [
+    "Un [[vecteur]] représente un déplacement (ou une force). Je le dessine avec une flèche.",
+    "Il a une [[direction]] (la droite), un [[sens|sens-vecteur]] (le bout de la flèche) et une [[norme]] (la longueur).",
+    "Le vecteur qui va de A à B s’écrit ~AB~."
+   ],
+   "man": [
+    "Le vecteur ~AB~ est caractérisé par sa direction (celle de la droite (AB)), son sens (de A vers B) et sa norme (la longueur AB), notée ‖~AB~‖."
+   ],
+   "ex": [
+    "~AB~ : le robot va de A à B. ~BA~ : il va de B à A, dans l’autre sens."
+   ],
+   "ill": "l3:vect|single"
+  },
+  {
+   "titre": "Vecteurs égaux",
+   "txt": [
+    "Deux [[vecteurs égaux|vecteurs-egaux]] ont la même direction, le même sens et la même norme.",
+    "Ils peuvent être à des endroits différents.",
+    "Si ~AB~ = ~DC~, alors ABCD est un parallélogramme."
+   ],
+   "man": [
+    "~AB~ = ~DC~ si et seulement si ABCD est un parallélogramme (éventuellement aplati)."
+   ],
+   "ex": [
+    "Deux robots font le même déplacement : 3 m vers l’est et 4 m vers le nord. Leurs vecteurs sont égaux."
+   ],
+   "ill": "l3:vect|egaux"
+  },
+  {
+   "titre": "Coordonnées d’un vecteur",
+   "txt": [
+    "Les [[coordonnées du vecteur|coordonnees-vecteur]] ~AB~ disent de combien on se déplace en x et en y.",
+    "~AB~(xB − xA ; yB − yA) : arrivée moins départ.",
+    "Deux vecteurs égaux ont les mêmes coordonnées."
+   ],
+   "man": [
+    "Dans un repère, si A(xA ; yA) et B(xB ; yB), alors ~AB~ a pour coordonnées (xB − xA ; yB − yA)."
+   ],
+   "ex": [
+    "A(1 ; 2), B(4 ; 6) : ~AB~(4 − 1 ; 6 − 2) = (3 ; 4)."
+   ],
+   "ill": "l3:vect|coord"
+  },
+  {
+   "titre": "La norme d’un vecteur",
+   "txt": [
+    "La norme est la longueur de la flèche.",
+    "Si ~u~(x ; y), alors ‖~u~‖ = √(x² + y²). C’est le théorème de Pythagore.",
+    "La norme de ~AB~ est la distance AB."
+   ],
+   "man": [
+    "Dans un repère orthonormé, ‖~u~‖ = √(x² + y²) pour ~u~(x ; y)."
+   ],
+   "ex": [
+    "~AB~(3 ; 4) : ‖~AB~‖ = √(9 + 16) = 5. Le robot parcourt 5 m."
+   ],
+   "ill": "l3:vect|norme"
+  },
+  {
+   "titre": "Somme de vecteurs",
+   "txt": [
+    "Faire deux déplacements de suite, c’est faire leur [[somme|somme-vecteurs]].",
+    "[[Relation de Chasles|relation-chasles]] : ~AB~ + ~BC~ = ~AC~.",
+    "Avec les coordonnées, j’additionne les x ensemble et les y ensemble."
+   ],
+   "man": [
+    "Relation de Chasles : pour tous points A, B, C, ~AB~ + ~BC~ = ~AC~. Si ~u~(x ; y) et ~v~(x′ ; y′), alors ~u~ + ~v~ a pour coordonnées (x + x′ ; y + y′)."
+   ],
+   "ex": [
+    "~AB~(3 ; 4) + ~BC~(5 ; −2) = ~AC~(8 ; 2)."
+   ],
+   "ill": "l3:vect|somme"
+  },
+  {
+   "titre": "Multiplier un vecteur par un nombre",
+   "txt": [
+    "3~u~ a la même direction que ~u~, le même sens, et une norme 3 fois plus grande.",
+    "−~u~ est l’[[opposé|vecteur-oppose]] de ~u~ : même direction, sens contraire.",
+    "Si ~v~ = k~u~, les vecteurs sont [[colinéaires]] : ils ont la même direction."
+   ],
+   "man": [
+    "Si ~u~(x ; y), alors k~u~ a pour coordonnées (kx ; ky). ~u~ et ~v~ sont colinéaires s’il existe un réel k tel que ~v~ = k~u~ ; dans ce cas, xy′ − x′y = 0."
+   ],
+   "ex": [
+    "~u~(2 ; 3) et ~v~(6 ; 9) : ~v~ = 3~u~. Ils sont colinéaires."
+   ],
+   "ill": "l3:vect|colin"
+  }
+ ],
+ "methodes": [
+  {
+   "titre": "Calculer les coordonnées et la norme d’un vecteur",
+   "etapes": [
+    "J’écris les coordonnées de A et de B.",
+    "Je calcule xB − xA puis yB − yA (arrivée moins départ).",
+    "Pour la norme, je calcule √(x² + y²)."
+   ],
+   "exemple": {
+    "enonce": "B(4 ; 6) et C(9 ; 4). **Calcule** les coordonnées de ~BC~ et sa norme. **Arrondis** au centième.",
+    "etapes": [
+     { "t": "Coordonnées.", "c": "~BC~(9 − 4 ; 4 − 6) = (5 ; −2)" },
+     { "t": "Norme.", "c": "√(25 + 4) = √29 ≈ 5,39" }
+    ],
+    "reponse": "~BC~(5 ; −2) et ‖~BC~‖ ≈ 5,39 m."
+   }
+  },
+  {
+   "titre": "Trouver le quatrième sommet d’un parallélogramme",
+   "etapes": [
+    "J’écris l’égalité de vecteurs : ABCD parallélogramme ⟺ ~AB~ = ~DC~.",
+    "Je calcule les coordonnées de ~AB~.",
+    "J’écris ~DC~ avec les coordonnées inconnues de D(x ; y).",
+    "J’égalise et je résous."
+   ],
+   "exemple": {
+    "enonce": "A(1 ; 1), B(5 ; 2), C(6 ; 5). **Détermine** D pour que ABCD soit un parallélogramme.",
+    "ill": "l3:vect|egaux",
+    "etapes": [
+     { "t": "~AB~(4 ; 1).", "c": "" },
+     { "t": "~DC~(6 − x ; 5 − y).", "c": "6 − x = 4 et 5 − y = 1" },
+     { "t": "Je résous.", "c": "x = 2 ; y = 4" }
+    ],
+    "reponse": "D(2 ; 4)."
+   }
+  },
+  {
+   "titre": "Additionner deux forces",
+   "etapes": [
+    "J’écris les coordonnées de chaque force.",
+    "J’additionne les coordonnées.",
+    "Je calcule la norme de la somme : c’est l’intensité de la force totale."
+   ],
+   "exemple": {
+    "enonce": "Deux câbles tirent une charge : ~F₁~(300 ; 0) et ~F₂~(0 ; 400), en newtons. **Calcule** l’intensité de la force totale.",
+    "ill": "l3:vect|force",
+    "etapes": [
+     { "t": "Somme.", "c": "~F~(300 ; 400)" },
+     { "t": "Norme.", "c": "√(90 000 + 160 000) = √250 000 = 500" }
+    ],
+    "reponse": "La force totale a une intensité de 500 N."
+   }
+  }
+ ],
+ "comprendre": [
+  { "t": "qcm", "txt": "A(2 ; 3) et B(7 ; 1).", "q": "Quelles sont les coordonnées de ~AB~ ?", "o": ["(5 ; −2)", "(−5 ; 2)", "(9 ; 4)"], "a": 0, "exp": "Arrivée moins départ : (7 − 2 ; 1 − 3) = (5 ; −2)." },
+  { "t": "qcm", "txt": "~u~(6 ; 8).", "q": "Quelle est la norme de ~u~ ?", "o": ["10", "14", "48"], "a": 0, "exp": "√(36 + 64) = √100 = 10." },
+  { "t": "vf", "txt": "~AB~ + ~BC~.", "q": "Cette somme est égale à ~AC~.", "a": true, "exp": "C’est la relation de Chasles." },
+  { "t": "qcm", "txt": "~u~(1 ; −3) et ~v~(4 ; 2).", "q": "Quelles sont les coordonnées de ~u~ + ~v~ ?", "o": ["(5 ; −1)", "(4 ; −6)", "(3 ; 5)"], "a": 0, "exp": "(1 + 4 ; −3 + 2) = (5 ; −1)." },
+  { "t": "vf", "txt": "~u~(2 ; 5) et ~v~(4 ; 8).", "q": "Les vecteurs sont colinéaires.", "a": false, "exp": "2 × 2 = 4 mais 5 × 2 = 10 ≠ 8. Il n’y a pas de nombre k tel que ~v~ = k~u~." },
+  { "t": "question", "txt": ["Le robot part de A(1 ; 2).", "Il arrive en B(4 ; 6).", "Quelle distance a-t-il parcourue ?"], "q": "Touche la phrase qui est la question.", "a": 2, "exp": "La question finit par « ? »." },
+  { "t": "donnees", "txt": "Un chariot de 80 kg est tiré par une force ~F~(120 ; 50) en newtons. Calcule l’intensité de la force.", "q": "Touche les deux données utiles.", "a": ["120", "50"], "exp": "√(120² + 50²) = √16 900 = 130 N. La masse ne sert pas." },
+  { "t": "ordre", "q": "Remets la phrase dans l’ordre.", "phrase": "Les deux vecteurs ont la même direction et le même sens." }
+ ],
+ "brevet": [
+  {
+   "id": "ve-b1",
+   "titre": "Le trajet du robot",
+   "fig": "l3:vect|somme",
+   "ctx": ["Le robot part de A(1 ; 2), va en B(4 ; 6), puis en C(9 ; 4). L’unité est le mètre."],
+   "qs": [
+    { "q": "**Calcule** la première coordonnée de ~AB~.", "type": "num", "a": 3, "aide": ["xB − xA."], "corr": ["4 − 1 = 3"], "rep": "La première coordonnée de ~AB~ est 3." },
+    { "q": "~AB~(3 ; 4). **Calcule** la longueur AB.", "type": "num", "a": 5, "unit": "m", "aide": ["AB = √(3² + 4²)."], "corr": ["√(9 + 16) = √25 = 5"], "rep": "Le robot parcourt 5 m de A à B." },
+    { "q": "~BC~(5 ; −2). **Calcule** la longueur BC. **Arrondis** au centième.", "type": "num", "a": 5.38516481, "arr": 2, "unit": "m", "aide": ["BC = √(5² + (−2)²)."], "corr": ["√(25 + 4) = √29 ≈ 5,39"], "rep": "Le robot parcourt environ 5,39 m de B à C." },
+    { "q": "**Calcule** la distance totale parcourue par le robot. **Arrondis** au centième.", "type": "num", "a": 10.38516481, "arr": 2, "unit": "m", "aide": ["J’additionne AB et BC."], "corr": ["5 + 5,39 ≈ 10,39"], "rep": "Le robot parcourt environ 10,39 m." },
+    { "q": "Avec la relation de Chasles, ~AC~ = ~AB~ + ~BC~. **Calcule** la distance AC. **Arrondis** au centième.", "type": "num", "a": 8.24621125, "arr": 2, "unit": "m", "aide": ["~AC~(3 + 5 ; 4 + (−2)) = (8 ; 2).", "AC = √(8² + 2²)."], "corr": ["~AC~(8 ; 2)", "AC = √68 ≈ 8,25"], "rep": "En ligne droite, A et C sont à environ 8,25 m l’un de l’autre." }
+   ]
+  },
+  {
+   "id": "ve-b2",
+   "titre": "Le dallage en parallélogramme",
+   "fig": "l3:vect|egaux",
+   "ctx": ["Un carreleur trace un motif en parallélogramme ABCD.", "A(1 ; 1), B(5 ; 2) et C(6 ; 5). On cherche D pour que ABCD soit un parallélogramme."],
+   "qs": [
+    { "q": "**Choisis** l’égalité de vecteurs qui convient.", "type": "qcm", "o": ["~AB~ = ~DC~", "~AB~ = ~CD~", "~AC~ = ~BD~"], "a": 0, "aide": ["Dans un parallélogramme ABCD, les flèches de A vers B et de D vers C sont pareilles."], "corr": ["ABCD est un parallélogramme ⟺ ~AB~ = ~DC~."], "rep": "L’égalité est ~AB~ = ~DC~." },
+    { "q": "**Calcule** l’abscisse de D.", "type": "num", "a": 2, "aide": ["~AB~(4 ; 1) et ~DC~(6 − x ; 5 − y).", "6 − x = 4."], "corr": ["6 − x = 4", "x = 2"], "rep": "L’abscisse de D est 2." },
+    { "q": "**Calcule** l’ordonnée de D.", "type": "num", "a": 4, "aide": ["5 − y = 1."], "corr": ["5 − y = 1", "y = 4"], "rep": "L’ordonnée de D est 4 : D(2 ; 4)." }
+   ]
+  },
+  {
+   "id": "ve-b3",
+   "titre": "Les deux câbles de la grue",
+   "fig": "l3:vect|force",
+   "ctx": ["Deux câbles tirent une charge. Leurs forces, en newtons, sont ~F₁~(300 ; 0) et ~F₂~(0 ; 400).", "Le câble principal supporte au maximum 450 N."],
+   "qs": [
+    { "q": "**Calcule** la deuxième coordonnée de la force totale ~F~ = ~F₁~ + ~F₂~.", "type": "num", "a": 400, "unit": "N", "aide": ["0 + 400."], "corr": ["~F~(300 + 0 ; 0 + 400) = (300 ; 400)"], "rep": "~F~ a pour coordonnées (300 ; 400)." },
+    { "q": "**Calcule** l’intensité de la force totale.", "type": "num", "a": 500, "unit": "N", "aide": ["‖~F~‖ = √(300² + 400²)."], "corr": ["√(90 000 + 160 000) = √250 000 = 500"], "rep": "L’intensité de la force totale est 500 N." },
+    { "q": "Le câble principal peut-il supporter cette force ?", "type": "qcm", "o": ["Non, car 500 N > 450 N", "Oui, car 500 N > 450 N", "Oui, car 300 N < 450 N"], "a": 0, "aide": ["Je compare 500 N et 450 N."], "corr": ["500 N > 450 N : le câble est trop faible."], "rep": "Non, il faut un câble plus résistant." }
+   ]
+  }
+ ],
+ "calc": ["ve-coord", "ve-norme", "ve-somme", "ve-colin"],
+ "mots": [
+  { "id": "vecteur", "mot": "vecteur", "art": "le", "g": "m", "cat": "geometrie", "sym": "~AB~", "ill": "l3:vect|single", "def": "Une flèche qui représente un déplacement ou une force : direction, sens et longueur.", "man": "Objet caractérisé par une direction, un sens et une norme ; noté ~AB~ ou ~u~.", "ph": ["Le [[vecteur]] ~AB~ représente le trajet du robot.", "Je dessine le [[vecteur]] avec une flèche."] },
+  { "id": "direction", "mot": "direction", "art": "la", "g": "f", "cat": "geometrie", "ill": "l3:vect|colin", "def": "La droite qui porte le vecteur (horizontale, verticale, penchée…).", "man": "Direction de ~AB~ : celle de la droite (AB).", "vie": "la direction : le chemin à prendre ; ou les chefs d’une entreprise.", "ph": ["~u~ et 3~u~ ont la même [[direction]].", "Deux vecteurs colinéaires ont la même [[direction]]."] },
+  { "id": "sens-vecteur", "mot": "sens d’un vecteur", "art": "le", "g": "m", "cat": "geometrie", "ill": "l3:vect|oppose", "def": "Le côté vers lequel va la flèche : de A vers B, ou de B vers A.", "man": "Pour une direction donnée, deux sens sont possibles ; ~BA~ a le sens contraire de ~AB~.", "vie": "le sens : la signification d’un mot ; les cinq sens (voir, entendre…).", "ph": ["~AB~ et ~BA~ n’ont pas le même [[sens|sens-vecteur]].", "Le [[sens|sens-vecteur]] du vecteur est de A vers B."] },
+  { "id": "norme", "mot": "norme d’un vecteur", "art": "la", "g": "f", "cat": "geometrie", "sym": "‖~u~‖", "ill": "l3:vect|norme", "def": "La longueur de la flèche.", "man": "‖~u~‖ = √(x² + y²) pour ~u~(x ; y) dans un repère orthonormé.", "vie": "une norme : une règle à respecter (norme de sécurité).", "ph": ["La [[norme]] de ~AB~ est 5.", "Je calcule la [[norme]] avec √(x² + y²)."] },
+  { "id": "coordonnees-vecteur", "mot": "coordonnées d’un vecteur", "art": "les", "g": "f", "cat": "geometrie", "ill": "l3:vect|coord", "def": "Le déplacement en x et le déplacement en y : (xB − xA ; yB − yA).", "man": "~AB~(xB − xA ; yB − yA).", "ph": ["Les [[coordonnées du vecteur|coordonnees-vecteur]] ~AB~ sont (3 ; 4).", "J’additionne les [[coordonnées|coordonnees-vecteur]] des deux vecteurs."] },
+  { "id": "vecteurs-egaux", "mot": "vecteurs égaux", "art": "les", "g": "m", "cat": "geometrie", "ill": "l3:vect|egaux", "def": "Deux vecteurs avec la même direction, le même sens et la même longueur.", "man": "~AB~ = ~DC~ ⟺ ABCD parallélogramme ⟺ mêmes coordonnées.", "ph": ["~AB~ et ~DC~ sont des [[vecteurs égaux|vecteurs-egaux]].", "Deux [[vecteurs égaux|vecteurs-egaux]] ont les mêmes coordonnées."] },
+  { "id": "relation-chasles", "mot": "relation de Chasles", "art": "la", "g": "f", "cat": "geometrie", "ill": "l3:vect|somme", "def": "~AB~ + ~BC~ = ~AC~ : deux trajets de suite donnent le trajet direct.", "man": "Pour tous points A, B, C : ~AB~ + ~BC~ = ~AC~.", "ph": ["Avec la [[relation de Chasles|relation-chasles]], ~AB~ + ~BC~ = ~AC~.", "J’utilise la [[relation de Chasles|relation-chasles]] pour simplifier."] },
+  { "id": "somme-vecteurs", "mot": "somme de vecteurs", "art": "la", "g": "f", "cat": "geometrie", "ill": "l3:vect|force", "def": "Le vecteur obtenu en faisant deux déplacements de suite.", "man": "~u~ + ~v~ a pour coordonnées (x + x′ ; y + y′).", "ph": ["La [[somme des vecteurs|somme-vecteurs]] ~F₁~ et ~F₂~ est la force totale.", "Je calcule la [[somme|somme-vecteurs]] coordonnée par coordonnée."] },
+  { "id": "colineaires", "mot": "vecteurs colinéaires", "art": "les", "g": "m", "cat": "geometrie", "ill": "l3:vect|colin", "def": "Deux vecteurs qui ont la même direction. L’un est un multiple de l’autre.", "man": "~u~ et ~v~ colinéaires ⟺ il existe k tel que ~v~ = k~u~ ⟺ xy′ − x′y = 0.", "ph": ["~u~(2 ; 3) et ~v~(6 ; 9) sont [[colinéaires]].", "Des [[vecteurs colinéaires|colineaires]] sont portés par des droites parallèles."] },
+  { "id": "vecteur-oppose", "mot": "vecteur opposé", "art": "le", "g": "m", "cat": "geometrie", "sym": "−~u~", "ill": "l3:vect|oppose", "def": "Le vecteur de même direction et même longueur, mais de sens contraire.", "man": "−~u~(−x ; −y) ; ~BA~ = −~AB~.", "ph": ["~BA~ est le [[vecteur opposé|vecteur-oppose]] de ~AB~.", "Le [[vecteur opposé|vecteur-oppose]] de (3 ; −1) est (−3 ; 1)."] }
+ ]
+}

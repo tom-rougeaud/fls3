@@ -1,0 +1,277 @@
+{
+ "id": "lycee-pro",
+ "annee": "2de",
+ "titre": "Les maths au lycée professionnel",
+ "icone": "🧭",
+ "cat": "verbe",
+ "domaine": "Méthodes et outils",
+ "intro": "Lire un sujet, comprendre les consignes, utiliser la calculatrice et le tableur, et rédiger une réponse.",
+ "objectifs": [
+  "Je sais **lire** un sujet : les parties, les documents, l’annexe.",
+  "Je connais les **compétences** : s’approprier, analyser, réaliser, valider, communiquer.",
+  "Je sais **utiliser** la calculatrice et le tableur.",
+  "Je sais **vérifier** qu’un résultat est réaliste et **rédiger** une phrase-réponse."
+ ],
+ "situation": {
+  "metier": "🔧 Atelier de maintenance",
+  "txt": [
+   "Yanis est en stage dans un atelier. Son tuteur lui donne une feuille de calcul.",
+   "La feuille calcule le prix des pièces commandées : prix d’une pièce × quantité.",
+   "Yanis doit recopier la formule pour toutes les lignes, puis vérifier le total."
+  ],
+  "question": "Comment écrire une formule dans le tableur et contrôler le résultat ?"
+ },
+ "cours": [
+  {
+   "titre": "Un sujet de maths",
+   "txt": [
+    "Un [[sujet]] commence par une situation : un métier, une entreprise, un projet.",
+    "Le sujet a des parties : partie A, partie B… Les questions se suivent.",
+    "Les informations sont dans le texte et dans les [[documents|document]].",
+    "Parfois, je réponds sur une [[annexe]] : une feuille à rendre avec ma copie."
+   ],
+   "man": [
+    "Le sujet présente une situation professionnelle ou de la vie courante. Il est organisé en parties souvent indépendantes.",
+    "Les documents (textes, tableaux, graphiques) apportent les données utiles. L’annexe est à compléter et à rendre avec la copie."
+   ],
+   "ex": [
+    "Partie A : je calcule un prix. Partie B : je lis un graphique.",
+    "« Compléter le tableau de l’annexe 1 » : j’écris sur la feuille d’annexe."
+   ],
+   "ill": "l3:sujet|partie"
+  },
+  {
+   "titre": "Les cinq compétences",
+   "txt": [
+    "**S’approprier** : je lis, je cherche les informations utiles.",
+    "**Analyser, raisonner** : je choisis une méthode, je fais un plan.",
+    "**Réaliser** : je fais les calculs, les tracés, j’utilise les outils.",
+    "**Valider** : je vérifie que le résultat est juste et réaliste.",
+    "**Communiquer** : j’écris une phrase claire, avec l’unité."
+   ],
+   "man": [
+    "Les compétences évaluées sont : s’approprier, analyser-raisonner, réaliser, valider, communiquer.",
+    "Une même question peut évaluer plusieurs compétences."
+   ],
+   "ex": [
+    "« Montrer que le prix est 45 € » : je réalise le calcul, puis je valide (je trouve bien 45 €)."
+   ],
+   "ill": "l3:verbe|analyser"
+  },
+  {
+   "titre": "Lire une consigne",
+   "txt": [
+    "Le verbe dit ce que je dois faire. Dans un sujet, il est à l’infinitif : « Calculer ».",
+    "[[Analyser|analyser]] : je regarde en détail. [[Interpréter|interpreter]] : je dis ce que le résultat veut dire.",
+    "[[Argumenter|argumenter]] : je donne une raison avec « car ». [[Valider|valider]] : je dis si c’est juste.",
+    "Je souligne le verbe et la donnée demandée."
+   ],
+   "man": [
+    "Dans un sujet, les consignes sont à l’infinitif : calculer, déterminer, justifier, interpréter, argumenter.",
+    "« Montrer que » : le résultat est donné, il faut écrire le calcul qui permet de l’obtenir."
+   ],
+   "ex": [
+    "« Interpréter le résultat » : 75 % des clients attendent moins de 5 min, donc l’objectif est atteint."
+   ],
+   "ill": "l3:verbe|interpreter"
+  },
+  {
+   "titre": "La calculatrice",
+   "txt": [
+    "Je tape le calcul en entier, avec les parenthèses.",
+    "La touche (−) sert pour un nombre négatif. La touche − sert pour soustraire.",
+    "Le jour de l’examen, la calculatrice est en [[mode examen|mode-examen]] : la lumière clignote."
+   ],
+   "man": [
+    "La calculatrice respecte les priorités opératoires : il faut parfois ajouter des parenthèses.",
+    "Le mode examen bloque la mémoire de la calculatrice pendant l’épreuve."
+   ],
+   "ex": [
+    "(12 + 8) ÷ 4 = 5, mais 12 + 8 ÷ 4 = 14."
+   ],
+   "ill": "l3:calculatrice|(12+8)/4|= 5"
+  },
+  {
+   "titre": "Le tableur",
+   "txt": [
+    "Un [[tableur]] est un grand tableau. Chaque case est une [[cellule]] : A1, B2, C3…",
+    "Une [[formule du tableur|formule-tableur]] commence toujours par le signe =.",
+    "Pour faire le même calcul sur chaque ligne, je [[recopie la formule vers le bas|recopier-vers-le-bas]]."
+   ],
+   "man": [
+    "Une cellule est repérée par sa colonne (lettre) et sa ligne (nombre).",
+    "Lors d’une recopie vers le bas, les références des cellules s’adaptent : =A2*B2 devient =A3*B3."
+   ],
+   "ex": [
+    "En C2 : =A2*B2. Recopiée en C3, la formule devient =A3*B3."
+   ],
+   "ill": "l3:recopier"
+  },
+  {
+   "titre": "Un résultat réaliste ?",
+   "txt": [
+    "Avant de répondre, je me demande : est-ce que ce résultat est possible ?",
+    "Je fais un [[ordre de grandeur|ordre-de-grandeur]] avec des nombres ronds.",
+    "Je vérifie l’unité : un prix en €, une durée en min ou en h, une longueur en m…"
+   ],
+   "man": [
+    "Valider un résultat, c’est contrôler sa vraisemblance (ordre de grandeur, unité, signe) et sa cohérence avec la situation."
+   ],
+   "ex": [
+    "Une voiture roule à 2 400 km/h ? Ce n’est pas réaliste : je cherche l’erreur."
+   ],
+   "ill": "l3:verbe|critiquer"
+  },
+  {
+   "titre": "Durées et heures décimales",
+   "txt": [
+    "1 h = 60 min. Une demi-heure = 0,5 h = 30 min.",
+    "0,25 h = 15 min ; 0,75 h = 45 min.",
+    "Pour passer des heures aux minutes, je multiplie par 60."
+   ],
+   "man": [
+    "Une durée de t heures correspond à t × 60 minutes. Ne pas confondre 1,5 h (1 h 30 min) et 1 h 50 min."
+   ],
+   "ex": [
+    "2,2 h = 2 h + 0,2 × 60 min = 2 h 12 min."
+   ],
+   "ill": "txt:1,5 h = {1 h 30 min}|0,2 h = {12 min}"
+  },
+  {
+   "titre": "Rédiger une réponse",
+   "txt": [
+    "Je recopie le calcul, puis le résultat.",
+    "J’écris une phrase qui répond à la question, avec l’unité.",
+    "Si on me demande de [[justifier]], j’explique avec « car » ou « donc »."
+   ],
+   "man": [
+    "Communiquer : présenter la démarche, le résultat avec son unité, et une conclusion qui répond à la question posée."
+   ],
+   "ex": [
+    "15 × 4 = 60. Le prix des 15 pièces est 60 €."
+   ],
+   "ill": "l3:verbe|communiquer"
+  }
+ ],
+ "methodes": [
+  {
+   "titre": "Lire un sujet en 4 étapes",
+   "etapes": [
+    "Je lis le titre et la situation : de quoi parle-t-on ?",
+    "Je repère les parties et les documents.",
+    "Pour chaque question, je souligne le verbe et ce qu’on cherche.",
+    "Je cherche les données utiles dans le texte et les documents."
+   ],
+   "exemple": {
+    "enonce": "Document 1 : une pièce coûte 3,50 €. Le transport coûte 12 €. Document 2 : l’atelier ouvre à 8 h. **Calcule** le prix de 20 pièces, transport compris.",
+    "etapes": [
+     { "t": "Le verbe : calculer. On cherche : le prix total.", "c": "" },
+     { "t": "Les données utiles : 3,50 € ; 20 pièces ; 12 €.", "c": "8 h ne sert pas." },
+     { "t": "Je calcule.", "c": "20 × 3,50 + 12 = 82" }
+    ],
+    "reponse": "Le prix de 20 pièces, transport compris, est 82 €."
+   }
+  },
+  {
+   "titre": "Écrire et recopier une formule dans le tableur",
+   "outil": "Tableur",
+   "etapes": [
+    "Je clique sur la cellule du résultat.",
+    "Je tape = puis le calcul avec les noms des cellules (A2, B2…).",
+    "J’appuie sur Entrée.",
+    "Je tire le petit carré en bas à droite de la cellule pour recopier vers le bas."
+   ],
+   "exemple": {
+    "enonce": "En A2 : le prix d’une pièce. En B2 : la quantité. **Écris** la formule à mettre en C2 pour le prix total.",
+    "ill": "l3:recopier",
+    "etapes": [
+     { "t": "Le prix total = prix × quantité.", "c": "" },
+     { "t": "Je tape la formule en C2.", "c": "=A2*B2" },
+     { "t": "Je recopie vers le bas.", "c": "C3 contient =A3*B3" }
+    ],
+    "reponse": "La formule en C2 est =A2*B2."
+   }
+  },
+  {
+   "titre": "Valider un résultat",
+   "etapes": [
+    "Je fais un ordre de grandeur avec des nombres ronds.",
+    "Je compare avec mon résultat : est-il proche ?",
+    "Je vérifie l’unité et le sens : un prix n’est pas négatif, une durée de trajet n’est pas de 300 h.",
+    "Si le résultat n’est pas réaliste, je recommence le calcul."
+   ],
+   "exemple": {
+    "enonce": "Ali calcule le prix de 48 pièces à 2,10 € pièce. Il trouve 1 008 €. **Vérifie** son résultat.",
+    "etapes": [
+     { "t": "Ordre de grandeur : 50 × 2 = 100.", "c": "≈ 100 €" },
+     { "t": "1 008 € est 10 fois trop grand.", "c": "erreur de virgule" },
+     { "t": "Je recalcule.", "c": "48 × 2,10 = 100,80" }
+    ],
+    "reponse": "Le résultat n’est pas réaliste : le bon prix est 100,80 €."
+   }
+  }
+ ],
+ "comprendre": [
+  { "t": "qcm", "txt": "« Compléter le tableau de l’annexe 2. »", "q": "Où dois-je écrire ma réponse ?", "o": ["Sur la feuille d’annexe 2", "Sur ma copie seulement", "Sur le brouillon"], "a": 0, "exp": "L’annexe est une feuille du sujet. Je la complète et je la rends avec ma copie." },
+  { "t": "qcm", "txt": "« Interpréter le résultat obtenu. »", "q": "Que dois-je faire ?", "o": ["Dire ce que le résultat veut dire dans la situation", "Refaire le calcul", "Recopier le résultat"], "a": 0, "exp": "Interpréter : expliquer le sens du résultat dans la situation." },
+  { "t": "vf", "txt": "Dans un tableur, j’écris en C2 : A2*B2 (sans le signe =).", "q": "Le tableur va faire le calcul.", "a": false, "exp": "Une formule commence toujours par =. Sans =, le tableur écrit seulement le texte." },
+  { "t": "qcm", "txt": "En C2, la formule est =A2*B2. Je la recopie vers le bas.", "q": "Quelle formule y a-t-il en C5 ?", "o": ["=A5*B5", "=A2*B2", "=A2*B5"], "a": 0, "exp": "En recopiant vers le bas, les numéros de ligne changent : ligne 5 → =A5*B5." },
+  { "t": "question", "txt": ["L’atelier commande des vis.", "Une boîte de 100 vis coûte 4,80 €.", "Combien coûtent 6 boîtes ?"], "q": "Touche la phrase qui est la question.", "a": 2, "exp": "La question finit par « ? »." },
+  { "t": "donnees", "txt": "Le stage dure 6 semaines. Yanis travaille 35 heures par semaine et il habite à 12 km. Calcule le nombre d’heures de stage.", "q": "Touche les deux données utiles.", "a": ["6", "35"], "exp": "6 × 35 = 210 heures. La distance de 12 km ne sert pas." },
+  { "t": "qcm", "txt": "Un élève calcule la durée d’un trajet de 30 km à vélo. Il trouve 150 heures.", "q": "Ce résultat est :", "o": ["pas réaliste", "réaliste", "exact"], "a": 0, "exp": "30 km à vélo, c’est environ 2 heures. 150 heures n’est pas possible : il faut chercher l’erreur." },
+  { "t": "ordre", "q": "Remets la phrase dans l’ordre.", "phrase": "Le prix total des pièces est quatre-vingt-deux euros." }
+ ],
+ "brevet": [
+  {
+   "id": "lp-b1",
+   "titre": "La commande de l’atelier",
+   "tab": [["", "A", "B", "C"], ["1", "Prix d’une pièce (€)", "Quantité", "Prix total (€)"], ["2", "3,50", "20", ""], ["3", "1,25", "40", ""], ["4", "12,80", "5", ""], ["5", "", "Total", ""]],
+   "ctx": ["Yanis utilise une feuille de calcul pour la commande de l’atelier."],
+   "qs": [
+    { "q": "**Choisis** la formule à écrire dans la cellule C2.", "type": "qcm", "o": ["=A2*B2", "A2*B2", "=A2+B2"], "a": 0, "aide": ["Prix total = prix d’une pièce × quantité.", "Une formule commence par =."], "corr": ["Prix total = prix × quantité : =A2*B2."], "rep": "La formule est =A2*B2." },
+    { "q": "**Calcule** le prix total de la ligne 3.", "type": "num", "a": 50, "unit": "€", "aide": ["Je multiplie le prix d’une pièce par la quantité."], "corr": ["1,25 × 40 = 50"], "rep": "Le prix total de la ligne 3 est 50 €." },
+    { "q": "**Calcule** le total de la commande.", "type": "num", "a": 184, "unit": "€", "aide": ["Je calcule les trois prix totaux, puis j’additionne.", "Ligne 2 : 70 € ; ligne 3 : 50 €."], "corr": ["3,50 × 20 = 70", "12,80 × 5 = 64", "70 + 50 + 64 = 184"], "rep": "Le total de la commande est 184 €." },
+    { "q": "**Choisis** la formule à écrire en C5 pour le total.", "type": "qcm", "o": ["=SOMME(C2:C4)", "=C2*C3*C4", "=SOMME(A2:A4)"], "a": 0, "aide": ["Le total est la somme des prix de C2 à C4."], "corr": ["=SOMME(C2:C4) additionne C2, C3 et C4."], "rep": "La formule du total est =SOMME(C2:C4)." }
+   ]
+  },
+  {
+   "id": "lp-b2",
+   "titre": "Le temps de travail",
+   "ctx": ["Un technicien répare une machine. Il note ses durées de travail.", "Lundi : 1,5 h. Mardi : 2,25 h. Mercredi : 0,75 h.", "L’entreprise facture 48 € de l’heure de main-d’œuvre."],
+   "qs": [
+    { "q": "**Convertis** 2,25 h en heures et minutes.", "type": "qcm", "o": ["2 h 15 min", "2 h 25 min", "2 h 50 min"], "a": 0, "aide": ["0,25 h = 0,25 × 60 min."], "corr": ["0,25 × 60 = 15", "2,25 h = 2 h 15 min"], "rep": "2,25 h correspond à 2 h 15 min." },
+    { "q": "**Calcule** la durée totale de travail, en heures.", "type": "num", "a": 4.5, "unit": "h", "aide": ["J’additionne les trois durées."], "corr": ["1,5 + 2,25 + 0,75 = 4,5"], "rep": "La durée totale est 4,5 heures." },
+    { "q": "**Calcule** le prix de la main-d’œuvre.", "type": "num", "a": 216, "unit": "€", "aide": ["Je multiplie la durée totale par 48 €."], "corr": ["4,5 × 48 = 216"], "rep": "La main-d’œuvre coûte 216 €." },
+    { "q": "Un collègue trouve 2 160 €. **Valide** ou non son résultat.", "type": "qcm", "o": ["Pas réaliste : environ 5 h × 50 € = 250 €", "Réaliste", "Exact"], "a": 0, "aide": ["Je fais un ordre de grandeur : 5 h × 50 €."], "corr": ["Ordre de grandeur : 5 × 50 = 250 €.", "2 160 € est 10 fois trop grand."], "rep": "Le résultat du collègue n’est pas réaliste." }
+   ]
+  },
+  {
+   "id": "lp-b3",
+   "titre": "Choisir une offre",
+   "ctx": ["L’atelier loue une machine.", "Offre A : 35 € par jour.", "Offre B : 120 € de frais, puis 20 € par jour.", "L’atelier a besoin de la machine pendant 10 jours."],
+   "qs": [
+    { "q": "**Calcule** le prix de l’offre A pour 10 jours.", "type": "num", "a": 350, "unit": "€", "aide": ["35 € par jour, pendant 10 jours."], "corr": ["35 × 10 = 350"], "rep": "Avec l’offre A, la location coûte 350 €." },
+    { "q": "**Calcule** le prix de l’offre B pour 10 jours.", "type": "num", "a": 320, "unit": "€", "aide": ["Je calcule 20 € × 10 jours, puis j’ajoute les frais."], "corr": ["20 × 10 = 200", "200 + 120 = 320"], "rep": "Avec l’offre B, la location coûte 320 €." },
+    { "q": "**Argumente** : quelle offre l’atelier doit-il choisir ?", "type": "qcm", "o": ["L’offre B, car 320 € < 350 €", "L’offre A, car 35 € > 20 €", "L’offre A, car il n’y a pas de frais"], "a": 0, "aide": ["Je compare les deux prix pour 10 jours."], "corr": ["320 € < 350 € : l’offre B est moins chère."], "rep": "L’atelier doit choisir l’offre B car elle est moins chère." }
+   ]
+  }
+ ],
+ "calc": ["consigne", "lp-tableur", "lp-duree", "lp-valider", "arrondi"],
+ "mots": [
+  { "id": "sujet", "mot": "sujet", "art": "le", "g": "m", "cat": "verbe", "ill": "l3:sujet|partie", "def": "Les feuilles de l’examen, avec la situation, les documents et les questions.", "man": "Énoncé complet d’une évaluation : situation, documents, questions, annexes.", "vie": "en grammaire, le sujet du verbe ; ou le thème d’une discussion.", "ph": ["Je lis tout le [[sujet]] avant de répondre.", "Le [[sujet]] a deux parties : A et B."] },
+  { "id": "document", "mot": "document", "art": "le", "g": "m", "cat": "verbe", "ill": "l3:document", "def": "Un texte, un tableau ou un graphique qui donne des informations.", "man": "Support (texte, tableau, graphique, schéma) qui apporte les données nécessaires.", "ph": ["Je trouve le prix dans le [[document]] 2.", "Le [[document]] 1 est un graphique."] },
+  { "id": "annexe", "mot": "annexe", "art": "l’", "g": "f", "cat": "verbe", "ill": "l3:annexe", "def": "Une feuille du sujet que je complète et que je rends avec ma copie.", "man": "Document à compléter (tableau, graphique), à rendre avec la copie.", "vie": "un petit bâtiment à côté d’un grand.", "ph": ["Je trace la droite sur l’[[annexe]].", "Je n’oublie pas de rendre l’[[annexe]] avec ma copie."] },
+  { "id": "analyser", "mot": "analyser", "cat": "verbe", "ill": "l3:verbe|analyser", "f": { "c": "Analyse · Analysez", "je": "j’analyse" }, "def": "Regarder en détail pour comprendre et choisir une méthode.", "man": "Analyser, raisonner : identifier le problème, choisir une stratégie, organiser les étapes.", "ph": ["J’[[analyse|analyser]] le graphique avant de répondre.", "[[Analyser]] la situation : de quoi a-t-on besoin ?"] },
+  { "id": "interpreter", "mot": "interpréter", "cat": "verbe", "ill": "l3:verbe|interpreter", "f": { "c": "Interprète · Interprétez", "je": "j’interprète" }, "def": "Dire ce que veut dire un résultat dans la situation.", "man": "Donner du sens à un résultat mathématique dans le contexte de l’énoncé.", "vie": "traduire ce que dit une personne dans une autre langue, ou jouer un rôle au théâtre.", "ph": ["J’[[interprète|interpreter]] la médiane : la moitié des clients attend moins de 7 min.", "[[Interpréter|interpreter]] le résultat obtenu."] },
+  { "id": "argumenter", "mot": "argumenter", "cat": "verbe", "ill": "l3:verbe|argumenter", "f": { "c": "Argumente · Argumentez", "je": "j’argumente" }, "def": "Donner des raisons pour défendre une réponse.", "man": "Justifier un choix ou une conclusion à l’aide de résultats, avec des connecteurs (car, donc).", "ph": ["J’[[argumente|argumenter]] : je choisis l’offre B car elle coûte moins cher.", "[[Argumenter]] la réponse avec un calcul."] },
+  { "id": "valider", "mot": "valider", "cat": "verbe", "ill": "l3:verbe|valider", "f": { "c": "Valide · Validez", "je": "je valide" }, "def": "Vérifier qu’un résultat est juste et qu’il est possible.", "man": "Contrôler la vraisemblance d’un résultat et confirmer ou infirmer une hypothèse.", "vie": "valider un ticket de bus : le passer dans la machine.", "ph": ["Je [[valide|valider]] mon résultat avec un ordre de grandeur.", "[[Valider]] ou non l’hypothèse."] },
+  { "id": "hypothese", "mot": "hypothèse", "art": "l’", "g": "f", "cat": "verbe", "ill": "l3:verbe|hypothese", "def": "Une idée que l’on propose, puis que l’on vérifie.", "man": "Supposition émise avant une vérification par le calcul ou l’expérience.", "ph": ["Mon [[hypothèse|hypothese]] : le prix est proportionnel à la quantité.", "Je vérifie l’[[hypothèse|hypothese]] avec un calcul."] },
+  { "id": "realiste", "mot": "réaliste", "cat": "verbe", "ill": "l3:verbe|critiquer", "def": "Possible dans la vraie vie.", "man": "Se dit d’un résultat vraisemblable, cohérent avec la situation (ordre de grandeur, unité, signe).", "ph": ["150 heures pour 30 km à vélo : ce n’est pas [[réaliste|realiste]].", "Je vérifie que le résultat est [[réaliste|realiste]]."] },
+  { "id": "tableur", "mot": "tableur", "art": "le", "g": "m", "cat": "algo", "ill": "l3:tableur|B2|=A2*3|4/12;5/15;6/18", "def": "Un logiciel qui fait des calculs dans un grand tableau.", "man": "Logiciel de feuille de calcul organisé en lignes (1, 2, 3…) et colonnes (A, B, C…).", "ph": ["Avec le [[tableur]], je calcule les prix de toutes les lignes.", "J’ouvre une feuille de [[tableur]]."] },
+  { "id": "cellule", "mot": "cellule", "art": "la", "g": "f", "cat": "algo", "ill": "l3:cellule", "def": "Une case du tableur. Elle a un nom : une lettre et un nombre.", "man": "Intersection d’une colonne et d’une ligne, désignée par une référence (ex. B2).", "vie": "en biologie, la plus petite partie d’un être vivant.", "ph": ["J’écris la formule dans la [[cellule]] C2.", "La [[cellule]] B3 contient le nombre 40."] },
+  { "id": "formule-tableur", "mot": "formule du tableur", "art": "la", "g": "f", "cat": "algo", "ill": "l3:tableur|C2|=A2*B2|3,50/20/70;1,25/40/", "def": "Un calcul qui commence par = et qui utilise le nom des cellules.", "man": "Expression commençant par « = », utilisant des références de cellules, des opérations et des fonctions (SOMME, MOYENNE…).", "ph": ["La [[formule du tableur|formule-tableur]] =A2*B2 multiplie A2 par B2.", "J’écris la [[formule|formule-tableur]] =SOMME(C2:C4)."] },
+  { "id": "recopier-vers-le-bas", "mot": "recopier vers le bas", "cat": "algo", "ill": "l3:recopier", "f": { "c": "Recopie · Recopiez", "je": "je recopie" }, "def": "Faire glisser une formule sur les lignes en dessous. Les numéros de ligne changent.", "man": "Recopie incrémentée : les références relatives s’adaptent à chaque ligne.", "ph": ["Je [[recopie vers le bas|recopier-vers-le-bas]] la formule de C2.", "Après [[recopie vers le bas|recopier-vers-le-bas]], C3 contient =A3*B3."] },
+  { "id": "mode-examen", "mot": "mode examen", "art": "le", "g": "m", "cat": "verbe", "ill": "l3:calculatrice|MODE EXAMEN", "def": "Un réglage de la calculatrice pour l’examen : une lumière clignote.", "man": "Mode qui neutralise l’accès aux données mémorisées pendant l’épreuve.", "ph": ["Le professeur demande d’activer le [[mode examen|mode-examen]].", "En [[mode examen|mode-examen]], la lumière de la calculatrice clignote."] },
+  { "id": "competence", "mot": "compétence", "art": "la", "g": "f", "cat": "verbe", "ill": "txt:{S’approprier} · {Analyser}|{Réaliser} · {Valider}|{Communiquer}", "def": "Ce que je sais faire. En maths, il y en a cinq : s’approprier, analyser, réaliser, valider, communiquer.", "man": "Capacité évaluée : s’approprier, analyser-raisonner, réaliser, valider, communiquer.", "ph": ["Cette question évalue la [[compétence|competence]] « valider ».", "Je travaille la [[compétence|competence]] « communiquer » : j’écris une phrase."] }
+ ]
+}
