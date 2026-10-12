@@ -74,7 +74,7 @@ function tokRe(){ return /\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g; }
 function tokens(s){ const r=tokRe(), out=[]; let m; while((m=r.exec(s))) out.push({text:m[1],id:m[2]||slug(m[1]),index:m.index,len:m[0].length}); return out; }
 function fracPlain(a,b){ return /\s/.test(a+b)?`${a} sur ${b}`:`${a}/${b}`; }
 function plain(s){ return String(s).replace(tokRe(),'$1').replace(/\*\*/g,'').replace(/~([A-Za-z0-9₀-₉]{1,3})~/g,'vecteur $1').replace(/\{\{([^{}]+?)\/([^{}]+?)\}\}/g,(m,a,b)=>fracPlain(a.trim(),b.trim())); }
-function deco(h){ return h.replace(/~([A-Za-z0-9₀-₉]{1,3})~/g,'<span class="vecn" title="vecteur $1">$1</span>').replace(/\*\*(.+?)\*\*/g,'<b class="kv">$1</b>').replace(/P_([A-Z][̄₀-₉]*)\(/g,'P<sub>$1</sub>(').replace(/\{\{([^{}]+?)\/([^{}]+?)\}\}/g,'<span class="fr" role="math"><span class="fn">$1</span><span class="fd">$2</span></span>'); }
+function deco(h){ return h.replace(/~([A-Za-z0-9₀-₉]{1,3})~/g,'<span class="vecn" title="vecteur $1">$1</span>').replace(/\*\*(.+?)\*\*/g,'<b class="kv">$1</b>').replace(/P_([A-ZĀ][̄₀-₉]*)\(/g,'P<sub>$1</sub>(').replace(/\{\{([^{}]+?)\/([^{}]+?)\}\}/g,'<span class="fr" role="math"><span class="fn">$1</span><span class="fd">$2</span></span>'); }
 function rich(s,link){
   link=link!==false; s=String(s==null?'':s); const r=tokRe(); let out='',last=0,m;
   while((m=r.exec(s))){
@@ -110,7 +110,7 @@ function ttsPrep(t){
   t=plain(String(t));
   for(let i=0;i<3;i++) t=t.replace(/(\d)[   ](\d{3})(?!\d)/g,'$1$2');
   t=t.replace(/[  ]/g,' ');
-  t=t.replace(/P_([A-Z][̄₀-₉]*)\(([^()]+)\)/g,' probabilité de $2 sachant $1 ');
+  t=t.replace(/P_([A-ZĀ][̄₀-₉]*)\(([^()]+)\)/g,(m,a,x)=>' probabilité de '+x+' sachant '+(a==='Ā'?'non A':a)+' ');
   t=t.replace(/(\d|π)\/(\d)/g,'$1 sur $2').replace(/θ/g,' thêta ').replace(/ⁿ⁻¹/g,' puissance n moins 1').replace(/ⁿ/g,' puissance n').replace(/ˣ/g,' puissance x').replace(/ᵗ/g,' puissance t').replace(/ʸ/g,' puissance y');
   t=t.replace(/√\s?\(?([\d,]+|[a-z])\)?/g,' racine carrée de $1 ').replace(/π/g,' pi ').replace(/cos⁻¹/g,'arc cosinus').replace(/sin⁻¹/g,'arc sinus').replace(/tan⁻¹/g,'arc tangente')
    .replace(/\bcos\(/g,'cosinus de (').replace(/\bsin\(/g,'sinus de (').replace(/\btan\(/g,'tangente de (')

@@ -81,7 +81,7 @@
   "exemple": {"enonce": "Les mêmes pointures (N = 60). Effectifs cumulés : 4 ; 11 ; 23 ; 38 ; 48 ; 56 ; 60. **Détermine** la médiane et les quartiles.",
    "etapes": [{"t": "Médiane : rangs 30 et 31.", "c": "23 < 30 ≤ 38 → Me = 39"}, {"t": "Q₁ : rang 60 ÷ 4 = 15.", "c": "11 < 15 ≤ 23 → Q₁ = 38"}, {"t": "Q₃ : rang 3 × 60 ÷ 4 = 45.", "c": "38 < 45 ≤ 48 → Q₃ = 40"}],
    "reponse": "Me = 39 ; Q₁ = 38 ; Q₃ = 40 ; l’écart interquartile est 2."}},
- {"titre": "Avec la calculatrice ou le tableur", "outil": "🖩 Calculatrice · 📗 Tableur",
+ {"titre": "Avec la calculatrice ou le tableur", "outil": "🧮 Calculatrice · 📗 Tableur",
   "etapes": ["Calculatrice : j’ouvre le menu Statistiques. J’écris les valeurs dans la liste 1 (et les effectifs dans la liste 2).", "Je demande les résultats « 1 variable ». Je lis : x̄ (moyenne), σx (écart type), n (effectif total), min, Q₁, Med, Q₃, max.", "Tableur : =MOYENNE(B2:B21), =MEDIANE(B2:B21), =ECARTYPEP(B2:B21), =MIN( ), =MAX( ).", "J’écris les résultats en français : une virgule à la place du point, et l’unité."],
   "exemple": {"enonce": "La calculatrice affiche x̄ = 3.95 et σx = 1.986… pour les temps d’attente du samedi B. **Écris** les résultats.",
    "etapes": [{"t": "Je remplace le point par une virgule.", "c": "x̄ = 3,95"}, {"t": "J’arrondis l’écart type au centième.", "c": "σ ≈ 1,99"}, {"t": "J’ajoute l’unité.", "c": "minutes"}],
