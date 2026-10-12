@@ -358,7 +358,9 @@ function defItem(w,pool){ const c=pick(phraseCands(w)); if(!c) return null; cons
 function makeCompItems(m){ const items=(m.comprendre||[]).map(c=>compItem(m,c)).filter(Boolean); const ws=m.mots.map(id=>W[id]);
   sample(ws,3).forEach(w=>{ const d=defItem(w,ws); if(d) items.push(d); }); return shuffle(items).slice(0,10); }
 function makeCalcItems(m){ const g=m.calc||[]; const order=shuffle(g); const items=[]; for(let i=0;i<8;i++){ const d=i<3?1:i<6?2:3; const it=makeCalc(order[i%order.length],d); if(it){ it.mod=m.id; items.push(it); } } return items; }
-function brevetItem(m,p,version){ version=version||S.version||'standard'; const qs=p.qs.map(q=>Object.assign({},q,{st:version==='guidee'&&(q.aide||[]).length?{help:1,auto:1}:null})); const last=[...qs].reverse().find(q=>q.rep&&plain(q.rep).split(/\s+/).length>=4&&plain(q.rep).split(/\s+/).length<=14&&!/\{\{/.test(q.rep));
+/* une étiquette qui est un morceau de formule (« = », « 10,1x », « f(3) ») : la phrase n’est pas proposée à remettre en ordre */
+function isFormulaTok(t){ return /^[=<>≤≥×÷−+]$|\d[a-zA-Z²³ⁿ]|[a-zA-Z][(′₀-₉]|[()=]/.test(t); }
+function brevetItem(m,p,version){ version=version||S.version||'standard'; const qs=p.qs.map(q=>Object.assign({},q,{st:version==='guidee'&&(q.aide||[]).length?{help:1,auto:1}:null})); const last=[...qs].reverse().find(q=>q.rep&&plain(q.rep).split(/\s+/).length>=4&&plain(q.rep).split(/\s+/).length<=14&&!/\{\{/.test(q.rep)&&!plain(q.rep).split(/\s+/).some(isFormulaTok));
   if(last) qs.push(Object.assign({q:'✍️ **Je rédige** la phrase-réponse : remets les mots dans l’ordre.',type:'ordre',rep:last.rep},orderTiles(last.rep)));
   return {type:'prob',brevet:true,bid:p.id,mod:m.id,titre:p.titre,ctx:p.ctx||[],fig:p.fig||null,tab:p.tab||null,qs,version}; }
 function makeBrevetItems(m){ return (m.brevet||[]).map(p=>brevetItem(m,p)); }

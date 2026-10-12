@@ -45,12 +45,17 @@ function trainCards(){
   <a class="modcard c-nombre" href="#/revision"><span class="mi">🔁</span><h3>Révision</h3><p>Ce que je dois encore travailler : mots et calculs ratés.</p></a>`; }
 
 /* ---------- Chapitres ---------- */
+/* Le manuel papier de l’année (PDF dans le dossier pdf/ du site) */
+function manuelOf(y){ const M=(DATA.manuels||{})[y]; return M&&M.fichier?M:null; }
+function manuelCard(y){ const M=manuelOf(y); if(!M) return '';
+  const others=ANNEES.filter(a=>a.id!==y&&manuelOf(a.id)).map(a=>`<a href="${esc(manuelOf(a.id).fichier)}" target="_blank" rel="noopener">${esc(a.nom)}</a>`).join(' · ');
+  return `<section class="card manuel"><h2>📘 Mon manuel papier · ${esc(ANNEE[y].nom)}</h2><p class="small">Tout le cours, les méthodes, les exercices, deux sujets d’entraînement et le glossaire de l’année, à imprimer (PDF, ${M.pages} pages, ${String(M.mo).replace('.',',')} Mo). Les QR codes du manuel ouvrent la bonne page de l’appli.</p><div class="row"><a class="btn sm go" href="${esc(M.fichier)}" target="_blank" rel="noopener" download>⬇️ Télécharger le manuel</a></div>${others?`<p class="small muted">Les autres années : ${others}</p>`:''}</section>`; }
 function viewChapitres(){ const y=ANNEE[state.args[0]]?state.args[0]:curYear(); const mods=modsOf(y); const doms=[...new Set(mods.map(m=>m.domaine))];
   return `<div class="stack"><h1>📚 Les chapitres</h1><p class="lede">${MODS.length} chapitres pour les trois années du bac pro. Dans chaque chapitre : une situation de métier, le cours sur deux colonnes, les méthodes, les mots et les exercices.</p>
   ${yearTabs(y,'#/chapitres/')}
   ${S.grp==='tous'&&S.spe==='tous'?'':`<p class="small muted">Les chapitres marqués ⏸️ ne sont pas au programme de ton groupement : tu peux quand même les ouvrir. <a href="#/parametres">Changer mon groupement</a></p>`}
   ${legendHTML()}
-  ${doms.map(d=>`<h2 class="domh">${esc(d)}</h2><div class="grid">${mods.filter(m=>m.domaine===d).map(modCard).join('')}</div>`).join('')}</div>`; }
+  ${doms.map(d=>`<h2 class="domh">${esc(d)}</h2><div class="grid">${mods.filter(m=>m.domaine===d).map(modCard).join('')}</div>`).join('')}${manuelCard(y)}</div>`; }
 const CTABS=[['cours','📖','Le cours'],['methode','🪜','Les méthodes'],['mots','🔤','Les mots'],['exos','🎯','Je m’entraîne']];
 function viewChap(){
   const m=MOD[state.args[0]]; if(!m) return notFound(); const tab=CTABS.some(t=>t[0]===state.args[1])?state.args[1]:'cours';
@@ -59,7 +64,7 @@ function viewChap(){
   let body=''; if(tab==='cours') body=coursHTML(m); else if(tab==='methode') body=methodeHTML(m); else if(tab==='mots') body=motsHTML(m); else body=exosHTML(m);
   const tag=modTag(m);
   return `<div class="stack c-${m.cat}">
-  <p class="row"><a href="#/chapitres/${m.annee}" class="btn sm alt">← ${ANNEE[m.annee].nom}</a><button type="button" class="btn sm alt" data-act="print" data-mod="${m.id}">🖨️ Imprimer le cours</button></p>
+  <p class="row"><a href="#/chapitres/${m.annee}" class="btn sm alt">← ${ANNEE[m.annee].nom}</a><button type="button" class="btn sm alt" data-act="print" data-mod="${m.id}">🖨️ Imprimer le cours</button>${(()=>{ const M=manuelOf(m.annee), pg=M&&M.chap&&M.chap[m.id]; return pg?`<a class="btn sm alt" href="${esc(M.fichier)}#page=${pg}" target="_blank" rel="noopener">📘 Mon manuel, page ${pg}</a>`:''; })()}</p>
   <header class="chaphead"><span class="chapico" aria-hidden="true">${m.icone}</span><div><p class="mk-l">${esc(ANNEE[m.annee].nom)} · Chapitre ${m.num} · ${esc(m.domaine)}${tag?' · '+esc(tag):''}</p><h1>${esc(m.titre)}</h1><p class="lede">${esc(m.intro)}</p></div></header>
   ${modFor(m)?'':`<div class="banner">⏸️ Ce chapitre n’est pas au programme de ton groupement (${esc(tag)}). Tu peux le travailler quand même.</div>`}
   <div class="card objs"><span class="lbl">🎯 Dans ce chapitre</span><ul>${(m.objectifs||[]).map(o=>`<li><span>${rich(o)}</span>${sayBtn(o,true)}</li>`).join('')}</ul></div>
@@ -268,6 +273,7 @@ function viewApropos(){ const nT=(()=>{ try{ return studioItems().length; }catch
   <li>Des <b>méthodes pas à pas</b>, avec la calculatrice, le tableur ou Python quand c’est utile, et un exemple résolu.</li>
   <li><b>${N2.length} mots</b> du niveau 3 dans un <b>glossaire commun aux trois années</b>, chacun avec une image, une définition simple, la phrase du manuel, des phrases à réutiliser, et le sens dans la vie de tous les jours quand le mot a deux sens. Les ${RAPPELS.length} mots des niveaux 1 et 2 sont aussi là, en rappel.</li>
   <li>Trois sortes d’exercices de maths, liées aux compétences du bac pro : <b>je comprends l’énoncé</b> (s’approprier), <b>je calcule</b> (réaliser), <b>comme à l’examen</b> (analyser, valider, communiquer). Les problèmes existent en <b>trois versions</b> : guidée, standard, examen (consignes à l’infinitif, sans aide).</li>
+  <li>Un <b>manuel papier</b> par année (PDF à imprimer, page « Les chapitres ») : le même contenu que l’appli, deux sujets d’entraînement et le glossaire de l’année. Ses QR codes ouvrent la bonne page de l’appli, et chaque chapitre de l’appli indique sa page dans le manuel.</li>
   <li>Les verbes des consignes sont <b class="kv">en gras et soulignés</b>. En version examen, ils passent à l’infinitif (« Calculer ») comme dans les sujets, avec un rappel de leur sens.</li>
   <li>La <b>voix du professeur</b> (${nT} textes à enregistrer, plusieurs prises qui tournent) ; sinon une voix naturelle de synthèse. Une phrase est toujours dite en entier : jamais de sons assemblés. Les enregistrements des niveaux 1 et 2 sont réutilisés quand le texte est le même.</li>
   <li>Des <b>commentaires comme au football</b>, la <b>spirale</b> (mots et calculs des chapitres déjà vus), un <b>sujet d’entraînement</b> par année, un glossaire, un carnet, le zoom et des réglages d’affichage.</li></ul>

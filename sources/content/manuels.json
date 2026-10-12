@@ -1,0 +1,51 @@
+{
+ "2de": {
+  "fichier": "pdf/manuel-maths-allophones-niveau-3-seconde.pdf",
+  "pages": 186,
+  "mo": 7.8,
+  "chap": {
+   "lycee-pro": 7,
+   "stat1": 23,
+   "fluctuation": 41,
+   "premier-degre": 57,
+   "fonctions": 71,
+   "commerce": 85,
+   "geometrie": 101,
+   "pythagore-trigo": 117,
+   "python": 131
+  }
+ },
+ "1re": {
+  "fichier": "pdf/manuel-maths-allophones-niveau-3-premiere.pdf",
+  "pages": 204,
+  "mo": 8.4,
+  "chap": {
+   "stat2": 7,
+   "proba1": 23,
+   "suites-arith": 41,
+   "resol-graph": 55,
+   "degre2": 69,
+   "derivee": 85,
+   "espace": 97,
+   "vecteurs": 111,
+   "trigo1": 125,
+   "interets": 139,
+   "logique": 153
+  }
+ },
+ "tle": {
+  "fichier": "pdf/manuel-maths-allophones-niveau-3-terminale.pdf",
+  "pages": 140,
+  "mo": 5.9,
+  "chap": {
+   "suites-geo": 7,
+   "degre3": 19,
+   "exp-log": 33,
+   "modeles": 47,
+   "proba2": 61,
+   "emprunts": 75,
+   "vecteurs-espace": 91,
+   "fresnel": 103
+  }
+ }
+}

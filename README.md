@@ -34,7 +34,23 @@ S’y ajoutent un **sujet d’entraînement** par année (4 problèmes en versio
 
 Il n’y a aucune traduction dans une autre langue : l’élève peut noter sa propre traduction dans la fiche d’un mot (« Dans ma langue »), elle reste sur son appareil.
 
-## La voix du professeur et le partage avec les niveaux 1 et 2
+## Les manuels papier
+
+Un manuel PDF par année, à imprimer, dans le dossier `pdf/` :
+
+| Année | Fichier |
+|---|---|
+| Seconde pro | [pdf/manuel-maths-allophones-niveau-3-seconde.pdf](pdf/manuel-maths-allophones-niveau-3-seconde.pdf) |
+| Première pro | [pdf/manuel-maths-allophones-niveau-3-premiere.pdf](pdf/manuel-maths-allophones-niveau-3-premiere.pdf) |
+| Terminale pro | [pdf/manuel-maths-allophones-niveau-3-terminale.pdf](pdf/manuel-maths-allophones-niveau-3-terminale.pdf) |
+
+Chaque manuel reprend le contenu de l’appli : pour chaque chapitre, la situation de métier, le cours sur deux colonnes, les méthodes et les exercices (je comprends l’énoncé, les mots, je calcule, un problème en version guidée et un en version standard, je rédige, je parle, un bilan par compétence). S’y ajoutent l’essentiel de l’année, deux sujets d’entraînement en version examen et le glossaire de l’année (fiches, index de A à Z, mots déjà vus). Les QR codes ouvrent la bonne page de l’appli ; dans l’appli, chaque chapitre indique sa page dans le manuel et la page « Les chapitres » propose le téléchargement.
+
+Le PDF a des signets, un sommaire et des QR codes cliquables ; chaque chapitre commence sur une page de droite.
+
+Une version professeur (mêmes pages, réponses en rouge, corrigé express) est produite en même temps, mais n’est jamais publiée.
+
+
 
 - Les enregistrements du niveau 3 vont dans les tables `fls3_clips` / `fls3_textes` et le stockage `fls3-voix`, dans le même projet Supabase que les niveaux 1 et 2.
 - Le niveau 3 **lit aussi** (sans jamais les modifier) les enregistrements du niveau 2, puis ceux du niveau 1 : une phrase déjà enregistrée (commentaire, définition…) est réutilisée telle quelle.
@@ -45,11 +61,13 @@ Il n’y a aucune traduction dans une autre langue : l’élève peut noter sa p
 ```
 index.html            l’application (un seul fichier, construit à partir de sources/)
 vendor/               voix naturelle (ONNX Runtime Web, phonémiseur Piper) et encodeur MP3 du studio
+pdf/                  les manuels papier des élèves (un par année)
 supabase/             schéma des tables et du stockage (modèle, sans adresse personnelle)
 sources/
   content/            le contenu : base.json (rappels des niveaux 1-2, commentaires) + un fichier JSON par chapitre (2de-…, 1re-…, tle-…)
   src/                code (core, db, voice, illus, illus2, illus3, maths, maths3, exos, studio, views, main), style, gabarit
   build.py            construit et vérifie l’application
+  livret/             fabrique les manuels PDF (make.py)
   test/               tests automatiques
 ```
 
@@ -77,6 +95,21 @@ sources/
    - `run.js` : un parcours complet de l’appli (toutes les pages, toutes les séries, les trois sujets d’entraînement).
 
    `test/e2e/` contient un test dans un vrai navigateur (Playwright) avec un faux Supabase local.
+
+## Refaire les manuels
+
+Après une modification du contenu :
+
+```
+cd sources
+python3 build.py                  # l’appli, utilisée comme source par le manuel
+cd livret
+python3 make.py --publier         # les trois années ; ou : python3 make.py 2de --publier
+cd ..
+python3 build.py --publier        # l’appli, avec les nouvelles pages du manuel
+```
+
+`make.py` met en page avec Chromium (Playwright) et contrôle chaque page (rien ne déborde, renvois de pages, mêmes pages pour l’élève et le professeur). Les PDF et la version professeur restent dans `sources/livret/build/` (non publié) ; `--publier` copie seulement les manuels élèves dans `pdf/` et écrit `sources/content/manuels.json` (page de chaque chapitre).
 
 ## Vie privée
 

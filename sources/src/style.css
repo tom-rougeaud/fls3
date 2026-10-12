@@ -565,3 +565,6 @@ pre.code{font-family:ui-monospace,"Cascadia Code","DejaVu Sans Mono",Consolas,mo
 .def.man{background:var(--sunk);border-radius:.8rem;padding:.4rem .7rem}
 .note.vie{background:color-mix(in srgb,var(--accent) 16%,var(--panel));border-color:var(--accent)}
 @media print{ .pduo{display:grid;grid-template-columns:1fr 1fr;gap:6px} .pduo i{display:block;font-size:8pt;color:#555} .psit{border:1px solid #999;padding:4px 8px;margin:6px 0} }
+
+.card.manuel{border-left:.5rem solid var(--c-nombre)}
+.card.manuel h2{margin-top:0}

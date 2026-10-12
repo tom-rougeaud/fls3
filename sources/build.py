@@ -68,7 +68,10 @@ def load():
         'mots': [words[i] for i in l3] + [w for w in words.values() if w.get('rap')],
         'commentaires': base['commentaires'], 'evenements': base['evenements'],
     }
-    return walk(data)
+    data = walk(data)
+    mf = C / 'manuels.json'   # écrit par livret/make.py --publier
+    data['manuels'] = json.loads(mf.read_text(encoding='utf-8')) if mf.exists() else {}
+    return data
 
 TOK = re.compile(r'\[\[([^\]|]+)(?:\|([^\]]+))?\]\]')
 
